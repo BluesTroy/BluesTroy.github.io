@@ -6,9 +6,9 @@
     <entry>
       <title><![CDATA[Java实现通过smtp服务器验证邮箱的真实有效性]]></title>
       <url>http://www.bluestroy.com/2016/09/10/Java%E5%AE%9E%E7%8E%B0%E9%80%9A%E8%BF%87smtp%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%AA%8C%E8%AF%81%E9%82%AE%E7%AE%B1%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%9C%89%E6%95%88%E6%80%A7/</url>
-      <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱  </p>
+      <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱。  </p>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>改程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包</li>
+<li>该程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包</li>
 <li>大部分的国内常见邮箱都能准确验证</li>
 <li>验证频率和数量多的话容易被封掉ip</li>
 <li>使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程序的发送邮箱，验证频率和数量多的话邮箱地址容易被封  </li>
@@ -191,7 +191,7 @@
 
 }
 </code></pre>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>其中还写了一点开发过程中的相关文档，生成了该功能相应的jar包。也生成了dll，写了供C#调用的使用方法。很简单。这里附上相关文件的链接：<a href="http://pan.baidu.com/s/1jHpdDjC" target="_blank" rel="external">http://pan.baidu.com/s/1jHpdDjC</a> 密码：wio6</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>其中还写了一点开发过程中的相关文档，生成了该功能相应的jar包。也生成了dll，写了供C#调用的使用方法。很简单。这里附上相关文件的链接：<a href="http://pan.baidu.com/s/1jHpdDjC" target="_blank" rel="external">http://pan.baidu.com/s/1jHpdDjC</a> &nbsp;&nbsp;密码：wio6</p>
 ]]></content>
     </entry>
     
