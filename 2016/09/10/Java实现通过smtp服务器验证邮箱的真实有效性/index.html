@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="树莓派," />
+  <meta name="keywords" content="Java smtp," />
 
 
 
@@ -88,28 +88,31 @@
 
 
 
-<meta name="description" content="——树莓派？好吃吗？——Yes, It’s delicious, but for programer!  
-
-树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  
-废话不多说了，当你买来树莓派时，它还是一个裸">
+<meta name="description" content="原理设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱  
+说明
+改程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包
+大部分的国内常见邮箱都能准确验证
+验证频率和数量多的话容易被封掉ip
+使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派装系统+远程登录">
-<meta property="og:url" content="http://www.bluestroy.com/2016/09/10/树莓派装系统-远程登录/index.html">
+<meta property="og:title" content="Java实现通过smtp服务器验证邮箱的真实有效性">
+<meta property="og:url" content="http://www.bluestroy.com/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/index.html">
 <meta property="og:site_name" content="Troy's Blog">
-<meta property="og:description" content="——树莓派？好吃吗？——Yes, It’s delicious, but for programer!  
-
-树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  
-废话不多说了，当你买来树莓派时，它还是一个裸">
-<meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/20151012213447693.jpg">
-<meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/20151012214540119.jpg">
-<meta property="og:updated_time" content="2016-09-10T10:58:34.620Z">
+<meta property="og:description" content="原理设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱  
+说明
+改程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包
+大部分的国内常见邮箱都能准确验证
+验证频率和数量多的话容易被封掉ip
+使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程">
+<meta property="og:updated_time" content="2016-09-10T12:09:42.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派装系统+远程登录">
-<meta name="twitter:description" content="——树莓派？好吃吗？——Yes, It’s delicious, but for programer!  
-
-树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  
-废话不多说了，当你买来树莓派时，它还是一个裸">
-<meta name="twitter:image" content="http://obmxnha1c.bkt.clouddn.com/20151012213447693.jpg">
+<meta name="twitter:title" content="Java实现通过smtp服务器验证邮箱的真实有效性">
+<meta name="twitter:description" content="原理设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱  
+说明
+改程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包
+大部分的国内常见邮箱都能准确验证
+验证频率和数量多的话容易被封掉ip
+使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程">
 
 
 
@@ -130,9 +133,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/2016/09/10/树莓派装系统-远程登录/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/"/>
 
-  <title> 树莓派装系统+远程登录 | Troy's Blog </title>
+  <title> Java实现通过smtp服务器验证邮箱的真实有效性 | Troy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -305,7 +308,7 @@
             
             
               
-                树莓派装系统+远程登录
+                Java实现通过smtp服务器验证邮箱的真实有效性
               
             
           </h1>
@@ -317,7 +320,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-10T17:30:02+08:00" content="2016-09-10">
+            <time itemprop="dateCreated" datetime="2016-09-10T20:01:12+08:00" content="2016-09-10">
               2016-09-10
             </time>
           </span>
@@ -331,8 +334,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -347,8 +350,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/10/树莓派装系统-远程登录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/树莓派装系统-远程登录/" itemprop="commentsCount"></span>
+                <a href="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,7 +361,7 @@
 
           
           
-             <span id="/2016/09/10/树莓派装系统-远程登录/" class="leancloud_visitors" data-flag-title="树莓派装系统+远程登录">
+             <span id="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/" class="leancloud_visitors" data-flag-title="Java实现通过smtp服务器验证邮箱的真实有效性">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -380,29 +383,192 @@
       
 
       
-        <blockquote>
-<p>——树莓派？好吃吗？<br>——Yes, It’s delicious, but for programer!  </p>
-</blockquote>
-<p>树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  </p>
-<p>废话不多说了，当你买来树莓派时，它还是一个裸机，需要你给它装系统。  </p>
-<h2 id="树莓派装系统"><a href="#树莓派装系统" class="headerlink" title="树莓派装系统"></a>树莓派装系统</h2><ol>
-<li>下载2015-05-05-raspbian-wheezy树莓派系统镜像文件</li>
-<li>树莓派用SD卡来充当硬盘，用卡器将SD卡连接电脑，使用Win32DiskImager软件把系统镜像文件烧录到SD卡上</li>
-<li>然后将SD卡插到树莓派上，把树莓派接通电源，树莓派即启动了。  </li>
-</ol>
-<p>很简单就将树莓派系统装好了。树莓派启动时，红灯亮、绿灯闪烁，当绿灯常亮时即启动成功。</p>
-<blockquote>
-<p>一开始因为不是很懂，进入系统后操作失误，后来又重装了系统。<br><strong>注意： </strong>重装系统时要先使用<strong>SDFormatterv4</strong>软件对SD卡进行格式化，如果直接<code>右键-&gt;格式化</code>的话很可能SD的容量没有完全释放掉，格式化后只显示很小的容量。  </p>
-</blockquote>
-<h2 id="树莓派远程登录"><a href="#树莓派远程登录" class="headerlink" title="树莓派远程登录"></a>树莓派远程登录</h2><p>如果有显示器和HDMI连接线，是可以直接将树莓派连接到显示其上使用的。这里讲一下没有的话要如何远程登录树莓派。</p>
-<h3 id="1、获取树莓派的IP地址"><a href="#1、获取树莓派的IP地址" class="headerlink" title="1、获取树莓派的IP地址"></a>1、获取树莓派的IP地址</h3><p><strong>要远程登录树莓派首先要知道树莓派的IP地址：</strong><br>首先将网线插入树莓派，然后使用<strong>Advanced Ip Scanner</strong>软件进行Ip扫描，可以扫描出连接到当前局域网的所有设备。可以看到制造商为<strong>Raspberry Pi Foundation</strong>的设备就是树莓派，IP地址为10.199.157.36，听说树莓派的MAC 地址前几个数是固定的，也可通过Mac地址判断。如果连接的设备较多，可以根据自己的笔记本IP大概判断一下树莓派的IP，然后在软件的输入框中输入IP段范围，可以找的快一点。<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012213447693.jpg" alt="Untitled Image">  </p>
-<h3 id="2、使用Win7自带的mstsc远程登录"><a href="#2、使用Win7自带的mstsc远程登录" class="headerlink" title="2、使用Win7自带的mstsc远程登录"></a>2、使用Win7自带的mstsc远程登录</h3><p><code>开始 -&gt; 输入 mstsc</code>，弹出桌面远程连接，输入树莓派的ip地址后点击连接，就可以登录到树莓派系统了，中间要输入树莓派的账密，<code>默认账号：pi 密码：raspberry</code> 。下面是登录后的样子：<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012214540119.jpg" alt="Untitled Image">  </p>
-<h3 id="3、其他技巧"><a href="#3、其他技巧" class="headerlink" title="3、其他技巧"></a>3、其他技巧</h3><ul>
-<li>我试了一下远程登录可以好几台电脑同时远程登录树莓派，互相之间操作的结果会同步，但其他人的操作动作不可见  </li>
-<li>mstsc远程登录可以使用<code>ctrl+alt+Break</code>快捷键进行全盘切换，当键盘不灵时也可以切换一下就可以了</li>
-<li>另外：也可以用<strong>ssh+putty</strong>进行远程登录  </li>
+        <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱  </p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>改程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包</li>
+<li>大部分的国内常见邮箱都能准确验证</li>
+<li>验证频率和数量多的话容易被封掉ip</li>
+<li>使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程序的发送邮箱，验证频率和数量多的话邮箱地址容易被封  </li>
 </ul>
-<h2 id="树莓派无线网卡配置"><a href="#树莓派无线网卡配置" class="headerlink" title="树莓派无线网卡配置"></a>树莓派无线网卡配置</h2><p>如果是连接的路由器的wifi的话，这个百度经验上有，自行百度。<br><strong>注意</strong>：如果无线网卡配置信息过时或错误，同时插上无线网卡和网线远程登录可能会有问题，也可能上不了网，这个时候把无线网卡拔掉，直插网线就好。<br>【配置没成功，待定】</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="java"><span class="keyword">package</span> com.tieniu;
+<span class="keyword">import</span> java.io.IOException;
+
+<span class="keyword">import</span> org.apache.commons.net.smtp.SMTPClient;
+<span class="keyword">import</span> org.apache.commons.net.smtp.SMTPReply;
+<span class="keyword">import</span> org.xbill.DNS.Lookup;
+<span class="keyword">import</span> org.xbill.DNS.MXRecord;
+<span class="keyword">import</span> org.xbill.DNS.Record;
+<span class="keyword">import</span> org.xbill.DNS.Type;
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CheckEmail</span> </span>{
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SENDER_EMAIL = <span class="string">"no-reply@domain.com"</span>;<span class="comment">//"no-reply@domain.com";</span>
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SENDER_EMAIL_SERVER = SENDER_EMAIL.split(<span class="string">"@"</span>)[<span class="number">1</span>];<span class="comment">//"domain.com";</span>
+
+
+    <span class="comment">/**
+     * 
+     * <span class="doctag">@param</span> email  The recipient's email address, it need to be validate if it is real exists or doesn't exists.
+     * <span class="doctag">@return</span> True if email is real exists, false if not.
+     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkEmailMethod</span><span class="params">(String email)</span> </span>{
+        <span class="keyword">if</span> (!email.matches(<span class="string">"[\\w\\.\\-]+@([\\w\\-]+\\.)+[\\w\\-]+"</span>)) {
+            System.err.println(<span class="string">"Format error"</span>);
+            <span class="keyword">return</span> <span class="keyword">false</span>;
+        }
+
+        String log = <span class="string">""</span>;
+        String host = <span class="string">""</span>;
+        String hostName = email.split(<span class="string">"@"</span>)[<span class="number">1</span>];
+        Record[] result = <span class="keyword">null</span>;
+        SMTPClient client = <span class="keyword">new</span> SMTPClient();
+        client.setConnectTimeout(<span class="number">8000</span>);  <span class="comment">//设置连接超时时间,有些服务器比较慢</span>
+
+        <span class="keyword">try</span> {
+            <span class="comment">// 查找MX记录</span>
+            Lookup lookup = <span class="keyword">new</span> Lookup(hostName, Type.MX);
+            lookup.run();
+            <span class="keyword">if</span> (lookup.getResult() != Lookup.SUCCESSFUL) {
+                log += <span class="string">"找不到MX记录\n"</span>;
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            } <span class="keyword">else</span> {
+                result = lookup.getAnswers();
+            }
+<span class="comment">/*
+             if(result.length &gt; 1) { // 优先级排序
+                    List&lt;Record&gt; arrRecords = new ArrayList&lt;Record&gt;();
+                    Collections.addAll(arrRecords, result);
+                    Collections.sort(arrRecords, new Comparator&lt;Record&gt;() {
+
+                        public int compare(Record o1, Record o2) {
+                            return new CompareToBuilder().append(((MXRecord)o1).getPriority(), ((MXRecord)o2).getPriority()).toComparison();
+                        }
+
+                    });
+                    host = ((MXRecord)arrRecords.get(0)).getTarget().toString();
+                }
+ * 
+ */</span>
+            <span class="comment">// 连接到邮箱服务器</span>
+
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.length; i++) {
+                System.out.println(result[i].getAdditionalName().toString());
+                System.out.println(((MXRecord)result[i]).getPriority());
+            }
+            <span class="keyword">int</span> count=<span class="number">0</span>;  
+<span class="comment">//            String tempLog ="";</span>
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.length; i++) {
+                log=<span class="string">""</span>;
+                host = result[i].getAdditionalName().toString();
+                <span class="keyword">try</span>{
+                    client.connect(host);    <span class="comment">//连接到接收邮箱地址的邮箱服务器</span>
+                }<span class="keyword">catch</span>(Exception e){        <span class="comment">//捕捉连接超时的抛出的异常</span>
+                    count++;
+                    <span class="keyword">if</span>(count&gt;=result.length){    <span class="comment">//如果由MX得到的result服务器都连接不上，则认定email无效</span>
+                        log +=<span class="string">"Connect mail server timeout...\n"</span>;
+                        <span class="keyword">return</span> <span class="keyword">false</span>;
+                    }
+                }
+
+                <span class="keyword">if</span> (!SMTPReply.isPositiveCompletion(client.getReplyCode())) {    <span class="comment">//服务器通信不成功</span>
+                    client.disconnect();
+                    <span class="keyword">continue</span>;
+                } <span class="keyword">else</span> {
+                    log += <span class="string">"MX record about "</span> + hostName + <span class="string">" exists.\n"</span>;
+                    log += <span class="string">"Connection succeeded to "</span> + host + <span class="string">"\n"</span>;
+                    log += client.getReplyString();
+
+                    <span class="comment">// HELO &lt;$SENDER_EMAIL_SERVER&gt;   //domain.com</span>
+                    <span class="keyword">try</span>{
+                        client.login(SENDER_EMAIL_SERVER);   <span class="comment">//这一步可能会出现空指针异常</span>
+                    }<span class="keyword">catch</span>(Exception e){
+                        <span class="keyword">return</span> <span class="keyword">false</span>;
+                    }
+                    log += <span class="string">"&gt;HELO "</span>+SENDER_EMAIL_SERVER+<span class="string">"\n"</span>;
+                    log += <span class="string">"="</span> + client.getReplyString();
+
+                    client.setSender(SENDER_EMAIL);
+                    <span class="keyword">if</span>(client.getReplyCode()!=<span class="number">250</span>){        <span class="comment">//为解决hotmail有的MX可能出现=550 OU-001 (SNT004-MC1F43) Unfortunately, messages from 116.246.2.245 weren't sent.</span>
+                        client.disconnect();
+                        <span class="keyword">continue</span>;                            <span class="comment">//把client.login 和client.setSender放在循环体内，这样所有的如果某mx不行就换其他mx，但这样会对无效的邮箱进行所有mx遍历，耗时</span>
+                    }
+                    log += <span class="string">"&gt;MAIL FROM: &lt;"</span>+SENDER_EMAIL+<span class="string">"&gt;\n"</span>;
+                    log += <span class="string">"="</span> + client.getReplyString();
+                    <span class="comment">// RCPT TO: &lt;$email&gt;</span>
+                    <span class="keyword">try</span>{
+                        client.addRecipient(email);
+                    }<span class="keyword">catch</span>(Exception e){
+                        <span class="keyword">return</span> <span class="keyword">false</span>;
+                    }
+                    log += <span class="string">"&gt;RCPT TO: &lt;"</span> + email + <span class="string">"&gt;\n"</span>;
+                    log += <span class="string">"="</span> + client.getReplyString();
+
+                    <span class="comment">//最后从收件邮箱服务器返回true，说明服务器中能够找到此收件地址，邮箱有效</span>
+                    <span class="keyword">if</span> (<span class="number">250</span> == client.getReplyCode()) {
+                        <span class="keyword">return</span> <span class="keyword">true</span>;
+                    }
+                    client.disconnect();
+
+                }
+            }
+<span class="comment">//            log+=tempLog;</span>
+<span class="comment">//            log += "&gt;MAIL FROM: &lt;"+SENDER_EMAIL+"&gt;\n";</span>
+<span class="comment">//            log += "=" + client.getReplyString();</span>
+<span class="comment">//            </span>
+<span class="comment">//            // RCPT TO: &lt;$email&gt;</span>
+<span class="comment">//            try{</span>
+<span class="comment">//                client.addRecipient(email);</span>
+<span class="comment">//            }catch(Exception e){</span>
+<span class="comment">//                return false;</span>
+<span class="comment">//            }</span>
+<span class="comment">//            log += "&gt;RCPT TO: &lt;" + email + "&gt;\n";</span>
+<span class="comment">//            log += "=" + client.getReplyString();</span>
+<span class="comment">//            </span>
+<span class="comment">//            //最后从收件邮箱服务器返回true，说明服务器中能够找到此收件地址，邮箱有效</span>
+<span class="comment">//            if (250 == client.getReplyCode()) {</span>
+<span class="comment">//                return true;</span>
+<span class="comment">//            }</span>
+        } <span class="keyword">catch</span> (Exception e) {
+            e.printStackTrace();
+        } <span class="keyword">finally</span> {
+            <span class="keyword">try</span> {
+                client.disconnect();
+            } <span class="keyword">catch</span> (IOException e) {
+            }
+            <span class="comment">// print log</span>
+            System.out.println(log);
+        }
+        <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+
+    <span class="comment">/**
+     * This method is more accurate than checkEmailMethod(String email);
+     * 
+     * <span class="doctag">@param</span> email  The recipient's email address, it need to be validate if it is real exists or doesn't exists.
+     * <span class="doctag">@return</span> True if email is real exists, false if not.
+     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkEmail</span><span class="params">(String email)</span></span>{
+        <span class="keyword">if</span>(email.split(<span class="string">"@"</span>)[<span class="number">1</span>].equals(<span class="string">"qq.com"</span>)){
+            <span class="keyword">if</span>( checkEmailMethod(email) &amp;&amp; checkEmailMethod(email) &amp;&amp; checkEmailMethod(email)){
+                <span class="keyword">return</span> <span class="keyword">true</span>;
+            }<span class="keyword">else</span>{
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        }
+        <span class="keyword">return</span> checkEmailMethod(email);
+    }
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        CheckEmail ce = <span class="keyword">new</span> CheckEmail();
+        <span class="keyword">if</span>(ce.checkEmail(<span class="string">"dfdegcex@qq.com"</span>)){
+            System.out.println(<span class="string">"true"</span>);
+        }<span class="keyword">else</span>{
+            System.out.println(<span class="string">"false"</span>);
+        }
+    }
+
+}
+</code></pre>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>其中还写了一点开发过程中的相关文档，生成了该功能相应的jar包。也生成了dll，写了供C#调用的使用方法。很简单。这里附上相关文件的链接：<a href="http://pan.baidu.com/s/1jHpdDjC" target="_blank" rel="external">http://pan.baidu.com/s/1jHpdDjC</a> 密码：wio6</p>
 
       
     </div>
@@ -446,7 +612,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树莓派/" rel="tag">#树莓派</a>
+            <a href="/tags/Java-smtp/" rel="tag">#Java smtp</a>
           
         </div>
       
@@ -455,17 +621,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/08/Linux Makefile文件编译错误——makeNothing to be donw for 'all'/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" rel="next" title="Java实现将选择题题库按照字母顺序重新排列">
+                <i class="fa fa-chevron-left"></i> Java实现将选择题题库按照字母顺序重新排列
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" rel="prev" title="Java实现将选择题题库按照字母顺序重新排列">
-                Java实现将选择题题库按照字母顺序重新排列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,10 +642,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/10/树莓派装系统-远程登录/"
-     data-title="树莓派装系统+远程登录"
+        <div class="ds-share flat" data-thread-key="2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/"
+     data-title="Java实现通过smtp服务器验证邮箱的真实有效性"
      data-content=""
-     data-url="http://www.bluestroy.com/2016/09/10/树莓派装系统-远程登录/">
+     data-url="http://www.bluestroy.com/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -510,8 +672,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/10/树莓派装系统-远程登录/"
-           data-title="树莓派装系统+远程登录" data-url="http://www.bluestroy.com/2016/09/10/树莓派装系统-远程登录/">
+      <div class="ds-thread" data-thread-key="2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/"
+           data-title="Java实现通过smtp服务器验证邮箱的真实有效性" data-url="http://www.bluestroy.com/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/">
       </div>
     
   </div>
@@ -640,7 +802,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派装系统"><span class="nav-number">1.</span> <span class="nav-text">树莓派装系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派远程登录"><span class="nav-number">2.</span> <span class="nav-text">树莓派远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、获取树莓派的IP地址"><span class="nav-number">2.1.</span> <span class="nav-text">1、获取树莓派的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、使用Win7自带的mstsc远程登录"><span class="nav-number">2.2.</span> <span class="nav-text">2、使用Win7自带的mstsc远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、其他技巧"><span class="nav-number">2.3.</span> <span class="nav-text">3、其他技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派无线网卡配置"><span class="nav-number">3.</span> <span class="nav-text">树莓派无线网卡配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
           </div>
         </section>
