@@ -429,7 +429,7 @@
               
                 
                 <a class="post-title-link" href="/2016/08/08/Test/" itemprop="url">
-                  Test
+                  Linux Makefile文件编译错误。——make:Nothing to be donw for 'all'
                 </a>
               
             
@@ -448,6 +448,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -464,7 +483,7 @@
 
           
           
-             <span id="/2016/08/08/Test/" class="leancloud_visitors" data-flag-title="Test">
+             <span id="/2016/08/08/Test/" class="leancloud_visitors" data-flag-title="Linux Makefile文件编译错误。——make:Nothing to be donw for 'all'">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -488,8 +507,14 @@
       
         
           
-            <h2 id="Test-for-Hexo"><a href="#Test-for-Hexo" class="headerlink" title="Test for Hexo"></a>Test for Hexo</h2><p>This is a test article, the following is a patch of javascript code.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   	alert(<span class="string">"hello word!"</span>);</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
+            <h3 id="Linux-Makefile文件使用make命令编译错误如下："><a href="#Linux-Makefile文件使用make命令编译错误如下：" class="headerlink" title="Linux Makefile文件使用make命令编译错误如下："></a>Linux Makefile文件使用<code>make</code>命令编译错误如下：</h3><p>在Linux操作系统中使用Makefile时，例如，Makefile内容如下：  </p>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232834116.png" alt="Untitled Image">  </p>
+<p>看起来是没有错的。然后，在Terminal中使用<code>make</code>进行编译，却出现如下错误：<br><img src="http://obmxnha1c.bkt.clouddn.com/20160102232950093.png" alt="Untitled Image"><br>在网上查了半天找不到解决方法，网上大多是转来赚取的同一个说法，并没有帮助。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>原因就在于上例中Makefile文件中的白色高亮部分。Makefile文件中只能使用<strong><em>Tab</em></strong>，不能使用多个空格。  </p>
+<blockquote>
+<p>这个文件的代码是从别处复制来的，白色高亮部分是多个空格，将其变成一个<strong><em>Tab</em></strong>就可以了。</p>
+</blockquote>
+
           
         
       
@@ -703,7 +728,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -712,7 +737,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
