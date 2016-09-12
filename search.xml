@@ -4,10 +4,10 @@
   
     
     <entry>
-      <title><![CDATA[Linuxx常用命令]]></title>
+      <title><![CDATA[Linux常用命令]]></title>
       <url>http://www.bluestroy.com/2016/09/12/Linuxx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<h3 id="crontab简介"><a href="#crontab简介" class="headerlink" title="crontab简介"></a>crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。 </p>
-<h5 id="crontab调度文件规则"><a href="#crontab调度文件规则" class="headerlink" title="crontab调度文件规则"></a>crontab调度文件规则</h5><p>命令格式：<code>* * * * * command</code><br><strong>*</strong> 依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
+      <content type="html"><![CDATA[<h3 id="一、crontab简介"><a href="#一、crontab简介" class="headerlink" title="一、crontab简介"></a>一、crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。 </p>
+<h5 id="1、crontab调度文件规则"><a href="#1、crontab调度文件规则" class="headerlink" title="1、crontab调度文件规则"></a>1、crontab调度文件规则</h5><p>命令格式：<code>* * * * * command</code><br><strong>*</strong> 依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
 <ul>
 <li>分钟——每小时的第几分钟执行，范围0~59  </li>
 <li>小时——每日的第几个小时执行，范围0~23</li>
@@ -15,29 +15,29 @@
 <li>月——每年你的第几月执行 ，范围1~12  </li>
 <li>星期——每周的第几天执行，范围0~6  </li>
 </ul>
-<h5 id="crontab命令的例子"><a href="#crontab命令的例子" class="headerlink" title="crontab命令的例子"></a>crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
+<h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
-<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2, * * * date</div></pre></td></tr></table></figure></p>
+<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
 <p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
-<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">crontab -r <span class="comment">#停止（即删除）所有任务（慎用）</span></div><div class="line">crontab <span class="_">-l</span> <span class="comment">#列出所有任务</span></div></pre></td></tr></table></figure>
-<h3 id="文件中-atime-ctime-mtime简介"><a href="#文件中-atime-ctime-mtime简介" class="headerlink" title="文件中 -atime, -ctime, -mtime简介"></a>文件中 -atime, -ctime, -mtime简介</h3><ul>
+<h5 id="3、其他"><a href="#3、其他" class="headerlink" title="3、其他"></a>3、其他</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">crontab -r <span class="comment">#停止（即删除）所有任务（慎用）</span></div><div class="line">crontab <span class="_">-l</span> <span class="comment">#列出所有任务</span></div></pre></td></tr></table></figure>
+<h3 id="二、文件中-atime-ctime-mtime简介"><a href="#二、文件中-atime-ctime-mtime简介" class="headerlink" title="二、文件中 -atime, -ctime, -mtime简介"></a>二、文件中 -atime, -ctime, -mtime简介</h3><ul>
 <li>atime(Access time)，访问时间，如读取文件</li>
 <li>ctime(Change time), 状态时间，如修改权限、属性、所有者</li>
 <li>mtime(Modified time), 修改时间，文件内容修改的时间<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">find . -mtime +3 <span class="comment">#3天以前修改的文件(&gt;3)  </span></div><div class="line">find . -mtime -3 <span class="comment">#3天之内修改的文件(&lt;3)</span></div><div class="line">find . -mtime 1 <span class="comment">#距离当前时间24~24*2小时内修改的文件(即当前时间的“昨天内”）</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="amin-cmin-mmin简介"><a href="#amin-cmin-mmin简介" class="headerlink" title="-amin, -cmin, -mmin简介"></a>-amin, -cmin, -mmin简介</h3><p>与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</p>
-<h3 id="history命令"><a href="#history命令" class="headerlink" title="history命令"></a>history命令</h3><p>显示最近使用的5个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">history</span> 5</div></pre></td></tr></table></figure></p>
+<h3 id="三、-amin-cmin-mmin简介"><a href="#三、-amin-cmin-mmin简介" class="headerlink" title="三、-amin, -cmin, -mmin简介"></a>三、-amin, -cmin, -mmin简介</h3><p>与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</p>
+<h3 id="四、history命令"><a href="#四、history命令" class="headerlink" title="四、history命令"></a>四、history命令</h3><p>显示最近使用的5个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">history</span> 5</div></pre></td></tr></table></figure></p>
 <p>执行历史编号为5的命令那个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !5</div></pre></td></tr></table></figure></p>
 <p>执行最后一次以ls结尾的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !ls</div></pre></td></tr></table></figure></p>
-<h3 id="为bash脚本设置别名"><a href="#为bash脚本设置别名" class="headerlink" title="为bash脚本设置别名"></a>为bash脚本设置别名</h3><p>修改<code>~/.bashrc</code>文件，该文件是登录用户的启动文件，能用作用户的全局设置。<br>假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件<code>deploy.sh</code>，则在<code>~./bashrc</code>文件中添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="五、为bash脚本设置别名"><a href="#五、为bash脚本设置别名" class="headerlink" title="五、为bash脚本设置别名"></a>五、为bash脚本设置别名</h3><p>修改<code>~/.bashrc</code>文件，该文件是登录用户的启动文件，能用作用户的全局设置。<br>假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件<code>deploy.sh</code>，则在<code>~./bashrc</code>文件中添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div></pre></td></tr></table></figure></p>
 <p>那么在命令行中直接执行<code>go</code>命令即可执行<code>deploy.sh</code>文件中的命令。  </p>
 <p>注意：编辑完后执行<code>source ./bashrc</code>命令使其生效，若不能生效则重新登录生效。  </p>
-<h3 id="usermod将用户添加到用户组"><a href="#usermod将用户添加到用户组" class="headerlink" title="usermod将用户添加到用户组"></a>usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
+<h3 id="六、usermod将用户添加到用户组"><a href="#六、usermod将用户添加到用户组" class="headerlink" title="六、usermod将用户添加到用户组"></a>六、usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
 <p>-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </p>
-<h3 id="head-和tail"><a href="#head-和tail" class="headerlink" title="head 和tail"></a>head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
+<h3 id="七、head-和tail"><a href="#七、head-和tail" class="headerlink" title="七、head 和tail"></a>七、head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
