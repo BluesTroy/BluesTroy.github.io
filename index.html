@@ -295,6 +295,296 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/12/Linuxx常用命令/" itemprop="url">
+                  Linuxx常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-12T10:37:13+08:00" content="2016-09-12">
+              2016-09-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/12/Linuxx常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Linuxx常用命令/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/12/Linuxx常用命令/" class="leancloud_visitors" data-flag-title="Linuxx常用命令">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="crontab简介"><a href="#crontab简介" class="headerlink" title="crontab简介"></a>crontab简介</h4><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>“crontab”</code>文件中，以供之后读取和执行。 </p>
+<h6 id="crontab调度文件规则"><a href="#crontab调度文件规则" class="headerlink" title="crontab调度文件规则"></a>crontab调度文件规则</h6><p>命令格式：<code>* * * * * command</code><br>*依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
+<ul>
+<li>分钟——每小时的第几分钟执行，范围0~59  </li>
+<li>小时——每日的第几个小时执行，范围0~23</li>
+<li>日——每月的第几天执行，范围1~31  </li>
+<li>月——每年你的第几月执行 ，范围1~12  </li>
+<li>星期——每周的第几天执行0~6  </li>
+</ul>
+<h6 id="crontab命令的例子"><a href="#crontab命令的例子" class="headerlink" title="crontab命令的例子"></a>crontab命令的例子</h6><p>*则表示该范围内任意时候，如每分钟执行一次：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div><div class="line">```  </div><div class="line">每天晚上11点到早上8点之间每两个小时，即早上八点 :</div></pre></td></tr></table></figure></p>
+<p>0 23-7/2, <em> </em> * date<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每两个小时：</div></pre></td></tr></table></figure></p>
+<p>0 <em>/2 </em> <em> </em> date<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个月的4号和每周的周一到周三的早上11点：</div></pre></td></tr></table></figure></p>
+<p>0 11 4 * mon-wed date<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每天18 : 00至23 : 00之间每隔30分钟重启apache：</div></pre></td></tr></table></figure></p>
+<p>0,30 18-23 <em> </em> * /usr/local/etc/rc.d/lighttpd restart<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">###### 其他  </div><div class="line"></div><div class="line">``` bash</div><div class="line">crontab -r #停止（即删除）所有任务（慎用）</div><div class="line">crontab -l #列出所有任务</div><div class="line">```  </div><div class="line"></div><div class="line"></div><div class="line">#### 文件中 -atime, -ctime, -mtime简介   </div><div class="line"></div><div class="line">- atime(Access time)，访问时间，如读取文件</div><div class="line">- ctime(Change time), 状态时间，如修改权限、属性、所有者</div><div class="line">- mtime(Modified time), 修改时间，文件内容修改的时间</div><div class="line">``` bash</div><div class="line">find . -mtime +3 #3天以前修改的文件(&gt;3)  </div><div class="line">find . -mtime -3 #3天之内修改的文件(&lt;3)</div><div class="line">find . -mtime 1 #距离当前时间24~24*2小时内修改的文件(即当前时间的“昨天内”）</div><div class="line">```  </div><div class="line"></div><div class="line">#### -amin, -cmin, -mmin简介  </div><div class="line">与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</div><div class="line"></div><div class="line">#### history命令</div><div class="line">显示最近使用的5个命令：</div><div class="line">``` bash</div><div class="line">$ history 5</div><div class="line">```  </div><div class="line">执行历史编号为5的命令那个：</div><div class="line">``` bash</div><div class="line">$ !5</div><div class="line">```  </div><div class="line">执行最后一次以ls结尾的命令：</div><div class="line">``` bash</div><div class="line">$ !ls</div><div class="line">```  </div><div class="line"></div><div class="line">#### 为bash脚本设置别名  </div><div class="line">修改`~/.bashrc`文件，该文件是登录用户的启动文件，能用作用户的全局设置。</div><div class="line">假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件`deploy.sh`，则在`~./bashrc`文件中添加如下内容：  </div><div class="line">``` </div><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div><div class="line">```  </div><div class="line">那么在命令行中直接执行`go`命令即可执行`deploy.sh`文件中的命令。  </div><div class="line"></div><div class="line">注意：编辑完后执行`source ./bashrc`命令使其生效，若不能生效则重新登录生效。  </div><div class="line"></div><div class="line">#### usermod将用户添加到用户组  </div><div class="line">千万不能直接用 `usermode -G groupName userName`，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。  </div><div class="line">应该加上`-a`选项：  </div><div class="line">``` bash</div><div class="line">$ usermod -a -G sudo userName</div><div class="line">```  </div><div class="line">-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </div><div class="line"></div><div class="line">#### head 和tail  </div><div class="line">``` bash</div><div class="line">head -n 20 /etc/man.config #列出前20行</div><div class="line">head -n -100 /etc/man.config #列出除最后100行的之前的所有行  </div><div class="line">tail -n 20 /etc/ #列出最后20行  </div><div class="line">tail -n +100 /etc/man.config #列出除前100行的之后的所有行  </div><div class="line">head -n 20 /etc/man.config | tail -n 10 #显示第11到20行</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/12/Linux中mysql数据库定时备份/" itemprop="url">
+                  Linux中mysql数据库定时备份
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-12T10:33:26+08:00" content="2016-09-12">
+              2016-09-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/12/Linux中mysql数据库定时备份/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Linux中mysql数据库定时备份/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/12/Linux中mysql数据库定时备份/" class="leancloud_visitors" data-flag-title="Linux中mysql数据库定时备份">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"><a href="#Linux中，为mysql数据库备份，并删除一个月以前的备份数据" class="headerlink" title="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"></a>Linux中，为mysql数据库备份，并删除一个月以前的备份数据</h4><p>mysql_backup.sh备份脚本命令如下：</p>
+<pre><code class="bash"><span class="meta">#! /bin/bash</span>
+<span class="comment"># 按照时间戳来命名备份数据，便于管理</span>
+DATE=`date+%Y-%m-%d-%H:%M:%S`  
+mysqldump -u root -p123456 mysqldbName &gt; /mysql_backup/backdata/mysqldbName_<span class="variable">${DATE}</span>.bak  
+<span class="comment"># 删除30天以前的备份数据</span>
+find /mysql_backup/backdata/ -atime +30 | xargs rm
+</code></pre>
+<p>其中root是mysql用户，123456是用户密码，msyqldbName是数据库名字，该备份命令会将mysqldbName数据库的数据全部备份到/mysql<em>backup/backdata目录下，并以mysqldbName\</em>加上时间戳的形式命名。 </p>
+<h4 id="crontab定时备份任务"><a href="#crontab定时备份任务" class="headerlink" title="crontab定时备份任务"></a>crontab定时备份任务</h4><p>将mysql_backup.sh脚本文件的执行加入到crontab定时任务中，编辑crontab定时任务:</p>
+<pre><code class="bash">$ crontab <span class="_">-e</span>
+`
+</code></pre>
+<p>将一下内容追加到crontab文件中：</p>
+<pre><code class="bash">0 12 * * * /mysql_backup/mysql_backup.sh
+0 0 * * * /mysql_backup/mysql_backup.sh
+</code></pre>
+<p>第一行内容表示每天中午12点执行mysql_backup.sh中的备份命令，第二行表示每天凌晨执行备份命令。你可以在任意时候执行备份命令，只需要学习一下crontab的 <em> </em> <em> </em> * 分别代表什么意思就可以。  </p>
+<h4 id="mysql数据库恢复备份数据"><a href="#mysql数据库恢复备份数据" class="headerlink" title="mysql数据库恢复备份数据"></a>mysql数据库恢复备份数据</h4><pre><code class="bash">mysql -u root -p123456 mysqldbName &lt; /mysql_backup/backdata/mysqldbName_xxxxxx.bak
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/" itemprop="url">
                   Java实现通过smtp服务器验证邮箱的真实有效性
                 </a>
@@ -1237,7 +1527,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1245,7 +1535,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
