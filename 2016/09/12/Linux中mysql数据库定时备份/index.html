@@ -102,7 +102,7 @@ mysqldump -u root -p123456 mysqldbName &amp;gt; /mysql_backup/backdata/mysqldbNa
 # 按照时间戳来命名备份数据，便于管理
 DATE=`date+%Y-%m-%d-%H:%M:%S`  
 mysqldump -u root -p123456 mysqldbName &amp;gt; /mysql_backup/backdata/mysqldbName">
-<meta property="og:updated_time" content="2016-09-12T02:36:28.936Z">
+<meta property="og:updated_time" content="2016-09-12T04:34:41.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux中mysql数据库定时备份">
 <meta name="twitter:description" content="Linux中，为mysql数据库备份，并删除一个月以前的备份数据mysql_backup.sh备份脚本命令如下：
@@ -391,14 +391,13 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 <p>其中root是mysql用户，123456是用户密码，msyqldbName是数据库名字，该备份命令会将mysqldbName数据库的数据全部备份到/mysql<em>backup/backdata目录下，并以mysqldbName\</em>加上时间戳的形式命名。 </p>
 <h4 id="crontab定时备份任务"><a href="#crontab定时备份任务" class="headerlink" title="crontab定时备份任务"></a>crontab定时备份任务</h4><p>将mysql_backup.sh脚本文件的执行加入到crontab定时任务中，编辑crontab定时任务:</p>
 <pre><code class="bash">$ crontab <span class="_">-e</span>
-`
 </code></pre>
 <p>将一下内容追加到crontab文件中：</p>
 <pre><code class="bash">0 12 * * * /mysql_backup/mysql_backup.sh
 0 0 * * * /mysql_backup/mysql_backup.sh
 </code></pre>
 <p>第一行内容表示每天中午12点执行mysql_backup.sh中的备份命令，第二行表示每天凌晨执行备份命令。你可以在任意时候执行备份命令，只需要学习一下crontab的 <em> </em> <em> </em> * 分别代表什么意思就可以。  </p>
-<h4 id="mysql数据库恢复备份数据"><a href="#mysql数据库恢复备份数据" class="headerlink" title="mysql数据库恢复备份数据"></a>mysql数据库恢复备份数据</h4><pre><code class="bash">mysql -u root -p123456 mysqldbName &lt; /mysql_backup/backdata/mysqldbName_xxxxxx.bak
+<h4 id="mysql数据库恢复备份数据"><a href="#mysql数据库恢复备份数据" class="headerlink" title="mysql数据库恢复备份数据"></a>mysql数据库恢复备份数据</h4><pre><code class="bash">$ mysql -u root -p123456 mysqldbName &lt; /mysql_backup/backdata/mysqldbName_xxxxxx.bak
 </code></pre>
 
       
