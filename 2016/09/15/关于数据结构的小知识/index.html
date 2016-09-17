@@ -101,7 +101,7 @@
 完全二叉树：只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。
 若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第">
 <meta property="og:image" content="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg">
-<meta property="og:updated_time" content="2016-09-16T09:29:42.651Z">
+<meta property="og:updated_time" content="2016-09-16T14:06:15.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于数据结构的小知识">
 <meta name="twitter:description" content="二叉树的深度和高度树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
@@ -418,11 +418,31 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//懒汉模式 线程安全优化</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	<span class="keyword">synchronized</span>(Singleton.class)&#123;</div><div class="line">            	<span class="keyword">if</span>(instance ==<span class="keyword">null</span>)&#123;</div><div class="line">                	instance = <span class="keyword">new</span> Singleton();</div><div class="line">            	&#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 饿汉模式，无线程安全问题</span></div><div class="line"> * 缺点是类一加载就实例化，提前占用系统资源。</div><div class="line"> * 但实际可能并没有用到</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> INSTANCE;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="在3亿个数中找出不重复的整数，假设电脑内存之后2G"><a href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G" class="headerlink" title="在3亿个数中找出不重复的整数，假设电脑内存之后2G"></a>在3亿个数中找出不重复的整数，假设电脑内存之后2G</h4><p>待回答。</p>
-<h4 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h4><p>待回答。</p>
-<h4 id="数据库的基本锁有哪几种，脏读是如何产生的"><a href="#数据库的基本锁有哪几种，脏读是如何产生的" class="headerlink" title="数据库的基本锁有哪几种，脏读是如何产生的"></a>数据库的基本锁有哪几种，脏读是如何产生的</h4><p>待回答。</p>
-<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p>参考 <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
+<h4 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h4><blockquote>
+<ol>
+<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。 </li>
+<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议  </li>
+<li>http和https使用的是完全不同的连接方式用的端口也不一样,前者是80,后者是443。  </li>
+<li>http的连接很简单,是无状态的  </li>
+<li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议 要比http协议安全  </li>
+</ol>
+</blockquote>
+<h4 id="数据库的并发控制"><a href="#数据库的并发控制" class="headerlink" title="数据库的并发控制"></a>数据库的并发控制</h4><p><strong>数据库的并发操作通常会带来3个问题：</strong></p>
+<ol>
+<li>丢失更新问题：两个事务的操作交错执行，引起数据不正确</li>
+<li>读脏数据问题：另一个事务读了一个事务未提交的值</li>
+<li>不可重复读问题：一个事务两次读A操作间隔中，另一事务改变了A，两次同一数据却读出了不同的值  </li>
+</ol>
+<p><em>脏数据：未提交的随后被撤销（Rollback）的数据。</em></p>
+<blockquote>
+<p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个被更新后的数据。  </p>
+</blockquote>
+<p><em>这写问题都可通过并发控制子系统解决。</em></p>
+<p>基本锁有X锁，S锁和U锁。</p>
+<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
 <p><br><br><br></p>
-<p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em></p>
+<p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em>  </p>
+<p><br><br><br></p>
 
       
     </div>
@@ -576,7 +596,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -584,7 +604,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +613,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -660,7 +680,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的深度和高度"><span class="nav-number">1.</span> <span class="nav-text">二叉树的深度和高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完全二叉树："><span class="nav-number">2.</span> <span class="nav-text">完全二叉树：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#满二叉树"><span class="nav-number">3.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">4.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法复杂度"><span class="nav-number">5.</span> <span class="nav-text">各种排序算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的4个必要条件"><span class="nav-number">6.</span> <span class="nav-text">死锁的4个必要条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准的SQL解析顺序"><span class="nav-number">7.</span> <span class="nav-text">标准的SQL解析顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简述abstract-类和interface的区别"><span class="nav-number">8.</span> <span class="nav-text">简述abstract 类和interface的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中对象什么时候被垃圾回收"><span class="nav-number">9.</span> <span class="nav-text">java中对象什么时候被垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算1！-2！-……-n-（最简单的单循环方法）"><span class="nav-number">10.</span> <span class="nav-text">计算1！+2！+……+n!（最简单的单循环方法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql"><span class="nav-number">11.</span> <span class="nav-text">sql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java单例模式"><span class="nav-number">12.</span> <span class="nav-text">Java单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G"><span class="nav-number">13.</span> <span class="nav-text">在3亿个数中找出不重复的整数，假设电脑内存之后2G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http和https的区别"><span class="nav-number">14.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的基本锁有哪几种，脏读是如何产生的"><span class="nav-number">15.</span> <span class="nav-text">数据库的基本锁有哪几种，脏读是如何产生的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统平均无故障时间——可靠性。X个9的含义"><span class="nav-number">16.</span> <span class="nav-text">系统平均无故障时间——可靠性。X个9的含义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的深度和高度"><span class="nav-number">1.</span> <span class="nav-text">二叉树的深度和高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完全二叉树："><span class="nav-number">2.</span> <span class="nav-text">完全二叉树：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#满二叉树"><span class="nav-number">3.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">4.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法复杂度"><span class="nav-number">5.</span> <span class="nav-text">各种排序算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的4个必要条件"><span class="nav-number">6.</span> <span class="nav-text">死锁的4个必要条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准的SQL解析顺序"><span class="nav-number">7.</span> <span class="nav-text">标准的SQL解析顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简述abstract-类和interface的区别"><span class="nav-number">8.</span> <span class="nav-text">简述abstract 类和interface的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中对象什么时候被垃圾回收"><span class="nav-number">9.</span> <span class="nav-text">java中对象什么时候被垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算1！-2！-……-n-（最简单的单循环方法）"><span class="nav-number">10.</span> <span class="nav-text">计算1！+2！+……+n!（最简单的单循环方法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql"><span class="nav-number">11.</span> <span class="nav-text">sql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java单例模式"><span class="nav-number">12.</span> <span class="nav-text">Java单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G"><span class="nav-number">13.</span> <span class="nav-text">在3亿个数中找出不重复的整数，假设电脑内存之后2G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http和https的区别"><span class="nav-number">14.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的并发控制"><span class="nav-number">15.</span> <span class="nav-text">数据库的并发控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统平均无故障时间——可靠性。X个9的含义"><span class="nav-number">16.</span> <span class="nav-text">系统平均无故障时间——可靠性。X个9的含义</span></a></li></ol></div>
             
           </div>
         </section>
