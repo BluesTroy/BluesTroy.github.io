@@ -8,7 +8,7 @@
       <url>http://www.bluestroy.com/2016/09/17/%E5%85%B3%E4%BA%8EGit%EF%BC%8C%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E8%AE%B0%E4%BD%8F%E6%9B%B4%E5%A4%9A/</url>
       <content type="html"><![CDATA[<h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
 <p>然后，在github服务器端也创建一个同名仓库<code>test</code>，执行以下命令关联远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:BluesTroy/test.git</div></pre></td></tr></table></figure></p>
-<p>然后，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
+<p>接着，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
 <p>第一次推送到<code>master</code>分支时，<code>-u</code>参数会把本地<code>master</code>分支和远程<code>master</code>分支关联，之后就可以直接使用简化命令<code>git push</code>和<code>git pull</code>了。</p>
 <h4 id="拉取远程特定分支"><a href="#拉取远程特定分支" class="headerlink" title="拉取远程特定分支"></a>拉取远程特定分支</h4><p>远程分支和本地分支需要区分，所以，在从服务器上拉取特定分支的时候，需要指定本地分支名字。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --track origin/develop</div></pre></td></tr></table></figure></p>
 <p>注意该命令由于带有–track参数，所以要求git1.6.4以上！这样git会自动切换到develop分支。</p>
@@ -22,7 +22,7 @@
 <p>冲突出现和解决与<code>merge</code>冲突类似，解决完后执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
 <h4 id="ssh生成公钥和私钥"><a href="#ssh生成公钥和私钥" class="headerlink" title="ssh生成公钥和私钥"></a>ssh生成公钥和私钥</h4><p>git需要ssh访问的公钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen</div></pre></td></tr></table></figure></p>
 <h4 id="gitignore使用方法"><a href="#gitignore使用方法" class="headerlink" title=".gitignore使用方法"></a>.gitignore使用方法</h4><p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如无，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 此为注释 – 将被 Git 忽略  </div><div class="line">*.a       # 忽略所有 .a 结尾的文件  </div><div class="line">!lib.a    # 但 lib.a 除外  </div><div class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO </div><div class="line">build/    # 忽略 build/ 目录下的所有文件  </div><div class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括   doc/server/arch.txt</div></pre></td></tr></table></figure></p>
-<p><strong>如何某文件已添加到<code>.gitignore</code>，但不起作用，下面三条命令可解决：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git rm -r --cached .</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">'update .gitignore'</span></div></pre></td></tr></table></figure></p>
+<p><strong>如果某文件已添加到<code>.gitignore</code>，但不起作用，下面三条命令可解决：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git rm -r --cached .</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">'update .gitignore'</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交</p>
 </blockquote>
@@ -554,9 +554,15 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
     </entry>
     
     <entry>
-      <title></title>
-      <url>http://www.bluestroy.com/2016/08/08/Linux%20Makefile%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E2%80%94%E2%80%94makeNothing%20to%20be%20donw%20for%20'all'/</url>
-      <content type="html"></content>
+      <title><![CDATA[Linux Makefile文件编译错误——makeNothing to be donw for 'all']]></title>
+      <url>http://www.bluestroy.com/2016/09/10/Linux%20Makefile%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E2%80%94%E2%80%94makeNothing%20to%20be%20donw%20for%20'all'/</url>
+      <content type="html"><![CDATA[<h4 id="错误出现"><a href="#错误出现" class="headerlink" title="错误出现"></a>错误出现</h4><p>在Linux操作系统中使用Makefile时，Makefile内容如下：  </p>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232834116.png" alt="Untitled Image"></p>
+<p>然后make进行编译，出现如下错误：make： Nothing to be done for ‘all’  </p>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232950093.png" alt="Untitled Image">  </p>
+<p>在网上查了半天找不到解决方法，网上大多是转来转去的同一个说法。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>Makefile文件中只能使用Tab，不能使用多个空格。这个Makefile文件的内容是复制来的，所以图片上白色高亮区域是多个空格，把它变为一个tab就可以了。</p>
+]]></content>
     </entry>
     
     <entry>
