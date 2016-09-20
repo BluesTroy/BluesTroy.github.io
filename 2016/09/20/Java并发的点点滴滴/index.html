@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java - 多线程," />
 
 
 
@@ -88,16 +88,27 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://www.bluestroy.com/tags/index.html">
+<meta name="description" content="争用条件： 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  
+线程的交互： 互斥与同步
+互斥： 关键数据在同一时间只能被一个线程访问。同步： 一种通信机制。object方法： wait()/notify()/notifyAll();
+可见性： 一个线程对共享变量值的修改，能够及时地被其他线程看到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java并发的点点滴滴">
+<meta property="og:url" content="http://www.bluestroy.com/2016/09/20/Java并发的点点滴滴/index.html">
 <meta property="og:site_name" content="Troy's Blog">
-<meta property="og:description" content="Ordinary every day is a miracle.">
-<meta property="og:updated_time" content="2016-08-08T13:08:31.444Z">
+<meta property="og:description" content="争用条件： 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  
+线程的交互： 互斥与同步
+互斥： 关键数据在同一时间只能被一个线程访问。同步： 一种通信机制。object方法： wait()/notify()/notifyAll();
+可见性： 一个线程对共享变量值的修改，能够及时地被其他线程看到">
+<meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/tempClipboardImage.png">
+<meta property="og:updated_time" content="2016-09-20T02:08:57.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="Java并发的点点滴滴">
+<meta name="twitter:description" content="争用条件： 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  
+线程的交互： 互斥与同步
+互斥： 关键数据在同一时间只能被一个线程访问。同步： 一种通信机制。object方法： wait()/notify()/notifyAll();
+可见性： 一个线程对共享变量值的修改，能够及时地被其他线程看到">
+<meta name="twitter:image" content="http://obmxnha1c.bkt.clouddn.com/tempClipboardImage.png">
 
 
 
@@ -118,15 +129,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/tags/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/09/20/Java并发的点点滴滴/"/>
 
-  <title>
-  
-
-  
-    标签 | Troy's Blog
-  
-</title>
+  <title> Java并发的点点滴滴 | Troy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,16 +285,210 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 10 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java并发的点点滴滴
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-20T10:03:37+08:00" content="2016-09-20">
+              2016-09-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/20/Java并发的点点滴滴/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/Java并发的点点滴滴/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/20/Java并发的点点滴滴/" class="leancloud_visitors" data-flag-title="Java并发的点点滴滴">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/Java-TreeMap/" style="font-size: 12px; color: #ccc">Java - TreeMap</a> <a href="/tags/Java-smtp/" style="font-size: 12px; color: #ccc">Java - smtp</a> <a href="/tags/Java-多线程/" style="font-size: 12px; color: #ccc">Java - 多线程</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/Mysql/" style="font-size: 12px; color: #ccc">Mysql</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/排序-算法/" style="font-size: 12px; color: #ccc">排序 - 算法</a> <a href="/tags/数据结构/" style="font-size: 21px; color: #6f6f6f">数据结构</a> <a href="/tags/树莓派/" style="font-size: 12px; color: #ccc">树莓派</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>争用条件：</strong> 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  </p>
+<p><strong>线程的交互：</strong> 互斥与同步</p>
+<p><strong>互斥：</strong> 关键数据在同一时间只能被一个线程访问。<br><strong>同步：</strong> 一种通信机制。<br><strong>object方法：</strong> wait()/notify()/notifyAll();</p>
+<p><strong>可见性：</strong> 一个线程对共享变量值的修改，能够及时地被其他线程看到。<br><strong>共享变量：</strong> 如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量。<br><strong>Java内存模型（JMM)：</strong><br>所有变量都存储在主内存中，每个线程都有自己独立的工作内存，里面保存该线程使用到的变量的副本（主内存中该变量的一份拷贝）。 </p>
+<div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/tempClipboardImage.png" width="400" height="220"><br></div>
+
+<blockquote>
+<p>线程对共享变量的所有操作都必须在自己的工作内存中进行，不能直接从内存中读写。<br>不同线程之间无法直接访问其他线程工作内存中的变量，线程间变量的值的传递需要通过主内存来完成。  </p>
+</blockquote>
+<p><br></p>
+<p>可见性语言层面的实现方式：  </p>
+<ol>
+<li>synchronized  </li>
+<li>volatile  </li>
+</ol>
+<p>synchronized可保证原子性，但volatile不能保证原子性。  </p>
+<h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><p>//reentrantLock<br>//final也可以保证内存可见性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</div><div class="line">lock.lock();</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">    	number++;</div><div class="line">    &#125;<span class="keyword">finally</span>&#123;</div><div class="line">    	lock.unlock();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java-多线程/" rel="tag">#Java - 多线程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/19/常见数据结构/" rel="next" title="常见数据结构">
+                <i class="fa fa-chevron-left"></i> 常见数据结构
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/20/Java并发的点点滴滴/"
+     data-title="Java并发的点点滴滴"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/09/20/Java并发的点点滴滴/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
 
@@ -298,6 +497,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/20/Java并发的点点滴滴/"
+           data-title="Java并发的点点滴滴" data-url="http://www.bluestroy.com/2016/09/20/Java并发的点点滴滴/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -317,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -406,6 +622,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#待学习"><span class="nav-number">1.</span> <span class="nav-text">待学习</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -502,6 +729,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

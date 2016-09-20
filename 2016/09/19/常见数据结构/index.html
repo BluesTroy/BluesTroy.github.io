@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -88,16 +88,46 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://www.bluestroy.com/tags/index.html">
+<meta name="description" content="Stack栈先进后出，使用LinkedList实现的。  
+
+push():压入栈    
+pop(): 移除并返回栈顶元素  
+peek(): 提供栈顶元素但不移除  
+empty(): 栈是否为空  
+
+Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
+
+offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
+p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见数据结构">
+<meta property="og:url" content="http://www.bluestroy.com/2016/09/19/常见数据结构/index.html">
 <meta property="og:site_name" content="Troy's Blog">
-<meta property="og:description" content="Ordinary every day is a miracle.">
-<meta property="og:updated_time" content="2016-08-08T13:08:31.444Z">
+<meta property="og:description" content="Stack栈先进后出，使用LinkedList实现的。  
+
+push():压入栈    
+pop(): 移除并返回栈顶元素  
+peek(): 提供栈顶元素但不移除  
+empty(): 栈是否为空  
+
+Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
+
+offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
+p">
+<meta property="og:updated_time" content="2016-09-20T01:42:00.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="常见数据结构">
+<meta name="twitter:description" content="Stack栈先进后出，使用LinkedList实现的。  
+
+push():压入栈    
+pop(): 移除并返回栈顶元素  
+peek(): 提供栈顶元素但不移除  
+empty(): 栈是否为空  
+
+Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
+
+offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
+p">
 
 
 
@@ -118,15 +148,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/tags/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/09/19/常见数据结构/"/>
 
-  <title>
-  
-
-  
-    标签 | Troy's Blog
-  
-</title>
+  <title> 常见数据结构 | Troy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +181,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,16 +304,229 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 10 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                常见数据结构
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T09:13:10+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/常见数据结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/常见数据结构/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/19/常见数据结构/" class="leancloud_visitors" data-flag-title="常见数据结构">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/Java-TreeMap/" style="font-size: 12px; color: #ccc">Java - TreeMap</a> <a href="/tags/Java-smtp/" style="font-size: 12px; color: #ccc">Java - smtp</a> <a href="/tags/Java-多线程/" style="font-size: 12px; color: #ccc">Java - 多线程</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/Mysql/" style="font-size: 12px; color: #ccc">Mysql</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/排序-算法/" style="font-size: 12px; color: #ccc">排序 - 算法</a> <a href="/tags/数据结构/" style="font-size: 21px; color: #6f6f6f">数据结构</a> <a href="/tags/树莓派/" style="font-size: 12px; color: #ccc">树莓派</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
+<ul>
+<li>push():压入栈    </li>
+<li>pop(): 移除并返回栈顶元素  </li>
+<li>peek(): 提供栈顶元素但不移除  </li>
+<li>empty(): 栈是否为空  </li>
+</ul>
+<h4 id="Queue队列"><a href="#Queue队列" class="headerlink" title="Queue队列"></a>Queue队列</h4><p>先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  </p>
+<ul>
+<li>offer(): 添加一个元素到队尾并返回true，若队列满则返回false。</li>
+<li>peek(): 返回队列头部元素，若队列空则返回null。</li>
+<li>element(): 返回队列头部元素，若队列空则抛出NoSuchElementException异常。</li>
+<li>poll(): 移除并返回队头元素，若队列空则返回null。</li>
+<li>remove(): 移除并返队头元素，若队列空则抛出NoSuchElementException异常。  </li>
+</ul>
+<h4 id="用两个栈实现一个队列"><a href="#用两个栈实现一个队列" class="headerlink" title="用两个栈实现一个队列"></a>用两个栈实现一个队列</h4><blockquote>
+<ol>
+<li>插入操作在stack1中进行，删除操作在stack2中进行  </li>
+<li>如果stack2为空，则将stack1中的所有元素转移到stack2中  </li>
+<li>出栈时如果两个栈都为空，则抛出NoSuchElementException异常并处理。</li>
+</ol>
+</blockquote>
+<h4 id="使用两个队列实现一个栈"><a href="#使用两个队列实现一个栈" class="headerlink" title="使用两个队列实现一个栈"></a>使用两个队列实现一个栈</h4><blockquote>
+<ol>
+<li>有两个队列q1和q2，先往q1内插入a，b，c，这做的都是栈的push操作。</li>
+<li>现在要做pop操作，即要得到c，这时可以将q1中的a,b两个元素全部dequeue并存入q2中，这时q2中元素为a，b，对q1再做一次dequeue操作即可得到c。</li>
+<li>如果继续做push操作，比如插入d，f，则把d，f插入到q2中，</li>
+<li>此时若要做pop操作，则做步骤2</li>
+<li>以此类推，就实现了用两个队列来实现一个栈的目的。</li>
+</ol>
+<p>新push进来的元素总是插入到非空队列中，空队列保存一次pop之后的元素。那么原来的空队列变成非空，原来的非空队列变成了空，总是这样循环。<br>push和pop  时间复杂度O(n)。</p>
+</blockquote>
+<h4 id="快速排序针对最坏情况，有哪些改进"><a href="#快速排序针对最坏情况，有哪些改进" class="headerlink" title="快速排序针对最坏情况，有哪些改进"></a>快速排序针对最坏情况，有哪些改进</h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/17/关于Git，你不需要记住更多/" rel="next" title="关于Git，你不需要记住更多">
+                <i class="fa fa-chevron-left"></i> 关于Git，你不需要记住更多
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/20/Java并发的点点滴滴/" rel="prev" title="Java并发的点点滴滴">
+                Java并发的点点滴滴 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/19/常见数据结构/"
+     data-title="常见数据结构"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/09/19/常见数据结构/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
 
@@ -298,6 +535,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/19/常见数据结构/"
+           data-title="常见数据结构" data-url="http://www.bluestroy.com/2016/09/19/常见数据结构/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -317,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -406,6 +660,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack栈"><span class="nav-number">1.</span> <span class="nav-text">Stack栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue队列"><span class="nav-number">2.</span> <span class="nav-text">Queue队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用两个栈实现一个队列"><span class="nav-number">3.</span> <span class="nav-text">用两个栈实现一个队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用两个队列实现一个栈"><span class="nav-number">4.</span> <span class="nav-text">使用两个队列实现一个栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序针对最坏情况，有哪些改进"><span class="nav-number">5.</span> <span class="nav-text">快速排序针对最坏情况，有哪些改进</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -502,6 +767,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

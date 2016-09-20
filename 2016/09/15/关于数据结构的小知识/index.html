@@ -88,27 +88,43 @@
 
 
 
-<meta name="description" content="二叉树的深度和高度树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
-二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。
-完全二叉树：只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。
-若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第">
+<meta name="description" content="二叉树的深度和高度
+树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
+
+二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。第i层节点数： 2^(i-1)  
+平衡二叉树
+它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  
+
+完全二叉树：
+只有最下面两层节点度能够小于2，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于数据结构的小知识">
 <meta property="og:url" content="http://www.bluestroy.com/2016/09/15/关于数据结构的小知识/index.html">
 <meta property="og:site_name" content="Troy's Blog">
-<meta property="og:description" content="二叉树的深度和高度树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
-二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。
-完全二叉树：只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。
-若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第">
+<meta property="og:description" content="二叉树的深度和高度
+树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
+
+二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。第i层节点数： 2^(i-1)  
+平衡二叉树
+它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  
+
+完全二叉树：
+只有最下面两层节点度能够小于2，">
+<meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg">
 <meta property="og:image" content="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg">
-<meta property="og:updated_time" content="2016-09-16T14:06:15.028Z">
+<meta property="og:updated_time" content="2016-09-17T08:31:19.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于数据结构的小知识">
-<meta name="twitter:description" content="二叉树的深度和高度树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
-二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。
-完全二叉树：只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。
-若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第">
-<meta name="twitter:image" content="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg">
+<meta name="twitter:description" content="二叉树的深度和高度
+树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  
+
+二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。第i层节点数： 2^(i-1)  
+平衡二叉树
+它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  
+
+完全二叉树：
+只有最下面两层节点度能够小于2，">
+<meta name="twitter:image" content="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg">
 
 
 
@@ -379,11 +395,34 @@
       
 
       
-        <h4 id="二叉树的深度和高度"><a href="#二叉树的深度和高度" class="headerlink" title="二叉树的深度和高度"></a>二叉树的深度和高度</h4><p>树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  </p>
-<p>二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。</p>
-<h4 id="完全二叉树："><a href="#完全二叉树：" class="headerlink" title="完全二叉树："></a>完全二叉树：</h4><p>只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。</p>
+        <h4 id="二叉树的深度和高度"><a href="#二叉树的深度和高度" class="headerlink" title="二叉树的深度和高度"></a>二叉树的深度和高度</h4><blockquote>
+<p>树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  </p>
+</blockquote>
+<p>二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。<br>第i层节点数： 2^(i-1)  </p>
+<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><blockquote>
+<p>它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  </p>
+</blockquote>
+<h4 id="完全二叉树："><a href="#完全二叉树：" class="headerlink" title="完全二叉树："></a>完全二叉树：</h4><blockquote>
+<p>只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。</p>
+</blockquote>
 <p>若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边，这就是<strong>完全二叉树</strong>。  </p>
-<h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1<br><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
+<h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
+<p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1   </p>
+</blockquote>
+<p><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
+<h4 id="二叉排序树（二叉查找树、二叉搜索树）"><a href="#二叉排序树（二叉查找树、二叉搜索树）" class="headerlink" title="二叉排序树（二叉查找树、二叉搜索树）"></a>二叉排序树（二叉查找树、二叉搜索树）</h4><blockquote>
+<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的结点。</p>
+<div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg" width="300" height="180" align="center"><br></div>
+
+</blockquote>
+<h4 id="哈夫曼树（最优二叉树）"><a href="#哈夫曼树（最优二叉树）" class="headerlink" title="哈夫曼树（最优二叉树）"></a>哈夫曼树（最优二叉树）</h4><blockquote>
+<p>带权路径长度最短的二叉树。  </p>
+</blockquote>
+<p><strong>节点的带权路径长度：</strong> 从根结点到该结点之间的路径长度与该结点的权的乘积  </p>
+<p><strong>树的带权路径长度：</strong> 所有<strong><em>叶子结点</em></strong>的带权路径长度之和，记为WPL</p>
+<h6 id="哈夫曼编码步骤"><a href="#哈夫曼编码步骤" class="headerlink" title="哈夫曼编码步骤"></a>哈夫曼编码步骤</h6><blockquote>
+<p>一、对给定的n个权值{W1,W2,W3,…,Wi,…,Wn}构成n棵二叉树的初始集合F= {T1,T2,T3,…,Ti,…,Tn}，其中每棵二叉树Ti中只有一个权值为Wi的根结点，它的左右子树均为空。（为方便在计算机上实现算 法，一般还要求以Ti的权值Wi的升序排列。）<br>二、在F中选取两棵根结点权值最小的树作为新构造的二叉树的左右子树，新二叉树的根结点的权值为其左右子树的根结点的权值之和。<br>三、从F中删除这两棵树，并把这棵新的二叉树同样以升序排列加入到集合F中。<br>四、重复二和三两步，直到集合F中只有一棵二叉树为止。</p>
+</blockquote>
 <h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>Ki(i从0开始）。 则Ki的左孩子为K(2i+1)，右孩子K(2i+2)。父节点为Parent(i)=K[(i-1)/2]  </p>
 <p><strong>小根堆：</strong> K[i]&lt;=K[2i+1] &amp;&amp; K[i]&lt;=K[2i+2]<br><strong>大根堆：</strong> K[i]&gt;=K[2i+1] &amp;&amp; K[i]&gt;=K[2i+2]  </p>
 <p>空间复杂度：O(1)，建堆复杂度O(n)，调整堆的复杂度O(nlogn)</p>
@@ -596,7 +635,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -613,7 +652,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -680,7 +719,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的深度和高度"><span class="nav-number">1.</span> <span class="nav-text">二叉树的深度和高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完全二叉树："><span class="nav-number">2.</span> <span class="nav-text">完全二叉树：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#满二叉树"><span class="nav-number">3.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">4.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法复杂度"><span class="nav-number">5.</span> <span class="nav-text">各种排序算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的4个必要条件"><span class="nav-number">6.</span> <span class="nav-text">死锁的4个必要条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准的SQL解析顺序"><span class="nav-number">7.</span> <span class="nav-text">标准的SQL解析顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简述abstract-类和interface的区别"><span class="nav-number">8.</span> <span class="nav-text">简述abstract 类和interface的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中对象什么时候被垃圾回收"><span class="nav-number">9.</span> <span class="nav-text">java中对象什么时候被垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算1！-2！-……-n-（最简单的单循环方法）"><span class="nav-number">10.</span> <span class="nav-text">计算1！+2！+……+n!（最简单的单循环方法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql"><span class="nav-number">11.</span> <span class="nav-text">sql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java单例模式"><span class="nav-number">12.</span> <span class="nav-text">Java单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G"><span class="nav-number">13.</span> <span class="nav-text">在3亿个数中找出不重复的整数，假设电脑内存之后2G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http和https的区别"><span class="nav-number">14.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的并发控制"><span class="nav-number">15.</span> <span class="nav-text">数据库的并发控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统平均无故障时间——可靠性。X个9的含义"><span class="nav-number">16.</span> <span class="nav-text">系统平均无故障时间——可靠性。X个9的含义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的深度和高度"><span class="nav-number">1.</span> <span class="nav-text">二叉树的深度和高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">2.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完全二叉树："><span class="nav-number">3.</span> <span class="nav-text">完全二叉树：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#满二叉树"><span class="nav-number">4.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉排序树（二叉查找树、二叉搜索树）"><span class="nav-number">5.</span> <span class="nav-text">二叉排序树（二叉查找树、二叉搜索树）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哈夫曼树（最优二叉树）"><span class="nav-number">6.</span> <span class="nav-text">哈夫曼树（最优二叉树）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#哈夫曼编码步骤"><span class="nav-number">6.0.1.</span> <span class="nav-text">哈夫曼编码步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">7.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种排序算法复杂度"><span class="nav-number">8.</span> <span class="nav-text">各种排序算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的4个必要条件"><span class="nav-number">9.</span> <span class="nav-text">死锁的4个必要条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准的SQL解析顺序"><span class="nav-number">10.</span> <span class="nav-text">标准的SQL解析顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简述abstract-类和interface的区别"><span class="nav-number">11.</span> <span class="nav-text">简述abstract 类和interface的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中对象什么时候被垃圾回收"><span class="nav-number">12.</span> <span class="nav-text">java中对象什么时候被垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算1！-2！-……-n-（最简单的单循环方法）"><span class="nav-number">13.</span> <span class="nav-text">计算1！+2！+……+n!（最简单的单循环方法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql"><span class="nav-number">14.</span> <span class="nav-text">sql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java单例模式"><span class="nav-number">15.</span> <span class="nav-text">Java单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G"><span class="nav-number">16.</span> <span class="nav-text">在3亿个数中找出不重复的整数，假设电脑内存之后2G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http和https的区别"><span class="nav-number">17.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的并发控制"><span class="nav-number">18.</span> <span class="nav-text">数据库的并发控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统平均无故障时间——可靠性。X个9的含义"><span class="nav-number">19.</span> <span class="nav-text">系统平均无故障时间——可靠性。X个9的含义</span></a></li></ol></div>
             
           </div>
         </section>
