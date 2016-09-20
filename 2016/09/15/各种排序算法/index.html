@@ -102,7 +102,7 @@
 ①以第一个关键字 K 1 为控制字，将 [K 1 ,K 2 ,…,K n ] 分成两个子区，使左区所有关键字小于等于 K 1 ，右区所有关键字大于等于 K 1 ，最后控制字居两个子区中间的适当位置。在子区内数据尚处于无序状态。②把左区作为一个整体，用①的步骤进行处理，右区进行相同的处理。（即递">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/266279_1442481223258_BB3663E2B94AB7FD90C31D24E4C6E7EB.jpg">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/21457204_1326898064RUxx.jpg">
-<meta property="og:updated_time" content="2016-09-20T02:15:30.618Z">
+<meta property="og:updated_time" content="2016-09-20T03:09:01.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各种排序算法总结">
 <meta name="twitter:description" content="快排的辅助存储应该是log(n)稳定的含义：  两个相同元素的相对位置不变。
@@ -386,11 +386,20 @@
 <p>①以第一个关键字 K 1 为控制字，将 [K 1 ,K 2 ,…,K n ] 分成两个子区，使左区所有关键字小于等于 K 1 ，右区所有关键字大于等于 K 1 ，最后控制字居两个子区中间的适当位置。在子区内数据尚处于无序状态。<br>②把左区作为一个整体，用①的步骤进行处理，右区进行相同的处理。（即递归）<br>③重复第①、②步，直到左区处理完毕。`  </p>
 </blockquote>
 <h5 id="1-2-Java实现"><a href="#1-2-Java实现" class="headerlink" title="1.2 Java实现"></a>1.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 快速排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a     待排序的数组</div><div class="line"> * <span class="doctag">@param</span> left  待排序区间的开始下标</div><div class="line"> * <span class="doctag">@param</span> right 待排序区间的结束下标</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (left &gt;= right) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> i = left;</div><div class="line">    <span class="keyword">int</span> j = right;</div><div class="line">    <span class="keyword">int</span> key = a[i];    <span class="comment">//以第一个数为关键字</span></div><div class="line">    <span class="comment">//经过一趟后，关键字在中间的某处，左边的都比其小，右边的都比其大</span></div><div class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</div><div class="line">        <span class="comment">//先从j开始由右往左，遇见比关键字小的则将此数放到左边i的位置，然后i++</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt;= key) &#123;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[i] = a[j];</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//然后再从i开始由左往右，遇见比关键字大的数则将此数放到j的位置，然后j--</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt;= key) &#123;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[j] = a[i];</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    a[i] = key;</div><div class="line">    <span class="comment">//然后对左右区间分别执行快排算法</span></div><div class="line">    quickSort(a, left, i - <span class="number">1</span>);</div><div class="line">    quickSort(a, i + <span class="number">1</span>, right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="1-3-算法分析"><a href="#1-3-算法分析" class="headerlink" title="1.3 算法分析"></a>1.3 算法分析</h5><p>每次分成两组，分logn次，每趟比较n次。<br><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(nlogn)<br><strong>不稳定</strong></p>
+<h5 id="1-3-算法分析"><a href="#1-3-算法分析" class="headerlink" title="1.3 算法分析"></a>1.3 算法分析</h5><p>每次分成两组，分logn次，每趟比较n次。<br><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(+logn)<br><strong>不稳定</strong></p>
 <blockquote>
 <p>始序列有序时，快速排序效率最低<br>快排每一趟就是O(n)，在一般情况下递归深度是log(n)，所以总的复杂度是O(nlogn)。在有序的情况下，递归深度变成了n，所以总复杂度会退化到O(n*n)</p>
 </blockquote>
-<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2 冒泡排序"></a>2 冒泡排序</h3><p>按从小到达排序：</p>
+<p><strong>针对快速排序的最坏情况进行的改进方法</strong> </p>
+<blockquote>
+<p>改进方法主要是对控制字pivot的选取进行改进，默认的是选取区间的第一个节点。<br>改进方法1. 随机选取区间里面的的一个数作为控制字。<br>改进方法2. 对区间的left,middle,last三数取中作为关键字，避开了随机数产生器的开销又带了了一定程度的随机性。<br><em>改进方法还有其他很多种。</em>  </p>
+</blockquote>
+<p><strong>快速排序的优化</strong></p>
+<ol>
+<li>待排序序列的长度分割到一定大小后，使用插入排序。（比如right-left+1&lt;10）。<strong>原因：</strong> 对于很小和部分有序的数组，快排不如插排好。</li>
+<li>优化尾部递归、使用并行或多线程处理子序列等其他。</li>
+</ol>
+<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2 冒泡排序"></a>2 冒泡排序</h3><p>按从小到大排序：</p>
 <h5 id="2-1-思路"><a href="#2-1-思路" class="headerlink" title="2.1 思路"></a>2.1 思路</h5><blockquote>
 <ol>
 <li>按从前往后的顺序多次扫描，每次扫描向后比较相邻元素，若后面比前面小，则交换它们</li>
@@ -609,7 +618,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -626,7 +635,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

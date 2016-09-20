@@ -295,6 +295,157 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/10/树莓派装系统-远程登录/" itemprop="url">
+                  树莓派装系统+远程登录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-10T17:30:02+08:00" content="2016-09-10">
+              2016-09-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/10/树莓派装系统-远程登录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/树莓派装系统-远程登录/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/10/树莓派装系统-远程登录/" class="leancloud_visitors" data-flag-title="树莓派装系统+远程登录">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>——树莓派？好吃吗？<br>——Yes, It’s delicious, but for programer!  </p>
+</blockquote>
+<p>树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  </p>
+<p>废话不多说了，当你买来树莓派时，它还是一个裸机，需要你给它装系统。  </p>
+<h2 id="树莓派装系统"><a href="#树莓派装系统" class="headerlink" title="树莓派装系统"></a>树莓派装系统</h2><ol>
+<li>下载2015-05-05-raspbian-wheezy树莓派系统镜像文件</li>
+<li>树莓派用SD卡来充当硬盘，用卡器将SD卡连接电脑，使用Win32DiskImager软件把系统镜像文件烧录到SD卡上</li>
+<li>然后将SD卡插到树莓派上，把树莓派接通电源，树莓派即启动了。  </li>
+</ol>
+<p>很简单就将树莓派系统装好了。树莓派启动时，红灯亮、绿灯闪烁，当绿灯常亮时即启动成功。</p>
+<blockquote>
+<p>一开始因为不是很懂，进入系统后操作失误，后来又重装了系统。<br><strong>注意： </strong>重装系统时要先使用<strong>SDFormatterv4</strong>软件对SD卡进行格式化，如果直接<code>右键-&gt;格式化</code>的话很可能SD的容量没有完全释放掉，格式化后只显示很小的容量。  </p>
+</blockquote>
+<h2 id="树莓派远程登录"><a href="#树莓派远程登录" class="headerlink" title="树莓派远程登录"></a>树莓派远程登录</h2><p>如果有显示器和HDMI连接线，是可以直接将树莓派连接到显示其上使用的。这里讲一下没有的话要如何远程登录树莓派。</p>
+<h3 id="1、获取树莓派的IP地址"><a href="#1、获取树莓派的IP地址" class="headerlink" title="1、获取树莓派的IP地址"></a>1、获取树莓派的IP地址</h3><p><strong>要远程登录树莓派首先要知道树莓派的IP地址：</strong><br>首先将网线插入树莓派，然后使用<strong>Advanced Ip Scanner</strong>软件进行Ip扫描，可以扫描出连接到当前局域网的所有设备。可以看到制造商为<strong>Raspberry Pi Foundation</strong>的设备就是树莓派，IP地址为10.199.157.36，听说树莓派的MAC 地址前几个数是固定的，也可通过Mac地址判断。如果连接的设备较多，可以根据自己的笔记本IP大概判断一下树莓派的IP，然后在软件的输入框中输入IP段范围，可以找的快一点。<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012213447693.jpg" alt="Untitled Image">  </p>
+<h3 id="2、使用Win7自带的mstsc远程登录"><a href="#2、使用Win7自带的mstsc远程登录" class="headerlink" title="2、使用Win7自带的mstsc远程登录"></a>2、使用Win7自带的mstsc远程登录</h3><p><code>开始 -&gt; 输入 mstsc</code>，弹出桌面远程连接，输入树莓派的ip地址后点击连接，就可以登录到树莓派系统了，中间要输入树莓派的账密，<code>默认账号：pi 密码：raspberry</code> 。下面是登录后的样子：<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012214540119.jpg" alt="Untitled Image">  </p>
+<h3 id="3、其他技巧"><a href="#3、其他技巧" class="headerlink" title="3、其他技巧"></a>3、其他技巧</h3><ul>
+<li>我试了一下远程登录可以好几台电脑同时远程登录树莓派，互相之间操作的结果会同步，但其他人的操作动作不可见  </li>
+<li>mstsc远程登录可以使用<code>ctrl+alt+Break</code>快捷键进行全盘切换，当键盘不灵时也可以切换一下就可以了</li>
+<li>另外：也可以用<strong>ssh+putty</strong>进行远程登录  </li>
+</ul>
+<h2 id="树莓派无线网卡配置"><a href="#树莓派无线网卡配置" class="headerlink" title="树莓派无线网卡配置"></a>树莓派无线网卡配置</h2><p>如果是连接的路由器的wifi的话，这个百度经验上有，自行百度。<br><strong>注意</strong>：如果无线网卡配置信息过时或错误，同时插上无线网卡和网线远程登录可能会有问题，也可能上不了网，这个时候把无线网卡拔掉，直插网线就好。<br>【配置没成功，待定】</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/10/Linux Makefile文件编译错误——makeNothing to be done for 'all'/" itemprop="url">
                   Linux Makefile文件编译错误——makeNothing to be done for 'all'
                 </a>
@@ -590,7 +741,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -607,7 +758,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title><![CDATA[Java线程安全的容器类]]></title>
+      <url>http://www.bluestroy.com/2016/09/20/Java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%AE%B9%E5%99%A8%E7%B1%BB/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a>  </p>
+</blockquote>
+<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
+<h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
+<p>在Map类中，提供两种线程安全容器。</p>
+<p><strong>java.util.Hashtable</strong>  </p>
+<p>Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtable是线程安全的。当我们查看Hashtable源码的时候，可以看到Hashtable的方法都是通过synchronized来进行方法层次的同步，以达到线程安全的作用。</p>
+<p><strong>java.util.concurrent.ConcurrentHashMap</strong><br>ConcurrentHashMap是性能更好的散列表。在兼顾线程安全的同时，相对于Hashtable，在效率上有很大的提高。我们可以猜想，Hashtable的线程安全实现是对方法进行synchronized，很明显可以通过其他并发方式，如ReentrantLock进行优化。而ConcurrentHashMap正是采用了ReentrantLock。运用锁分离技术，即在代码块上加锁，而不是方法上加。同时ConcurrentHashMap的一个特色是允许多个修改并发操作。这就有意思了，我们知道一般写都是互斥的，为什么这个还能多个同时写呢？那是因为ConcurrentHashMap采用了内部使用段机制，将ConcurrentHashMap分成了很多小段。只要不在一个小段上写就可以并发写。</p>
+<h3 id="2-Collection"><a href="#2-Collection" class="headerlink" title="2. Collection"></a>2. Collection</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg" alt="Untitled Image"></p>
+<p>Collection部分主要是运用的CopyOnWrite机制，即写时复制机制。从字面上就能理解什么意思，就是当我们往一个容器里添加元素的时候，先对这个容器进行一次复制，对副本进行写操作。写操作结束后，将原容器的引用指向新副本容器，就完成了写的刷新。从它的实现原理，我们可以看出这种机制是存在缺点的。</p>
+<p>1.内存占用：毫无疑问，每次写时需要首先复制一遍原容器，假如复制了很多，或者本身原容器就比较大，那么肯定会占用很多内存。可以采用压缩容器中的元素来防止内存消耗过大。</p>
+<p>2.数据一致性问题：当我们在副本中进行写操组时，只能在最终结束后使数据同步，不能实时同步</p>
+<p>可以看到，这种机制适用于读操作多，写操作少的应用场景。</p>
+<p><strong>java.util.concurrent.CopyOnWriteArrayList</strong></p>
+<p>Collection类的线程安全容器主要都是利用的ReentrantLock实现的线程安全，CopyOnWriteArrayList也不例外。在并发写的时候，需要获取lock。读的时候不需要进行lock</p>
+<p><strong>java.util.concurrent.CopyOnWriteArraySet</strong></p>
+<p>CopyOnWriteArraySet的实现就是基于CopyOnWriteArrayList实现的，采用的装饰器进行实现。二者的区别和List和Set的区别一样。</p>
+<p><strong>Vector</strong></p>
+<p>一般我们都不用Vector了，不过它确实也是线程安全的。相对于其他容器，能够提供随机访问功能。</p>
+<h3 id="3-StringBuffer和StringBuilder"><a href="#3-StringBuffer和StringBuilder" class="headerlink" title="3. StringBuffer和StringBuilder"></a>3. StringBuffer和StringBuilder</h3><p>我们知道，String在进行+操作的时候，原生的String会重新新建一个String对象来完成字符串拼接，明显这种操作多了的话会加重服务器负担。因此我们需要的时候就会用StringBuffer和StringBuilder。这二者有什么区别呢？</p>
+<p><strong>StringBuffer</strong>是线程安全的，StringBuilder不是。从StringBuffer的源码可以看到，它采用的是对方法进行synchronized实现的同步。但是加了同步机制，肯定会对性能有一定影响。  </p>
+<blockquote>
+<p>高并发情况下，对数据安全有需求，则用StringBuffer，否则用StringBuilder</p>
+</blockquote>
+<p><br></p>
+<hr>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li><strong>java.util.Hashtable</strong>：synchronized实现</li>
+<li><strong>*java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
+<li><strong>ava.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
+<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
+<li><strong>Vector</strong>: ReentrantLock实现</li>
+<li><strong>StringBuffer</strong>： synchronized实现</li>
+</ol>
+<blockquote>
+<p>前1.2.属Map，3.4.5.属Collection。<br>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java并发的点点滴滴]]></title>
       <url>http://www.bluestroy.com/2016/09/20/Java%E5%B9%B6%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4/</url>
       <content type="html"><![CDATA[<p><strong>争用条件：</strong> 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  </p>
@@ -29,7 +73,11 @@
     <entry>
       <title><![CDATA[常见数据结构]]></title>
       <url>http://www.bluestroy.com/2016/09/19/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-      <content type="html"><![CDATA[<h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
+      <content type="html"><![CDATA[<blockquote>
+<p>四种基本数据结构：集合、线性结构、树形结构、图状街头。</p>
+<p>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+</blockquote>
+<h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
 <ul>
 <li>push():压入栈    </li>
 <li>pop(): 移除并返回栈顶元素  </li>
@@ -61,7 +109,24 @@
 </ol>
 <p>新push进来的元素总是插入到非空队列中，空队列保存一次pop之后的元素。那么原来的空队列变成非空，原来的非空队列变成了空，总是这样循环。<br>push和pop  时间复杂度O(n)。</p>
 </blockquote>
-<h4 id="快速排序针对最坏情况，有哪些改进"><a href="#快速排序针对最坏情况，有哪些改进" class="headerlink" title="快速排序针对最坏情况，有哪些改进"></a>快速排序针对最坏情况，有哪些改进</h4>]]></content>
+<h4 id="优先队列PriorityQueue"><a href="#优先队列PriorityQueue" class="headerlink" title="优先队列PriorityQueue"></a>优先队列PriorityQueue</h4><p>优先队列调用offer方法来插入一个对象时，这个对象会在队列中被排序。默认的排序将使用对象在队列中的自然顺序，可提供自己的Comparator来修该这个顺序。PriorityQueue可确保调用peek、poll、remove方法时，获取的元素是队列中优先级最高的元素。PriorityQueue与Integer、String、character内置类型一起工作易如反掌。（若是String,空格也算值，且优先级高于字母）</p>
+<blockquote>
+<p>PriorityQueue本质上是堆排序里面的小根堆。</p>
+</blockquote>
+<p>PriorityQueue例子。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">*在做算法题的时候可以考虑使用PriorityQueue*</div><div class="line"></div><div class="line">#### Arrays工具类用法总结</div><div class="line">``` java</div><div class="line">    int[] a = &#123;-3,3,5,11,54,63,74&#125;;</div><div class="line">    int[] b = &#123;-3,3,5,11,54,63,74&#125;;</div><div class="line">    Integer[] c = &#123;15,6,788,2,3,56,9&#125;;</div><div class="line">    Arrays.toString(a); //打印数组</div><div class="line">    int y =Arrays.binarySearch(a,11);   //二分查找，返回找到的下标，找不到返回负数</div><div class="line">    int[] xa=Arrays.copyOf(a,3);    //复制数组的前三个元素为另一个数组</div><div class="line">    int[] xb = Arrays.copyOfRange(a,0,2);   //复制数组下标&gt;=0,&lt;2的部分</div><div class="line">    boolean z =Arrays.equals(a,b);  //判断两个数组内容是否相同</div><div class="line">    Arrays.fill(a,7);   //数组元素全部填充为7</div><div class="line">    Arrays.fill(a,2,4,0);   //数组下标&gt;=2,&lt;4的元素填充为0</div><div class="line">    Arrays.sort(c,2,6); //对数组下标&gt;=2,&lt;6的部分升序排序</div><div class="line">    Arrays.sort(c);     //对数组进行升序排序</div><div class="line">    Arrays.sort(c,Collections.&lt;Integer&gt;reverseOrder());//对数组进行降序排序</div><div class="line">    Arrays.sort(c,new Comparator&lt;Integer&gt;()&#123;//自定义降序排序排序</div><div class="line">        @Override</div><div class="line">        public int compare(Integer a, Integer b)&#123;</div><div class="line">            return b.compareTo(a);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    Arrays.sort(c);     //对数组进行升序排序</div><div class="line">    Arrays.sort(c, 0, 4, new Comparator&lt;Integer&gt;() &#123; //自定义数组下标&gt;=0,&lt;4的部分降序</div><div class="line">        @Override</div><div class="line">        public int compare(Integer o1, Integer o2) &#123;</div><div class="line">            return o2.compareTo(o1);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Collections工具类用法总结"><a href="#Collections工具类用法总结" class="headerlink" title="Collections工具类用法总结"></a>Collections工具类用法总结</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">	List list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>);<span class="comment">//将后面的元素都添加到list中</span></div><div class="line">    Collections.reverseOrder();<span class="comment">//返回一个Comparator&lt;T&gt;倒序排序的接口对象</span></div><div class="line">    println(list);</div><div class="line">    Collections.reverse(list);  <span class="comment">//将列表逆序排序</span></div><div class="line">    Collections.sort(list); <span class="comment">//将列表升序排序</span></div><div class="line">    println(list);</div><div class="line">    Collections.sort(list,Collections.reverseOrder());  <span class="comment">//将列表降序排序</span></div><div class="line"></div><div class="line">    List list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list2,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">16</span>,<span class="number">45</span>);</div><div class="line">    <span class="keyword">int</span> index = Collections.binarySearch(list2,<span class="number">12</span>); <span class="comment">//二分查找，返回下标，无则返回负数</span></div><div class="line">    println(list);</div><div class="line">    println(index);</div><div class="line"></div><div class="line">    Object max = Collections.max(list); <span class="comment">//返回最大值</span></div><div class="line">    Object min = Collections.min(list); <span class="comment">//返回最小值</span></div><div class="line">    println(<span class="string">"max:"</span>+max);</div><div class="line">    println(<span class="string">"min:"</span>+min);</div><div class="line"></div><div class="line">    List list3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;()&#123;&#123;add(<span class="number">2</span>);add(<span class="number">3</span>);add(<span class="number">5</span>);add(<span class="number">7</span>);add(<span class="number">6</span>);add(<span class="number">8</span>);&#125;&#125;;<span class="comment">//初始化</span></div><div class="line"><span class="comment">//        Collections.synchronizedList(list);</span></div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回第一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> sindex = Collections.indexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回最后一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> lindex = Collections.lastIndexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    println(<span class="string">"first index:"</span>+sindex);</div><div class="line">    println(<span class="string">"last index:"</span>+lindex);</div><div class="line"></div><div class="line">    Collections.rotate(list3,<span class="number">2</span>);<span class="comment">//集合中元素后移2个位置，益处的循环到前面</span></div><div class="line">    println(list3);</div><div class="line">    Collections.shuffle(list3);<span class="comment">//对集合进行洗牌，即打乱顺序</span></div><div class="line">    println(list3);</div><div class="line">    Collections.swap(list3,<span class="number">0</span>,<span class="number">1</span>);<span class="comment">//交换集合中第0个和第一个元素</span></div><div class="line">    println(list3);</div><div class="line"></div><div class="line">    <span class="comment">//list本身不是同步的，此法得到线程安全的list</span></div><div class="line">    <span class="comment">//【注意】即直接使用它提供的单个函数，可以同步。但若多个函数想同步，必须自己做同步。</span></div><div class="line">    List safeList = Collections.synchronizedList(list3);</div><div class="line"></div><div class="line">    <span class="comment">//三个final类型的类变量，在某些情况下，我们经常需要返回一个空的集合对象，</span></div><div class="line">    <span class="comment">//比如在数据查询时，并不需要发挥一个NULL或是异常，那么就可以返回一个空的集合对象。</span></div><div class="line">    List emptyList = Collections.EMPTY_LIST;    <span class="comment">//创建一个空列表</span></div><div class="line">    emptyList = Collections.emptyList();    <span class="comment">//同上，下面类推</span></div><div class="line">    Map emptyMap = Collections.EMPTY_MAP;  <span class="comment">//创建一个空map</span></div><div class="line">    Set emptySet = Collections.EMPTY_SET;  <span class="comment">//创建一个空集合</span></div></pre></td></tr></table></figure>
+<h4 id="Java线程安全的容器类"><a href="#Java线程安全的容器类" class="headerlink" title="Java线程安全的容器类"></a>Java线程安全的容器类</h4><ol>
+<li><strong>java.util.Hashtable</strong>：synchronized实现</li>
+<li><strong>*java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
+<li><strong>ava.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
+<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
+<li><strong>Vector</strong>: ReentrantLock实现</li>
+<li><strong>StringBuffer</strong>： synchronized实现</li>
+</ol>
+<blockquote>
+<p>前1.2.属Map，3.4.5.属Collection。</p>
+</blockquote>
+<h4 id="容器本身也有很多有用的方法，待总结。"><a href="#容器本身也有很多有用的方法，待总结。" class="headerlink" title="容器本身也有很多有用的方法，待总结。"></a>容器本身也有很多有用的方法，待总结。</h4>]]></content>
     </entry>
     
     <entry>
@@ -100,11 +165,20 @@
 <p>①以第一个关键字 K 1 为控制字，将 [K 1 ,K 2 ,…,K n ] 分成两个子区，使左区所有关键字小于等于 K 1 ，右区所有关键字大于等于 K 1 ，最后控制字居两个子区中间的适当位置。在子区内数据尚处于无序状态。<br>②把左区作为一个整体，用①的步骤进行处理，右区进行相同的处理。（即递归）<br>③重复第①、②步，直到左区处理完毕。`  </p>
 </blockquote>
 <h5 id="1-2-Java实现"><a href="#1-2-Java实现" class="headerlink" title="1.2 Java实现"></a>1.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 快速排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a     待排序的数组</div><div class="line"> * <span class="doctag">@param</span> left  待排序区间的开始下标</div><div class="line"> * <span class="doctag">@param</span> right 待排序区间的结束下标</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (left &gt;= right) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> i = left;</div><div class="line">    <span class="keyword">int</span> j = right;</div><div class="line">    <span class="keyword">int</span> key = a[i];    <span class="comment">//以第一个数为关键字</span></div><div class="line">    <span class="comment">//经过一趟后，关键字在中间的某处，左边的都比其小，右边的都比其大</span></div><div class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</div><div class="line">        <span class="comment">//先从j开始由右往左，遇见比关键字小的则将此数放到左边i的位置，然后i++</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt;= key) &#123;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[i] = a[j];</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//然后再从i开始由左往右，遇见比关键字大的数则将此数放到j的位置，然后j--</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt;= key) &#123;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[j] = a[i];</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    a[i] = key;</div><div class="line">    <span class="comment">//然后对左右区间分别执行快排算法</span></div><div class="line">    quickSort(a, left, i - <span class="number">1</span>);</div><div class="line">    quickSort(a, i + <span class="number">1</span>, right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="1-3-算法分析"><a href="#1-3-算法分析" class="headerlink" title="1.3 算法分析"></a>1.3 算法分析</h5><p>每次分成两组，分logn次，每趟比较n次。<br><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(nlogn)<br><strong>不稳定</strong></p>
+<h5 id="1-3-算法分析"><a href="#1-3-算法分析" class="headerlink" title="1.3 算法分析"></a>1.3 算法分析</h5><p>每次分成两组，分logn次，每趟比较n次。<br><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(+logn)<br><strong>不稳定</strong></p>
 <blockquote>
 <p>始序列有序时，快速排序效率最低<br>快排每一趟就是O(n)，在一般情况下递归深度是log(n)，所以总的复杂度是O(nlogn)。在有序的情况下，递归深度变成了n，所以总复杂度会退化到O(n*n)</p>
 </blockquote>
-<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2 冒泡排序"></a>2 冒泡排序</h3><p>按从小到达排序：</p>
+<p><strong>针对快速排序的最坏情况进行的改进方法</strong> </p>
+<blockquote>
+<p>改进方法主要是对控制字pivot的选取进行改进，默认的是选取区间的第一个节点。<br>改进方法1. 随机选取区间里面的的一个数作为控制字。<br>改进方法2. 对区间的left,middle,last三数取中作为关键字，避开了随机数产生器的开销又带了了一定程度的随机性。<br><em>改进方法还有其他很多种。</em>  </p>
+</blockquote>
+<p><strong>快速排序的优化</strong></p>
+<ol>
+<li>待排序序列的长度分割到一定大小后，使用插入排序。（比如right-left+1&lt;10）。<strong>原因：</strong> 对于很小和部分有序的数组，快排不如插排好。</li>
+<li>优化尾部递归、使用并行或多线程处理子序列等其他。</li>
+</ol>
+<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2 冒泡排序"></a>2 冒泡排序</h3><p>按从小到大排序：</p>
 <h5 id="2-1-思路"><a href="#2-1-思路" class="headerlink" title="2.1 思路"></a>2.1 思路</h5><blockquote>
 <ol>
 <li>按从前往后的顺序多次扫描，每次扫描向后比较相邻元素，若后面比前面小，则交换它们</li>

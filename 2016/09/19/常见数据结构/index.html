@@ -88,46 +88,46 @@
 
 
 
-<meta name="description" content="Stack栈先进后出，使用LinkedList实现的。  
+<meta name="description" content="四种基本数据结构：集合、线性结构、树形结构、图状街头。
+注：新程序中不应该使用过时的Vector、Hashtable和Stack等。
+
+Stack栈先进后出，使用LinkedList实现的。  
 
 push():压入栈    
 pop(): 移除并返回栈顶元素  
 peek(): 提供栈顶元素但不移除  
 empty(): 栈是否为空  
 
-Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
-
-offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
-p">
+Queue队列先进先出，队列在并发编程中特别重要，因为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见数据结构">
 <meta property="og:url" content="http://www.bluestroy.com/2016/09/19/常见数据结构/index.html">
 <meta property="og:site_name" content="Troy's Blog">
-<meta property="og:description" content="Stack栈先进后出，使用LinkedList实现的。  
+<meta property="og:description" content="四种基本数据结构：集合、线性结构、树形结构、图状街头。
+注：新程序中不应该使用过时的Vector、Hashtable和Stack等。
+
+Stack栈先进后出，使用LinkedList实现的。  
 
 push():压入栈    
 pop(): 移除并返回栈顶元素  
 peek(): 提供栈顶元素但不移除  
 empty(): 栈是否为空  
 
-Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
-
-offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
-p">
-<meta property="og:updated_time" content="2016-09-20T01:42:00.026Z">
+Queue队列先进先出，队列在并发编程中特别重要，因为">
+<meta property="og:updated_time" content="2016-09-20T10:56:42.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见数据结构">
-<meta name="twitter:description" content="Stack栈先进后出，使用LinkedList实现的。  
+<meta name="twitter:description" content="四种基本数据结构：集合、线性结构、树形结构、图状街头。
+注：新程序中不应该使用过时的Vector、Hashtable和Stack等。
+
+Stack栈先进后出，使用LinkedList实现的。  
 
 push():压入栈    
 pop(): 移除并返回栈顶元素  
 peek(): 提供栈顶元素但不移除  
 empty(): 栈是否为空  
 
-Queue队列先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  
-
-offer(): 添加一个元素到队尾并返回true，若队列满则返回false。
-p">
+Queue队列先进先出，队列在并发编程中特别重要，因为">
 
 
 
@@ -398,7 +398,11 @@ p">
       
 
       
-        <h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
+        <blockquote>
+<p>四种基本数据结构：集合、线性结构、树形结构、图状街头。</p>
+<p>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+</blockquote>
+<h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
 <ul>
 <li>push():压入栈    </li>
 <li>pop(): 移除并返回栈顶元素  </li>
@@ -430,7 +434,24 @@ p">
 </ol>
 <p>新push进来的元素总是插入到非空队列中，空队列保存一次pop之后的元素。那么原来的空队列变成非空，原来的非空队列变成了空，总是这样循环。<br>push和pop  时间复杂度O(n)。</p>
 </blockquote>
-<h4 id="快速排序针对最坏情况，有哪些改进"><a href="#快速排序针对最坏情况，有哪些改进" class="headerlink" title="快速排序针对最坏情况，有哪些改进"></a>快速排序针对最坏情况，有哪些改进</h4>
+<h4 id="优先队列PriorityQueue"><a href="#优先队列PriorityQueue" class="headerlink" title="优先队列PriorityQueue"></a>优先队列PriorityQueue</h4><p>优先队列调用offer方法来插入一个对象时，这个对象会在队列中被排序。默认的排序将使用对象在队列中的自然顺序，可提供自己的Comparator来修该这个顺序。PriorityQueue可确保调用peek、poll、remove方法时，获取的元素是队列中优先级最高的元素。PriorityQueue与Integer、String、character内置类型一起工作易如反掌。（若是String,空格也算值，且优先级高于字母）</p>
+<blockquote>
+<p>PriorityQueue本质上是堆排序里面的小根堆。</p>
+</blockquote>
+<p>PriorityQueue例子。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">*在做算法题的时候可以考虑使用PriorityQueue*</div><div class="line"></div><div class="line">#### Arrays工具类用法总结</div><div class="line">``` java</div><div class="line">    int[] a = &#123;-3,3,5,11,54,63,74&#125;;</div><div class="line">    int[] b = &#123;-3,3,5,11,54,63,74&#125;;</div><div class="line">    Integer[] c = &#123;15,6,788,2,3,56,9&#125;;</div><div class="line">    Arrays.toString(a); //打印数组</div><div class="line">    int y =Arrays.binarySearch(a,11);   //二分查找，返回找到的下标，找不到返回负数</div><div class="line">    int[] xa=Arrays.copyOf(a,3);    //复制数组的前三个元素为另一个数组</div><div class="line">    int[] xb = Arrays.copyOfRange(a,0,2);   //复制数组下标&gt;=0,&lt;2的部分</div><div class="line">    boolean z =Arrays.equals(a,b);  //判断两个数组内容是否相同</div><div class="line">    Arrays.fill(a,7);   //数组元素全部填充为7</div><div class="line">    Arrays.fill(a,2,4,0);   //数组下标&gt;=2,&lt;4的元素填充为0</div><div class="line">    Arrays.sort(c,2,6); //对数组下标&gt;=2,&lt;6的部分升序排序</div><div class="line">    Arrays.sort(c);     //对数组进行升序排序</div><div class="line">    Arrays.sort(c,Collections.&lt;Integer&gt;reverseOrder());//对数组进行降序排序</div><div class="line">    Arrays.sort(c,new Comparator&lt;Integer&gt;()&#123;//自定义降序排序排序</div><div class="line">        @Override</div><div class="line">        public int compare(Integer a, Integer b)&#123;</div><div class="line">            return b.compareTo(a);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    Arrays.sort(c);     //对数组进行升序排序</div><div class="line">    Arrays.sort(c, 0, 4, new Comparator&lt;Integer&gt;() &#123; //自定义数组下标&gt;=0,&lt;4的部分降序</div><div class="line">        @Override</div><div class="line">        public int compare(Integer o1, Integer o2) &#123;</div><div class="line">            return o2.compareTo(o1);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Collections工具类用法总结"><a href="#Collections工具类用法总结" class="headerlink" title="Collections工具类用法总结"></a>Collections工具类用法总结</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">	List list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>);<span class="comment">//将后面的元素都添加到list中</span></div><div class="line">    Collections.reverseOrder();<span class="comment">//返回一个Comparator&lt;T&gt;倒序排序的接口对象</span></div><div class="line">    println(list);</div><div class="line">    Collections.reverse(list);  <span class="comment">//将列表逆序排序</span></div><div class="line">    Collections.sort(list); <span class="comment">//将列表升序排序</span></div><div class="line">    println(list);</div><div class="line">    Collections.sort(list,Collections.reverseOrder());  <span class="comment">//将列表降序排序</span></div><div class="line"></div><div class="line">    List list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list2,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">16</span>,<span class="number">45</span>);</div><div class="line">    <span class="keyword">int</span> index = Collections.binarySearch(list2,<span class="number">12</span>); <span class="comment">//二分查找，返回下标，无则返回负数</span></div><div class="line">    println(list);</div><div class="line">    println(index);</div><div class="line"></div><div class="line">    Object max = Collections.max(list); <span class="comment">//返回最大值</span></div><div class="line">    Object min = Collections.min(list); <span class="comment">//返回最小值</span></div><div class="line">    println(<span class="string">"max:"</span>+max);</div><div class="line">    println(<span class="string">"min:"</span>+min);</div><div class="line"></div><div class="line">    List list3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;()&#123;&#123;add(<span class="number">2</span>);add(<span class="number">3</span>);add(<span class="number">5</span>);add(<span class="number">7</span>);add(<span class="number">6</span>);add(<span class="number">8</span>);&#125;&#125;;<span class="comment">//初始化</span></div><div class="line"><span class="comment">//        Collections.synchronizedList(list);</span></div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回第一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> sindex = Collections.indexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回最后一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> lindex = Collections.lastIndexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    println(<span class="string">"first index:"</span>+sindex);</div><div class="line">    println(<span class="string">"last index:"</span>+lindex);</div><div class="line"></div><div class="line">    Collections.rotate(list3,<span class="number">2</span>);<span class="comment">//集合中元素后移2个位置，益处的循环到前面</span></div><div class="line">    println(list3);</div><div class="line">    Collections.shuffle(list3);<span class="comment">//对集合进行洗牌，即打乱顺序</span></div><div class="line">    println(list3);</div><div class="line">    Collections.swap(list3,<span class="number">0</span>,<span class="number">1</span>);<span class="comment">//交换集合中第0个和第一个元素</span></div><div class="line">    println(list3);</div><div class="line"></div><div class="line">    <span class="comment">//list本身不是同步的，此法得到线程安全的list</span></div><div class="line">    <span class="comment">//【注意】即直接使用它提供的单个函数，可以同步。但若多个函数想同步，必须自己做同步。</span></div><div class="line">    List safeList = Collections.synchronizedList(list3);</div><div class="line"></div><div class="line">    <span class="comment">//三个final类型的类变量，在某些情况下，我们经常需要返回一个空的集合对象，</span></div><div class="line">    <span class="comment">//比如在数据查询时，并不需要发挥一个NULL或是异常，那么就可以返回一个空的集合对象。</span></div><div class="line">    List emptyList = Collections.EMPTY_LIST;    <span class="comment">//创建一个空列表</span></div><div class="line">    emptyList = Collections.emptyList();    <span class="comment">//同上，下面类推</span></div><div class="line">    Map emptyMap = Collections.EMPTY_MAP;  <span class="comment">//创建一个空map</span></div><div class="line">    Set emptySet = Collections.EMPTY_SET;  <span class="comment">//创建一个空集合</span></div></pre></td></tr></table></figure>
+<h4 id="Java线程安全的容器类"><a href="#Java线程安全的容器类" class="headerlink" title="Java线程安全的容器类"></a>Java线程安全的容器类</h4><ol>
+<li><strong>java.util.Hashtable</strong>：synchronized实现</li>
+<li><strong>*java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
+<li><strong>ava.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
+<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
+<li><strong>Vector</strong>: ReentrantLock实现</li>
+<li><strong>StringBuffer</strong>： synchronized实现</li>
+</ol>
+<blockquote>
+<p>前1.2.属Map，3.4.5.属Collection。</p>
+</blockquote>
+<h4 id="容器本身也有很多有用的方法，待总结。"><a href="#容器本身也有很多有用的方法，待总结。" class="headerlink" title="容器本身也有很多有用的方法，待总结。"></a>容器本身也有很多有用的方法，待总结。</h4>
       
     </div>
 
@@ -583,7 +604,7 @@ p">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -600,7 +621,7 @@ p">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -667,7 +688,7 @@ p">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack栈"><span class="nav-number">1.</span> <span class="nav-text">Stack栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue队列"><span class="nav-number">2.</span> <span class="nav-text">Queue队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用两个栈实现一个队列"><span class="nav-number">3.</span> <span class="nav-text">用两个栈实现一个队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用两个队列实现一个栈"><span class="nav-number">4.</span> <span class="nav-text">使用两个队列实现一个栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序针对最坏情况，有哪些改进"><span class="nav-number">5.</span> <span class="nav-text">快速排序针对最坏情况，有哪些改进</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack栈"><span class="nav-number">1.</span> <span class="nav-text">Stack栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue队列"><span class="nav-number">2.</span> <span class="nav-text">Queue队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用两个栈实现一个队列"><span class="nav-number">3.</span> <span class="nav-text">用两个栈实现一个队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用两个队列实现一个栈"><span class="nav-number">4.</span> <span class="nav-text">使用两个队列实现一个栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优先队列PriorityQueue"><span class="nav-number">5.</span> <span class="nav-text">优先队列PriorityQueue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Collections工具类用法总结"><span class="nav-number">6.</span> <span class="nav-text">Collections工具类用法总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java线程安全的容器类"><span class="nav-number">7.</span> <span class="nav-text">Java线程安全的容器类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器本身也有很多有用的方法，待总结。"><span class="nav-number">8.</span> <span class="nav-text">容器本身也有很多有用的方法，待总结。</span></a></li></ol></div>
             
           </div>
         </section>
