@@ -4,10 +4,20 @@
   
     
     <entry>
+      <title><![CDATA[常用的位运算技巧]]></title>
+      <url>http://www.bluestroy.com/2016/09/21/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>位运算——<strong>高效性</strong>。<br><em>使用适当的位运算不是为了装逼，而是为了迷倒别人。</em></p>
+</blockquote>
+<p>下面是常用的位运算例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 常见的位运算</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bitOperation</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a= <span class="number">56</span>;</div><div class="line">    <span class="keyword">int</span> b =<span class="number">23</span>;</div><div class="line"></div><div class="line">    <span class="comment">/******不用临时变量交换两个数*****/</span></div><div class="line">    a^=b;</div><div class="line">    b^=a;</div><div class="line">    a^=b;</div><div class="line">    println(<span class="string">"a:"</span>+a);</div><div class="line">    println(<span class="string">"b:"</span>+b);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2运算*****/</span></div><div class="line">    <span class="keyword">int</span> c = a &lt;&lt; <span class="number">1</span> ;</div><div class="line">    println(c);</div><div class="line"></div><div class="line">    <span class="comment">/*****除2运算*****/</span></div><div class="line">    <span class="keyword">int</span> d = b&gt;&gt;<span class="number">1</span>;</div><div class="line">    println(d);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2的n次方   x &lt;&lt; n ********/</span></div><div class="line">    <span class="keyword">int</span> e = <span class="number">3</span> &lt;&lt; <span class="number">2</span>;</div><div class="line">    println(e);</div><div class="line"></div><div class="line">    <span class="comment">/********除2的n次方  x &gt;&gt; n  ******/</span></div><div class="line">    println(<span class="number">8</span> &gt;&gt; <span class="number">2</span>);</div><div class="line"></div><div class="line">    <span class="comment">/********* 判断一个数的奇偶性，true奇数，false偶数 *****/</span></div><div class="line">    println((<span class="number">9</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line">    println((<span class="number">8</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** 判断两个数符号是否相同，true相同，false不同 ***/</span></div><div class="line">    println((<span class="number">8</span> ^ -<span class="number">2</span>)&gt;=<span class="number">0</span>);</div><div class="line">    <span class="comment">//求平均数</span></div><div class="line">    println((<span class="number">3</span>+<span class="number">2</span>)&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** &gt;&gt;是算术（有符号）右移，它使用最高位填充移位后左侧的空位，不改变符号。</span></div><div class="line">     * &gt;&gt;&gt; 是逻辑无符号（）右移，它用0填充左侧的空为。没有算术含义   */</div><div class="line">    println(<span class="string">"&gt;&gt;和&gt;&gt;&gt;的区别："</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;<span class="number">1</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java线程安全的容器类]]></title>
       <url>http://www.bluestroy.com/2016/09/20/Java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%AE%B9%E5%99%A8%E7%B1%BB/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a>  </p>
+<p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a></em>  </p>
 </blockquote>
 <p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
 <h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
@@ -42,7 +52,7 @@
 <li><strong>StringBuffer</strong>： synchronized实现</li>
 </ol>
 <blockquote>
-<p>前1.2.属Map，3.4.5.属Collection。<br>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+<p>前1.2.属Map，3.4.5.属Collection。<br><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -71,11 +81,11 @@
     </entry>
     
     <entry>
-      <title><![CDATA[常见数据结构]]></title>
-      <url>http://www.bluestroy.com/2016/09/19/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+      <title><![CDATA[Java容器类和工具类]]></title>
+      <url>http://www.bluestroy.com/2016/09/19/Java%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%92%8C%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>四种基本数据结构：集合、线性结构、树形结构、图状街头。</p>
-<p>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+<p><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
 </blockquote>
 <h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
 <ul>
@@ -716,8 +726,8 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
     </entry>
     
     <entry>
-      <title><![CDATA[Linux Makefile文件编译错误——makeNothing to be done for 'all']]></title>
-      <url>http://www.bluestroy.com/2016/09/10/Linux%20Makefile%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E2%80%94%E2%80%94makeNothing%20to%20be%20done%20for%20'all'/</url>
+      <title><![CDATA[Linux Makefile文件编译错误——make-Nothing to be done for 'all']]></title>
+      <url>http://www.bluestroy.com/2016/09/10/Linux%20Makefile%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E2%80%94%E2%80%94make-Nothing%20to%20be%20done%20for%20'all'/</url>
       <content type="html"><![CDATA[<h4 id="错误出现"><a href="#错误出现" class="headerlink" title="错误出现"></a>错误出现</h4><p>在Linux操作系统中使用Makefile时，Makefile内容如下：  </p>
 <p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232834116.png" alt="Untitled Image"></p>
 <p>然后make进行编译，出现如下错误：make： Nothing to be done for ‘all’  </p>

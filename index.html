@@ -295,6 +295,138 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/21/常用的位运算技巧/" itemprop="url">
+                  常用的位运算技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-21T09:55:43+08:00" content="2016-09-21">
+              2016-09-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/21/常用的位运算技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/常用的位运算技巧/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/21/常用的位运算技巧/" class="leancloud_visitors" data-flag-title="常用的位运算技巧">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>位运算——<strong>高效性</strong>。<br><em>使用适当的位运算不是为了装逼，而是为了迷倒别人。</em></p>
+</blockquote>
+<p>下面是常用的位运算例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 常见的位运算</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bitOperation</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a= <span class="number">56</span>;</div><div class="line">    <span class="keyword">int</span> b =<span class="number">23</span>;</div><div class="line"></div><div class="line">    <span class="comment">/******不用临时变量交换两个数*****/</span></div><div class="line">    a^=b;</div><div class="line">    b^=a;</div><div class="line">    a^=b;</div><div class="line">    println(<span class="string">"a:"</span>+a);</div><div class="line">    println(<span class="string">"b:"</span>+b);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2运算*****/</span></div><div class="line">    <span class="keyword">int</span> c = a &lt;&lt; <span class="number">1</span> ;</div><div class="line">    println(c);</div><div class="line"></div><div class="line">    <span class="comment">/*****除2运算*****/</span></div><div class="line">    <span class="keyword">int</span> d = b&gt;&gt;<span class="number">1</span>;</div><div class="line">    println(d);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2的n次方   x &lt;&lt; n ********/</span></div><div class="line">    <span class="keyword">int</span> e = <span class="number">3</span> &lt;&lt; <span class="number">2</span>;</div><div class="line">    println(e);</div><div class="line"></div><div class="line">    <span class="comment">/********除2的n次方  x &gt;&gt; n  ******/</span></div><div class="line">    println(<span class="number">8</span> &gt;&gt; <span class="number">2</span>);</div><div class="line"></div><div class="line">    <span class="comment">/********* 判断一个数的奇偶性，true奇数，false偶数 *****/</span></div><div class="line">    println((<span class="number">9</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line">    println((<span class="number">8</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** 判断两个数符号是否相同，true相同，false不同 ***/</span></div><div class="line">    println((<span class="number">8</span> ^ -<span class="number">2</span>)&gt;=<span class="number">0</span>);</div><div class="line">    <span class="comment">//求平均数</span></div><div class="line">    println((<span class="number">3</span>+<span class="number">2</span>)&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** &gt;&gt;是算术（有符号）右移，它使用最高位填充移位后左侧的空位，不改变符号。</span></div><div class="line">     * &gt;&gt;&gt; 是逻辑无符号（）右移，它用0填充左侧的空为。没有算术含义   */</div><div class="line">    println(<span class="string">"&gt;&gt;和&gt;&gt;&gt;的区别："</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;<span class="number">1</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/20/Java线程安全的容器类/" itemprop="url">
                   Java线程安全的容器类
                 </a>
@@ -375,7 +507,7 @@
         
           
             <blockquote>
-<p>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a>  </p>
+<p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a></em>  </p>
 </blockquote>
 <p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
 <h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
@@ -410,7 +542,7 @@
 <li><strong>StringBuffer</strong>： synchronized实现</li>
 </ol>
 <blockquote>
-<p>前1.2.属Map，3.4.5.属Collection。<br>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+<p>前1.2.属Map，3.4.5.属Collection。<br><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
 </blockquote>
 
           
@@ -606,8 +738,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/19/常见数据结构/" itemprop="url">
-                  常见数据结构
+                <a class="post-title-link" href="/2016/09/19/Java容器类和工具类/" itemprop="url">
+                  Java容器类和工具类
                 </a>
               
             
@@ -650,8 +782,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/19/常见数据结构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/常见数据结构/" itemprop="commentsCount"></span>
+                <a href="/2016/09/19/Java容器类和工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/Java容器类和工具类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -661,7 +793,7 @@
 
           
           
-             <span id="/2016/09/19/常见数据结构/" class="leancloud_visitors" data-flag-title="常见数据结构">
+             <span id="/2016/09/19/Java容器类和工具类/" class="leancloud_visitors" data-flag-title="Java容器类和工具类">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -687,7 +819,7 @@
           
             <blockquote>
 <p>四种基本数据结构：集合、线性结构、树形结构、图状街头。</p>
-<p>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</p>
+<p><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
 </blockquote>
 <h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
 <ul>
@@ -1966,217 +2098,6 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" itemprop="url">
-                  Java实现将选择题题库按照字母顺序重新排列
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-10T19:09:12+08:00" content="2016-09-10">
-              2016-09-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" class="leancloud_visitors" data-flag-title="Java实现将选择题题库按照字母顺序重新排列">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><strong>记</strong>：若有开卷考试，且只能带纸质题库，而选择题题库又特别多，那么就可以用此方法将题库按照字母顺序排列，便于查找定位。  </p>
-</blockquote>
-<h3 id="巧用TreeMap"><a href="#巧用TreeMap" class="headerlink" title="巧用TreeMap"></a>巧用TreeMap</h3><p>Java中的Map是用来存储键值对的，其中HashMap没有固定的排列顺序，是通过hashcode对其内容进行快速查找。而TreeMap是由红黑树算法实现的，TreeMap在保存元素是按照key值的顺序排好序的。如果你需要得到一个有序的结果就应该使用TreeMap。TreeMap在不指定排序器时，默认按照key值进行升序排序。  </p>
-<p>本方法需要先将题库拷贝到txt文本中（注意txt中\r\n表示一个换行符），取<strong>每道题去掉题号之后的第一行内容作为key，整个题目的内容作为value</strong>，则遍历完所有的题库并将其保存到TreeMap后，TreeMap中的题目就已经是按照A-Za-z的字母顺序排列了(key是字符串的话按照第一个字母的ASCII升序)，将其输出即可。  （A-65，a-97）</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>很简单，一看就懂。  </p>
-<pre><code class="java"><span class="keyword">import</span> java.io.*;
-<span class="keyword">import</span> java.util.HashMap;
-<span class="keyword">import</span> java.util.Iterator;
-<span class="keyword">import</span> java.util.TreeMap;
-<span class="comment">/*
-将选择题题库按照字母顺序重新排列
-若有开卷考试，使用排序后的题库进行查找岂不是非常方便。
-*/</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException</span>{
-        BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"tiku.txt"</span>));
-        BufferedWriter out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"tiku_sort.txt"</span>));
-        TreeMap&lt;String, String&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();
-        String s, content = <span class="string">""</span>, key = <span class="string">""</span>;
-        s = in.readLine();
-        <span class="keyword">int</span> length;
-        <span class="keyword">int</span> maxNumber = <span class="number">6</span>;      <span class="comment">//表示一共有多少到题，最大的题号</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxNumber; i++) {
-            <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; s.startsWith(String.valueOf(i))) {
-                key = <span class="string">""</span>;
-                content = s + <span class="string">"\r\n"</span>;        <span class="comment">//在txt中\r\n表示一个换行符</span>
-                <span class="keyword">if</span> (i &lt; <span class="number">10</span>) {
-                    length = <span class="number">2</span>;                <span class="comment">//length表示除题号和.之外的内容开始的下标，用于后面key截取字符串的开始位置</span>
-                }
-                <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">100</span>) {
-                    length = <span class="number">3</span>;
-                }
-                <span class="keyword">else</span> {
-                    length = <span class="number">4</span>;
-                }
-                key = s.substring(length).replaceAll(<span class="string">" "</span>, <span class="string">""</span>).toLowerCase();    <span class="comment">//将每个题的第一行（去除题号后)作为key，用于排序</span>
-                <span class="comment">//System.out.println(key+"-----------");</span>
-            }
-            <span class="comment">//将一道题的整个内容放入content</span>
-            s = in.readLine();
-            <span class="keyword">while</span> (s != <span class="keyword">null</span> &amp;&amp; !s.startsWith(String.valueOf((<span class="keyword">int</span>)(i+<span class="number">1</span>)))) {    <span class="comment">//因为题库都是按顺序的，所有这样写（i+1)</span>
-                content += s + <span class="string">"\r\n"</span>;
-                s = in.readLine();
-            }
-            <span class="comment">//TreeMap会自动按照键值进行排序建树</span>
-            map.put(key, content);
-        }
-
-        <span class="comment">//整棵树的内容写到一个新的文件中。新的文件是按字母顺序排列（旧的文件按照题号排序）</span>
-        Iterator&lt;String&gt; keys = map.keySet().iterator();
-        <span class="keyword">while</span> (keys.hasNext()) {
-            key = keys.next();
-            content = map.get(key);
-            out.write(content);
-        }
-        <span class="keyword">try</span>{
-            in.close();
-            out.close();
-        }<span class="keyword">catch</span>(Exception e){}
-
-    }
-}
-</code></pre>
-<h3 id="样例输入与输出"><a href="#样例输入与输出" class="headerlink" title="样例输入与输出"></a>样例输入与输出</h3><p><b>1. 样例输入：  </b></p>
-<blockquote>
-<ol>
-<li>d a respon…What.. this behavior?<br>A) Compare the conten…<br>B) Refer to the con…<br>C) Compare the contents of..<br>D) Refer to the ale..  </li>
-<li>you decided to…lause? (Choose three.)<br>A. ALL<br>B. PFILE<br>C. BOTH<br>D. NONE  </li>
-<li>efine aue… the event?<br>A) the alert.log file<br>B) the DBA_ALERTS view<br>C) the Database Control Home page<br>D) the Database Control performance page<br>E) the Database Control Maintenance page  </li>
-</ol>
-</blockquote>
-<p><b>2. 样例输出： </b></p>
-<blockquote>
-<ol>
-<li>d a respon…What.. this behavior?<br>A) Compare the conten…<br>B) Refer to the con…<br>C) Compare the contents of..<br>D) Refer to the ale..  <ol>
-<li>efine aue… the event?<br>A) the alert.log file<br>B) the DBA_ALERTS view<br>C) the Database Control Home page<br>D) the Database Control performance page<br>E) the Database Control Maintenance page</li>
-<li>you decided to…lause? (Choose three.)<br>A. ALL<br>B. PFILE<br>C. BOTH<br>D. NONE  </li>
-</ol>
-</li>
-</ol>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2222,7 +2143,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2239,7 +2160,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
