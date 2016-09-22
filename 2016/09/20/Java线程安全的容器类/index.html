@@ -108,7 +108,7 @@ java.util.Hashtable
 Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtab">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg">
-<meta property="og:updated_time" content="2016-09-20T11:32:20.726Z">
+<meta property="og:updated_time" content="2016-09-22T12:52:33.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程安全的容器类">
 <meta name="twitter:description" content="转自Jeff的自留地：java线程安全的容器类  
@@ -417,12 +417,12 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
 <p><br></p>
 <hr>
 <h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><strong>java.util.Hashtable</strong>：synchronized实现</li>
-<li><strong>*java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
-<li><strong>ava.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
+<li><strong>*java.util.Hashtable</strong>：synchronized实现</li>
+<li><strong>java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
+<li><strong>java.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
 <li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
-<li><strong>Vector</strong>: ReentrantLock实现</li>
-<li><strong>StringBuffer</strong>： synchronized实现</li>
+<li><strong>*Vector</strong>: ReentrantLock实现</li>
+<li><strong>*StringBuffer</strong>： synchronized实现</li>
 </ol>
 <blockquote>
 <p>前1.2.属Map，3.4.5.属Collection。<br><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
@@ -580,7 +580,7 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -597,7 +597,7 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
