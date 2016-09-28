@@ -295,6 +295,382 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/15/关于数据结构的小知识/" itemprop="url">
+                  关于数据结构的小知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-15T20:15:02+08:00" content="2016-09-15">
+              2016-09-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/15/关于数据结构的小知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/关于数据结构的小知识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/15/关于数据结构的小知识/" class="leancloud_visitors" data-flag-title="关于数据结构的小知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="二叉树的深度和高度"><a href="#二叉树的深度和高度" class="headerlink" title="二叉树的深度和高度"></a>二叉树的深度和高度</h4><blockquote>
+<p>树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  </p>
+</blockquote>
+<p>二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。<br>第i层节点数： 2^(i-1)  </p>
+<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><blockquote>
+<p>它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  </p>
+</blockquote>
+<h4 id="完全二叉树："><a href="#完全二叉树：" class="headerlink" title="完全二叉树："></a>完全二叉树：</h4><blockquote>
+<p>只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。</p>
+</blockquote>
+<p><strong><em>树的高度为 logN+1向下取整。当使用二分搜索时，比较的次数即为数的高度。</em></strong>  </p>
+<p>若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边，这就是<strong>完全二叉树</strong>。  </p>
+<h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
+<p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1   </p>
+</blockquote>
+<p><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
+<h4 id="二叉排序树（二叉查找树、二叉搜索树）"><a href="#二叉排序树（二叉查找树、二叉搜索树）" class="headerlink" title="二叉排序树（二叉查找树、二叉搜索树）"></a>二叉排序树（二叉查找树、二叉搜索树）</h4><blockquote>
+<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的结点。</p>
+<div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg" width="300" height="180" align="center"><br></div>
+
+</blockquote>
+<h4 id="哈夫曼树（最优二叉树）"><a href="#哈夫曼树（最优二叉树）" class="headerlink" title="哈夫曼树（最优二叉树）"></a>哈夫曼树（最优二叉树）</h4><blockquote>
+<p>带权路径长度最短的二叉树。  </p>
+</blockquote>
+<p><strong>节点的带权路径长度：</strong> 从根结点到该结点之间的路径长度与该结点的权的乘积  </p>
+<p><strong>树的带权路径长度：</strong> 所有<strong><em>叶子结点</em></strong>的带权路径长度之和，记为WPL</p>
+<h6 id="哈夫曼编码步骤"><a href="#哈夫曼编码步骤" class="headerlink" title="哈夫曼编码步骤"></a>哈夫曼编码步骤</h6><blockquote>
+<p>一、对给定的n个权值{W1,W2,W3,…,Wi,…,Wn}构成n棵二叉树的初始集合F= {T1,T2,T3,…,Ti,…,Tn}，其中每棵二叉树Ti中只有一个权值为Wi的根结点，它的左右子树均为空。（为方便在计算机上实现算 法，一般还要求以Ti的权值Wi的升序排列。）<br>二、在F中选取两棵根结点权值最小的树作为新构造的二叉树的左右子树，新二叉树的根结点的权值为其左右子树的根结点的权值之和。<br>三、从F中删除这两棵树，并把这棵新的二叉树同样以升序排列加入到集合F中。<br>四、重复二和三两步，直到集合F中只有一棵二叉树为止。</p>
+</blockquote>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>Ki(i从0开始）。 则Ki的左孩子为K(2i+1)，右孩子K(2i+2)。父节点为Parent(i)=K[(i-1)/2]  </p>
+<p><strong>小根堆：</strong> K[i]&lt;=K[2i+1] &amp;&amp; K[i]&lt;=K[2i+2]<br><strong>大根堆：</strong> K[i]&gt;=K[2i+1] &amp;&amp; K[i]&gt;=K[2i+2]  </p>
+<p>空间复杂度：O(1)，建堆复杂度O(n)，调整堆的复杂度O(nlogn)</p>
+<h4 id="各种排序算法复杂度"><a href="#各种排序算法复杂度" class="headerlink" title="各种排序算法复杂度"></a>各种排序算法复杂度</h4><p><img src="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg" alt="各种排序算法复杂度"></p>
+<h4 id="死锁的4个必要条件"><a href="#死锁的4个必要条件" class="headerlink" title="死锁的4个必要条件"></a>死锁的4个必要条件</h4><p>（1） 互斥条件：一个资源每次只能被一个进程使用。<br>（2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>（3） 不可抢占（不剥夺）条件：进程已获得的资源，在末使用完之前，不能强行剥夺。<br>（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。  </p>
+<h4 id="标准的SQL解析顺序"><a href="#标准的SQL解析顺序" class="headerlink" title="标准的SQL解析顺序"></a>标准的SQL解析顺序</h4><p>(1).FROM 子句, 组装来自不同数据源的数据<br>(2).WHERE 子句, 基于指定的条件对记录进行筛选<br>(3).GROUP BY 子句, 将数据划分为多个分组<br>(4).使用聚合函数进行计算<br>(5).使用 HAVING 子句筛选分组<br>(6).计算Select所有的表达式<br>(7).使用 ORDER BY 对结果集进行排序  </p>
+<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p>同： abstract类 和接口都可以有abstract方法<br>不同：  </p>
+<ol>
+<li><p>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </p>
+</li>
+<li><p>abstract类也可以有非abstract方法，接口不可以。  </p>
+</li>
+<li>实现接口是一定要实现接口里定义的所有方法，而实现抽象类可以有选择的重写需要用到的方法。  </li>
+<li>接口是公开的，里面不能有私有的方法和变量。而首次昂类是可以有私有方法和私有变量的。  </li>
+<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有没有具体实现的抽象方法）  </li>
+<li>子类只能单继承抽象类；而子类能够同时实现多个接口</li>
+</ol>
+<h4 id="java中对象什么时候被垃圾回收"><a href="#java中对象什么时候被垃圾回收" class="headerlink" title="java中对象什么时候被垃圾回收"></a>java中对象什么时候被垃圾回收</h4><p>当没有任何对象的引用指向对象时，在一个不可预期的时间内对象才会被回收  </p>
+<p>当对象的引用为空，当对象堆当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
+<blockquote>
+<p>一个对象，可以有一个或多个引用变量指向它。当一个对象不再有任何一个引用变量指向它时，这个对象就被应用抛弃了。或者说，这个对象可以被垃圾回收机制回收了。这就是说，当不存在对某对象的任何引用时，就意味着，应用告诉JVM：我不要这个对象，你可以回收了。  </p>
+<p>JVM的垃圾回收机制对堆空间做实时检测。当发现某对象的引用计数为0时，就将该对象列入待回收列表中。但是，并不是马上予以销毁</p>
+</blockquote>
+<h4 id="计算1！-2！-……-n-（最简单的单循环方法）"><a href="#计算1！-2！-……-n-（最简单的单循环方法）" class="headerlink" title="计算1！+2！+……+n!（最简单的单循环方法）"></a>计算1！+2！+……+n!（最简单的单循环方法）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> n;</div><div class="line">		<span class="keyword">long</span> sum =<span class="number">0</span>;</div><div class="line">		<span class="keyword">long</span> temp =<span class="number">1</span>;</div><div class="line">		Scanner cin = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		n = cin.nextInt();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">			temp*=i;	</div><div class="line">			sum+=temp;</div><div class="line">		&#125;</div><div class="line">		System.out.println(sum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_id,c_id,score</div><div class="line"><span class="keyword">from</span> grade</div><div class="line"><span class="keyword">where</span> score&gt;<span class="number">80</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_name,c_id,score</div><div class="line"><span class="keyword">from</span> grade,student</div><div class="line"><span class="keyword">where</span> score&gt;<span class="number">80</span> <span class="keyword">and</span> grade.s_id = student.s_id;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_name,c_name,score</div><div class="line"><span class="keyword">from</span> student,course,grade</div><div class="line"><span class="keyword">where</span> score <span class="keyword">is</span> <span class="literal">NULL</span> <span class="keyword">and</span> student.s_id = grade.s_id <span class="keyword">and</span> course.c_id = grade.c_id;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_id</div><div class="line"><span class="keyword">from</span> grade </div><div class="line"><span class="keyword">where</span> <span class="keyword">min</span>(score) &gt;<span class="number">80</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> s_id;</div></pre></td></tr></table></figure>
+<p>列出学生及格和不及格的科目数，栏位包括学生号、及格科目数、不及格科目数：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.s_id, <span class="keyword">count</span>(a), <span class="keyword">count</span>(b)</div><div class="line"><span class="keyword">from</span> grade <span class="keyword">as</span> a,</div><div class="line">	(<span class="keyword">select</span> s_id <span class="keyword">from</span> grade <span class="keyword">where</span> score &lt; <span class="number">60</span>) <span class="keyword">as</span> b </div><div class="line"><span class="keyword">where</span> a.score&gt;<span class="number">60</span> <span class="keyword">and</span> a.s_id = b.s_id </div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> s_id;</div></pre></td></tr></table></figure></p>
+<h4 id="Java单例模式"><a href="#Java单例模式" class="headerlink" title="Java单例模式"></a>Java单例模式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 懒汉模式，线程不安全</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	instance = <span class="keyword">new</span> Singleton();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//懒汉模式 线程安全</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	instance = <span class="keyword">new</span> Singleton();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//懒汉模式 线程安全优化</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	<span class="keyword">synchronized</span>(Singleton.class)&#123;</div><div class="line">            	<span class="keyword">if</span>(instance ==<span class="keyword">null</span>)&#123;</div><div class="line">                	instance = <span class="keyword">new</span> Singleton();</div><div class="line">            	&#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 饿汉模式，无线程安全问题</span></div><div class="line"> * 缺点是类一加载就实例化，提前占用系统资源。</div><div class="line"> * 但实际可能并没有用到</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> INSTANCE;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="在3亿个数中找出不重复的整数，假设电脑内存之后2G"><a href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G" class="headerlink" title="在3亿个数中找出不重复的整数，假设电脑内存之后2G"></a>在3亿个数中找出不重复的整数，假设电脑内存之后2G</h4><p>待回答。</p>
+<h4 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h4><blockquote>
+<ol>
+<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。 </li>
+<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议  </li>
+<li>http和https使用的是完全不同的连接方式用的端口也不一样,前者是80,后者是443。  </li>
+<li>http的连接很简单,是无状态的  </li>
+<li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议 要比http协议安全  </li>
+</ol>
+</blockquote>
+<h4 id="数据库的并发控制"><a href="#数据库的并发控制" class="headerlink" title="数据库的并发控制"></a>数据库的并发控制</h4><p><strong>数据库的并发操作通常会带来3个问题：</strong></p>
+<ol>
+<li>丢失更新问题：两个事务的操作交错执行，引起数据不正确</li>
+<li>读脏数据问题：另一个事务读了一个事务未提交的值</li>
+<li>不可重复读问题：一个事务两次读A操作间隔中，另一事务改变了A，两次同一数据却读出了不同的值  </li>
+</ol>
+<p><em>脏数据：未提交的随后被撤销（Rollback）的数据。</em></p>
+<blockquote>
+<p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个被更新后的数据。  </p>
+</blockquote>
+<p><em>这写问题都可通过并发控制子系统解决。</em></p>
+<p>基本锁有X锁，S锁和U锁。</p>
+<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
+<p><br><br><br></p>
+<p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em>  </p>
+<p><br><br><br></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/12/Linux常用命令/" itemprop="url">
+                  Linux常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-12T10:37:13+08:00" content="2016-09-12">
+              2016-09-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/12/Linux常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Linux常用命令/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/12/Linux常用命令/" class="leancloud_visitors" data-flag-title="Linux常用命令">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一、crontab简介"><a href="#一、crontab简介" class="headerlink" title="一、crontab简介"></a>一、crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。 </p>
+<h5 id="1、crontab调度文件规则"><a href="#1、crontab调度文件规则" class="headerlink" title="1、crontab调度文件规则"></a>1、crontab调度文件规则</h5><p>命令格式：<code>* * * * * command</code><br><strong>*</strong> 依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
+<ul>
+<li>分钟——每小时的第几分钟执行，范围0~59  </li>
+<li>小时——每日的第几个小时执行，范围0~23</li>
+<li>日——每月的第几天执行，范围1~31  </li>
+<li>月——每年你的第几月执行 ，范围1~12  </li>
+<li>星期——每周的第几天执行，范围0~6  </li>
+</ul>
+<h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
+<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
+<p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
+<p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
+<p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
+<h5 id="3、其他"><a href="#3、其他" class="headerlink" title="3、其他"></a>3、其他</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">crontab -r <span class="comment">#停止（即删除）所有任务（慎用）</span></div><div class="line">crontab <span class="_">-l</span> <span class="comment">#列出所有任务</span></div></pre></td></tr></table></figure>
+<h3 id="二、文件中-atime-ctime-mtime简介"><a href="#二、文件中-atime-ctime-mtime简介" class="headerlink" title="二、文件中 -atime, -ctime, -mtime简介"></a>二、文件中 -atime, -ctime, -mtime简介</h3><ul>
+<li>atime(Access time)，访问时间，如读取文件</li>
+<li>ctime(Change time), 状态时间，如修改权限、属性、所有者</li>
+<li>mtime(Modified time), 修改时间，文件内容修改的时间<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">find . -mtime +3 <span class="comment">#3天以前修改的文件(&gt;3)  </span></div><div class="line">find . -mtime -3 <span class="comment">#3天之内修改的文件(&lt;3)</span></div><div class="line">find . -mtime 1 <span class="comment">#距离当前时间24~24*2小时内修改的文件(即当前时间的“昨天内”）</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="三、-amin-cmin-mmin简介"><a href="#三、-amin-cmin-mmin简介" class="headerlink" title="三、-amin, -cmin, -mmin简介"></a>三、-amin, -cmin, -mmin简介</h3><p>与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</p>
+<h3 id="四、history命令"><a href="#四、history命令" class="headerlink" title="四、history命令"></a>四、history命令</h3><p>显示最近使用的5个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">history</span> 5</div></pre></td></tr></table></figure></p>
+<p>执行历史编号为5的命令那个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !5</div></pre></td></tr></table></figure></p>
+<p>执行最后一次以ls结尾的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !ls</div></pre></td></tr></table></figure></p>
+<h3 id="五、为bash脚本设置别名"><a href="#五、为bash脚本设置别名" class="headerlink" title="五、为bash脚本设置别名"></a>五、为bash脚本设置别名</h3><p>修改<code>~/.bashrc</code>文件，该文件是登录用户的启动文件，能用作用户的全局设置。<br>假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件<code>deploy.sh</code>，则在<code>~./bashrc</code>文件中添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div></pre></td></tr></table></figure></p>
+<p>那么在命令行中直接执行<code>go</code>命令即可执行<code>deploy.sh</code>文件中的命令。  </p>
+<p>注意：编辑完后执行<code>source ./bashrc</code>命令使其生效，若不能生效则重新登录生效。  </p>
+<h3 id="六、usermod将用户添加到用户组"><a href="#六、usermod将用户添加到用户组" class="headerlink" title="六、usermod将用户添加到用户组"></a>六、usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
+<p>-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </p>
+<h3 id="七、head-和tail"><a href="#七、head-和tail" class="headerlink" title="七、head 和tail"></a>七、head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/12/Linux中mysql数据库定时备份/" itemprop="url">
                   Linux中mysql数据库定时备份
                 </a>
@@ -1413,7 +1789,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1430,7 +1806,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
