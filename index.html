@@ -295,6 +295,165 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/05/部署web项目-nginx-tomcat7/" itemprop="url">
+                  部署web项目 nginx+tomcat7
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-05T14:34:36+08:00" content="2016-10-05">
+              2016-10-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/05/部署web项目-nginx-tomcat7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/05/部署web项目-nginx-tomcat7/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/05/部署web项目-nginx-tomcat7/" class="leancloud_visitors" data-flag-title="部署web项目 nginx+tomcat7">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><strong>记：</strong><br>完成了基于SpringMVC+Mybatis+redis的Java高并发（练手）项目之后，想把它（seckill）部署到自己的子域名上。<br>于是，开始了一系列的部署之旅。</p>
+</blockquote>
+<h3 id="添加子域名解析记录"><a href="#添加子域名解析记录" class="headerlink" title="添加子域名解析记录"></a>添加子域名解析记录</h3><p>首先，进入你的域名解析管理页面，添加A记录，如下：<br><img src="http://obmxnha1c.bkt.clouddn.com/XNlj3" alt="Untitled Image"></p>
+<h3 id="服务器安装tomcat7-nginx-redis"><a href="#服务器安装tomcat7-nginx-redis" class="headerlink" title="服务器安装tomcat7+nginx+redis"></a>服务器安装tomcat7+nginx+redis</h3><p>本人服务器是Linux ubuntu 14.04，安装命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ apt-get update</div><div class="line">$ apt-get install tomcat7</div><div class="line">$ apt-get install nginx <span class="comment">#不指定版本的话好像默认版本较低</span></div><div class="line">$ apt-get install redis-server <span class="comment">#会默认安装redis-cli</span></div><div class="line">$ apt-get install mysql-server-5.6</div><div class="line">$ apt-get install mysql-client-5.6</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><h4 id="理解反向代理"><a href="#理解反向代理" class="headerlink" title="理解反向代理"></a>理解反向代理</h4><blockquote>
+<p><strong><em>反向代理（Reverse Proxy）</em></strong>方式是指以代理服务器来接受Internet的连接请求，然后将请求转发给内部网络的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。  </p>
+</blockquote>
+<p><strong>理解：</strong><br>反向代理方式实际上就是一台负责转发的代理服务器，看似充当了真正服务器的功能，但实际上并不是，代理服务器只是充当了转发的作用，并且从真正的（上游）服务器那里取得返回的数据。    </p>
+<p>这样说，其实nginx完成的就是这样的工作。我们让nginx监听一个端口，譬如80端口，但实际上我们转发给在8080端口的tomcat，由它来处理真正的请求，当请求完成后，tomcat返回，但数据此时没直接返回，而是直接给nginx，由nginx进行返回，这里，我们会以为是nginx进行了处理，但实际上进行处理的是tomcat。  </p>
+<p>于是，很多人就会想到，使用nginx处理用户请求的js、css、图片等静态资源，使用tomcat（servlet容器）处理如jsp等动态资源。nginx处理静态页面效率远高于tomcat，这样就能更好的提高并发处理性能。实际上，这种动静分离可以搭建高性能负载均衡的集群。  </p>
+<h4 id="nginx虚拟主机配置"><a href="#nginx虚拟主机配置" class="headerlink" title="nginx虚拟主机配置"></a>nginx虚拟主机配置</h4><p>对于静态资源网站，nginx作为服务器直接处理，不需要转发：  </p>
+<p>nginx的配置文件是<code>/etc/nginx/nginx.conf</code>，发现其中http下引入了<code>etc/nginx/sites-enabled/*</code>，那索性就把所有的虚拟主机都配置在<code>etc/nginx/sites-enabled/default</code>中，在其中添加如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;  </div><div class="line">        listen 80;  <span class="comment">#监听端口</span></div><div class="line">        server_name resume.bluestroy.com; <span class="comment">#二级域名  </span></div><div class="line">  		root /opt/webapp/resume; <span class="comment">#项目路径</span></div><div class="line">        location / &#123;  <span class="comment"># /表示处理所有请求</span></div><div class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404; </div><div class="line">        &#125;  </div><div class="line">        <span class="comment"># nginx还有很多其他属性，自行了解</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nginx -t <span class="comment">#检查配置文件是否正确</span></div><div class="line">$ nginx <span class="_">-s</span> reload <span class="comment">#重新加载配置文件而不必重启</span></div></pre></td></tr></table></figure>
+<p>配置完成后，浏览器直接输入子域名resume.bluestroy.com就可以访问到的我的简历项目（只有一个index.html）。</p>
+<hr>
+<h3 id="Nginx-Tomcat配置多个二级域名"><a href="#Nginx-Tomcat配置多个二级域名" class="headerlink" title="Nginx+Tomcat配置多个二级域名"></a>Nginx+Tomcat配置多个二级域名</h3><p>上面nginx添加了虚拟主机只能处理静态资源。那么下面就配置动态web项目的二级域名。</p>
+<h4 id="配置nginx虚拟主机"><a href="#配置nginx虚拟主机" class="headerlink" title="配置nginx虚拟主机"></a>配置nginx虚拟主机</h4><p>在<code>etc/nginx/sites-enabled/default</code>中添加如下server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name seckill.bluestroy.com;</div><div class="line">        <span class="comment"># tomcat7 处理动态请求</span></div><div class="line">        location / &#123;</div><div class="line">                proxy_pass http://seckill.bluestroy.com:8080; <span class="comment">#tomcat7端口</span></div><div class="line">                <span class="comment">#proxy_redirect off;</span></div><div class="line">                proxy_<span class="built_in">set</span>_header Host <span class="variable">$host</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Real-IP <span class="variable">$remote_addr</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="comment"># nginx直接寻找并加载静态资源</span></div><div class="line"><span class="comment">#       location ~ \.(html|js|css|png|jpg|jpeg|gif)$ &#123;</span></div><div class="line"><span class="comment">#              root /opt/webapp/seckill;</span></div><div class="line"><span class="comment">#     &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的配置让tomcat处理了所有请求，要实现动静分离请自行了解。</p>
+<h4 id="Tomcat7配置默认项目和虚拟目录"><a href="#Tomcat7配置默认项目和虚拟目录" class="headerlink" title="Tomcat7配置默认项目和虚拟目录"></a>Tomcat7配置默认项目和虚拟目录</h4><p>在 <code>/etc/tomcat7/server.xml</code>中增加如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">"seckill.bluestroy.com"</span> <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"/opt/webapp/seckill"</span> <span class="attr">debug</span>=<span class="string">"0"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Host标签的name是子域名，与nginx中相同。appBase下的子目录会自动解压及加载部署。<br>Context表齐纳的path=””表示直接输入ip（域名）直接对应到项目根目录,docBase是项目的路径。</p>
+<blockquote>
+<p>这里没有把seckill项目放到tomcat7的webapps目录下，如果放到webapps下是，会造成seckill项目重复加载: </p>
+<ol>
+<li>Tomcat 会在启动时自动加载 appBase 指定目录下的所有合法工程；<br>2.由于同时又通过 Context 的docBase 属性设置了Tomcat 默认工程， 所以，指定的 seckill工程又会被加载一次<br>另外，若放到webapps目录下时，发现seckill.bluestroy.com/seckill/seckill/list 才能访问到，没有将seckill作为根目录导致xxx/seckill/list 404错误。<br><strong><em>因此，最好将自己的项目放到其他地方。</em></strong></li>
+</ol>
+</blockquote>
+<h4 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h4><p><code>vi /etc/hosts</code>将<code>seckill.bluestroy.com</code>追加到127.0.0.1后面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1 	seckill.bluestroy.com</div></pre></td></tr></table></figure></p>
+<h4 id="Success"><a href="#Success" class="headerlink" title="Success"></a>Success</h4><p>配置完成，重启tomcat7，重新加载nginx配置文件。浏览器访问 <a href="http://seckill.bluestroy.com" target="_blank" rel="external">http://seckill.bluestroy.com</a></p>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/F81yQ" alt="Untitled Image"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/29/ACM-树的表示-缩进到广义表/" itemprop="url">
                   ACM-树的表示-缩进到广义表
                 </a>
@@ -1595,155 +1754,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/17/关于Git，你不需要记住更多/" itemprop="url">
-                  关于Git，你不需要记住更多
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T14:26:40+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/17/关于Git，你不需要记住更多/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/17/关于Git，你不需要记住更多/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/17/关于Git，你不需要记住更多/" class="leancloud_visitors" data-flag-title="关于Git，你不需要记住更多">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
-<p>然后，在github服务器端也创建一个同名仓库<code>test</code>，执行以下命令关联远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:BluesTroy/test.git</div></pre></td></tr></table></figure></p>
-<p>接着，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
-<p>第一次推送到<code>master</code>分支时，<code>-u</code>参数会把本地<code>master</code>分支和远程<code>master</code>分支关联，之后就可以直接使用简化命令<code>git push</code>和<code>git pull</code>了。</p>
-<h4 id="拉取远程特定分支"><a href="#拉取远程特定分支" class="headerlink" title="拉取远程特定分支"></a>拉取远程特定分支</h4><p>远程分支和本地分支需要区分，所以，在从服务器上拉取特定分支的时候，需要指定本地分支名字。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --track origin/develop</div></pre></td></tr></table></figure></p>
-<p>注意该命令由于带有–track参数，所以要求git1.6.4以上！这样git会自动切换到develop分支。</p>
-<h4 id="为git命令设置别名"><a href="#为git命令设置别名" class="headerlink" title="为git命令设置别名"></a>为git命令设置别名</h4><p>将以下内容追加到<code>C:\Users\Troy\.gitconfig</code>文件，就可以用简化命令，如<code>git st</code>来代替<code>git status</code>。  </p>
-<blockquote>
-<p>[alias]<br>  co = checkout<br>  ci = commit<br>  br = branch<br>  st = status<br>  unstage = reset HEAD<br>  last = log -1<br>  lg = log –color –graph –pretty=format:’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset’ –abbrev-commit</p>
-</blockquote>
-<h4 id="git修复冲突"><a href="#git修复冲突" class="headerlink" title="git修复冲突"></a>git修复冲突</h4><h5 id="修复merge冲突"><a href="#修复merge冲突" class="headerlink" title="修复merge冲突"></a>修复merge冲突</h5><p>如<code>develop</code>分支与<code>dev</code>分支合并：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout develop</div><div class="line">$ git merge dev</div></pre></td></tr></table></figure></p>
-<p>因为合并时有冲突，会出现分支(develop|MERGING)情况，会列出CONFLICT冲突的文件有哪些。<br><strong>解决：</strong><br>依次进入冲突文件，会出现冲突部分之前的内容和最新的内容，其中<br>==== HEAD<br>\======<br>=====dev<br>之间相关的内容要处理掉，需要保留最新的有用的内容，删掉旧的内容。<br>处理完成后执行以下命令即可修复冲突：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">$ git commit -m <span class="string">'fix conflict'</span></div></pre></td></tr></table></figure></p>
-<h5 id="修复rebase冲突"><a href="#修复rebase冲突" class="headerlink" title="修复rebase冲突"></a>修复rebase冲突</h5><p>使用以下命令可能会出现<code>rebase</code>冲突：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull --rebase</div></pre></td></tr></table></figure></p>
-<p>冲突出现和解决与<code>merge</code>冲突类似，解决完后执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
-<h4 id="ssh生成公钥和私钥"><a href="#ssh生成公钥和私钥" class="headerlink" title="ssh生成公钥和私钥"></a>ssh生成公钥和私钥</h4><p>git需要ssh访问的公钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen</div></pre></td></tr></table></figure></p>
-<h4 id="gitignore使用方法"><a href="#gitignore使用方法" class="headerlink" title=".gitignore使用方法"></a>.gitignore使用方法</h4><p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如无，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 此为注释 – 将被 Git 忽略  </div><div class="line">*.a       # 忽略所有 .a 结尾的文件  </div><div class="line">!lib.a    # 但 lib.a 除外  </div><div class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO </div><div class="line">build/    # 忽略 build/ 目录下的所有文件  </div><div class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括   doc/server/arch.txt</div></pre></td></tr></table></figure></p>
-<p><strong>如果某文件已添加到<code>.gitignore</code>，但不起作用，下面三条命令可解决：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git rm -r --cached .</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">'update .gitignore'</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交</p>
-</blockquote>
-<h4 id="git多人协作常用命令"><a href="#git多人协作常用命令" class="headerlink" title="git多人协作常用命令"></a>git多人协作常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># 从服务器上clone</div><div class="line">git clone ssh://git@xxx.xxx.xxx.xxx/opt/fashion/fashion.git  </div><div class="line"></div><div class="line">git branch dev	#本地建立新分支dev</div><div class="line">git checkout dev	#切换到dev分支</div><div class="line">#这样就可在dev分支上进行操作了,万一代码写错,还可以还原到原先的分支  </div><div class="line"></div><div class="line">git branch -d dev	#删除dev分支</div><div class="line">git branch	#查看当前分支HEAD</div><div class="line"></div><div class="line">#一但代码修改以后,保存自己写的代码到本地</div><div class="line">git status</div><div class="line">git add -A</div><div class="line">git commit -m “这段修改的代码你做了什么,写在这里面,方便别人看到”</div><div class="line"></div><div class="line">#接下来将自己的代码更新到网上</div><div class="line">git checkout develop</div><div class="line">git pull --rebase	#拉取服务器最新代码</div><div class="line">git merge dev	#将dev分支合并到develop分支</div><div class="line">git push	#提交自己的最新代码到服务器</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1789,7 +1799,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1797,7 +1807,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1806,7 +1816,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

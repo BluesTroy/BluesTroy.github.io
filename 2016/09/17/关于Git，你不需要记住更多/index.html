@@ -90,23 +90,23 @@
 
 <meta name="description" content="关联本地仓库和远程仓库首先，需要本地创建一个文件test，将其初始化为git仓库1$ git init
 然后，在github服务器端也创建一个同名仓库test，执行以下命令关联远程仓库1$ git remote add origin git@github.com:BluesTroy/test.git
-接着，就可以将本地库的内容推送到远程1$ git push -u origin master
-第一">
+接着，将远程master最新分支拉取到本地1$ git pull origin master
+最后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Git，你不需要记住更多">
 <meta property="og:url" content="http://www.bluestroy.com/2016/09/17/关于Git，你不需要记住更多/index.html">
 <meta property="og:site_name" content="Troy的输出流">
 <meta property="og:description" content="关联本地仓库和远程仓库首先，需要本地创建一个文件test，将其初始化为git仓库1$ git init
 然后，在github服务器端也创建一个同名仓库test，执行以下命令关联远程仓库1$ git remote add origin git@github.com:BluesTroy/test.git
-接着，就可以将本地库的内容推送到远程1$ git push -u origin master
-第一">
-<meta property="og:updated_time" content="2016-09-17T07:17:41.025Z">
+接着，将远程master最新分支拉取到本地1$ git pull origin master
+最后">
+<meta property="og:updated_time" content="2016-10-01T09:45:35.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Git，你不需要记住更多">
 <meta name="twitter:description" content="关联本地仓库和远程仓库首先，需要本地创建一个文件test，将其初始化为git仓库1$ git init
 然后，在github服务器端也创建一个同名仓库test，执行以下命令关联远程仓库1$ git remote add origin git@github.com:BluesTroy/test.git
-接着，就可以将本地库的内容推送到远程1$ git push -u origin master
-第一">
+接着，将远程master最新分支拉取到本地1$ git pull origin master
+最后">
 
 
 
@@ -379,7 +379,8 @@
       
         <h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
 <p>然后，在github服务器端也创建一个同名仓库<code>test</code>，执行以下命令关联远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:BluesTroy/test.git</div></pre></td></tr></table></figure></p>
-<p>接着，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
+<p>接着，将远程<code>master</code>最新分支拉取到本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master</div></pre></td></tr></table></figure></p>
+<p>最后，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
 <p>第一次推送到<code>master</code>分支时，<code>-u</code>参数会把本地<code>master</code>分支和远程<code>master</code>分支关联，之后就可以直接使用简化命令<code>git push</code>和<code>git pull</code>了。</p>
 <h4 id="拉取远程特定分支"><a href="#拉取远程特定分支" class="headerlink" title="拉取远程特定分支"></a>拉取远程特定分支</h4><p>远程分支和本地分支需要区分，所以，在从服务器上拉取特定分支的时候，需要指定本地分支名字。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --track origin/develop</div></pre></td></tr></table></figure></p>
 <p>注意该命令由于带有–track参数，所以要求git1.6.4以上！这样git会自动切换到develop分支。</p>
@@ -551,7 +552,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -559,7 +560,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -568,7 +569,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
