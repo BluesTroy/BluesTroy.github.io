@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux,TCP," />
 
 
 
@@ -88,15 +88,40 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Troy的输出流">
-<meta property="og:url" content="http://www.bluestroy.com/categories/Nginx/index.html">
+<meta name="description" content="查看哪些IP连接本机netstat -an
+查看TCP连接数
+统计80端口连接数netstat -nat|grep -i “80”|wc -l
+
+统计httpd协议连接数ps -ef|grep httpd|wc -l
+
+统计已连接上的，状态为“establishednetstat -na|grep ESTABLISHED|wc -l
+
+查出哪个IP地址连接最多,将其封了.netstat -na|g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查看Linux中TCP连接数">
+<meta property="og:url" content="http://www.bluestroy.com/2016/10/05/查看Linux中TCP连接数/index.html">
 <meta property="og:site_name" content="Troy的输出流">
-<meta property="og:description" content="Ordinary every day is a miracle.">
+<meta property="og:description" content="查看哪些IP连接本机netstat -an
+查看TCP连接数
+统计80端口连接数netstat -nat|grep -i “80”|wc -l
+
+统计httpd协议连接数ps -ef|grep httpd|wc -l
+
+统计已连接上的，状态为“establishednetstat -na|grep ESTABLISHED|wc -l
+
+查出哪个IP地址连接最多,将其封了.netstat -na|g">
+<meta property="og:updated_time" content="2016-10-05T14:55:31.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Troy的输出流">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="查看Linux中TCP连接数">
+<meta name="twitter:description" content="查看哪些IP连接本机netstat -an
+查看TCP连接数
+统计80端口连接数netstat -nat|grep -i “80”|wc -l
+
+统计httpd协议连接数ps -ef|grep httpd|wc -l
+
+统计已连接上的，状态为“establishednetstat -na|grep ESTABLISHED|wc -l
+
+查出哪个IP地址连接最多,将其封了.netstat -na|g">
 
 
 
@@ -117,9 +142,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/categories/Nginx/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/10/05/查看Linux中TCP连接数/"/>
 
-  <title> 分类: Nginx | Troy的输出流 </title>
+  <title> 查看Linux中TCP连接数 | Troy的输出流 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +175,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,47 +296,244 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Nginx
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                查看Linux中TCP连接数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-05T22:35:01+08:00" content="2016-10-05">
+              2016-10-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/05/查看Linux中TCP连接数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/05/查看Linux中TCP连接数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/05/查看Linux中TCP连接数/" class="leancloud_visitors" data-flag-title="查看Linux中TCP连接数">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h4 id="查看哪些IP连接本机"><a href="#查看哪些IP连接本机" class="headerlink" title="查看哪些IP连接本机"></a>查看哪些IP连接本机</h4><p>netstat -an</p>
+<h4 id="查看TCP连接数"><a href="#查看TCP连接数" class="headerlink" title="查看TCP连接数"></a>查看TCP连接数</h4><ol>
+<li><p>统计80端口连接数<br>netstat -nat|grep -i “80”|wc -l</p>
+</li>
+<li><p>统计httpd协议连接数<br>ps -ef|grep httpd|wc -l</p>
+</li>
+<li><p>统计已连接上的，状态为“established<br>netstat -na|grep ESTABLISHED|wc -l</p>
+</li>
+<li><p>查出哪个IP地址连接最多,将其封了.<br>netstat -na|grep ESTABLISHED|awk {print $5}|awk -F: {print $1}|sort|uniq -c|sort -r +0n<br>netstat -na|grep SYN|awk {print $5}|awk -F: {print $1}|sort|uniq -c|sort -r +0n</p>
+</li>
+</ol>
+<hr>
+<ol>
+<li><p>查看apache当前并发访问数：<br>netstat -an | grep ESTABLISHED | wc -l<br>对比httpd.conf中MaxClients的数字差距多少。</p>
+</li>
+<li><p>查看有多少个进程数：<br>ps aux|grep httpd|wc -l</p>
+</li>
+<li><p>可以使用如下参数查看数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ps -ef|grep httpd|wc <span class="_">-l</span></div><div class="line">1388</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>统计httpd进程数，连个请求会启动一个进程，使用于Apache服务器。<br>表示Apache能够处理1388个并发请求，这个值Apache可根据负载情况自动调整。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -nat|grep -i <span class="string">"80"</span>|wc <span class="_">-l</span></div><div class="line">4341</div></pre></td></tr></table></figure></p>
+<p>netstat -an会打印系统当前网络链接状态，而grep -i “80”是用来提取与80端口有关的连接的，wc -l进行连接数统计。<br>最终返回的数字就是当前所有80端口的请求总数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -na|grep ESTABLISHED|wc <span class="_">-l</span></div><div class="line">376</div></pre></td></tr></table></figure>
+<p>netstat -an会打印系统当前网络链接状态，而grep ESTABLISHED 提取出已建立连接的信息。 然后wc -l统计。<br>最终返回的数字就是当前所有80端口的已建立连接的总数。</p>
+<p><code>netstat -nat | grep ESTABLISHED</code> 可查看所有建立连接的详细记录  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;'</span></div></pre></td></tr></table></figure>
+<p>查看Apache的并发请求数及其TCP连接状态.</p>
+<blockquote>
+<p>TIME_WAIT 8947 等待足够的时间以确保远程TCP接收到连接中断请求的确认<br>FIN_WAIT1 15 等待远程TCP连接中断请求，或先前的连接中断请求的确认<br>FIN_WAIT2 1 从远程TCP等待连接中断请求<br>ESTABLISHED 55 代表一个打开的连接<br>SYN_RECV 21 再收到和发送一个连接请求后等待对方对连接请求的确认<br>CLOSING 2 没有任何连接状态<br>LAST_ACK 4 等待原来的发向远程TCP的连接中断请求的确认  </p>
+</blockquote>
+<p><strong>TCP连接状态详解</strong><br>LISTEN： 侦听来自远方的TCP端口的连接请求<br>SYN-SENT： 再发送连接请求后等待匹配的连接请求<br>SYN-RECEIVED：再收到和发送一个连接请求后等待对方对连接请求的确认<br>ESTABLISHED： 代表一个打开的连接<br>FIN-WAIT-1： 等待远程TCP连接中断请求，或先前的连接中断请求的确认<br>FIN-WAIT-2： 从远程TCP等待连接中断请求<br>CLOSE-WAIT： 等待从本地用户发来的连接中断请求<br>CLOSING： 等待远程TCP对连接中断的确认<br>LAST-ACK： 等待原来的发向远程TCP的连接中断请求的确认<br>TIME-WAIT： 等待足够的时间以确保远程TCP接收到连接中断请求的确认<br>CLOSED： 没有任何连接状态  </p>
+<hr>
+<h4 id="wc-命令"><a href="#wc-命令" class="headerlink" title="wc 命令"></a>wc 命令</h4><blockquote>
+<p>wc [-clw] [filename…]</p>
+<ul>
+<li>-c Bytes数</li>
+<li>-l  行数（列数）</li>
+<li>-w  字数</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ wc testfile testfile_1 testfile_2  <span class="comment">#统计三个文件的信息  </span></div><div class="line">3 92 598 testfile                    <span class="comment">#第一个文件行数为3、单词数92、字节数598  </span></div><div class="line">9 18 78 testfile_1                   <span class="comment">#第二个文件的行数为9、单词数18、字节数78  </span></div><div class="line">3 6 32 testfile_2                    <span class="comment">#第三个文件的行数为3、单词数6、字节数32  </span></div><div class="line">15 116 708 总用量                    <span class="comment">#三个文件总共的行数为15、单词数116、字节数708</span></div></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<blockquote>
+<p><em>内容多数转自<a href="https://my.oschina.net/u/1169079/blog/397705" target="_blank" rel="external">查看linux中的TCP连接数</a></em></p>
+</blockquote>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/05/部署web项目-nginx-tomcat7-二级域名/" itemprop="url">
-              
-                <span itemprop="name">部署web项目 nginx+tomcat7+二级域名</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-05T14:34:36+08:00"
-              content="2016-10-05" >
-          10-05
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+            <a href="/tags/TCP/" rel="tag">#TCP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/05/递归——汉诺塔/" rel="next" title="递归——汉诺塔">
+                <i class="fa fa-chevron-left"></i> 递归——汉诺塔
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/05/查看Linux中TCP连接数/"
+     data-title="查看Linux中TCP连接数"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/10/05/查看Linux中TCP连接数/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -319,6 +541,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/05/查看Linux中TCP连接数/"
+           data-title="查看Linux中TCP连接数" data-url="http://www.bluestroy.com/2016/10/05/查看Linux中TCP连接数/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -338,8 +568,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -440,6 +679,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看哪些IP连接本机"><span class="nav-number">1.</span> <span class="nav-text">查看哪些IP连接本机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看TCP连接数"><span class="nav-number">2.</span> <span class="nav-text">查看TCP连接数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc-命令"><span class="nav-number">3.</span> <span class="nav-text">wc 命令</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -535,6 +785,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

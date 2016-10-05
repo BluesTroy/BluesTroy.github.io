@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,递归,汉诺塔," />
 
 
 
@@ -88,15 +88,46 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Troy的输出流">
-<meta property="og:url" content="http://www.bluestroy.com/categories/Nginx/index.html">
+<meta name="description" content="求有向图的所有拓扑序列：依次取只有出度的节点。列出所有可能的情况。二分查找的比较次数： 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。  
+汉诺塔游戏规则：  
+
+每次只能移动一个盘子
+小盘子必须在大盘子上面
+
+算法描述
+设三个塔分别为A、B、C。   
+
+当A塔上有n个盘子时，先将A塔上编号1至n-1的盘子（共n-1个）移动到B塔上（借助C塔）  
+然后将A塔上最大的n号盘子移动到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归——汉诺塔">
+<meta property="og:url" content="http://www.bluestroy.com/2016/10/05/递归——汉诺塔/index.html">
 <meta property="og:site_name" content="Troy的输出流">
-<meta property="og:description" content="Ordinary every day is a miracle.">
+<meta property="og:description" content="求有向图的所有拓扑序列：依次取只有出度的节点。列出所有可能的情况。二分查找的比较次数： 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。  
+汉诺塔游戏规则：  
+
+每次只能移动一个盘子
+小盘子必须在大盘子上面
+
+算法描述
+设三个塔分别为A、B、C。   
+
+当A塔上有n个盘子时，先将A塔上编号1至n-1的盘子（共n-1个）移动到B塔上（借助C塔）  
+然后将A塔上最大的n号盘子移动到">
+<meta property="og:updated_time" content="2016-10-05T14:04:00.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Troy的输出流">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="递归——汉诺塔">
+<meta name="twitter:description" content="求有向图的所有拓扑序列：依次取只有出度的节点。列出所有可能的情况。二分查找的比较次数： 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。  
+汉诺塔游戏规则：  
+
+每次只能移动一个盘子
+小盘子必须在大盘子上面
+
+算法描述
+设三个塔分别为A、B、C。   
+
+当A塔上有n个盘子时，先将A塔上编号1至n-1的盘子（共n-1个）移动到B塔上（借助C塔）  
+然后将A塔上最大的n号盘子移动到">
 
 
 
@@ -117,9 +148,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/categories/Nginx/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/10/05/递归——汉诺塔/"/>
 
-  <title> 分类: Nginx | Troy的输出流 </title>
+  <title> 递归——汉诺塔 | Troy的输出流 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +181,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,47 +302,222 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Nginx
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                递归——汉诺塔
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-05T22:02:28+08:00" content="2016-10-05">
+              2016-10-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/05/递归——汉诺塔/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/05/递归——汉诺塔/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/05/递归——汉诺塔/" class="leancloud_visitors" data-flag-title="递归——汉诺塔">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><strong>求有向图的所有拓扑序列：</strong><br>依次取只有出度的节点。列出所有可能的情况。<br><strong>二分查找的比较次数：</strong> 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。  </p>
+<h2 id="汉诺塔游戏"><a href="#汉诺塔游戏" class="headerlink" title="汉诺塔游戏"></a>汉诺塔游戏</h2><p><strong>规则：</strong>  </p>
+<ul>
+<li>每次只能移动一个盘子</li>
+<li>小盘子必须在大盘子上面</li>
+</ul>
+<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><blockquote>
+<p>设三个塔分别为A、B、C。   </p>
+<ol>
+<li>当A塔上有n个盘子时，先将A塔上编号1至n-1的盘子（共n-1个）移动到B塔上（借助C塔）  </li>
+<li>然后将A塔上最大的n号盘子移动到C塔上  </li>
+<li>最后将B塔上的n-1个盘子借助A塔移动到C塔上。<br>只有一个盘子时直接从A盘移到C盘。</li>
+</ol>
+</blockquote>
+<p><strong>如何理解？</strong><br>该算法使用了递归。递归永远都那么<em>迷人</em>。可以这样理解：<br>假设已经有了这样的一个方法hanio()可以实现想要的功能，那么递归调用时就直接调用hanio()，而不需要去明白功能的细节，只需要在写方法的时候处理好递归可能终止的条件就可以了。<br>就比如下面的代码中的<code>hanoi(start,end,mid,n-1)</code>，我不需要知道到底是经过哪些步骤实现了将n-1个盘子从初始塔移动到借用塔上，我只需明白<code>hanoi()</code>是有这个功能的。于是，整个代码就显得那么简洁优雅。<br>而当程序运行时，所以的实现细节就都呈现在眼前了。</p>
+<h4 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HanoiTower</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> start  初始塔</div><div class="line">     * <span class="doctag">@param</span> mid   借用塔</div><div class="line">     * <span class="doctag">@param</span> end   目标塔</div><div class="line">     * <span class="doctag">@param</span> n     盘子数</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(String start,String mid,String end, <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">        <span class="comment">//只有一个盘子时直接将初塔上的盘子移动到目标塔</span></div><div class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">            System.out.println(start+<span class="string">"-&gt;"</span>+end);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            hanoi(start,end,mid,n-<span class="number">1</span>);<span class="comment">//将初始塔的n-1个盘子借助目的塔移动到借用塔</span></div><div class="line">            System.out.println(start+<span class="string">"-&gt;"</span>+end);<span class="comment">//将剩下最大的盘移动到目标塔</span></div><div class="line">            hanoi(mid, start, end, n-<span class="number">1</span>);<span class="comment">//将借用塔上的n-1个盘子借用初始塔移动到目标塔</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        hanoi(<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="number">4</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><p>一共需要移动2^n-1步。<br>时间复杂度O(2^n)<br>空间复杂度O(n)</p>
+<h2 id="折纸游戏"><a href="#折纸游戏" class="headerlink" title="折纸游戏"></a>折纸游戏</h2><p>（未完）</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/05/部署web项目-nginx-tomcat7-二级域名/" itemprop="url">
-              
-                <span itemprop="name">部署web项目 nginx+tomcat7+二级域名</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-05T14:34:36+08:00"
-              content="2016-10-05" >
-          10-05
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+          
+            <a href="/tags/递归/" rel="tag">#递归</a>
+          
+            <a href="/tags/汉诺塔/" rel="tag">#汉诺塔</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/05/部署web项目-nginx-tomcat7-二级域名/" rel="next" title="部署web项目 nginx+tomcat7+二级域名">
+                <i class="fa fa-chevron-left"></i> 部署web项目 nginx+tomcat7+二级域名
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/05/查看Linux中TCP连接数/" rel="prev" title="查看Linux中TCP连接数">
+                查看Linux中TCP连接数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/05/递归——汉诺塔/"
+     data-title="递归——汉诺塔"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/10/05/递归——汉诺塔/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -319,6 +525,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/05/递归——汉诺塔/"
+           data-title="递归——汉诺塔" data-url="http://www.bluestroy.com/2016/10/05/递归——汉诺塔/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -338,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -440,6 +663,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#汉诺塔游戏"><span class="nav-number">1.</span> <span class="nav-text">汉诺塔游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述"><span class="nav-number">1.0.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java实现"><span class="nav-number">1.0.2.</span> <span class="nav-text">Java实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">1.0.3.</span> <span class="nav-text">算法分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#折纸游戏"><span class="nav-number">2.</span> <span class="nav-text">折纸游戏</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -535,6 +769,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

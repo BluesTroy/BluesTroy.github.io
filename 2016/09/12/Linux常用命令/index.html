@@ -102,7 +102,7 @@
 
 分钟——每小时的第几分钟执行，范围0~59  
 小时——每日的第几个小时执行，范围0~23">
-<meta property="og:updated_time" content="2016-09-12T04:56:24.709Z">
+<meta property="og:updated_time" content="2016-10-05T14:15:42.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
 <meta name="twitter:description" content="一、crontab简介crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在crontab文件中，以供之后读取和执行。 
@@ -412,6 +412,24 @@
 <h3 id="六、usermod将用户添加到用户组"><a href="#六、usermod将用户添加到用户组" class="headerlink" title="六、usermod将用户添加到用户组"></a>六、usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
 <p>-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </p>
 <h3 id="七、head-和tail"><a href="#七、head-和tail" class="headerlink" title="七、head 和tail"></a>七、head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
+<h3 id="八、Linux层级目录结构"><a href="#八、Linux层级目录结构" class="headerlink" title="八、Linux层级目录结构"></a>八、Linux层级目录结构</h3><ul>
+<li>/  根目录</li>
+</ul>
+<ol>
+<li>/root存放root用户的相关文件</li>
+<li>/home 存放普通用户的相关文件</li>
+<li>/bin 存放常用命令的文件 。系统的一些指令</li>
+<li>/sbin 具有一定权限才可以使用的命令。超级用户指令、系统管理指令</li>
+<li>/mnt 默认挂在光驱和软驱的目录</li>
+<li>/boot 存放引导相关的文件</li>
+<li>/etc 存放配置相关的文件</li>
+<li>/var 存放经常变化的文件</li>
+<li>/usr 安装程序的默认安装文件夹。</li>
+</ol>
+<ul>
+<li>/usr/bin  后期安装的一些软件的运行脚本</li>
+<li>/usr/sbin 超级用户的一些管理程序</li>
+</ul>
 
       
     </div>
@@ -565,7 +583,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,7 +600,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -661,7 +679,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、crontab简介"><span class="nav-number">1.</span> <span class="nav-text">一、crontab简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、crontab调度文件规则"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、crontab调度文件规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、crontab命令的例子"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、crontab命令的例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、其他"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、文件中-atime-ctime-mtime简介"><span class="nav-number">2.</span> <span class="nav-text">二、文件中 -atime, -ctime, -mtime简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-amin-cmin-mmin简介"><span class="nav-number">3.</span> <span class="nav-text">三、-amin, -cmin, -mmin简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、history命令"><span class="nav-number">4.</span> <span class="nav-text">四、history命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、为bash脚本设置别名"><span class="nav-number">5.</span> <span class="nav-text">五、为bash脚本设置别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、usermod将用户添加到用户组"><span class="nav-number">6.</span> <span class="nav-text">六、usermod将用户添加到用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、head-和tail"><span class="nav-number">7.</span> <span class="nav-text">七、head 和tail</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、crontab简介"><span class="nav-number">1.</span> <span class="nav-text">一、crontab简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、crontab调度文件规则"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、crontab调度文件规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、crontab命令的例子"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、crontab命令的例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、其他"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、文件中-atime-ctime-mtime简介"><span class="nav-number">2.</span> <span class="nav-text">二、文件中 -atime, -ctime, -mtime简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-amin-cmin-mmin简介"><span class="nav-number">3.</span> <span class="nav-text">三、-amin, -cmin, -mmin简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、history命令"><span class="nav-number">4.</span> <span class="nav-text">四、history命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、为bash脚本设置别名"><span class="nav-number">5.</span> <span class="nav-text">五、为bash脚本设置别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、usermod将用户添加到用户组"><span class="nav-number">6.</span> <span class="nav-text">六、usermod将用户添加到用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、head-和tail"><span class="nav-number">7.</span> <span class="nav-text">七、head 和tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、Linux层级目录结构"><span class="nav-number">8.</span> <span class="nav-text">八、Linux层级目录结构</span></a></li></ol></div>
             
           </div>
         </section>
