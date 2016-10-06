@@ -295,6 +295,152 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/06/Redis-Protostuff实现缓存对象/" itemprop="url">
+                  Redis+Protostuff实现缓存对象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-06T16:53:25+08:00" content="2016-10-06">
+              2016-10-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/06/Redis-Protostuff实现缓存对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/06/Redis-Protostuff实现缓存对象/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/06/Redis-Protostuff实现缓存对象/" class="leancloud_visitors" data-flag-title="Redis+Protostuff实现缓存对象">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。<br>与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  </p>
+<h4 id="Redis优点"><a href="#Redis优点" class="headerlink" title="Redis优点"></a>Redis优点</h4><ul>
+<li><strong>异常快速 :</strong> Redis是非常快的，每秒可以执行大约110000设置操作，81000个/每秒的读取操作。</li>
+<li><strong>支持丰富的数据类型 :</strong> Redis支持最大多数开发人员已经知道如列表，集合，可排序集合，哈希等数据类型。</li>
+<li><strong>操作都是原子性的 :</strong> 所有 Redis 的操作都是原子，从而确保当两个客户同时访问 Redis 服务器得到的是更新后的值（最新值）。</li>
+<li><strong>MultiUtility工具：</strong> Redis是一个多功能实用工具，可以在很多如：缓存，消息传递队列中使用（Redis原生支持发布/订阅），在应用程序中，如：Web应用程序会话，网站页面点击数等任何短暂的数据；</li>
+</ul>
+<blockquote>
+<p><em>Redis不能直接保存Object（POJO），需要将Object序列化成Bytes[]进行缓存。</em></p>
+</blockquote>
+<h3 id="Protostuff简介"><a href="#Protostuff简介" class="headerlink" title="Protostuff简介"></a>Protostuff简介</h3><ul>
+<li>Protostuff是一个开源的、基于Java语言的序列化库，它内建支持向前向后兼容（模式演进）和验证功能。  </li>
+<li>Protostuff则是在protobuff基础上改进的一个优秀的高性能的序列化和反序列化框架。</li>
+<li>Protostuff相对于Java内置的实现Serializable接口，其序列化和反序列化具有更快的速度和更小的空间。  </li>
+</ul>
+<p><em>Java序列化和反序列有很多开源框架，可移步github上<a href="https://github.com/eishay/jvm-serializers/wiki" target="_blank" rel="external">jvm-serializers对比分析</a>了解。</em></p>
+<h3 id="Redis和Protostuff整合实现缓存"><a href="#Redis和Protostuff整合实现缓存" class="headerlink" title="Redis和Protostuff整合实现缓存"></a>Redis和Protostuff整合实现缓存</h3><p>下面的例子实现了对Seckill对象的超时（策略）缓存。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisDao</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> JedisPool jedisPool;    <span class="comment">//redis连接池</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedisDao</span><span class="params">(String ip,<span class="keyword">int</span> port)</span></span>&#123;</div><div class="line">        jedisPool = <span class="keyword">new</span> JedisPool(ip,port);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</div><div class="line">    <span class="comment">//获取Seckill对象的sechema，sechema保存了类的属性等信息</span></div><div class="line">    <span class="keyword">private</span> RuntimeSchema&lt;Seckill&gt; schema = RuntimeSchema.createFrom(Seckill.class);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 从缓存中读取seckill对象</div><div class="line">     * <span class="doctag">@param</span> seckillId</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Seckill <span class="title">getSeckill</span><span class="params">(<span class="keyword">long</span> seckillId)</span></span>&#123;</div><div class="line">        <span class="comment">//redis逻辑操作</span></div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            <span class="comment">//使用了redis的客户端Jedis来操作缓存</span></div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key=<span class="string">"seckill:"</span>+seckillId;</div><div class="line">                <span class="comment">//redis并没有实现内部序列化操作</span></div><div class="line">                <span class="comment">//get-&gt;byte[]-&gt;反序列化-&gt;Object(Seckill)</span></div><div class="line">                <span class="comment">//采用自定义序列化:速度快、空间小</span></div><div class="line">                <span class="comment">//protostuff:pojo</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = jedis.get(key.getBytes());</div><div class="line">                <span class="keyword">if</span> (bytes !=<span class="keyword">null</span>)&#123;</div><div class="line">                    Seckill seckill = schema.newMessage(); <span class="comment">//创建一个空对象</span></div><div class="line">                    ProtostuffIOUtil.mergeFrom(bytes,seckill,schema);<span class="comment">//反序列化</span></div><div class="line">                    <span class="keyword">return</span> seckill;</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 将数据放入redis缓存</div><div class="line">     * <span class="doctag">@param</span> seckill</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">putSeckill</span><span class="params">(Seckill seckill)</span></span>&#123;</div><div class="line">        <span class="comment">//set Object(Seckill) -&gt;序列化 -&gt; byte[]</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key =<span class="string">"seckill:"</span>+seckill.getSeckillId();</div><div class="line">                <span class="comment">//序列化，第三个参数是缓冲器</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = ProtostuffIOUtil.toByteArray(seckill,schema, LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE));</div><div class="line">                <span class="comment">//超时缓存</span></div><div class="line">                <span class="keyword">int</span> timeout = <span class="number">60</span>*<span class="number">60</span>; <span class="comment">//1个小时</span></div><div class="line">                String result = jedis.setex(key.getBytes(),timeout,bytes);</div><div class="line">                <span class="keyword">return</span> result; <span class="comment">//"OK"</span></div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>  <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的代码需要引入以下依赖包:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- redis 客户端  jedis--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- Protostuff序列化依赖--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/05/查看Linux中TCP连接数/" itemprop="url">
                   查看Linux中TCP连接数
                 </a>
@@ -1577,172 +1723,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/20/Java线程安全的容器类/" itemprop="url">
-                  Java线程安全的容器类
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-20T16:48:13+08:00" content="2016-09-20">
-              2016-09-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/20/Java线程安全的容器类/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/Java线程安全的容器类/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/20/Java线程安全的容器类/" class="leancloud_visitors" data-flag-title="Java线程安全的容器类">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a></em>  </p>
-</blockquote>
-<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
-<h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
-<p>在Map类中，提供两种线程安全容器。</p>
-<p><strong>java.util.Hashtable</strong>  </p>
-<p>Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtable是线程安全的。当我们查看Hashtable源码的时候，可以看到Hashtable的方法都是通过synchronized来进行方法层次的同步，以达到线程安全的作用。</p>
-<p><strong>java.util.concurrent.ConcurrentHashMap</strong><br>ConcurrentHashMap是性能更好的散列表。在兼顾线程安全的同时，相对于Hashtable，在效率上有很大的提高。我们可以猜想，Hashtable的线程安全实现是对方法进行synchronized，很明显可以通过其他并发方式，如ReentrantLock进行优化。而ConcurrentHashMap正是采用了ReentrantLock。运用锁分离技术，即在代码块上加锁，而不是方法上加。同时ConcurrentHashMap的一个特色是允许多个修改并发操作。这就有意思了，我们知道一般写都是互斥的，为什么这个还能多个同时写呢？那是因为ConcurrentHashMap采用了内部使用段机制，将ConcurrentHashMap分成了很多小段。只要不在一个小段上写就可以并发写。</p>
-<h3 id="2-Collection"><a href="#2-Collection" class="headerlink" title="2. Collection"></a>2. Collection</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg" alt="Untitled Image"></p>
-<p>Collection部分主要是运用的CopyOnWrite机制，即写时复制机制。从字面上就能理解什么意思，就是当我们往一个容器里添加元素的时候，先对这个容器进行一次复制，对副本进行写操作。写操作结束后，将原容器的引用指向新副本容器，就完成了写的刷新。从它的实现原理，我们可以看出这种机制是存在缺点的。</p>
-<p>1.内存占用：毫无疑问，每次写时需要首先复制一遍原容器，假如复制了很多，或者本身原容器就比较大，那么肯定会占用很多内存。可以采用压缩容器中的元素来防止内存消耗过大。</p>
-<p>2.数据一致性问题：当我们在副本中进行写操组时，只能在最终结束后使数据同步，不能实时同步</p>
-<p>可以看到，这种机制适用于读操作多，写操作少的应用场景。</p>
-<p><strong>java.util.concurrent.CopyOnWriteArrayList</strong></p>
-<p>Collection类的线程安全容器主要都是利用的ReentrantLock实现的线程安全，CopyOnWriteArrayList也不例外。在并发写的时候，需要获取lock。读的时候不需要进行lock</p>
-<p><strong>java.util.concurrent.CopyOnWriteArraySet</strong></p>
-<p>CopyOnWriteArraySet的实现就是基于CopyOnWriteArrayList实现的，采用的装饰器进行实现。二者的区别和List和Set的区别一样。</p>
-<p><strong>Vector</strong></p>
-<p>一般我们都不用Vector了，不过它确实也是线程安全的。相对于其他容器，能够提供随机访问功能。</p>
-<h3 id="3-StringBuffer和StringBuilder"><a href="#3-StringBuffer和StringBuilder" class="headerlink" title="3. StringBuffer和StringBuilder"></a>3. StringBuffer和StringBuilder</h3><p>我们知道，String在进行+操作的时候，原生的String会重新新建一个String对象来完成字符串拼接，明显这种操作多了的话会加重服务器负担。因此我们需要的时候就会用StringBuffer和StringBuilder。这二者有什么区别呢？</p>
-<p><strong>StringBuffer</strong>是线程安全的，StringBuilder不是。从StringBuffer的源码可以看到，它采用的是对方法进行synchronized实现的同步。但是加了同步机制，肯定会对性能有一定影响。  </p>
-<blockquote>
-<p>高并发情况下，对数据安全有需求，则用StringBuffer，否则用StringBuilder</p>
-</blockquote>
-<p><br></p>
-<hr>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><strong>*java.util.Hashtable</strong>：synchronized实现</li>
-<li><strong>java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
-<li><strong>java.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
-<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
-<li><strong>*Vector</strong>: ReentrantLock实现</li>
-<li><strong>*StringBuffer</strong>： synchronized实现</li>
-</ol>
-<blockquote>
-<p>前1.2.属Map，3.4.5.属Collection。<br><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1788,7 +1768,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1796,7 +1776,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1805,7 +1785,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

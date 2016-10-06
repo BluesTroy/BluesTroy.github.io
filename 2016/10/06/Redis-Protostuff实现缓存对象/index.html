@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="位运算," />
+  <meta name="keywords" content="Redis,Protostuff,缓存," />
 
 
 
@@ -88,22 +88,22 @@
 
 
 
-<meta name="description" content="位运算——高效性。使用适当的位运算不是为了装逼，而是为了迷倒别人。
-
-常用的位运算例子：123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * 常见的位运算 */public static void bitOperation()&amp;#123;    int a= 56;    in">
+<meta name="description" content="Redis简介Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  
+Redis优点
+异常快速 : Redis是非常快的，每秒可以执行大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用的位运算技巧">
-<meta property="og:url" content="http://www.bluestroy.com/2016/09/21/常用的位运算技巧/index.html">
+<meta property="og:title" content="Redis+Protostuff实现缓存对象">
+<meta property="og:url" content="http://www.bluestroy.com/2016/10/06/Redis-Protostuff实现缓存对象/index.html">
 <meta property="og:site_name" content="Troy的输出流">
-<meta property="og:description" content="位运算——高效性。使用适当的位运算不是为了装逼，而是为了迷倒别人。
-
-常用的位运算例子：123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * 常见的位运算 */public static void bitOperation()&amp;#123;    int a= 56;    in">
-<meta property="og:updated_time" content="2016-09-28T10:00:59.888Z">
+<meta property="og:description" content="Redis简介Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  
+Redis优点
+异常快速 : Redis是非常快的，每秒可以执行大">
+<meta property="og:updated_time" content="2016-10-06T09:25:39.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用的位运算技巧">
-<meta name="twitter:description" content="位运算——高效性。使用适当的位运算不是为了装逼，而是为了迷倒别人。
-
-常用的位运算例子：123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * 常见的位运算 */public static void bitOperation()&amp;#123;    int a= 56;    in">
+<meta name="twitter:title" content="Redis+Protostuff实现缓存对象">
+<meta name="twitter:description" content="Redis简介Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  
+Redis优点
+异常快速 : Redis是非常快的，每秒可以执行大">
 
 
 
@@ -124,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/2016/09/21/常用的位运算技巧/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/10/06/Redis-Protostuff实现缓存对象/"/>
 
-  <title> 常用的位运算技巧 | Troy的输出流 </title>
+  <title> Redis+Protostuff实现缓存对象 | Troy的输出流 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +299,7 @@
             
             
               
-                常用的位运算技巧
+                Redis+Protostuff实现缓存对象
               
             
           </h1>
@@ -311,8 +311,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-21T09:55:43+08:00" content="2016-09-21">
-              2016-09-21
+            <time itemprop="dateCreated" datetime="2016-10-06T16:53:25+08:00" content="2016-10-06">
+              2016-10-06
             </time>
           </span>
 
@@ -325,8 +325,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
                   </a>
                 </span>
 
@@ -341,8 +341,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/21/常用的位运算技巧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/常用的位运算技巧/" itemprop="commentsCount"></span>
+                <a href="/2016/10/06/Redis-Protostuff实现缓存对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/06/Redis-Protostuff实现缓存对象/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -352,7 +352,7 @@
 
           
           
-             <span id="/2016/09/21/常用的位运算技巧/" class="leancloud_visitors" data-flag-title="常用的位运算技巧">
+             <span id="/2016/10/06/Redis-Protostuff实现缓存对象/" class="leancloud_visitors" data-flag-title="Redis+Protostuff实现缓存对象">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,19 +374,24 @@
       
 
       
-        <blockquote>
-<p>位运算——<strong>高效性</strong>。<br><em>使用适当的位运算不是为了装逼，而是为了迷倒别人。</em></p>
-</blockquote>
-<h3 id="常用的位运算例子："><a href="#常用的位运算例子：" class="headerlink" title="常用的位运算例子："></a>常用的位运算例子：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 常见的位运算</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bitOperation</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a= <span class="number">56</span>;</div><div class="line">    <span class="keyword">int</span> b =<span class="number">23</span>;</div><div class="line"></div><div class="line">    <span class="comment">/******不用临时变量交换两个数*****/</span></div><div class="line">    a^=b;</div><div class="line">    b^=a;</div><div class="line">    a^=b;</div><div class="line">    println(<span class="string">"a:"</span>+a);</div><div class="line">    println(<span class="string">"b:"</span>+b);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2运算*****/</span></div><div class="line">    <span class="keyword">int</span> c = a &lt;&lt; <span class="number">1</span> ;</div><div class="line">    println(c);</div><div class="line"></div><div class="line">    <span class="comment">/*****除2运算*****/</span></div><div class="line">    <span class="keyword">int</span> d = b&gt;&gt;<span class="number">1</span>;</div><div class="line">    println(d);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2的n次方   x &lt;&lt; n ********/</span></div><div class="line">    <span class="keyword">int</span> e = <span class="number">3</span> &lt;&lt; <span class="number">2</span>;</div><div class="line">    println(e);</div><div class="line"></div><div class="line">    <span class="comment">/********除2的n次方  x &gt;&gt; n  ******/</span></div><div class="line">    println(<span class="number">8</span> &gt;&gt; <span class="number">2</span>);</div><div class="line"></div><div class="line">    <span class="comment">/********* 判断一个数的奇偶性，true奇数，false偶数 *****/</span></div><div class="line">    println((<span class="number">9</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line">    println((<span class="number">8</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** 判断两个数符号是否相同，true相同，false不同 ***/</span></div><div class="line">    println((<span class="number">8</span> ^ -<span class="number">2</span>)&gt;=<span class="number">0</span>);</div><div class="line">    <span class="comment">//求平均数</span></div><div class="line">    println((<span class="number">3</span>+<span class="number">2</span>)&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** &gt;&gt;是算术（有符号）右移，它使用最高位填充移位后左侧的空位，不改变符号。</span></div><div class="line">     * &gt;&gt;&gt; 是逻辑无符号（）右移，它用0填充左侧的空为。没有算术含义   */</div><div class="line">    println(<span class="string">"&gt;&gt;和&gt;&gt;&gt;的区别："</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;<span class="number">1</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="位运算实现加法操作"><a href="#位运算实现加法操作" class="headerlink" title="位运算实现加法操作"></a>位运算实现加法操作</h4><p><strong>思路：</strong>  </p>
-<ul>
-<li>异或运算得出两个数不计进位的和  </li>
-<li>与运算的结果左移一位刚好是进位<br>可使用递归或非递归方式两种方法实现。<br><strong>实现：</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//非递归法实现加法运算</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> result = a;</div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)&#123;</div><div class="line">        result = a^b;</div><div class="line">        b=(a&amp;b)&lt;&lt;<span class="number">1</span>;</div><div class="line">        a = result;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//递归法实现加法运算</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> ((a&amp;b)==<span class="number">0</span>) <span class="keyword">return</span> a^b;</div><div class="line">    <span class="keyword">return</span> add2(a^b,(a&amp;b)&lt;&lt;<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
+        <h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。<br>与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  </p>
+<h4 id="Redis优点"><a href="#Redis优点" class="headerlink" title="Redis优点"></a>Redis优点</h4><ul>
+<li><strong>异常快速 :</strong> Redis是非常快的，每秒可以执行大约110000设置操作，81000个/每秒的读取操作。</li>
+<li><strong>支持丰富的数据类型 :</strong> Redis支持最大多数开发人员已经知道如列表，集合，可排序集合，哈希等数据类型。</li>
+<li><strong>操作都是原子性的 :</strong> 所有 Redis 的操作都是原子，从而确保当两个客户同时访问 Redis 服务器得到的是更新后的值（最新值）。</li>
+<li><strong>MultiUtility工具：</strong> Redis是一个多功能实用工具，可以在很多如：缓存，消息传递队列中使用（Redis原生支持发布/订阅），在应用程序中，如：Web应用程序会话，网站页面点击数等任何短暂的数据；</li>
 </ul>
-<h4 id="位运算实现减法操作"><a href="#位运算实现减法操作" class="headerlink" title="位运算实现减法操作"></a>位运算实现减法操作</h4><p><strong>思路：</strong><br>减法可通过转换变为加法来运算，因为a-b=a+(-b)=a+(~b)+1<br><strong>实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//减法运算</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">        <span class="comment">//b的相反数是~b+1</span></div><div class="line">        <span class="keyword">return</span> add(a, ~b+<span class="number">1</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h4 id="位运算实现乘法操作"><a href="#位运算实现乘法操作" class="headerlink" title="位运算实现乘法操作"></a>位运算实现乘法操作</h4><p>待续</p>
-<h4 id="位运算实现除法操作"><a href="#位运算实现除法操作" class="headerlink" title="位运算实现除法操作"></a>位运算实现除法操作</h4><p>待续</p>
+<blockquote>
+<p><em>Redis不能直接保存Object（POJO），需要将Object序列化成Bytes[]进行缓存。</em></p>
+</blockquote>
+<h3 id="Protostuff简介"><a href="#Protostuff简介" class="headerlink" title="Protostuff简介"></a>Protostuff简介</h3><ul>
+<li>Protostuff是一个开源的、基于Java语言的序列化库，它内建支持向前向后兼容（模式演进）和验证功能。  </li>
+<li>Protostuff则是在protobuff基础上改进的一个优秀的高性能的序列化和反序列化框架。</li>
+<li>Protostuff相对于Java内置的实现Serializable接口，其序列化和反序列化具有更快的速度和更小的空间。  </li>
+</ul>
+<p><em>Java序列化和反序列有很多开源框架，可移步github上<a href="https://github.com/eishay/jvm-serializers/wiki" target="_blank" rel="external">jvm-serializers对比分析</a>了解。</em></p>
+<h3 id="Redis和Protostuff整合实现缓存"><a href="#Redis和Protostuff整合实现缓存" class="headerlink" title="Redis和Protostuff整合实现缓存"></a>Redis和Protostuff整合实现缓存</h3><p>下面的例子实现了对Seckill对象的超时（策略）缓存。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisDao</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> JedisPool jedisPool;    <span class="comment">//redis连接池</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedisDao</span><span class="params">(String ip,<span class="keyword">int</span> port)</span></span>&#123;</div><div class="line">        jedisPool = <span class="keyword">new</span> JedisPool(ip,port);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</div><div class="line">    <span class="comment">//获取Seckill对象的sechema，sechema保存了类的属性等信息</span></div><div class="line">    <span class="keyword">private</span> RuntimeSchema&lt;Seckill&gt; schema = RuntimeSchema.createFrom(Seckill.class);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 从缓存中读取seckill对象</div><div class="line">     * <span class="doctag">@param</span> seckillId</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Seckill <span class="title">getSeckill</span><span class="params">(<span class="keyword">long</span> seckillId)</span></span>&#123;</div><div class="line">        <span class="comment">//redis逻辑操作</span></div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            <span class="comment">//使用了redis的客户端Jedis来操作缓存</span></div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key=<span class="string">"seckill:"</span>+seckillId;</div><div class="line">                <span class="comment">//redis并没有实现内部序列化操作</span></div><div class="line">                <span class="comment">//get-&gt;byte[]-&gt;反序列化-&gt;Object(Seckill)</span></div><div class="line">                <span class="comment">//采用自定义序列化:速度快、空间小</span></div><div class="line">                <span class="comment">//protostuff:pojo</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = jedis.get(key.getBytes());</div><div class="line">                <span class="keyword">if</span> (bytes !=<span class="keyword">null</span>)&#123;</div><div class="line">                    Seckill seckill = schema.newMessage(); <span class="comment">//创建一个空对象</span></div><div class="line">                    ProtostuffIOUtil.mergeFrom(bytes,seckill,schema);<span class="comment">//反序列化</span></div><div class="line">                    <span class="keyword">return</span> seckill;</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 将数据放入redis缓存</div><div class="line">     * <span class="doctag">@param</span> seckill</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">putSeckill</span><span class="params">(Seckill seckill)</span></span>&#123;</div><div class="line">        <span class="comment">//set Object(Seckill) -&gt;序列化 -&gt; byte[]</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key =<span class="string">"seckill:"</span>+seckill.getSeckillId();</div><div class="line">                <span class="comment">//序列化，第三个参数是缓冲器</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = ProtostuffIOUtil.toByteArray(seckill,schema, LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE));</div><div class="line">                <span class="comment">//超时缓存</span></div><div class="line">                <span class="keyword">int</span> timeout = <span class="number">60</span>*<span class="number">60</span>; <span class="comment">//1个小时</span></div><div class="line">                String result = jedis.setex(key.getBytes(),timeout,bytes);</div><div class="line">                <span class="keyword">return</span> result; <span class="comment">//"OK"</span></div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>  <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的代码需要引入以下依赖包:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- redis 客户端  jedis--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- Protostuff序列化依赖--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -430,7 +435,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/位运算/" rel="tag">#位运算</a>
+            <a href="/tags/Redis/" rel="tag">#Redis</a>
+          
+            <a href="/tags/Protostuff/" rel="tag">#Protostuff</a>
+          
+            <a href="/tags/缓存/" rel="tag">#缓存</a>
           
         </div>
       
@@ -439,17 +448,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/20/Java线程安全的容器类/" rel="next" title="Java线程安全的容器类">
-                <i class="fa fa-chevron-left"></i> Java线程安全的容器类
+              <a href="/2016/10/05/查看Linux中TCP连接数/" rel="next" title="查看Linux中TCP连接数">
+                <i class="fa fa-chevron-left"></i> 查看Linux中TCP连接数
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/22/网络基础知识总结/" rel="prev" title="网络基础知识总结">
-                网络基础知识总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,10 +469,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/21/常用的位运算技巧/"
-     data-title="常用的位运算技巧"
+        <div class="ds-share flat" data-thread-key="2016/10/06/Redis-Protostuff实现缓存对象/"
+     data-title="Redis+Protostuff实现缓存对象"
      data-content=""
-     data-url="http://www.bluestroy.com/2016/09/21/常用的位运算技巧/">
+     data-url="http://www.bluestroy.com/2016/10/06/Redis-Protostuff实现缓存对象/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -494,8 +499,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/21/常用的位运算技巧/"
-           data-title="常用的位运算技巧" data-url="http://www.bluestroy.com/2016/09/21/常用的位运算技巧/">
+      <div class="ds-thread" data-thread-key="2016/10/06/Redis-Protostuff实现缓存对象/"
+           data-title="Redis+Protostuff实现缓存对象" data-url="http://www.bluestroy.com/2016/10/06/Redis-Protostuff实现缓存对象/">
       </div>
     
   </div>
@@ -636,7 +641,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的位运算例子："><span class="nav-number">1.</span> <span class="nav-text">常用的位运算例子：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#位运算实现加法操作"><span class="nav-number">1.1.</span> <span class="nav-text">位运算实现加法操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位运算实现减法操作"><span class="nav-number">1.2.</span> <span class="nav-text">位运算实现减法操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位运算实现乘法操作"><span class="nav-number">1.3.</span> <span class="nav-text">位运算实现乘法操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位运算实现除法操作"><span class="nav-number">1.4.</span> <span class="nav-text">位运算实现除法操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis简介"><span class="nav-number">1.</span> <span class="nav-text">Redis简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Redis优点"><span class="nav-number">1.1.</span> <span class="nav-text">Redis优点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protostuff简介"><span class="nav-number">2.</span> <span class="nav-text">Protostuff简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis和Protostuff整合实现缓存"><span class="nav-number">3.</span> <span class="nav-text">Redis和Protostuff整合实现缓存</span></a></li></ol></div>
             
           </div>
         </section>
