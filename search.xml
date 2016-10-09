@@ -4,7 +4,87 @@
   
     
     <entry>
-      <title><![CDATA[Redis+Protostuff实现缓存对象]]></title>
+      <title><![CDATA[找出数组中出现奇数次的数]]></title>
+      <url>http://www.bluestroy.com/2016/10/09/%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E5%A5%87%E6%95%B0%E6%AC%A1%E7%9A%84%E6%95%B0/</url>
+      <content type="html"><![CDATA[<p><strong>题目1：</strong><br>一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。</p>
+<p><strong>分析：</strong><br>两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  </p>
+<ul>
+<li>x^y^z=y^x^z</li>
+<li>x^0=x</li>
+<li>x^x=0<br>如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：<br>result=x^b^c^b^d^d^c=x  </li>
+</ul>
+<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> sum =<span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> a[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</div><div class="line">	sum^=a[i];</div><div class="line">	System.out.println(sum);</div><div class="line">&#125;</div><div class="line">System.out.println(sum);</div><div class="line"><span class="comment">// output: 5</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>题目2：</strong><br>一个组数，只有两个数只出现了一次，其他所有数都是成对出现的。怎么找出这两个数。</p>
+<p><strong>分析：</strong><br>所有数的异或结果中，在它的二进制表示中为0的位说明两个数在此位的二进制表示相同，同样的如果此位为1，说明两个数在此位的二进制不同。<br>方法： 只要我们把这组数分开，分为两组数（使这两个数在不同的组）再分别利用异或，就可以得那两个数。<br>找不同：异或按位操作是相同的为0 ，不同的为1，那么这两个数异或的结果转换成2进制时，低位出现第一个1是就可以区分他们了。</p>
+<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> b[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">int</span> res=<span class="number">0</span>;  <span class="comment">//总的异或结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j:b) &#123;</div><div class="line">    res^=j;</div><div class="line">&#125;</div><div class="line">String binaryResult = Integer.toBinaryString(res);</div><div class="line"><span class="comment">//index需要右移的位数</span></div><div class="line"><span class="keyword">int</span> index= binaryResult.length()-(binaryResult.lastIndexOf(<span class="string">"1"</span>)+<span class="number">1</span>);</div><div class="line"><span class="keyword">int</span> result1=<span class="number">0</span>,result2=<span class="number">0</span>;    <span class="comment">//两组分别异或的结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k: b)&#123;</div><div class="line">    <span class="keyword">if</span> (((k&gt;&gt;index)&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</div><div class="line">        result1^=k;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        result2^=k;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">System.out.println(<span class="string">"result1 = "</span> + result1);</div><div class="line">System.out.println(<span class="string">"result2 = "</span> + result2);</div></pre></td></tr></table></figure></p>
+<p><strong>题目延伸：</strong><br>一个组数，只有1个数只出现了奇数次次，其他所有数都是成对出现的。<br><em>只要出现了奇数次都可以用这种方法</em></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JDK1.8-1.5新特性总结]]></title>
+      <url>http://www.bluestroy.com/2016/10/09/JDK1-8-1-5%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h4 id="JDK1-8-新特性"><a href="#JDK1-8-新特性" class="headerlink" title="JDK1.8 新特性"></a>JDK1.8 新特性</h4><ol>
+<li><p><strong>接口的默认方法</strong><br>一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法</p>
+</li>
+<li><p><strong>lambda表达式</strong><br>由参数列表、箭头符号-&gt;和函数体组成</p>
+</li>
+<li><p>函数式接口<br>“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。</p>
+</li>
+<li><p><strong>方法和对象函数引用</strong><br>Java8 允许使用::关键字来传递方法或者构造函数的引用。</p>
+</li>
+<li><p>lambda直接访问外城的局部变量，无需声明final。</p>
+</li>
+<li><p>lambda可访问对象字段和静态变量</p>
+</li>
+<li><p>包java.time下包含了<strong>全新的时间日期API</strong>，与Joda-time相似而不同。</p>
+</li>
+</ol>
+<h4 id="JDK1-7-新特性"><a href="#JDK1-7-新特性" class="headerlink" title="JDK1.7 新特性"></a>JDK1.7 新特性</h4><ol>
+<li><p><strong>switch中可以使用字符串</strong></p>
+</li>
+<li><p><strong>泛型实例化自动推断</strong><br>List<string> tempList = new ArrayList&lt;&gt;();</string></p>
+</li>
+<li><p>语法上支持集合，并一定是数组<br>List<integer> digits =[1,2,3,4];</integer></p>
+</li>
+<li><p>新增取环境信息的方法<br>File System.getJavaIoTempDir()//IO临时文件夹<br>File System.getUserHomeDir()//当前用户目录<br>…</p>
+</li>
+<li><p>Boolean类型反转，空指针安全，参与位运算</p>
+</li>
+<li><p>两个Char间的equals<br>boolean Character.equalsIgnoreCase(char c1,char c2);</p>
+</li>
+<li><p>安全的加减乘除<br>int Math.safeAdd(int v1,int v2);</p>
+</li>
+<li><p>二进制字面量  </p>
+</li>
+<li>数字字面量可出现下划线</li>
+<li>一个catch多个异常，用“|”隔开  </li>
+<li>自定义自动关闭类<br>实现AutoCloseable接口  </li>
+<li>try-witch-resources，可自动关闭资源</li>
+</ol>
+<h4 id="JDK1-6-新特性"><a href="#JDK1-6-新特性" class="headerlink" title="JDK1.6 新特性"></a>JDK1.6 新特性</h4><ol>
+<li>Desktop类和SystemTray类 </li>
+<li>STAX</li>
+<li>轻量级Http Server API  </li>
+<li>用Console开发控制程序</li>
+<li>对脚本语言支持<br>…</li>
+</ol>
+<h4 id="JDK1-5-新特性"><a href="#JDK1-5-新特性" class="headerlink" title="JDK1.5 新特性"></a>JDK1.5 新特性</h4><ol>
+<li><strong>泛型</strong></li>
+<li><strong>foreach</strong></li>
+<li><strong>自动拆箱装箱</strong> </li>
+<li><strong>枚举</strong></li>
+<li>静态导入（Static import）</li>
+<li>元数据（Metadata）</li>
+<li><strong>线程池</strong></li>
+<li>Java Generics<br>创建一个明确只能存放某种特定类型对象的容器类实例。容器类型安全</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Redis+Protostuff 实现缓存对象]]></title>
       <url>http://www.bluestroy.com/2016/10/06/Redis-Protostuff%E5%AE%9E%E7%8E%B0%E7%BC%93%E5%AD%98%E5%AF%B9%E8%B1%A1/</url>
       <content type="html"><![CDATA[<h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。<br>与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  </p>
 <h4 id="Redis优点"><a href="#Redis优点" class="headerlink" title="Redis优点"></a>Redis优点</h4><ul>

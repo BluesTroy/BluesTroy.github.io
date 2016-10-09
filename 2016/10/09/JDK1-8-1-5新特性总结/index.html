@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -88,15 +88,37 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Troy的输出流">
-<meta property="og:url" content="http://www.bluestroy.com/archives/2016/09/page/2/index.html">
+<meta name="description" content="JDK1.8 新特性
+接口的默认方法一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法
+
+lambda表达式由参数列表、箭头符号-&amp;gt;和函数体组成
+
+函数式接口“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。
+
+方法和对象函数引用Java8 允许使用::关键字来传递方法或者构造函数的引用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK1.8-1.5新特性总结">
+<meta property="og:url" content="http://www.bluestroy.com/2016/10/09/JDK1-8-1-5新特性总结/index.html">
 <meta property="og:site_name" content="Troy的输出流">
-<meta property="og:description" content="Ordinary every day is a miracle.">
+<meta property="og:description" content="JDK1.8 新特性
+接口的默认方法一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法
+
+lambda表达式由参数列表、箭头符号-&amp;gt;和函数体组成
+
+函数式接口“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。
+
+方法和对象函数引用Java8 允许使用::关键字来传递方法或者构造函数的引用。">
+<meta property="og:updated_time" content="2016-10-09T03:50:55.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Troy的输出流">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="JDK1.8-1.5新特性总结">
+<meta name="twitter:description" content="JDK1.8 新特性
+接口的默认方法一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法
+
+lambda表达式由参数列表、箭头符号-&amp;gt;和函数体组成
+
+函数式接口“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。
+
+方法和对象函数引用Java8 允许使用::关键字来传递方法或者构造函数的引用。">
 
 
 
@@ -117,9 +139,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/archives/2016/09/page/2/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/10/09/JDK1-8-1-5新特性总结/"/>
 
-  <title> 归档 | Troy的输出流 </title>
+  <title> JDK1.8-1.5新特性总结 | Troy的输出流 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +172,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  page-archive  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,329 +293,255 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 26 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JDK1.8-1.5新特性总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-09T11:50:26+08:00" content="2016-10-09">
+              2016-10-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/09/JDK1-8-1-5新特性总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/JDK1-8-1-5新特性总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/09/JDK1-8-1-5新特性总结/" class="leancloud_visitors" data-flag-title="JDK1.8-1.5新特性总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h4 id="JDK1-8-新特性"><a href="#JDK1-8-新特性" class="headerlink" title="JDK1.8 新特性"></a>JDK1.8 新特性</h4><ol>
+<li><p><strong>接口的默认方法</strong><br>一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法</p>
+</li>
+<li><p><strong>lambda表达式</strong><br>由参数列表、箭头符号-&gt;和函数体组成</p>
+</li>
+<li><p>函数式接口<br>“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。</p>
+</li>
+<li><p><strong>方法和对象函数引用</strong><br>Java8 允许使用::关键字来传递方法或者构造函数的引用。</p>
+</li>
+<li><p>lambda直接访问外城的局部变量，无需声明final。</p>
+</li>
+<li><p>lambda可访问对象字段和静态变量</p>
+</li>
+<li><p>包java.time下包含了<strong>全新的时间日期API</strong>，与Joda-time相似而不同。</p>
+</li>
+</ol>
+<h4 id="JDK1-7-新特性"><a href="#JDK1-7-新特性" class="headerlink" title="JDK1.7 新特性"></a>JDK1.7 新特性</h4><ol>
+<li><p><strong>switch中可以使用字符串</strong></p>
+</li>
+<li><p><strong>泛型实例化自动推断</strong><br>List<string> tempList = new ArrayList&lt;&gt;();</string></p>
+</li>
+<li><p>语法上支持集合，并一定是数组<br>List<integer> digits =[1,2,3,4];</integer></p>
+</li>
+<li><p>新增取环境信息的方法<br>File System.getJavaIoTempDir()//IO临时文件夹<br>File System.getUserHomeDir()//当前用户目录<br>…</p>
+</li>
+<li><p>Boolean类型反转，空指针安全，参与位运算</p>
+</li>
+<li><p>两个Char间的equals<br>boolean Character.equalsIgnoreCase(char c1,char c2);</p>
+</li>
+<li><p>安全的加减乘除<br>int Math.safeAdd(int v1,int v2);</p>
+</li>
+<li><p>二进制字面量  </p>
+</li>
+<li>数字字面量可出现下划线</li>
+<li>一个catch多个异常，用“|”隔开  </li>
+<li>自定义自动关闭类<br>实现AutoCloseable接口  </li>
+<li>try-witch-resources，可自动关闭资源</li>
+</ol>
+<h4 id="JDK1-6-新特性"><a href="#JDK1-6-新特性" class="headerlink" title="JDK1.6 新特性"></a>JDK1.6 新特性</h4><ol>
+<li>Desktop类和SystemTray类 </li>
+<li>STAX</li>
+<li>轻量级Http Server API  </li>
+<li>用Console开发控制程序</li>
+<li>对脚本语言支持<br>…</li>
+</ol>
+<h4 id="JDK1-5-新特性"><a href="#JDK1-5-新特性" class="headerlink" title="JDK1.5 新特性"></a>JDK1.5 新特性</h4><ol>
+<li><strong>泛型</strong></li>
+<li><strong>foreach</strong></li>
+<li><strong>自动拆箱装箱</strong> </li>
+<li><strong>枚举</strong></li>
+<li>静态导入（Static import）</li>
+<li>元数据（Metadata）</li>
+<li><strong>线程池</strong></li>
+<li>Java Generics<br>创建一个明确只能存放某种特定类型对象的容器类实例。容器类型安全</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/15/各种排序算法/" itemprop="url">
-              
-                <span itemprop="name">各种排序算法总结</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/06/Redis-Protostuff实现缓存对象/" rel="next" title="Redis+Protostuff 实现缓存对象">
+                <i class="fa fa-chevron-left"></i> Redis+Protostuff 实现缓存对象
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-15T20:18:13+08:00"
-              content="2016-09-15" >
-          09-15
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/09/找出数组中出现奇数次的数/" rel="prev" title="找出数组中出现奇数次的数">
+                找出数组中出现奇数次的数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/10/09/JDK1-8-1-5新特性总结/"
+     data-title="JDK1.8-1.5新特性总结"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/10/09/JDK1-8-1-5新特性总结/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/15/关于数据结构的小知识/" itemprop="url">
-              
-                <span itemprop="name">关于数据结构的小知识</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-15T20:15:02+08:00"
-              content="2016-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/12/Linux常用命令/" itemprop="url">
-              
-                <span itemprop="name">Linux常用命令</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T10:37:13+08:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/12/Linux中mysql数据库定时备份/" itemprop="url">
-              
-                <span itemprop="name">Linux中mysql数据库定时备份</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T10:33:26+08:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/" itemprop="url">
-              
-                <span itemprop="name">Java实现通过smtp服务器验证邮箱的真实有效性</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T20:01:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" itemprop="url">
-              
-                <span itemprop="name">Java实现将选择题题库按照字母顺序重新排列</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T19:09:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/树莓派装系统-远程登录/" itemprop="url">
-              
-                <span itemprop="name">树莓派装系统+远程登录</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T17:30:02+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Linux Makefile文件编译错误——make-Nothing to be done for 'all'/" itemprop="url">
-              
-                <span itemprop="name">Linux Makefile文件编译错误——make-Nothing to be done for 'all'</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T17:22:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2016/09/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2016/09/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -601,6 +549,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/09/JDK1-8-1-5新特性总结/"
+           data-title="JDK1.8-1.5新特性总结" data-url="http://www.bluestroy.com/2016/10/09/JDK1-8-1-5新特性总结/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -620,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -722,6 +687,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8-新特性"><span class="nav-number">1.</span> <span class="nav-text">JDK1.8 新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-7-新特性"><span class="nav-number">2.</span> <span class="nav-text">JDK1.7 新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-6-新特性"><span class="nav-number">3.</span> <span class="nav-text">JDK1.6 新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-5-新特性"><span class="nav-number">4.</span> <span class="nav-text">JDK1.5 新特性</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -817,11 +793,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

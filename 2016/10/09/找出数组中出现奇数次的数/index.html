@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,异或," />
 
 
 
@@ -88,15 +88,37 @@
 
 
 
-<meta name="description" content="Ordinary every day is a miracle.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Troy的输出流">
-<meta property="og:url" content="http://www.bluestroy.com/archives/2016/09/page/2/index.html">
+<meta name="description" content="题目1：一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。
+分析：两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  
+
+x^y^z=y^x^z
+x^0=x
+x^x=0如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：result=x^b^c^b^d^d^c=x  
+
+代码实现：123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="找出数组中出现奇数次的数">
+<meta property="og:url" content="http://www.bluestroy.com/2016/10/09/找出数组中出现奇数次的数/index.html">
 <meta property="og:site_name" content="Troy的输出流">
-<meta property="og:description" content="Ordinary every day is a miracle.">
+<meta property="og:description" content="题目1：一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。
+分析：两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  
+
+x^y^z=y^x^z
+x^0=x
+x^x=0如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：result=x^b^c^b^d^d^c=x  
+
+代码实现：123">
+<meta property="og:updated_time" content="2016-10-09T10:10:00.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Troy的输出流">
-<meta name="twitter:description" content="Ordinary every day is a miracle.">
+<meta name="twitter:title" content="找出数组中出现奇数次的数">
+<meta name="twitter:description" content="题目1：一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。
+分析：两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  
+
+x^y^z=y^x^z
+x^0=x
+x^x=0如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：result=x^b^c^b^d^d^c=x  
+
+代码实现：123">
 
 
 
@@ -117,9 +139,9 @@
 
 
 
-  <link rel="canonical" href="http://www.bluestroy.com/archives/2016/09/page/2/"/>
+  <link rel="canonical" href="http://www.bluestroy.com/2016/10/09/找出数组中出现奇数次的数/"/>
 
-  <title> 归档 | Troy的输出流 </title>
+  <title> 找出数组中出现奇数次的数 | Troy的输出流 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +172,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  page-archive  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,329 +293,211 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 26 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                找出数组中出现奇数次的数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-09T14:50:15+08:00" content="2016-10-09">
+              2016-10-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/09/找出数组中出现奇数次的数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/找出数组中出现奇数次的数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/09/找出数组中出现奇数次的数/" class="leancloud_visitors" data-flag-title="找出数组中出现奇数次的数">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p><strong>题目1：</strong><br>一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。</p>
+<p><strong>分析：</strong><br>两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  </p>
+<ul>
+<li>x^y^z=y^x^z</li>
+<li>x^0=x</li>
+<li>x^x=0<br>如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：<br>result=x^b^c^b^d^d^c=x  </li>
+</ul>
+<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> sum =<span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> a[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</div><div class="line">	sum^=a[i];</div><div class="line">	System.out.println(sum);</div><div class="line">&#125;</div><div class="line">System.out.println(sum);</div><div class="line"><span class="comment">// output: 5</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>题目2：</strong><br>一个组数，只有两个数只出现了一次，其他所有数都是成对出现的。怎么找出这两个数。</p>
+<p><strong>分析：</strong><br>所有数的异或结果中，在它的二进制表示中为0的位说明两个数在此位的二进制表示相同，同样的如果此位为1，说明两个数在此位的二进制不同。<br>方法： 只要我们把这组数分开，分为两组数（使这两个数在不同的组）再分别利用异或，就可以得那两个数。<br>找不同：异或按位操作是相同的为0 ，不同的为1，那么这两个数异或的结果转换成2进制时，低位出现第一个1是就可以区分他们了。</p>
+<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> b[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">int</span> res=<span class="number">0</span>;  <span class="comment">//总的异或结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j:b) &#123;</div><div class="line">    res^=j;</div><div class="line">&#125;</div><div class="line">String binaryResult = Integer.toBinaryString(res);</div><div class="line"><span class="comment">//index需要右移的位数</span></div><div class="line"><span class="keyword">int</span> index= binaryResult.length()-(binaryResult.lastIndexOf(<span class="string">"1"</span>)+<span class="number">1</span>);</div><div class="line"><span class="keyword">int</span> result1=<span class="number">0</span>,result2=<span class="number">0</span>;    <span class="comment">//两组分别异或的结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k: b)&#123;</div><div class="line">    <span class="keyword">if</span> (((k&gt;&gt;index)&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</div><div class="line">        result1^=k;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        result2^=k;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">System.out.println(<span class="string">"result1 = "</span> + result1);</div><div class="line">System.out.println(<span class="string">"result2 = "</span> + result2);</div></pre></td></tr></table></figure></p>
+<p><strong>题目延伸：</strong><br>一个组数，只有1个数只出现了奇数次次，其他所有数都是成对出现的。<br><em>只要出现了奇数次都可以用这种方法</em></p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obmxnha1c.bkt.clouddn.com/wechat-reward-image.jpg" alt="Blues Troy WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obmxnha1c.bkt.clouddn.com/alipay-reward-image.jpg" alt="Blues Troy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+          
+            <a href="/tags/异或/" rel="tag">#异或</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/15/各种排序算法/" itemprop="url">
-              
-                <span itemprop="name">各种排序算法总结</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/09/JDK1-8-1-5新特性总结/" rel="next" title="JDK1.8-1.5新特性总结">
+                <i class="fa fa-chevron-left"></i> JDK1.8-1.5新特性总结
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-15T20:18:13+08:00"
-              content="2016-09-15" >
-          09-15
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/10/09/找出数组中出现奇数次的数/"
+     data-title="找出数组中出现奇数次的数"
+     data-content=""
+     data-url="http://www.bluestroy.com/2016/10/09/找出数组中出现奇数次的数/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/15/关于数据结构的小知识/" itemprop="url">
-              
-                <span itemprop="name">关于数据结构的小知识</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-15T20:15:02+08:00"
-              content="2016-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/12/Linux常用命令/" itemprop="url">
-              
-                <span itemprop="name">Linux常用命令</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T10:37:13+08:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/12/Linux中mysql数据库定时备份/" itemprop="url">
-              
-                <span itemprop="name">Linux中mysql数据库定时备份</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T10:33:26+08:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/" itemprop="url">
-              
-                <span itemprop="name">Java实现通过smtp服务器验证邮箱的真实有效性</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T20:01:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/" itemprop="url">
-              
-                <span itemprop="name">Java实现将选择题题库按照字母顺序重新排列</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T19:09:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/树莓派装系统-远程登录/" itemprop="url">
-              
-                <span itemprop="name">树莓派装系统+远程登录</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T17:30:02+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/10/Linux Makefile文件编译错误——make-Nothing to be done for 'all'/" itemprop="url">
-              
-                <span itemprop="name">Linux Makefile文件编译错误——make-Nothing to be done for 'all'</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-10T17:22:12+08:00"
-              content="2016-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2016/09/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2016/09/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -601,6 +505,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/09/找出数组中出现奇数次的数/"
+           data-title="找出数组中出现奇数次的数" data-url="http://www.bluestroy.com/2016/10/09/找出数组中出现奇数次的数/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -620,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://obmxnha1c.bkt.clouddn.com/avatar-boy.jpg"
@@ -722,6 +643,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -817,11 +749,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
