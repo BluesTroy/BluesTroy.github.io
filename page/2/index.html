@@ -295,6 +295,275 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/24/字符串反转的N种方法/" itemprop="url">
+                  字符串反转的N种方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-24T09:21:53+08:00" content="2016-09-24">
+              2016-09-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/24/字符串反转的N种方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/字符串反转的N种方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/24/字符串反转的N种方法/" class="leancloud_visitors" data-flag-title="字符串反转的N种方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bluestroy.string;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Stack;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Troy on 2016/9/24.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 字符串反转的n种方法</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReverse</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse1</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuilder(s).reverse().toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> j= s.length()-<span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (;i&lt;j;i++,j--)&#123;</div><div class="line">            arr[i] = (<span class="keyword">char</span>)(arr[i]^arr[j]);</div><div class="line">            arr[j]=(<span class="keyword">char</span>)(arr[j]^arr[i]);</div><div class="line">            arr[i]=(<span class="keyword">char</span>)(arr[i]^arr[j]);</div><div class="line">        &#125;</div><div class="line">        System.out.println(arr);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(arr);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse3</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> length = s.length();</div><div class="line">        <span class="keyword">if</span>(length&lt;=<span class="number">1</span>) <span class="keyword">return</span> s;</div><div class="line">        String left = s.substring(<span class="number">0</span>,length/<span class="number">2</span>);</div><div class="line">        String right = s.substring(length/<span class="number">2</span>,length);</div><div class="line">        <span class="keyword">return</span> reverse3(right)+reverse1(left);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse4</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : arr) &#123;</div><div class="line">            stack.push(c);</div><div class="line">        &#125;</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="comment">/* error!</span></div><div class="line">        Iterator it = stack.iterator();</div><div class="line">        while (it.hasNext()) &#123;</div><div class="line">            sb.append(it.next());</div><div class="line">            System.out.println(sb.toString());</div><div class="line">        &#125;*/</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</div><div class="line">            sb.append(stack.pop());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sb.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse5</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=arr.length-<span class="number">1</span>; i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">            sb.append(arr[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sb.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse6</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        String str = <span class="string">""</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;s.length();i++)&#123;</div><div class="line">            str = s.charAt(i)+str;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        String str = <span class="string">"hello world"</span>;</div><div class="line">        System.out.println(reverse1(str));</div><div class="line">        System.out.println(reverse2(str));</div><div class="line">        System.out.println(reverse3(str));</div><div class="line">        System.out.println(reverse4(str));</div><div class="line">        System.out.println(reverse5(str));</div><div class="line">        System.out.println(reverse6(str));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/22/数据结构面试题之字符串系列/" itemprop="url">
+                  数据结构面试题之字符串系列
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T21:01:08+08:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/数据结构面试题之字符串系列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/数据结构面试题之字符串系列/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/22/数据结构面试题之字符串系列/" class="leancloud_visitors" data-flag-title="数据结构面试题之字符串系列">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="求字符串最后一个单词的长度"><a href="#求字符串最后一个单词的长度" class="headerlink" title="求字符串最后一个单词的长度"></a>求字符串最后一个单词的长度</h3><p>下面两种方法一看就懂：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 求一个字符串的最后一个单词的长度</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(s==<span class="keyword">null</span> &amp;&amp; s.length()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> i=s.length()-<span class="number">1</span>;</div><div class="line">    <span class="comment">//寻找第一个不为‘ ’的字符</span></div><div class="line">    <span class="keyword">for</span> (;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">        <span class="keyword">if</span> (s.charAt(i)==<span class="string">' '</span>);</div><div class="line">        <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//确定最后一个单词</span></div><div class="line">    <span class="keyword">for</span> (;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">        <span class="keyword">if</span> (s.charAt(i) ==<span class="string">' '</span>)<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">else</span> count++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 求一个字符串的最后一个单词的长度</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLastWord2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    String str[] = s.split(<span class="string">"\\s"</span>);</div><div class="line">    <span class="keyword">return</span> str[str.length-<span class="number">1</span>].length();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="同分异构体（Anagram）"><a href="#同分异构体（Anagram）" class="headerlink" title="同分异构体（Anagram）"></a>同分异构体（Anagram）</h3><p>给定字符串s和字符串t，判断t是否为s的Anagram。  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断两个字符串是否是同分异构体</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@param</span> t</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s,String t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s ==<span class="keyword">null</span> &amp;&amp; t!=<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (s.length()!=t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">char</span> [] sArray = s.toCharArray();</div><div class="line">        <span class="keyword">char</span> [] tArray = t.toCharArray();</div><div class="line">        Arrays.sort(sArray);</div><div class="line">        Arrays.sort(tArray);</div><div class="line">        <span class="keyword">return</span> Arrays.equals(sArray,tArray);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断两个字符串是否是同分异构体法2，此法只考虑小写字母</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@param</span> t</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram2</span><span class="params">(String s, String t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s ==<span class="keyword">null</span> &amp;&amp; t!=<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (s.length() != t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="comment">//此方法只考虑了只有小写字母，故设数组长度为26</span></div><div class="line">        <span class="keyword">int</span> twentySix = <span class="number">26</span>;</div><div class="line">        <span class="keyword">int</span> n = s.length();</div><div class="line">        <span class="keyword">int</span>[] sTable = <span class="keyword">new</span> <span class="keyword">int</span>[twentySix];</div><div class="line">        <span class="keyword">int</span>[] tTable = <span class="keyword">new</span> <span class="keyword">int</span>[twentySix];</div><div class="line">        <span class="comment">//用hash表的思想统计每个字母出现的次数</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">            sTable[s.charAt(i)-<span class="string">'a'</span>]++;</div><div class="line">            tTable[s.charAt(i)-<span class="string">'a'</span>]++;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//如果每个字母出现的次数都相同，返回true，否则返回false。</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;twentySix;i++)</div><div class="line">            <span class="keyword">if</span> (sTable[i]!=tTable[i])</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="反转单词顺序"><a href="#反转单词顺序" class="headerlink" title="反转单词顺序"></a>反转单词顺序</h3><p>输入一个英文句子，反转句子中单词的顺序，要求单词内部不变。<br>假设只含字母、空格，首位没有空格。<br><strong>思路：</strong> 先反转每一个单词，在反转整个句子。<br><img src="http://obmxnha1c.bkt.clouddn.com/3ETFm" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 反转句子中单词的顺序，要求单词内部不变。</div><div class="line"> * <span class="doctag">@param</span> s 要反转的字符数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseWords</span><span class="params">(<span class="keyword">char</span>[] s)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; s.length ==<span class="number">0</span>) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">int</span> n = s.length;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="keyword">while</span> (i&lt;n)&#123;</div><div class="line">        j=i;</div><div class="line">        <span class="comment">//找到要反转的单词的第一个字母下标i和最后一个字母下标j</span></div><div class="line">        <span class="keyword">while</span> (j&lt;n)&#123;</div><div class="line">            <span class="keyword">if</span> (s[j]==<span class="string">' '</span>) <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">else</span> j++;</div><div class="line">        &#125;</div><div class="line">        reverse(s,i,j-<span class="number">1</span>);</div><div class="line">        <span class="comment">//跳过空格</span></div><div class="line">        <span class="keyword">while</span> (j&lt;n &amp;&amp; s[j]==<span class="string">' '</span>) j++;</div><div class="line">        <span class="comment">//继续进行下一个单词</span></div><div class="line">        i=j;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//最后反转整个句子</span></div><div class="line">    reverse(s,<span class="number">0</span>,n-<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 调用String api实现反转句子中单词的顺序</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reverseWords2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    String [] strArray = s.split(<span class="string">"\\s"</span>);</div><div class="line">    StringBuilder result= <span class="keyword">new</span> StringBuilder();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = strArray.length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</div><div class="line">        result.append(strArray[i]+<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">    result.append(strArray[<span class="number">0</span>]);</div><div class="line">    <span class="keyword">return</span> result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="数一数读一读"><a href="#数一数读一读" class="headerlink" title="数一数读一读"></a>数一数读一读</h3><blockquote>
+<p>“1211”，有1个1、1个2、2个1，所以下一个字符串为“111221”；<br>“111221”，有3个1、2个2、1个1，所以下一个字符串为“312211”。<br>统计每个数字出现的次数，并把本次得到的结果字符串作为下一次的当前字符串。<br>如此循环往复，那么执行n次之后是什么？</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	        <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">	        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">	        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">"11"</span>;</div><div class="line">	        &#125;<span class="keyword">else</span>&#123;</div><div class="line">	        	String str=<span class="string">"11"</span>;</div><div class="line">	        	StringBuilder sb=<span class="keyword">new</span> StringBuilder();</div><div class="line">	        	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</div><div class="line">	        		<span class="keyword">char</span> temp=str.charAt(<span class="number">0</span>);</div><div class="line">	        		<span class="keyword">int</span> count=<span class="number">1</span>;</div><div class="line">	        		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;str.length();j++)&#123;</div><div class="line">	        			<span class="keyword">if</span>(str.charAt(j)==temp)&#123;</div><div class="line">	        				count++;</div><div class="line">	        			&#125;<span class="keyword">else</span>&#123;</div><div class="line">	        				sb.append(count).append(temp);</div><div class="line">	        				count=<span class="number">1</span>;</div><div class="line">	        				temp=str.charAt(j);</div><div class="line">	        			&#125;</div><div class="line">	        		&#125;</div><div class="line">	        		sb.append(count).append(temp);</div><div class="line">	        		str=sb.toString();</div><div class="line">	        		sb.delete(<span class="number">0</span>, sb.length());</div><div class="line">	        	&#125;</div><div class="line">	        	<span class="keyword">return</span> str;</div><div class="line">	        &#125;</div></pre></td></tr></table></figure>
+<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>暴力算法(Brute Force)<br>自己实现String类的index算法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(needle.length()==<span class="number">0</span>)&#123;</div><div class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> m=haystack.length();</div><div class="line">        <span class="keyword">int</span> n=needle.length();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</div><div class="line">        	<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n&amp;&amp;i+j&lt;m;j++)&#123;</div><div class="line">        		<span class="keyword">if</span>(haystack.charAt(i+j)!=needle.charAt(j))&#123;</div><div class="line">        			<span class="keyword">break</span>;</div><div class="line">        		&#125;<span class="keyword">else</span>&#123;</div><div class="line">        			count++;</div><div class="line">        		&#125;</div><div class="line">        	&#125;</div><div class="line">        	<span class="keyword">if</span>(count==n)&#123;</div><div class="line">        		<span class="keyword">return</span> i;</div><div class="line">        	&#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/slr4Z" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/bywsd" alt="Untitled Image"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * http://wiki.jikexueyuan.com/project/kmp-algorithm/define.html</div><div class="line"> * 仔细研读、多举例、多调试!</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">_028KMP</span> </span>&#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 时间复杂度O(M+N)</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack,String needle)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(needle.length()== <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> kmpSearch(haystack,needle);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 *求next数组，时间复杂度O(N)，准确来说，不超过2N,N表示模式串p的长度</div><div class="line">	 *k表示前一个指针，j表示后一个指针</div><div class="line">	 2种情况：</div><div class="line">	 *情况1：如果k越界，或者p[k]==p[j]，直接赋值</div><div class="line">	 *情况2：否则，将k往前移动</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] getNext(String p) &#123;</div><div class="line">		<span class="keyword">int</span> n=p.length();</div><div class="line">		<span class="keyword">int</span>[] next=<span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		next[<span class="number">0</span>]=-<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> k=-<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(j&lt;n-<span class="number">1</span>)&#123;</div><div class="line">			<span class="comment">//情况1</span></div><div class="line">			<span class="keyword">if</span>(k==-<span class="number">1</span>||p.charAt(k)==p.charAt(j))&#123;</div><div class="line">				k++;</div><div class="line">				j++;</div><div class="line">				<span class="comment">/*假设p="ABCDABD",k=1,j=5</span></div><div class="line">				 也就是p的第一个'B'与第二个'B'相等的情况,那么第二个'D'位置的next值就是2</div><div class="line">				即:next[6]=2</div><div class="line">				 */</div><div class="line">				<span class="comment">/*if(p.equals("ABCDABD")&amp;&amp;k==2&amp;&amp;j==6)&#123;</span></div><div class="line">					System.out.println("next"+"["+j+"]="+k);</div><div class="line">				&#125;*/</div><div class="line">				next[j]=k;</div><div class="line">			&#125; <span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">//情况2</span></div><div class="line">				<span class="comment">/*如果不匹配，由于next[k]&lt;k,将k往前移动,检测k位置之前的与j位置的字符是否相等</span></div><div class="line">				 假设p="AAAAABCD",k=4,j=5</div><div class="line">				 */</div><div class="line">				<span class="comment">/*if(p.equals("AAAAABCD"))&#123;</span></div><div class="line">					System.out.println("k="+k+",j="+j+",next["+k+"]="+next[k]);</div><div class="line">				&#125;*/</div><div class="line">				k=next[k];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> next;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 *KMP算法,时间复杂度O(M)，M表示文本串s的长度</div><div class="line">	 *2种情况：</div><div class="line">	 *情况1：如果越界，或者s[i]==p[j]，则i与j都往后移动</div><div class="line">	 *情况2：否则，将j移动到next[j]位置</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kmpSearch</span><span class="params">(String s,String p)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> m=s.length();</div><div class="line">		<span class="keyword">int</span> n=p.length();</div><div class="line">		<span class="keyword">int</span>[] next=getNext(p);</div><div class="line">		<span class="keyword">while</span>(i&lt;m&amp;&amp;j&lt;n)&#123;</div><div class="line">			<span class="comment">//情况1</span></div><div class="line">			<span class="keyword">if</span>(j==-<span class="number">1</span>||s.charAt(i)==p.charAt(j))&#123;</div><div class="line">				i++;</div><div class="line">				j++;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">//情况2</span></div><div class="line">				<span class="comment">/*"偷懒"的理解，只考虑“前缀与后缀没有重合区间”的简单情况</span></div><div class="line">				假设:s="BBC ABCDAB ABCDABCDABDE";p="ABCDABD"</div><div class="line">				1、s的第二个“AB”与p的第二个"AB"相等</div><div class="line">				2、p的第一个"AB"与p的第二个"AB"相等</div><div class="line">				所以必然有:s的第二个"AB"与p的第一个"AB"相等,故而，下一步，可以直接检测s的第二个空格与p的‘C’字符是否匹配</div><div class="line">				如果还不理解，看这句话：y=z,x=z --&gt; y=x*/</div><div class="line">				<span class="comment">/*if(s.equals("BBC ABCDAB ABCDABCDABDE")&amp;&amp;p.equals("ABCDABD")&amp;&amp;i==10&amp;&amp;j==6)&#123;</span></div><div class="line">					System.out.println("下一步比较s的"+i+"位置的字符与p的"+next[j]+"位置的字符是否相等");</div><div class="line">				&#125;*/</div><div class="line">				j=next[j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(j==n)&#123;</div><div class="line">			<span class="keyword">return</span> i-n;</div><div class="line">		&#125; <span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">return</span>-<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">		String s=<span class="string">"AABAABAC AAAAABCD CD"</span>;</div><div class="line">		String p=<span class="string">"AAAAABCD"</span>;</div><div class="line">		System.out.println(strStr(s, p));</div><div class="line">		System.out.println(s.indexOf(p));</div><div class="line">		s=<span class="string">"BBC ABCDAB ABCDABCDABDE"</span>;</div><div class="line">		p=<span class="string">"ABCDABD"</span>;</div><div class="line">		System.out.println(strStr(s, p));</div><div class="line">		System.out.println(s.indexOf(p));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/22/网络基础知识总结/" itemprop="url">
                   网络基础知识总结
                 </a>
@@ -805,8 +1074,11 @@
 <li>synchronized  </li>
 <li>volatile  </li>
 </ol>
-<p>synchronized可保证原子性，但volatile不能保证原子性。  </p>
+<p>synchronized可保证原子性，但volatile不能保证原子性。   </p>
+<p><em>Volatile 变量具有 synchronized 的可见性特性，但是<strong>不具备原子特性</strong>。这就是说线程能够自动发现 volatile 变量的最新值。只是使用volatile关键字一般情况下不能保证同步，即原子性。</em>强制每次都直接读取内存，组织编译器重排序，确保volatile类型的值一旦被写入缓存必定会被立即更新到主存。</p>
 <h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><p>//reentrantLock<br>//final也可以保证内存可见性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</div><div class="line">lock.lock();</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">    	number++;</div><div class="line">    &#125;<span class="keyword">finally</span>&#123;</div><div class="line">    	lock.unlock();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><em>慕课网上非常好的视频教程<a href="http://www.imooc.com/learn/352" target="_blank" rel="external">细说Java多线程值内存可见性</a></em></p>
 
           
         
@@ -1600,331 +1872,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/12/Linux常用命令/" itemprop="url">
-                  Linux常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-12T10:37:13+08:00" content="2016-09-12">
-              2016-09-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/12/Linux常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Linux常用命令/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/12/Linux常用命令/" class="leancloud_visitors" data-flag-title="Linux常用命令">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="一、crontab简介"><a href="#一、crontab简介" class="headerlink" title="一、crontab简介"></a>一、crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。 </p>
-<h5 id="1、crontab调度文件规则"><a href="#1、crontab调度文件规则" class="headerlink" title="1、crontab调度文件规则"></a>1、crontab调度文件规则</h5><p>命令格式：<code>* * * * * command</code><br><strong>*</strong> 依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
-<ul>
-<li>分钟——每小时的第几分钟执行，范围0~59  </li>
-<li>小时——每日的第几个小时执行，范围0~23</li>
-<li>日——每月的第几天执行，范围1~31  </li>
-<li>月——每年你的第几月执行 ，范围1~12  </li>
-<li>星期——每周的第几天执行，范围0~6  </li>
-</ul>
-<h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
-<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
-<p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
-<p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
-<p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
-<h5 id="3、其他"><a href="#3、其他" class="headerlink" title="3、其他"></a>3、其他</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">crontab -r <span class="comment">#停止（即删除）所有任务（慎用）</span></div><div class="line">crontab <span class="_">-l</span> <span class="comment">#列出所有任务</span></div></pre></td></tr></table></figure>
-<h3 id="二、文件中-atime-ctime-mtime简介"><a href="#二、文件中-atime-ctime-mtime简介" class="headerlink" title="二、文件中 -atime, -ctime, -mtime简介"></a>二、文件中 -atime, -ctime, -mtime简介</h3><ul>
-<li>atime(Access time)，访问时间，如读取文件</li>
-<li>ctime(Change time), 状态时间，如修改权限、属性、所有者</li>
-<li>mtime(Modified time), 修改时间，文件内容修改的时间<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">find . -mtime +3 <span class="comment">#3天以前修改的文件(&gt;3)  </span></div><div class="line">find . -mtime -3 <span class="comment">#3天之内修改的文件(&lt;3)</span></div><div class="line">find . -mtime 1 <span class="comment">#距离当前时间24~24*2小时内修改的文件(即当前时间的“昨天内”）</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="三、-amin-cmin-mmin简介"><a href="#三、-amin-cmin-mmin简介" class="headerlink" title="三、-amin, -cmin, -mmin简介"></a>三、-amin, -cmin, -mmin简介</h3><p>与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</p>
-<h3 id="四、history命令"><a href="#四、history命令" class="headerlink" title="四、history命令"></a>四、history命令</h3><p>显示最近使用的5个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">history</span> 5</div></pre></td></tr></table></figure></p>
-<p>执行历史编号为5的命令那个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !5</div></pre></td></tr></table></figure></p>
-<p>执行最后一次以ls结尾的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !ls</div></pre></td></tr></table></figure></p>
-<h3 id="五、为bash脚本设置别名"><a href="#五、为bash脚本设置别名" class="headerlink" title="五、为bash脚本设置别名"></a>五、为bash脚本设置别名</h3><p>修改<code>~/.bashrc</code>文件，该文件是登录用户的启动文件，能用作用户的全局设置。<br>假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件<code>deploy.sh</code>，则在<code>~./bashrc</code>文件中添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div></pre></td></tr></table></figure></p>
-<p>那么在命令行中直接执行<code>go</code>命令即可执行<code>deploy.sh</code>文件中的命令。  </p>
-<p>注意：编辑完后执行<code>source ./bashrc</code>命令使其生效，若不能生效则重新登录生效。  </p>
-<h3 id="六、usermod将用户添加到用户组"><a href="#六、usermod将用户添加到用户组" class="headerlink" title="六、usermod将用户添加到用户组"></a>六、usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
-<p>-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </p>
-<h3 id="七、head-和tail"><a href="#七、head-和tail" class="headerlink" title="七、head 和tail"></a>七、head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
-<h3 id="八、Linux层级目录结构"><a href="#八、Linux层级目录结构" class="headerlink" title="八、Linux层级目录结构"></a>八、Linux层级目录结构</h3><ul>
-<li>/  根目录</li>
-</ul>
-<ol>
-<li>/root存放root用户的相关文件</li>
-<li>/home 存放普通用户的相关文件</li>
-<li>/bin 存放常用命令的文件 。系统的一些指令</li>
-<li>/sbin 具有一定权限才可以使用的命令。超级用户指令、系统管理指令</li>
-<li>/mnt 默认挂在光驱和软驱的目录</li>
-<li>/boot 存放引导相关的文件</li>
-<li>/etc 存放配置相关的文件</li>
-<li>/var 存放经常变化的文件</li>
-<li>/usr 安装程序的默认安装文件夹。</li>
-</ol>
-<ul>
-<li>/usr/bin  后期安装的一些软件的运行脚本</li>
-<li>/usr/sbin 超级用户的一些管理程序</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/12/Linux中mysql数据库定时备份/" itemprop="url">
-                  Linux中mysql数据库定时备份
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-12T10:33:26+08:00" content="2016-09-12">
-              2016-09-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/12/Linux中mysql数据库定时备份/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Linux中mysql数据库定时备份/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/12/Linux中mysql数据库定时备份/" class="leancloud_visitors" data-flag-title="Linux中mysql数据库定时备份">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"><a href="#Linux中，为mysql数据库备份，并删除一个月以前的备份数据" class="headerlink" title="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"></a>Linux中，为mysql数据库备份，并删除一个月以前的备份数据</h4><p>mysql_backup.sh备份脚本命令如下：</p>
-<pre><code class="bash"><span class="meta">#! /bin/bash</span>
-<span class="comment"># 按照时间戳来命名备份数据，便于管理</span>
-DATE=`date+%Y-%m-%d-%H:%M:%S`  
-mysqldump -u root -p123456 mysqldbName &gt; /mysql_backup/backdata/mysqldbName_<span class="variable">${DATE}</span>.bak  
-<span class="comment"># 删除30天以前的备份数据</span>
-find /mysql_backup/backdata/ -atime +30 | xargs rm
-</code></pre>
-<p>其中root是mysql用户，123456是用户密码，msyqldbName是数据库名字，该备份命令会将mysqldbName数据库的数据全部备份到/mysql<em>backup/backdata目录下，并以mysqldbName\</em>加上时间戳的形式命名。 </p>
-<h4 id="crontab定时备份任务"><a href="#crontab定时备份任务" class="headerlink" title="crontab定时备份任务"></a>crontab定时备份任务</h4><p>将mysql_backup.sh脚本文件的执行加入到crontab定时任务中，编辑crontab定时任务:</p>
-<pre><code class="bash">$ crontab <span class="_">-e</span>
-</code></pre>
-<p>将一下内容追加到crontab文件中：</p>
-<pre><code class="bash">0 12 * * * /mysql_backup/mysql_backup.sh
-0 0 * * * /mysql_backup/mysql_backup.sh
-</code></pre>
-<p>第一行内容表示每天中午12点执行mysql_backup.sh中的备份命令，第二行表示每天凌晨执行备份命令。你可以在任意时候执行备份命令，只需要学习一下crontab的 <em> </em> <em> </em> * 分别代表什么意思就可以。  </p>
-<h4 id="mysql数据库恢复备份数据"><a href="#mysql数据库恢复备份数据" class="headerlink" title="mysql数据库恢复备份数据"></a>mysql数据库恢复备份数据</h4><pre><code class="bash">$ mysql -u root -p123456 mysqldbName &lt; /mysql_backup/backdata/mysqldbName_xxxxxx.bak
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1970,7 +1917,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1978,7 +1925,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1987,7 +1934,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

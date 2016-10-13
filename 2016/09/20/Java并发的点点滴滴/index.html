@@ -101,7 +101,7 @@
 互斥： 关键数据在同一时间只能被一个线程访问。同步： 一种通信机制。object方法： wait()/notify()/notifyAll();
 可见性： 一个线程对共享变量值的修改，能够及时地被其他线程看到">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/tempClipboardImage.png">
-<meta property="og:updated_time" content="2016-09-20T02:08:57.969Z">
+<meta property="og:updated_time" content="2016-10-13T05:04:21.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java并发的点点滴滴">
 <meta name="twitter:description" content="争用条件： 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  
@@ -394,8 +394,11 @@
 <li>synchronized  </li>
 <li>volatile  </li>
 </ol>
-<p>synchronized可保证原子性，但volatile不能保证原子性。  </p>
+<p>synchronized可保证原子性，但volatile不能保证原子性。   </p>
+<p><em>Volatile 变量具有 synchronized 的可见性特性，但是<strong>不具备原子特性</strong>。这就是说线程能够自动发现 volatile 变量的最新值。只是使用volatile关键字一般情况下不能保证同步，即原子性。</em>强制每次都直接读取内存，组织编译器重排序，确保volatile类型的值一旦被写入缓存必定会被立即更新到主存。</p>
 <h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><p>//reentrantLock<br>//final也可以保证内存可见性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</div><div class="line">lock.lock();</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">    	number++;</div><div class="line">    &#125;<span class="keyword">finally</span>&#123;</div><div class="line">    	lock.unlock();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p><em>慕课网上非常好的视频教程<a href="http://www.imooc.com/learn/352" target="_blank" rel="external">细说Java多线程值内存可见性</a></em></p>
 
       
     </div>
@@ -549,7 +552,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -557,7 +560,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -566,7 +569,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
