@@ -90,34 +90,22 @@
 
 <meta name="description" content="转自Jeff的自留地：java线程安全的容器类  
 
-Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容
-1. Map
-在Map类中，提供两种线程安全容器。
-java.util.Hashtable  
-Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtab">
+Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java线程安全的容器类">
 <meta property="og:url" content="http://www.bluestroy.com/2016/09/20/Java线程安全的容器类/index.html">
 <meta property="og:site_name" content="Troy的输出流">
 <meta property="og:description" content="转自Jeff的自留地：java线程安全的容器类  
 
-Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容
-1. Map
-在Map类中，提供两种线程安全容器。
-java.util.Hashtable  
-Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtab">
+Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg">
-<meta property="og:updated_time" content="2016-10-05T13:25:43.279Z">
+<meta property="og:updated_time" content="2016-11-04T13:53:33.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程安全的容器类">
 <meta name="twitter:description" content="转自Jeff的自留地：java线程安全的容器类  
 
-Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容
-1. Map
-在Map类中，提供两种线程安全容器。
-java.util.Hashtable  
-Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtab">
+Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容">
 <meta name="twitter:image" content="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg">
 
 
@@ -266,6 +254,161 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
           </a>
         </li>
       
+	  
+	  
+	  <li class="menu-item"> <a title="嗨起来~" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()    '><i>High一下<i></a> </li>
+	  
+	  
+	  
     </ul>
   
 
@@ -392,7 +535,7 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
         <blockquote>
 <p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a></em>  </p>
 </blockquote>
-<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
+<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容  <a id="more"></a></p>
 <h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
 <p>在Map类中，提供两种线程安全容器。</p>
 <p><strong>java.util.Hashtable</strong>  </p>
@@ -582,7 +725,7 @@ Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

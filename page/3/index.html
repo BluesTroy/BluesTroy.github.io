@@ -246,6 +246,161 @@
           </a>
         </li>
       
+	  
+	  
+	  <li class="menu-item"> <a title="嗨起来~" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()    '><i>High一下<i></a> </li>
+	  
+	  
+	  
     </ul>
   
 
@@ -273,6 +428,140 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/15/关于数据结构的小知识/" itemprop="url">
+                  关于数据结构的小知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-15T20:15:02+08:00" content="2016-09-15">
+              2016-09-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/15/关于数据结构的小知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/关于数据结构的小知识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/15/关于数据结构的小知识/" class="leancloud_visitors" data-flag-title="关于数据结构的小知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="二叉树的深度和高度"><a href="#二叉树的深度和高度" class="headerlink" title="二叉树的深度和高度"></a>二叉树的深度和高度</h4><blockquote>
+<p>树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  </p>
+</blockquote>
+<p>二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。<br>第i层节点数： 2^(i-1)
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/15/关于数据结构的小知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -373,59 +662,12 @@
 
       
         
-          
-            <h3 id="一、crontab简介"><a href="#一、crontab简介" class="headerlink" title="一、crontab简介"></a>一、crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。 </p>
-<h5 id="1、crontab调度文件规则"><a href="#1、crontab调度文件规则" class="headerlink" title="1、crontab调度文件规则"></a>1、crontab调度文件规则</h5><p>命令格式：<code>* * * * * command</code><br><strong>*</strong> 依次表示<strong>分钟、小时、日、月、星期</strong>  </p>
-<ul>
-<li>分钟——每小时的第几分钟执行，范围0~59  </li>
-<li>小时——每日的第几个小时执行，范围0~23</li>
-<li>日——每月的第几天执行，范围1~31  </li>
-<li>月——每年你的第几月执行 ，范围1~12  </li>
-<li>星期——每周的第几天执行，范围0~6  </li>
-</ul>
-<h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
-<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
-<p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
-<p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
-<p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
-<h5 id="3、其他"><a href="#3、其他" class="headerlink" title="3、其他"></a>3、其他</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">crontab -r <span class="comment">#停止（即删除）所有任务（慎用）</span></div><div class="line">crontab <span class="_">-l</span> <span class="comment">#列出所有任务</span></div></pre></td></tr></table></figure>
-<h3 id="二、文件中-atime-ctime-mtime简介"><a href="#二、文件中-atime-ctime-mtime简介" class="headerlink" title="二、文件中 -atime, -ctime, -mtime简介"></a>二、文件中 -atime, -ctime, -mtime简介</h3><ul>
-<li>atime(Access time)，访问时间，如读取文件</li>
-<li>ctime(Change time), 状态时间，如修改权限、属性、所有者</li>
-<li>mtime(Modified time), 修改时间，文件内容修改的时间<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">find . -mtime +3 <span class="comment">#3天以前修改的文件(&gt;3)  </span></div><div class="line">find . -mtime -3 <span class="comment">#3天之内修改的文件(&lt;3)</span></div><div class="line">find . -mtime 1 <span class="comment">#距离当前时间24~24*2小时内修改的文件(即当前时间的“昨天内”）</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="三、-amin-cmin-mmin简介"><a href="#三、-amin-cmin-mmin简介" class="headerlink" title="三、-amin, -cmin, -mmin简介"></a>三、-amin, -cmin, -mmin简介</h3><p>与atime，ctime，mtime用法相同，只不过time表示天，min表示分钟</p>
-<h3 id="四、history命令"><a href="#四、history命令" class="headerlink" title="四、history命令"></a>四、history命令</h3><p>显示最近使用的5个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">history</span> 5</div></pre></td></tr></table></figure></p>
-<p>执行历史编号为5的命令那个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !5</div></pre></td></tr></table></figure></p>
-<p>执行最后一次以ls结尾的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ !ls</div></pre></td></tr></table></figure></p>
-<h3 id="五、为bash脚本设置别名"><a href="#五、为bash脚本设置别名" class="headerlink" title="五、为bash脚本设置别名"></a>五、为bash脚本设置别名</h3><p>修改<code>~/.bashrc</code>文件，该文件是登录用户的启动文件，能用作用户的全局设置。<br>假定在/opt/fashion/目录下编写了某一键部署的bash脚本命令文件<code>deploy.sh</code>，则在<code>~./bashrc</code>文件中添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias go=&apos;/opt/fashion/deploy.sh&apos;</div></pre></td></tr></table></figure></p>
-<p>那么在命令行中直接执行<code>go</code>命令即可执行<code>deploy.sh</code>文件中的命令。  </p>
-<p>注意：编辑完后执行<code>source ./bashrc</code>命令使其生效，若不能生效则重新登录生效。  </p>
-<h3 id="六、usermod将用户添加到用户组"><a href="#六、usermod将用户添加到用户组" class="headerlink" title="六、usermod将用户添加到用户组"></a>六、usermod将用户添加到用户组</h3><p>千万不能直接用 <code>usermode -G groupName userName</code>，这样做会使你离开其他用户组，仅仅作为用户组groupName的成员。<br>应该加上<code>-a</code>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ usermod <span class="_">-a</span> -G sudo userName</div></pre></td></tr></table></figure></p>
-<p>-a代表append，也就是将用户添加到用户组sudo中，而不必离开其他用户组。  </p>
-<h3 id="七、head-和tail"><a href="#七、head-和tail" class="headerlink" title="七、head 和tail"></a>七、head 和tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">head -n 20 /etc/man.config <span class="comment">#列出前20行</span></div><div class="line">head -n -100 /etc/man.config <span class="comment">#列出除最后100行的之前的所有行  </span></div><div class="line">tail -n 20 /etc/ <span class="comment">#列出最后20行  </span></div><div class="line">tail -n +100 /etc/man.config <span class="comment">#列出除前100行的之后的所有行  </span></div><div class="line">head -n 20 /etc/man.config | tail -n 10 <span class="comment">#显示第11到20行</span></div></pre></td></tr></table></figure>
-<h3 id="八、Linux层级目录结构"><a href="#八、Linux层级目录结构" class="headerlink" title="八、Linux层级目录结构"></a>八、Linux层级目录结构</h3><ul>
-<li>/  根目录</li>
-</ul>
-<ol>
-<li>/root存放root用户的相关文件</li>
-<li>/home 存放普通用户的相关文件</li>
-<li>/bin 存放常用命令的文件 。系统的一些指令</li>
-<li>/sbin 具有一定权限才可以使用的命令。超级用户指令、系统管理指令</li>
-<li>/mnt 默认挂在光驱和软驱的目录</li>
-<li>/boot 存放引导相关的文件</li>
-<li>/etc 存放配置相关的文件</li>
-<li>/var 存放经常变化的文件</li>
-<li>/usr 安装程序的默认安装文件夹。</li>
-</ol>
-<ul>
-<li>/usr/bin  后期安装的一些软件的运行脚本</li>
-<li>/usr/sbin 超级用户的一些管理程序</li>
-</ul>
-
-          
+          <h3 id="一、crontab简介"><a href="#一、crontab简介" class="headerlink" title="一、crontab简介"></a>一、crontab简介</h3><p>crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在<code>crontab</code>文件中，以供之后读取和执行。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/12/Linux常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -551,8 +793,7 @@
 
       
         
-          
-            <h4 id="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"><a href="#Linux中，为mysql数据库备份，并删除一个月以前的备份数据" class="headerlink" title="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"></a>Linux中，为mysql数据库备份，并删除一个月以前的备份数据</h4><p>mysql_backup.sh备份脚本命令如下：</p>
+          <h4 id="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"><a href="#Linux中，为mysql数据库备份，并删除一个月以前的备份数据" class="headerlink" title="Linux中，为mysql数据库备份，并删除一个月以前的备份数据"></a>Linux中，为mysql数据库备份，并删除一个月以前的备份数据</h4><p>mysql_backup.sh备份脚本命令如下：</p>
 <pre><code class="bash"><span class="meta">#! /bin/bash</span>
 <span class="comment"># 按照时间戳来命名备份数据，便于管理</span>
 DATE=`date+%Y-%m-%d-%H:%M:%S`  
@@ -560,19 +801,11 @@ mysqldump -u root -p123456 mysqldbName &gt; /mysql_backup/backdata/mysqldbName_<
 <span class="comment"># 删除30天以前的备份数据</span>
 find /mysql_backup/backdata/ -atime +30 | xargs rm
 </code></pre>
-<p>其中root是mysql用户，123456是用户密码，msyqldbName是数据库名字，该备份命令会将mysqldbName数据库的数据全部备份到/mysql<em>backup/backdata目录下，并以mysqldbName\</em>加上时间戳的形式命名。 </p>
-<h4 id="crontab定时备份任务"><a href="#crontab定时备份任务" class="headerlink" title="crontab定时备份任务"></a>crontab定时备份任务</h4><p>将mysql_backup.sh脚本文件的执行加入到crontab定时任务中，编辑crontab定时任务:</p>
-<pre><code class="bash">$ crontab <span class="_">-e</span>
-</code></pre>
-<p>将一下内容追加到crontab文件中：</p>
-<pre><code class="bash">0 12 * * * /mysql_backup/mysql_backup.sh
-0 0 * * * /mysql_backup/mysql_backup.sh
-</code></pre>
-<p>第一行内容表示每天中午12点执行mysql_backup.sh中的备份命令，第二行表示每天凌晨执行备份命令。你可以在任意时候执行备份命令，只需要学习一下crontab的 <em> </em> <em> </em> * 分别代表什么意思就可以。  </p>
-<h4 id="mysql数据库恢复备份数据"><a href="#mysql数据库恢复备份数据" class="headerlink" title="mysql数据库恢复备份数据"></a>mysql数据库恢复备份数据</h4><pre><code class="bash">$ mysql -u root -p123456 mysqldbName &lt; /mysql_backup/backdata/mysqldbName_xxxxxx.bak
-</code></pre>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/12/Linux中mysql数据库定时备份/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -698,195 +931,12 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
       
         
-          
-            <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱。  </p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>该程序要用到commons-net-3.3.jar、dnsjava-2.1.7.jar包</li>
-<li>大部分的国内常见邮箱都能准确验证</li>
-<li>验证频率和数量多的话容易被封掉ip</li>
-<li>使用了”no-reply@domain.com”作为发送邮箱，不要用自己使用的邮箱作为程序的发送邮箱，验证频率和数量多的话邮箱地址容易被封  </li>
-</ul>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="java"><span class="keyword">package</span> com.tieniu;
-<span class="keyword">import</span> java.io.IOException;
-
-<span class="keyword">import</span> org.apache.commons.net.smtp.SMTPClient;
-<span class="keyword">import</span> org.apache.commons.net.smtp.SMTPReply;
-<span class="keyword">import</span> org.xbill.DNS.Lookup;
-<span class="keyword">import</span> org.xbill.DNS.MXRecord;
-<span class="keyword">import</span> org.xbill.DNS.Record;
-<span class="keyword">import</span> org.xbill.DNS.Type;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CheckEmail</span> </span>{
-
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SENDER_EMAIL = <span class="string">"no-reply@domain.com"</span>;<span class="comment">//"no-reply@domain.com";</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SENDER_EMAIL_SERVER = SENDER_EMAIL.split(<span class="string">"@"</span>)[<span class="number">1</span>];<span class="comment">//"domain.com";</span>
-
-
-    <span class="comment">/**
-     * 
-     * <span class="doctag">@param</span> email  The recipient's email address, it need to be validate if it is real exists or doesn't exists.
-     * <span class="doctag">@return</span> True if email is real exists, false if not.
-     */</span>
-    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkEmailMethod</span><span class="params">(String email)</span> </span>{
-        <span class="keyword">if</span> (!email.matches(<span class="string">"[\\w\\.\\-]+@([\\w\\-]+\\.)+[\\w\\-]+"</span>)) {
-            System.err.println(<span class="string">"Format error"</span>);
-            <span class="keyword">return</span> <span class="keyword">false</span>;
-        }
-
-        String log = <span class="string">""</span>;
-        String host = <span class="string">""</span>;
-        String hostName = email.split(<span class="string">"@"</span>)[<span class="number">1</span>];
-        Record[] result = <span class="keyword">null</span>;
-        SMTPClient client = <span class="keyword">new</span> SMTPClient();
-        client.setConnectTimeout(<span class="number">8000</span>);  <span class="comment">//设置连接超时时间,有些服务器比较慢</span>
-
-        <span class="keyword">try</span> {
-            <span class="comment">// 查找MX记录</span>
-            Lookup lookup = <span class="keyword">new</span> Lookup(hostName, Type.MX);
-            lookup.run();
-            <span class="keyword">if</span> (lookup.getResult() != Lookup.SUCCESSFUL) {
-                log += <span class="string">"找不到MX记录\n"</span>;
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            } <span class="keyword">else</span> {
-                result = lookup.getAnswers();
-            }
-<span class="comment">/*
-             if(result.length &gt; 1) { // 优先级排序
-                    List&lt;Record&gt; arrRecords = new ArrayList&lt;Record&gt;();
-                    Collections.addAll(arrRecords, result);
-                    Collections.sort(arrRecords, new Comparator&lt;Record&gt;() {
-
-                        public int compare(Record o1, Record o2) {
-                            return new CompareToBuilder().append(((MXRecord)o1).getPriority(), ((MXRecord)o2).getPriority()).toComparison();
-                        }
-
-                    });
-                    host = ((MXRecord)arrRecords.get(0)).getTarget().toString();
-                }
- * 
- */</span>
-            <span class="comment">// 连接到邮箱服务器</span>
-
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.length; i++) {
-                System.out.println(result[i].getAdditionalName().toString());
-                System.out.println(((MXRecord)result[i]).getPriority());
-            }
-            <span class="keyword">int</span> count=<span class="number">0</span>;  
-<span class="comment">//            String tempLog ="";</span>
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.length; i++) {
-                log=<span class="string">""</span>;
-                host = result[i].getAdditionalName().toString();
-                <span class="keyword">try</span>{
-                    client.connect(host);    <span class="comment">//连接到接收邮箱地址的邮箱服务器</span>
-                }<span class="keyword">catch</span>(Exception e){        <span class="comment">//捕捉连接超时的抛出的异常</span>
-                    count++;
-                    <span class="keyword">if</span>(count&gt;=result.length){    <span class="comment">//如果由MX得到的result服务器都连接不上，则认定email无效</span>
-                        log +=<span class="string">"Connect mail server timeout...\n"</span>;
-                        <span class="keyword">return</span> <span class="keyword">false</span>;
-                    }
-                }
-
-                <span class="keyword">if</span> (!SMTPReply.isPositiveCompletion(client.getReplyCode())) {    <span class="comment">//服务器通信不成功</span>
-                    client.disconnect();
-                    <span class="keyword">continue</span>;
-                } <span class="keyword">else</span> {
-                    log += <span class="string">"MX record about "</span> + hostName + <span class="string">" exists.\n"</span>;
-                    log += <span class="string">"Connection succeeded to "</span> + host + <span class="string">"\n"</span>;
-                    log += client.getReplyString();
-
-                    <span class="comment">// HELO &lt;$SENDER_EMAIL_SERVER&gt;   //domain.com</span>
-                    <span class="keyword">try</span>{
-                        client.login(SENDER_EMAIL_SERVER);   <span class="comment">//这一步可能会出现空指针异常</span>
-                    }<span class="keyword">catch</span>(Exception e){
-                        <span class="keyword">return</span> <span class="keyword">false</span>;
-                    }
-                    log += <span class="string">"&gt;HELO "</span>+SENDER_EMAIL_SERVER+<span class="string">"\n"</span>;
-                    log += <span class="string">"="</span> + client.getReplyString();
-
-                    client.setSender(SENDER_EMAIL);
-                    <span class="keyword">if</span>(client.getReplyCode()!=<span class="number">250</span>){        <span class="comment">//为解决hotmail有的MX可能出现=550 OU-001 (SNT004-MC1F43) Unfortunately, messages from 116.246.2.245 weren't sent.</span>
-                        client.disconnect();
-                        <span class="keyword">continue</span>;                            <span class="comment">//把client.login 和client.setSender放在循环体内，这样所有的如果某mx不行就换其他mx，但这样会对无效的邮箱进行所有mx遍历，耗时</span>
-                    }
-                    log += <span class="string">"&gt;MAIL FROM: &lt;"</span>+SENDER_EMAIL+<span class="string">"&gt;\n"</span>;
-                    log += <span class="string">"="</span> + client.getReplyString();
-                    <span class="comment">// RCPT TO: &lt;$email&gt;</span>
-                    <span class="keyword">try</span>{
-                        client.addRecipient(email);
-                    }<span class="keyword">catch</span>(Exception e){
-                        <span class="keyword">return</span> <span class="keyword">false</span>;
-                    }
-                    log += <span class="string">"&gt;RCPT TO: &lt;"</span> + email + <span class="string">"&gt;\n"</span>;
-                    log += <span class="string">"="</span> + client.getReplyString();
-
-                    <span class="comment">//最后从收件邮箱服务器返回true，说明服务器中能够找到此收件地址，邮箱有效</span>
-                    <span class="keyword">if</span> (<span class="number">250</span> == client.getReplyCode()) {
-                        <span class="keyword">return</span> <span class="keyword">true</span>;
-                    }
-                    client.disconnect();
-
-                }
-            }
-<span class="comment">//            log+=tempLog;</span>
-<span class="comment">//            log += "&gt;MAIL FROM: &lt;"+SENDER_EMAIL+"&gt;\n";</span>
-<span class="comment">//            log += "=" + client.getReplyString();</span>
-<span class="comment">//            </span>
-<span class="comment">//            // RCPT TO: &lt;$email&gt;</span>
-<span class="comment">//            try{</span>
-<span class="comment">//                client.addRecipient(email);</span>
-<span class="comment">//            }catch(Exception e){</span>
-<span class="comment">//                return false;</span>
-<span class="comment">//            }</span>
-<span class="comment">//            log += "&gt;RCPT TO: &lt;" + email + "&gt;\n";</span>
-<span class="comment">//            log += "=" + client.getReplyString();</span>
-<span class="comment">//            </span>
-<span class="comment">//            //最后从收件邮箱服务器返回true，说明服务器中能够找到此收件地址，邮箱有效</span>
-<span class="comment">//            if (250 == client.getReplyCode()) {</span>
-<span class="comment">//                return true;</span>
-<span class="comment">//            }</span>
-        } <span class="keyword">catch</span> (Exception e) {
-            e.printStackTrace();
-        } <span class="keyword">finally</span> {
-            <span class="keyword">try</span> {
-                client.disconnect();
-            } <span class="keyword">catch</span> (IOException e) {
-            }
-            <span class="comment">// print log</span>
-            System.out.println(log);
-        }
-        <span class="keyword">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="comment">/**
-     * This method is more accurate than checkEmailMethod(String email);
-     * 
-     * <span class="doctag">@param</span> email  The recipient's email address, it need to be validate if it is real exists or doesn't exists.
-     * <span class="doctag">@return</span> True if email is real exists, false if not.
-     */</span>
-    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkEmail</span><span class="params">(String email)</span></span>{
-        <span class="keyword">if</span>(email.split(<span class="string">"@"</span>)[<span class="number">1</span>].equals(<span class="string">"qq.com"</span>)){
-            <span class="keyword">if</span>( checkEmailMethod(email) &amp;&amp; checkEmailMethod(email) &amp;&amp; checkEmailMethod(email)){
-                <span class="keyword">return</span> <span class="keyword">true</span>;
-            }<span class="keyword">else</span>{
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            }
-        }
-        <span class="keyword">return</span> checkEmailMethod(email);
-    }
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        CheckEmail ce = <span class="keyword">new</span> CheckEmail();
-        <span class="keyword">if</span>(ce.checkEmail(<span class="string">"dfdegcex@qq.com"</span>)){
-            System.out.println(<span class="string">"true"</span>);
-        }<span class="keyword">else</span>{
-            System.out.println(<span class="string">"false"</span>);
-        }
-    }
-
-}
-</code></pre>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>其中还写了一点开发过程中的相关文档，生成了该功能相应的jar包。也生成了dll，写了供C#调用的使用方法。很简单。这里附上相关文件的链接：<a href="http://pan.baidu.com/s/1jHpdDjC" target="_blank" rel="external">http://pan.baidu.com/s/1jHpdDjC</a> &nbsp;&nbsp;密码：wio6</p>
-
-          
+          <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>设置一个已有邮箱地址，通过向邮箱服务器发送一个请求，去与目标邮箱地址通信，根据邮箱服务器的返回结果来判断目标邮箱地址是否是真实有效的邮箱。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/Java实现通过smtp服务器验证邮箱的真实有效性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1012,92 +1062,15 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p><strong>记</strong>：若有开卷考试，且只能带纸质题库，而选择题题库又特别多，那么就可以用此方法将题库按照字母顺序排列，便于查找定位。  </p>
 </blockquote>
-<h3 id="巧用TreeMap"><a href="#巧用TreeMap" class="headerlink" title="巧用TreeMap"></a>巧用TreeMap</h3><p>Java中的Map是用来存储键值对的，其中HashMap没有固定的排列顺序，是通过hashcode对其内容进行快速查找。而TreeMap是由红黑树算法实现的，TreeMap在保存元素是按照key值的顺序排好序的。如果你需要得到一个有序的结果就应该使用TreeMap。TreeMap在不指定排序器时，默认按照key值进行升序排序。  </p>
-<p>本方法需要先将题库拷贝到txt文本中（注意txt中\r\n表示一个换行符），取<strong>每道题去掉题号之后的第一行内容作为key，整个题目的内容作为value</strong>，则遍历完所有的题库并将其保存到TreeMap后，TreeMap中的题目就已经是按照A-Za-z的字母顺序排列了(key是字符串的话按照第一个字母的ASCII升序)，将其输出即可。  （A-65，a-97）</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>很简单，一看就懂。  </p>
-<pre><code class="java"><span class="keyword">import</span> java.io.*;
-<span class="keyword">import</span> java.util.HashMap;
-<span class="keyword">import</span> java.util.Iterator;
-<span class="keyword">import</span> java.util.TreeMap;
-<span class="comment">/*
-将选择题题库按照字母顺序重新排列
-若有开卷考试，使用排序后的题库进行查找岂不是非常方便。
-*/</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException</span>{
-        BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"tiku.txt"</span>));
-        BufferedWriter out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"tiku_sort.txt"</span>));
-        TreeMap&lt;String, String&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();
-        String s, content = <span class="string">""</span>, key = <span class="string">""</span>;
-        s = in.readLine();
-        <span class="keyword">int</span> length;
-        <span class="keyword">int</span> maxNumber = <span class="number">6</span>;      <span class="comment">//表示一共有多少到题，最大的题号</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxNumber; i++) {
-            <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; s.startsWith(String.valueOf(i))) {
-                key = <span class="string">""</span>;
-                content = s + <span class="string">"\r\n"</span>;        <span class="comment">//在txt中\r\n表示一个换行符</span>
-                <span class="keyword">if</span> (i &lt; <span class="number">10</span>) {
-                    length = <span class="number">2</span>;                <span class="comment">//length表示除题号和.之外的内容开始的下标，用于后面key截取字符串的开始位置</span>
-                }
-                <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">100</span>) {
-                    length = <span class="number">3</span>;
-                }
-                <span class="keyword">else</span> {
-                    length = <span class="number">4</span>;
-                }
-                key = s.substring(length).replaceAll(<span class="string">" "</span>, <span class="string">""</span>).toLowerCase();    <span class="comment">//将每个题的第一行（去除题号后)作为key，用于排序</span>
-                <span class="comment">//System.out.println(key+"-----------");</span>
-            }
-            <span class="comment">//将一道题的整个内容放入content</span>
-            s = in.readLine();
-            <span class="keyword">while</span> (s != <span class="keyword">null</span> &amp;&amp; !s.startsWith(String.valueOf((<span class="keyword">int</span>)(i+<span class="number">1</span>)))) {    <span class="comment">//因为题库都是按顺序的，所有这样写（i+1)</span>
-                content += s + <span class="string">"\r\n"</span>;
-                s = in.readLine();
-            }
-            <span class="comment">//TreeMap会自动按照键值进行排序建树</span>
-            map.put(key, content);
-        }
-
-        <span class="comment">//整棵树的内容写到一个新的文件中。新的文件是按字母顺序排列（旧的文件按照题号排序）</span>
-        Iterator&lt;String&gt; keys = map.keySet().iterator();
-        <span class="keyword">while</span> (keys.hasNext()) {
-            key = keys.next();
-            content = map.get(key);
-            out.write(content);
-        }
-        <span class="keyword">try</span>{
-            in.close();
-            out.close();
-        }<span class="keyword">catch</span>(Exception e){}
-
-    }
-}
-</code></pre>
-<h3 id="样例输入与输出"><a href="#样例输入与输出" class="headerlink" title="样例输入与输出"></a>样例输入与输出</h3><p><b>1. 样例输入：  </b></p>
-<blockquote>
-<ol>
-<li>d a respon…What.. this behavior?<br>A) Compare the conten…<br>B) Refer to the con…<br>C) Compare the contents of..<br>D) Refer to the ale..  </li>
-<li>you decided to…lause? (Choose three.)<br>A. ALL<br>B. PFILE<br>C. BOTH<br>D. NONE  </li>
-<li>efine aue… the event?<br>A) the alert.log file<br>B) the DBA_ALERTS view<br>C) the Database Control Home page<br>D) the Database Control performance page<br>E) the Database Control Maintenance page  </li>
-</ol>
-</blockquote>
-<p><b>2. 样例输出： </b></p>
-<blockquote>
-<ol>
-<li>d a respon…What.. this behavior?<br>A) Compare the conten…<br>B) Refer to the con…<br>C) Compare the contents of..<br>D) Refer to the ale..  <ol>
-<li>efine aue… the event?<br>A) the alert.log file<br>B) the DBA_ALERTS view<br>C) the Database Control Home page<br>D) the Database Control performance page<br>E) the Database Control Maintenance page</li>
-<li>you decided to…lause? (Choose three.)<br>A. ALL<br>B. PFILE<br>C. BOTH<br>D. NONE  </li>
-</ol>
-</li>
-</ol>
-</blockquote>
-
-          
+<h3 id="巧用TreeMap"><a href="#巧用TreeMap" class="headerlink" title="巧用TreeMap"></a>巧用TreeMap</h3><p>Java中的Map是用来存储键值对的，其中HashMap没有固定的排列顺序，是通过hashcode对其内容进行快速查找。而TreeMap是由红黑树算法实现的，TreeMap在保存元素是按照key值的顺序排好序的。如果你需要得到一个有序的结果就应该使用TreeMap。TreeMap在不指定排序器时，默认按照key值进行升序排序。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/Java实现将选择题题库按照字母顺序重新排列/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1223,32 +1196,13 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
       
         
-          
-            <blockquote>
-<p>——树莓派？好吃吗？<br>——Yes, It’s delicious, but for programer!  </p>
-</blockquote>
-<p>树莓派（Raspberry Pi)是只有信用卡卡片大小的微型电脑，系统基于Linux。吃货们要注意了，它是一台电脑，麻雀虽小，五脏可是俱全呢，树莓派是众多计算机发烧友和创客的玩具（价格二三百块钱），你可以用它做出很多令人惊喜而好玩的东西。  </p>
-<p>废话不多说了，当你买来树莓派时，它还是一个裸机，需要你给它装系统。  </p>
-<h2 id="树莓派装系统"><a href="#树莓派装系统" class="headerlink" title="树莓派装系统"></a>树莓派装系统</h2><ol>
-<li>下载2015-05-05-raspbian-wheezy树莓派系统镜像文件</li>
-<li>树莓派用SD卡来充当硬盘，用卡器将SD卡连接电脑，使用Win32DiskImager软件把系统镜像文件烧录到SD卡上</li>
-<li>然后将SD卡插到树莓派上，把树莓派接通电源，树莓派即启动了。  </li>
-</ol>
-<p>很简单就将树莓派系统装好了。树莓派启动时，红灯亮、绿灯闪烁，当绿灯常亮时即启动成功。</p>
-<blockquote>
-<p>一开始因为不是很懂，进入系统后操作失误，后来又重装了系统。<br><strong>注意： </strong>重装系统时要先使用<strong>SDFormatterv4</strong>软件对SD卡进行格式化，如果直接<code>右键-&gt;格式化</code>的话很可能SD的容量没有完全释放掉，格式化后只显示很小的容量。  </p>
-</blockquote>
-<h2 id="树莓派远程登录"><a href="#树莓派远程登录" class="headerlink" title="树莓派远程登录"></a>树莓派远程登录</h2><p>如果有显示器和HDMI连接线，是可以直接将树莓派连接到显示其上使用的。这里讲一下没有的话要如何远程登录树莓派。</p>
-<h3 id="1、获取树莓派的IP地址"><a href="#1、获取树莓派的IP地址" class="headerlink" title="1、获取树莓派的IP地址"></a>1、获取树莓派的IP地址</h3><p><strong>要远程登录树莓派首先要知道树莓派的IP地址：</strong><br>首先将网线插入树莓派，然后使用<strong>Advanced Ip Scanner</strong>软件进行Ip扫描，可以扫描出连接到当前局域网的所有设备。可以看到制造商为<strong>Raspberry Pi Foundation</strong>的设备就是树莓派，IP地址为10.199.157.36，听说树莓派的MAC 地址前几个数是固定的，也可通过Mac地址判断。如果连接的设备较多，可以根据自己的笔记本IP大概判断一下树莓派的IP，然后在软件的输入框中输入IP段范围，可以找的快一点。<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012213447693.jpg" alt="Untitled Image">  </p>
-<h3 id="2、使用Win7自带的mstsc远程登录"><a href="#2、使用Win7自带的mstsc远程登录" class="headerlink" title="2、使用Win7自带的mstsc远程登录"></a>2、使用Win7自带的mstsc远程登录</h3><p><code>开始 -&gt; 输入 mstsc</code>，弹出桌面远程连接，输入树莓派的ip地址后点击连接，就可以登录到树莓派系统了，中间要输入树莓派的账密，<code>默认账号：pi 密码：raspberry</code> 。下面是登录后的样子：<br><img src="http://obmxnha1c.bkt.clouddn.com/20151012214540119.jpg" alt="Untitled Image">  </p>
-<h3 id="3、其他技巧"><a href="#3、其他技巧" class="headerlink" title="3、其他技巧"></a>3、其他技巧</h3><ul>
-<li>我试了一下远程登录可以好几台电脑同时远程登录树莓派，互相之间操作的结果会同步，但其他人的操作动作不可见  </li>
-<li>mstsc远程登录可以使用<code>ctrl+alt+Break</code>快捷键进行全盘切换，当键盘不灵时也可以切换一下就可以了</li>
-<li>另外：也可以用<strong>ssh+putty</strong>进行远程登录  </li>
-</ul>
-<h2 id="树莓派无线网卡配置"><a href="#树莓派无线网卡配置" class="headerlink" title="树莓派无线网卡配置"></a>树莓派无线网卡配置</h2><p>如果是连接的路由器的wifi的话，这个百度经验上有，自行百度。<br><strong>注意</strong>：如果无线网卡配置信息过时或错误，同时插上无线网卡和网线远程登录可能会有问题，也可能上不了网，这个时候把无线网卡拔掉，直插网线就好。<br>【配置没成功，待定】</p>
-
-          
+          <blockquote>
+<p>——树莓派？好吃吗？<br>——Yes, It’s delicious, but for programer!
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/树莓派装系统-远程登录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1374,15 +1328,12 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
       
         
-          
-            <h4 id="错误出现"><a href="#错误出现" class="headerlink" title="错误出现"></a>错误出现</h4><p>在Linux操作系统中使用Makefile时，Makefile内容如下：  </p>
-<p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232834116.png" alt="Untitled Image"></p>
-<p>然后make进行编译，出现如下错误：make： Nothing to be done for ‘all’  </p>
-<p><img src="http://obmxnha1c.bkt.clouddn.com/20160102232950093.png" alt="Untitled Image">  </p>
-<p>在网上查了半天找不到解决方法，网上大多是转来转去的同一个说法。</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>Makefile文件中只能使用Tab，不能使用多个空格。这个Makefile文件的内容是复制来的，所以图片上白色高亮区域是多个空格，把它变为一个tab就可以了。</p>
-
-          
+          <h4 id="错误出现"><a href="#错误出现" class="headerlink" title="错误出现"></a>错误出现</h4><p>在Linux操作系统中使用Makefile时，Makefile内容如下：
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/Linux Makefile文件编译错误——make-Nothing to be done for 'all'/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1508,8 +1459,7 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p><em>问题非常简单，但却困扰了我很久，也许是编辑器的坑。</em></p>
 </blockquote>
 <pre><code>tags:  
@@ -1517,10 +1467,12 @@ find /mysql_backup/backdata/ -atime +30 | xargs rm
     - tag1
     - tag2
 categories: hexo
-</code></pre><p><strong>问题描述：</strong><br>用的是hexo next主题，编辑器用的WordMark。也许是编辑器的原因，当我写完第一个标签hexo时，按回车，光标自动跟第一个标签对齐，然后继续写标签，导致多标签失败。  </p>
-<p><strong>解决：</strong><br>上述方法写标签时，第二个tag和第三个tag前面是四个空格，改成一个<code>Tab</code>就可以了。</p>
-
-          
+</code></pre><p><strong>问题描述：</strong><br>用的是hexo next主题，编辑器用的WordMark。也许是编辑器的原因，当我写完第一个标签hexo时，按回车，光标自动跟第一个标签对齐，然后继续写标签，导致多标签失败。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/10/hexo如何打多个标签？/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1646,18 +1598,13 @@ categories: hexo
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/08/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1729,7 +1676,7 @@ categories: hexo
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -246,6 +246,161 @@
           </a>
         </li>
       
+	  
+	  
+	  <li class="menu-item"> <a title="嗨起来~" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()    '><i>High一下<i></a> </li>
+	  
+	  
+	  
     </ul>
   
 
@@ -273,6 +428,137 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/28/Java-IO流总结/" itemprop="url">
+                  Java IO流总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-28T10:56:00+08:00" content="2016-09-28">
+              2016-09-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/28/Java-IO流总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/Java-IO流总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/28/Java-IO流总结/" class="leancloud_visitors" data-flag-title="Java IO流总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="Java四个基本的抽象类"><a href="#Java四个基本的抽象类" class="headerlink" title="Java四个基本的抽象类"></a>Java四个基本的抽象类</h4><p><img src="http://obmxnha1c.bkt.clouddn.com/Dj77B" alt="Untitled Image"><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/28/Java-IO流总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -373,10 +659,12 @@
 
       
         
-          
-            <p>如题：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bluestroy.string;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Stack;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Troy on 2016/9/24.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 字符串反转的n种方法</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReverse</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse1</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuilder(s).reverse().toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> j= s.length()-<span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (;i&lt;j;i++,j--)&#123;</div><div class="line">            arr[i] = (<span class="keyword">char</span>)(arr[i]^arr[j]);</div><div class="line">            arr[j]=(<span class="keyword">char</span>)(arr[j]^arr[i]);</div><div class="line">            arr[i]=(<span class="keyword">char</span>)(arr[i]^arr[j]);</div><div class="line">        &#125;</div><div class="line">        System.out.println(arr);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(arr);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse3</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> length = s.length();</div><div class="line">        <span class="keyword">if</span>(length&lt;=<span class="number">1</span>) <span class="keyword">return</span> s;</div><div class="line">        String left = s.substring(<span class="number">0</span>,length/<span class="number">2</span>);</div><div class="line">        String right = s.substring(length/<span class="number">2</span>,length);</div><div class="line">        <span class="keyword">return</span> reverse3(right)+reverse1(left);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse4</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : arr) &#123;</div><div class="line">            stack.push(c);</div><div class="line">        &#125;</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="comment">/* error!</span></div><div class="line">        Iterator it = stack.iterator();</div><div class="line">        while (it.hasNext()) &#123;</div><div class="line">            sb.append(it.next());</div><div class="line">            System.out.println(sb.toString());</div><div class="line">        &#125;*/</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</div><div class="line">            sb.append(stack.pop());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sb.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse5</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=arr.length-<span class="number">1</span>; i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">            sb.append(arr[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sb.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse6</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        String str = <span class="string">""</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;s.length();i++)&#123;</div><div class="line">            str = s.charAt(i)+str;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        String str = <span class="string">"hello world"</span>;</div><div class="line">        System.out.println(reverse1(str));</div><div class="line">        System.out.println(reverse2(str));</div><div class="line">        System.out.println(reverse3(str));</div><div class="line">        System.out.println(reverse4(str));</div><div class="line">        System.out.println(reverse5(str));</div><div class="line">        System.out.println(reverse6(str));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
+          <p>如题：
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/24/字符串反转的N种方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -502,21 +790,12 @@
 
       
         
-          
-            <h3 id="求字符串最后一个单词的长度"><a href="#求字符串最后一个单词的长度" class="headerlink" title="求字符串最后一个单词的长度"></a>求字符串最后一个单词的长度</h3><p>下面两种方法一看就懂：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 求一个字符串的最后一个单词的长度</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(s==<span class="keyword">null</span> &amp;&amp; s.length()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> i=s.length()-<span class="number">1</span>;</div><div class="line">    <span class="comment">//寻找第一个不为‘ ’的字符</span></div><div class="line">    <span class="keyword">for</span> (;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">        <span class="keyword">if</span> (s.charAt(i)==<span class="string">' '</span>);</div><div class="line">        <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//确定最后一个单词</span></div><div class="line">    <span class="keyword">for</span> (;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">        <span class="keyword">if</span> (s.charAt(i) ==<span class="string">' '</span>)<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">else</span> count++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 求一个字符串的最后一个单词的长度</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLastWord2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    String str[] = s.split(<span class="string">"\\s"</span>);</div><div class="line">    <span class="keyword">return</span> str[str.length-<span class="number">1</span>].length();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="同分异构体（Anagram）"><a href="#同分异构体（Anagram）" class="headerlink" title="同分异构体（Anagram）"></a>同分异构体（Anagram）</h3><p>给定字符串s和字符串t，判断t是否为s的Anagram。  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断两个字符串是否是同分异构体</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@param</span> t</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s,String t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s ==<span class="keyword">null</span> &amp;&amp; t!=<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (s.length()!=t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">char</span> [] sArray = s.toCharArray();</div><div class="line">        <span class="keyword">char</span> [] tArray = t.toCharArray();</div><div class="line">        Arrays.sort(sArray);</div><div class="line">        Arrays.sort(tArray);</div><div class="line">        <span class="keyword">return</span> Arrays.equals(sArray,tArray);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断两个字符串是否是同分异构体法2，此法只考虑小写字母</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@param</span> t</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram2</span><span class="params">(String s, String t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s ==<span class="keyword">null</span> &amp;&amp; t!=<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (s != <span class="keyword">null</span> &amp;&amp; t== <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (s.length() != t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="comment">//此方法只考虑了只有小写字母，故设数组长度为26</span></div><div class="line">        <span class="keyword">int</span> twentySix = <span class="number">26</span>;</div><div class="line">        <span class="keyword">int</span> n = s.length();</div><div class="line">        <span class="keyword">int</span>[] sTable = <span class="keyword">new</span> <span class="keyword">int</span>[twentySix];</div><div class="line">        <span class="keyword">int</span>[] tTable = <span class="keyword">new</span> <span class="keyword">int</span>[twentySix];</div><div class="line">        <span class="comment">//用hash表的思想统计每个字母出现的次数</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">            sTable[s.charAt(i)-<span class="string">'a'</span>]++;</div><div class="line">            tTable[s.charAt(i)-<span class="string">'a'</span>]++;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//如果每个字母出现的次数都相同，返回true，否则返回false。</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;twentySix;i++)</div><div class="line">            <span class="keyword">if</span> (sTable[i]!=tTable[i])</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="反转单词顺序"><a href="#反转单词顺序" class="headerlink" title="反转单词顺序"></a>反转单词顺序</h3><p>输入一个英文句子，反转句子中单词的顺序，要求单词内部不变。<br>假设只含字母、空格，首位没有空格。<br><strong>思路：</strong> 先反转每一个单词，在反转整个句子。<br><img src="http://obmxnha1c.bkt.clouddn.com/3ETFm" alt=""></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 反转句子中单词的顺序，要求单词内部不变。</div><div class="line"> * <span class="doctag">@param</span> s 要反转的字符数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseWords</span><span class="params">(<span class="keyword">char</span>[] s)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> &amp;&amp; s.length ==<span class="number">0</span>) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">int</span> n = s.length;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="keyword">while</span> (i&lt;n)&#123;</div><div class="line">        j=i;</div><div class="line">        <span class="comment">//找到要反转的单词的第一个字母下标i和最后一个字母下标j</span></div><div class="line">        <span class="keyword">while</span> (j&lt;n)&#123;</div><div class="line">            <span class="keyword">if</span> (s[j]==<span class="string">' '</span>) <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">else</span> j++;</div><div class="line">        &#125;</div><div class="line">        reverse(s,i,j-<span class="number">1</span>);</div><div class="line">        <span class="comment">//跳过空格</span></div><div class="line">        <span class="keyword">while</span> (j&lt;n &amp;&amp; s[j]==<span class="string">' '</span>) j++;</div><div class="line">        <span class="comment">//继续进行下一个单词</span></div><div class="line">        i=j;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//最后反转整个句子</span></div><div class="line">    reverse(s,<span class="number">0</span>,n-<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 调用String api实现反转句子中单词的顺序</div><div class="line"> * <span class="doctag">@param</span> s</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reverseWords2</span><span class="params">(String s)</span></span>&#123;</div><div class="line">    String [] strArray = s.split(<span class="string">"\\s"</span>);</div><div class="line">    StringBuilder result= <span class="keyword">new</span> StringBuilder();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = strArray.length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</div><div class="line">        result.append(strArray[i]+<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">    result.append(strArray[<span class="number">0</span>]);</div><div class="line">    <span class="keyword">return</span> result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="数一数读一读"><a href="#数一数读一读" class="headerlink" title="数一数读一读"></a>数一数读一读</h3><blockquote>
-<p>“1211”，有1个1、1个2、2个1，所以下一个字符串为“111221”；<br>“111221”，有3个1、2个2、1个1，所以下一个字符串为“312211”。<br>统计每个数字出现的次数，并把本次得到的结果字符串作为下一次的当前字符串。<br>如此循环往复，那么执行n次之后是什么？</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">	        <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">	        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">	        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</div><div class="line">	        	<span class="keyword">return</span> <span class="string">"11"</span>;</div><div class="line">	        &#125;<span class="keyword">else</span>&#123;</div><div class="line">	        	String str=<span class="string">"11"</span>;</div><div class="line">	        	StringBuilder sb=<span class="keyword">new</span> StringBuilder();</div><div class="line">	        	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</div><div class="line">	        		<span class="keyword">char</span> temp=str.charAt(<span class="number">0</span>);</div><div class="line">	        		<span class="keyword">int</span> count=<span class="number">1</span>;</div><div class="line">	        		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;str.length();j++)&#123;</div><div class="line">	        			<span class="keyword">if</span>(str.charAt(j)==temp)&#123;</div><div class="line">	        				count++;</div><div class="line">	        			&#125;<span class="keyword">else</span>&#123;</div><div class="line">	        				sb.append(count).append(temp);</div><div class="line">	        				count=<span class="number">1</span>;</div><div class="line">	        				temp=str.charAt(j);</div><div class="line">	        			&#125;</div><div class="line">	        		&#125;</div><div class="line">	        		sb.append(count).append(temp);</div><div class="line">	        		str=sb.toString();</div><div class="line">	        		sb.delete(<span class="number">0</span>, sb.length());</div><div class="line">	        	&#125;</div><div class="line">	        	<span class="keyword">return</span> str;</div><div class="line">	        &#125;</div></pre></td></tr></table></figure>
-<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>暴力算法(Brute Force)<br>自己实现String类的index算法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(needle.length()==<span class="number">0</span>)&#123;</div><div class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> m=haystack.length();</div><div class="line">        <span class="keyword">int</span> n=needle.length();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</div><div class="line">        	<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n&amp;&amp;i+j&lt;m;j++)&#123;</div><div class="line">        		<span class="keyword">if</span>(haystack.charAt(i+j)!=needle.charAt(j))&#123;</div><div class="line">        			<span class="keyword">break</span>;</div><div class="line">        		&#125;<span class="keyword">else</span>&#123;</div><div class="line">        			count++;</div><div class="line">        		&#125;</div><div class="line">        	&#125;</div><div class="line">        	<span class="keyword">if</span>(count==n)&#123;</div><div class="line">        		<span class="keyword">return</span> i;</div><div class="line">        	&#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/slr4Z" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/bywsd" alt="Untitled Image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * http://wiki.jikexueyuan.com/project/kmp-algorithm/define.html</div><div class="line"> * 仔细研读、多举例、多调试!</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">_028KMP</span> </span>&#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 时间复杂度O(M+N)</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack,String needle)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(needle.length()== <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> kmpSearch(haystack,needle);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 *求next数组，时间复杂度O(N)，准确来说，不超过2N,N表示模式串p的长度</div><div class="line">	 *k表示前一个指针，j表示后一个指针</div><div class="line">	 2种情况：</div><div class="line">	 *情况1：如果k越界，或者p[k]==p[j]，直接赋值</div><div class="line">	 *情况2：否则，将k往前移动</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] getNext(String p) &#123;</div><div class="line">		<span class="keyword">int</span> n=p.length();</div><div class="line">		<span class="keyword">int</span>[] next=<span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		next[<span class="number">0</span>]=-<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> k=-<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(j&lt;n-<span class="number">1</span>)&#123;</div><div class="line">			<span class="comment">//情况1</span></div><div class="line">			<span class="keyword">if</span>(k==-<span class="number">1</span>||p.charAt(k)==p.charAt(j))&#123;</div><div class="line">				k++;</div><div class="line">				j++;</div><div class="line">				<span class="comment">/*假设p="ABCDABD",k=1,j=5</span></div><div class="line">				 也就是p的第一个'B'与第二个'B'相等的情况,那么第二个'D'位置的next值就是2</div><div class="line">				即:next[6]=2</div><div class="line">				 */</div><div class="line">				<span class="comment">/*if(p.equals("ABCDABD")&amp;&amp;k==2&amp;&amp;j==6)&#123;</span></div><div class="line">					System.out.println("next"+"["+j+"]="+k);</div><div class="line">				&#125;*/</div><div class="line">				next[j]=k;</div><div class="line">			&#125; <span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">//情况2</span></div><div class="line">				<span class="comment">/*如果不匹配，由于next[k]&lt;k,将k往前移动,检测k位置之前的与j位置的字符是否相等</span></div><div class="line">				 假设p="AAAAABCD",k=4,j=5</div><div class="line">				 */</div><div class="line">				<span class="comment">/*if(p.equals("AAAAABCD"))&#123;</span></div><div class="line">					System.out.println("k="+k+",j="+j+",next["+k+"]="+next[k]);</div><div class="line">				&#125;*/</div><div class="line">				k=next[k];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> next;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 *KMP算法,时间复杂度O(M)，M表示文本串s的长度</div><div class="line">	 *2种情况：</div><div class="line">	 *情况1：如果越界，或者s[i]==p[j]，则i与j都往后移动</div><div class="line">	 *情况2：否则，将j移动到next[j]位置</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kmpSearch</span><span class="params">(String s,String p)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> m=s.length();</div><div class="line">		<span class="keyword">int</span> n=p.length();</div><div class="line">		<span class="keyword">int</span>[] next=getNext(p);</div><div class="line">		<span class="keyword">while</span>(i&lt;m&amp;&amp;j&lt;n)&#123;</div><div class="line">			<span class="comment">//情况1</span></div><div class="line">			<span class="keyword">if</span>(j==-<span class="number">1</span>||s.charAt(i)==p.charAt(j))&#123;</div><div class="line">				i++;</div><div class="line">				j++;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">//情况2</span></div><div class="line">				<span class="comment">/*"偷懒"的理解，只考虑“前缀与后缀没有重合区间”的简单情况</span></div><div class="line">				假设:s="BBC ABCDAB ABCDABCDABDE";p="ABCDABD"</div><div class="line">				1、s的第二个“AB”与p的第二个"AB"相等</div><div class="line">				2、p的第一个"AB"与p的第二个"AB"相等</div><div class="line">				所以必然有:s的第二个"AB"与p的第一个"AB"相等,故而，下一步，可以直接检测s的第二个空格与p的‘C’字符是否匹配</div><div class="line">				如果还不理解，看这句话：y=z,x=z --&gt; y=x*/</div><div class="line">				<span class="comment">/*if(s.equals("BBC ABCDAB ABCDABCDABDE")&amp;&amp;p.equals("ABCDABD")&amp;&amp;i==10&amp;&amp;j==6)&#123;</span></div><div class="line">					System.out.println("下一步比较s的"+i+"位置的字符与p的"+next[j]+"位置的字符是否相等");</div><div class="line">				&#125;*/</div><div class="line">				j=next[j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(j==n)&#123;</div><div class="line">			<span class="keyword">return</span> i-n;</div><div class="line">		&#125; <span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">return</span>-<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">		String s=<span class="string">"AABAABAC AAAAABCD CD"</span>;</div><div class="line">		String p=<span class="string">"AAAAABCD"</span>;</div><div class="line">		System.out.println(strStr(s, p));</div><div class="line">		System.out.println(s.indexOf(p));</div><div class="line">		s=<span class="string">"BBC ABCDAB ABCDABCDABDE"</span>;</div><div class="line">		p=<span class="string">"ABCDABD"</span>;</div><div class="line">		System.out.println(strStr(s, p));</div><div class="line">		System.out.println(s.indexOf(p));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          <h3 id="求字符串最后一个单词的长度"><a href="#求字符串最后一个单词的长度" class="headerlink" title="求字符串最后一个单词的长度"></a>求字符串最后一个单词的长度</h3><p>下面两种方法一看就懂：
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/22/数据结构面试题之字符串系列/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -751,22 +1030,13 @@
 
       
         
-          
-            <blockquote>
-<p>位运算——<strong>高效性</strong>。<br><em>使用适当的位运算不是为了装逼，而是为了迷倒别人。</em></p>
-</blockquote>
-<h3 id="常用的位运算例子："><a href="#常用的位运算例子：" class="headerlink" title="常用的位运算例子："></a>常用的位运算例子：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 常见的位运算</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bitOperation</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a= <span class="number">56</span>;</div><div class="line">    <span class="keyword">int</span> b =<span class="number">23</span>;</div><div class="line"></div><div class="line">    <span class="comment">/******不用临时变量交换两个数*****/</span></div><div class="line">    a^=b;</div><div class="line">    b^=a;</div><div class="line">    a^=b;</div><div class="line">    println(<span class="string">"a:"</span>+a);</div><div class="line">    println(<span class="string">"b:"</span>+b);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2运算*****/</span></div><div class="line">    <span class="keyword">int</span> c = a &lt;&lt; <span class="number">1</span> ;</div><div class="line">    println(c);</div><div class="line"></div><div class="line">    <span class="comment">/*****除2运算*****/</span></div><div class="line">    <span class="keyword">int</span> d = b&gt;&gt;<span class="number">1</span>;</div><div class="line">    println(d);</div><div class="line"></div><div class="line">    <span class="comment">/*****乘2的n次方   x &lt;&lt; n ********/</span></div><div class="line">    <span class="keyword">int</span> e = <span class="number">3</span> &lt;&lt; <span class="number">2</span>;</div><div class="line">    println(e);</div><div class="line"></div><div class="line">    <span class="comment">/********除2的n次方  x &gt;&gt; n  ******/</span></div><div class="line">    println(<span class="number">8</span> &gt;&gt; <span class="number">2</span>);</div><div class="line"></div><div class="line">    <span class="comment">/********* 判断一个数的奇偶性，true奇数，false偶数 *****/</span></div><div class="line">    println((<span class="number">9</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line">    println((<span class="number">8</span> &amp; <span class="number">1</span>)==<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** 判断两个数符号是否相同，true相同，false不同 ***/</span></div><div class="line">    println((<span class="number">8</span> ^ -<span class="number">2</span>)&gt;=<span class="number">0</span>);</div><div class="line">    <span class="comment">//求平均数</span></div><div class="line">    println((<span class="number">3</span>+<span class="number">2</span>)&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">    <span class="comment">/**** &gt;&gt;是算术（有符号）右移，它使用最高位填充移位后左侧的空位，不改变符号。</span></div><div class="line">     * &gt;&gt;&gt; 是逻辑无符号（）右移，它用0填充左侧的空为。没有算术含义   */</div><div class="line">    println(<span class="string">"&gt;&gt;和&gt;&gt;&gt;的区别："</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;<span class="number">1</span>);</div><div class="line">    println((<span class="keyword">byte</span>)-<span class="number">4</span>&gt;&gt;&gt;<span class="number">1</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="位运算实现加法操作"><a href="#位运算实现加法操作" class="headerlink" title="位运算实现加法操作"></a>位运算实现加法操作</h4><p><strong>思路：</strong>  </p>
-<ul>
-<li>异或运算得出两个数不计进位的和  </li>
-<li>与运算的结果左移一位刚好是进位<br>可使用递归或非递归方式两种方法实现。<br><strong>实现：</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//非递归法实现加法运算</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> result = a;</div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)&#123;</div><div class="line">        result = a^b;</div><div class="line">        b=(a&amp;b)&lt;&lt;<span class="number">1</span>;</div><div class="line">        a = result;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//递归法实现加法运算</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> ((a&amp;b)==<span class="number">0</span>) <span class="keyword">return</span> a^b;</div><div class="line">    <span class="keyword">return</span> add2(a^b,(a&amp;b)&lt;&lt;<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="位运算实现减法操作"><a href="#位运算实现减法操作" class="headerlink" title="位运算实现减法操作"></a>位运算实现减法操作</h4><p><strong>思路：</strong><br>减法可通过转换变为加法来运算，因为a-b=a+(-b)=a+(~b)+1<br><strong>实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//减法运算</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">        <span class="comment">//b的相反数是~b+1</span></div><div class="line">        <span class="keyword">return</span> add(a, ~b+<span class="number">1</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h4 id="位运算实现乘法操作"><a href="#位运算实现乘法操作" class="headerlink" title="位运算实现乘法操作"></a>位运算实现乘法操作</h4><p>待续</p>
-<h4 id="位运算实现除法操作"><a href="#位运算实现除法操作" class="headerlink" title="位运算实现除法操作"></a>位运算实现除法操作</h4><p>待续</p>
-
-          
+          <blockquote>
+<p>位运算——<strong>高效性</strong>。<br><em>使用适当的位运算不是为了装逼，而是为了迷倒别人。</em>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/21/常用的位运算技巧/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -892,47 +1162,15 @@
 
       
         
-          
-            <blockquote>
-<p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621" target="_blank" rel="external">Jeff的自留地：java线程安全的容器类</a></em>  </p>
+          <blockquote>
+<p><em>转自<a href="http://blog.csdn.net/snail_ren/article/details/51969621">Jeff的自留地：java线程安全的容器类</a></em>  </p>
 </blockquote>
-<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容</p>
-<h3 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg" alt="Untitled Image"></p>
-<p>在Map类中，提供两种线程安全容器。</p>
-<p><strong>java.util.Hashtable</strong>  </p>
-<p>Hashtable和HashMap类似，都是散列表，存储键值对映射。主要区别在于Hashtable是线程安全的。当我们查看Hashtable源码的时候，可以看到Hashtable的方法都是通过synchronized来进行方法层次的同步，以达到线程安全的作用。</p>
-<p><strong>java.util.concurrent.ConcurrentHashMap</strong><br>ConcurrentHashMap是性能更好的散列表。在兼顾线程安全的同时，相对于Hashtable，在效率上有很大的提高。我们可以猜想，Hashtable的线程安全实现是对方法进行synchronized，很明显可以通过其他并发方式，如ReentrantLock进行优化。而ConcurrentHashMap正是采用了ReentrantLock。运用锁分离技术，即在代码块上加锁，而不是方法上加。同时ConcurrentHashMap的一个特色是允许多个修改并发操作。这就有意思了，我们知道一般写都是互斥的，为什么这个还能多个同时写呢？那是因为ConcurrentHashMap采用了内部使用段机制，将ConcurrentHashMap分成了很多小段。只要不在一个小段上写就可以并发写。</p>
-<h3 id="2-Collection"><a href="#2-Collection" class="headerlink" title="2. Collection"></a>2. Collection</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg" alt="Untitled Image"></p>
-<p>Collection部分主要是运用的CopyOnWrite机制，即写时复制机制。从字面上就能理解什么意思，就是当我们往一个容器里添加元素的时候，先对这个容器进行一次复制，对副本进行写操作。写操作结束后，将原容器的引用指向新副本容器，就完成了写的刷新。从它的实现原理，我们可以看出这种机制是存在缺点的。</p>
-<p>1.内存占用：毫无疑问，每次写时需要首先复制一遍原容器，假如复制了很多，或者本身原容器就比较大，那么肯定会占用很多内存。可以采用压缩容器中的元素来防止内存消耗过大。</p>
-<p>2.数据一致性问题：当我们在副本中进行写操组时，只能在最终结束后使数据同步，不能实时同步</p>
-<p>可以看到，这种机制适用于读操作多，写操作少的应用场景。</p>
-<p><strong>java.util.concurrent.CopyOnWriteArrayList</strong></p>
-<p>Collection类的线程安全容器主要都是利用的ReentrantLock实现的线程安全，CopyOnWriteArrayList也不例外。在并发写的时候，需要获取lock。读的时候不需要进行lock</p>
-<p><strong>java.util.concurrent.CopyOnWriteArraySet</strong></p>
-<p>CopyOnWriteArraySet的实现就是基于CopyOnWriteArrayList实现的，采用的装饰器进行实现。二者的区别和List和Set的区别一样。</p>
-<p><strong>Vector</strong></p>
-<p>一般我们都不用Vector了，不过它确实也是线程安全的。相对于其他容器，能够提供随机访问功能。</p>
-<h3 id="3-StringBuffer和StringBuilder"><a href="#3-StringBuffer和StringBuilder" class="headerlink" title="3. StringBuffer和StringBuilder"></a>3. StringBuffer和StringBuilder</h3><p>我们知道，String在进行+操作的时候，原生的String会重新新建一个String对象来完成字符串拼接，明显这种操作多了的话会加重服务器负担。因此我们需要的时候就会用StringBuffer和StringBuilder。这二者有什么区别呢？</p>
-<p><strong>StringBuffer</strong>是线程安全的，StringBuilder不是。从StringBuffer的源码可以看到，它采用的是对方法进行synchronized实现的同步。但是加了同步机制，肯定会对性能有一定影响。  </p>
-<blockquote>
-<p>高并发情况下，对数据安全有需求，则用StringBuffer，否则用StringBuilder</p>
-</blockquote>
-<p><br></p>
-<hr>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><strong>*java.util.Hashtable</strong>：synchronized实现</li>
-<li><strong>java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
-<li><strong>java.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
-<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
-<li><strong>*Vector</strong>: ReentrantLock实现</li>
-<li><strong>*StringBuffer</strong>： synchronized实现</li>
-</ol>
-<blockquote>
-<p>前1.2.属Map，3.4.5.属Collection。<br><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
-</blockquote>
-
-          
+<p>Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/20/Java线程安全的容器类/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1058,29 +1296,14 @@
 
       
         
-          
-            <p><strong>争用条件：</strong> 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  </p>
+          <p><strong>争用条件：</strong> 当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupter），这种现象称为争用条件（条件争用）。  </p>
 <p><strong>线程的交互：</strong> 互斥与同步</p>
-<p><strong>互斥：</strong> 关键数据在同一时间只能被一个线程访问。<br><strong>同步：</strong> 一种通信机制。<br><strong>object方法：</strong> wait()/notify()/notifyAll();</p>
-<p><strong>可见性：</strong> 一个线程对共享变量值的修改，能够及时地被其他线程看到。<br><strong>共享变量：</strong> 如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量。<br><strong>Java内存模型（JMM)：</strong><br>所有变量都存储在主内存中，每个线程都有自己独立的工作内存，里面保存该线程使用到的变量的副本（主内存中该变量的一份拷贝）。 </p>
-<div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/tempClipboardImage.png" width="400" height="220"><br></div>
-
-<blockquote>
-<p>线程对共享变量的所有操作都必须在自己的工作内存中进行，不能直接从内存中读写。<br>不同线程之间无法直接访问其他线程工作内存中的变量，线程间变量的值的传递需要通过主内存来完成。  </p>
-</blockquote>
-<p><br></p>
-<p>可见性语言层面的实现方式：  </p>
-<ol>
-<li>synchronized  </li>
-<li>volatile  </li>
-</ol>
-<p>synchronized可保证原子性，但volatile不能保证原子性。   </p>
-<p><em>Volatile 变量具有 synchronized 的可见性特性，但是<strong>不具备原子特性</strong>。这就是说线程能够自动发现 volatile 变量的最新值。只是使用volatile关键字一般情况下不能保证同步，即原子性。</em>强制每次都直接读取内存，组织编译器重排序，确保volatile类型的值一旦被写入缓存必定会被立即更新到主存。</p>
-<h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><p>//reentrantLock<br>//final也可以保证内存可见性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</div><div class="line">lock.lock();</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">    	number++;</div><div class="line">    &#125;<span class="keyword">finally</span>&#123;</div><div class="line">    	lock.unlock();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<p><em>慕课网上非常好的视频教程<a href="http://www.imooc.com/learn/352" target="_blank" rel="external">细说Java多线程值内存可见性</a></em></p>
-
-          
+<p><strong>互斥：</strong> 关键数据在同一时间只能被一个线程访问。<br><strong>同步：</strong> 一种通信机制。<br><strong>object方法：</strong> wait()/notify()/notifyAll();
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/20/Java并发的点点滴滴/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1206,67 +1429,14 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>四种基本数据结构：集合、线性结构、树形结构、图状街头。</p>
-<p><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em></p>
-</blockquote>
-<h4 id="Stack栈"><a href="#Stack栈" class="headerlink" title="Stack栈"></a>Stack栈</h4><p>先进后出，使用LinkedList实现的。  </p>
-<ul>
-<li>push():压入栈    </li>
-<li>pop(): 移除并返回栈顶元素  </li>
-<li>peek(): 提供栈顶元素但不移除  </li>
-<li>empty(): 栈是否为空  </li>
-</ul>
-<h4 id="Queue队列"><a href="#Queue队列" class="headerlink" title="Queue队列"></a>Queue队列</h4><p>先进先出，队列在并发编程中特别重要，因为它们可以安全地将对象从一个任务传输到另一个任务。  </p>
-<ul>
-<li>offer(): 添加一个元素到队尾并返回true，若队列满则返回false。</li>
-<li>peek(): 返回队列头部元素，若队列空则返回null。</li>
-<li>element(): 返回队列头部元素，若队列空则抛出NoSuchElementException异常。</li>
-<li>poll(): 移除并返回队头元素，若队列空则返回null。</li>
-<li>remove(): 移除并返队头元素，若队列空则抛出NoSuchElementException异常。  </li>
-</ul>
-<blockquote>
-<p>LinkedList提供了方法以支持队列的行为，并且它实现了Queue接口，因此可以将LinkedList向上转型为Queue。</p>
-</blockquote>
-<h4 id="用两个栈实现一个队列"><a href="#用两个栈实现一个队列" class="headerlink" title="用两个栈实现一个队列"></a>用两个栈实现一个队列</h4><blockquote>
-<ol>
-<li>插入操作在stack1中进行，删除操作在stack2中进行  </li>
-<li>如果stack2为空，则将stack1中的所有元素转移到stack2中  </li>
-<li>出栈时如果两个栈都为空，则抛出NoSuchElementException异常并处理。</li>
-</ol>
-</blockquote>
-<h4 id="使用两个队列实现一个栈"><a href="#使用两个队列实现一个栈" class="headerlink" title="使用两个队列实现一个栈"></a>使用两个队列实现一个栈</h4><blockquote>
-<ol>
-<li>有两个队列q1和q2，先往q1内插入a，b，c，这做的都是栈的push操作。</li>
-<li>现在要做pop操作，即要得到c，这时可以将q1中的a,b两个元素全部dequeue并存入q2中，这时q2中元素为a，b，对q1再做一次dequeue操作即可得到c。</li>
-<li>如果继续做push操作，比如插入d，f，则把d，f插入到q2中，</li>
-<li>此时若要做pop操作，则做步骤2</li>
-<li>以此类推，就实现了用两个队列来实现一个栈的目的。</li>
-</ol>
-<p>新push进来的元素总是插入到非空队列中，空队列保存一次pop之后的元素。那么原来的空队列变成非空，原来的非空队列变成了空，总是这样循环。<br>push和pop  时间复杂度O(n)。</p>
-</blockquote>
-<h4 id="优先队列PriorityQueue"><a href="#优先队列PriorityQueue" class="headerlink" title="优先队列PriorityQueue"></a>优先队列PriorityQueue</h4><p>优先队列调用offer方法来插入一个对象时，这个对象会在队列中被排序。默认的排序将使用对象在队列中的自然顺序，可提供自己的Comparator来修该这个顺序。PriorityQueue可确保调用peek、poll、remove方法时，获取的元素是队列中优先级最高的元素。PriorityQueue与Integer、String、character内置类型一起工作易如反掌。（若是String,空格也算值，且优先级高于字母）</p>
-<blockquote>
-<p>PriorityQueue本质上是堆排序里面的小根堆。</p>
-</blockquote>
-<p>PriorityQueue：脑补。</p>
-<p><em>在做算法题的时候可以考虑使用PriorityQueue</em></p>
-<h4 id="Arrays工具类用法总结"><a href="#Arrays工具类用法总结" class="headerlink" title="Arrays工具类用法总结"></a>Arrays工具类用法总结</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a = &#123;-<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">11</span>,<span class="number">54</span>,<span class="number">63</span>,<span class="number">74</span>&#125;;</div><div class="line"><span class="keyword">int</span>[] b = &#123;-<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">11</span>,<span class="number">54</span>,<span class="number">63</span>,<span class="number">74</span>&#125;;</div><div class="line">Integer[] c = &#123;<span class="number">15</span>,<span class="number">6</span>,<span class="number">788</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">56</span>,<span class="number">9</span>&#125;;</div><div class="line">Arrays.toString(a); <span class="comment">//打印数组</span></div><div class="line"><span class="keyword">int</span> y =Arrays.binarySearch(a,<span class="number">11</span>);   <span class="comment">//二分查找，返回找到的下标，找不到返回负数</span></div><div class="line"><span class="keyword">int</span>[] xa=Arrays.copyOf(a,<span class="number">3</span>);    <span class="comment">//复制数组的前三个元素为另一个数组</span></div><div class="line"><span class="keyword">int</span>[] xb = Arrays.copyOfRange(a,<span class="number">0</span>,<span class="number">2</span>);   <span class="comment">//复制数组下标&gt;=0,&lt;2的部分</span></div><div class="line"><span class="keyword">boolean</span> z =Arrays.equals(a,b);  <span class="comment">//判断两个数组内容是否相同</span></div><div class="line">Arrays.fill(a,<span class="number">7</span>);   <span class="comment">//数组元素全部填充为7</span></div><div class="line">Arrays.fill(a,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>);   <span class="comment">//数组下标&gt;=2,&lt;4的元素填充为0</span></div><div class="line">Arrays.sort(c,<span class="number">2</span>,<span class="number">6</span>); <span class="comment">//对数组下标&gt;=2,&lt;6的部分升序排序</span></div><div class="line">Arrays.sort(c);     <span class="comment">//对数组进行升序排序</span></div><div class="line">Arrays.sort(c,Collections.&lt;Integer&gt;reverseOrder());<span class="comment">//对数组进行降序排序</span></div><div class="line">Arrays.sort(c,<span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;<span class="comment">//自定义降序排序排序</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> b.compareTo(a);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">Arrays.sort(c);     <span class="comment">//对数组进行升序排序</span></div><div class="line">Arrays.sort(c, <span class="number">0</span>, <span class="number">4</span>, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123; <span class="comment">//自定义数组下标&gt;=0,&lt;4的部分降序</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> o2.compareTo(o1);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">char</span>[] s = &#123;<span class="string">'a'</span>,<span class="string">'b'</span>&#125;;</div><div class="line"><span class="keyword">char</span>[] t = &#123;<span class="string">'a'</span>,<span class="string">'b'</span>&#125;;</div><div class="line"><span class="comment">//判断两个数组的内容是否相等</span></div><div class="line">println(Arrays.equals(s,t));</div></pre></td></tr></table></figure>
-<h4 id="Collections工具类用法总结"><a href="#Collections工具类用法总结" class="headerlink" title="Collections工具类用法总结"></a>Collections工具类用法总结</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">	List list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>);<span class="comment">//将后面的元素都添加到list中</span></div><div class="line">    Collections.reverseOrder();<span class="comment">//返回一个Comparator&lt;T&gt;倒序排序的接口对象</span></div><div class="line">    println(list);</div><div class="line">    Collections.reverse(list);  <span class="comment">//将列表逆序排序</span></div><div class="line">    Collections.sort(list); <span class="comment">//将列表升序排序</span></div><div class="line">    println(list);</div><div class="line">    Collections.sort(list,Collections.reverseOrder());  <span class="comment">//将列表降序排序</span></div><div class="line"></div><div class="line">    List list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">    Collections.addAll(list2,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">16</span>,<span class="number">45</span>);</div><div class="line">    <span class="keyword">int</span> index = Collections.binarySearch(list2,<span class="number">12</span>); <span class="comment">//二分查找，返回下标，无则返回负数</span></div><div class="line">    println(list);</div><div class="line">    println(index);</div><div class="line"></div><div class="line">    Object max = Collections.max(list); <span class="comment">//返回最大值</span></div><div class="line">    Object min = Collections.min(list); <span class="comment">//返回最小值</span></div><div class="line">    println(<span class="string">"max:"</span>+max);</div><div class="line">    println(<span class="string">"min:"</span>+min);</div><div class="line"></div><div class="line">    List list3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;()&#123;&#123;add(<span class="number">2</span>);add(<span class="number">3</span>);add(<span class="number">5</span>);add(<span class="number">7</span>);add(<span class="number">6</span>);add(<span class="number">8</span>);&#125;&#125;;<span class="comment">//初始化</span></div><div class="line"><span class="comment">//        Collections.synchronizedList(list);</span></div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回第一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> sindex = Collections.indexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    <span class="comment">//查找是否有某子列表，有则返回最后一个子列表下标，无则返回-1</span></div><div class="line">    <span class="keyword">int</span> lindex = Collections.lastIndexOfSubList(list3,Arrays.asList(<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">    println(<span class="string">"first index:"</span>+sindex);</div><div class="line">    println(<span class="string">"last index:"</span>+lindex);</div><div class="line"></div><div class="line">    Collections.rotate(list3,<span class="number">2</span>);<span class="comment">//集合中元素后移2个位置，益处的循环到前面</span></div><div class="line">    println(list3);</div><div class="line">    Collections.shuffle(list3);<span class="comment">//对集合进行洗牌，即打乱顺序</span></div><div class="line">    println(list3);</div><div class="line">    Collections.swap(list3,<span class="number">0</span>,<span class="number">1</span>);<span class="comment">//交换集合中第0个和第一个元素</span></div><div class="line">    println(list3);</div><div class="line"></div><div class="line">    <span class="comment">//list本身不是同步的，此法得到线程安全的list</span></div><div class="line">    <span class="comment">//【注意】即直接使用它提供的单个函数，可以同步。但若多个函数想同步，必须自己做同步。</span></div><div class="line">    List safeList = Collections.synchronizedList(list3);</div><div class="line"></div><div class="line">    <span class="comment">//三个final类型的类变量，在某些情况下，我们经常需要返回一个空的集合对象，</span></div><div class="line">    <span class="comment">//比如在数据查询时，并不需要发挥一个NULL或是异常，那么就可以返回一个空的集合对象。</span></div><div class="line">    List emptyList = Collections.EMPTY_LIST;    <span class="comment">//创建一个空列表</span></div><div class="line">    emptyList = Collections.emptyList();    <span class="comment">//同上，下面类推</span></div><div class="line">    Map emptyMap = Collections.EMPTY_MAP;  <span class="comment">//创建一个空map</span></div><div class="line">    Set emptySet = Collections.EMPTY_SET;  <span class="comment">//创建一个空集合</span></div></pre></td></tr></table></figure>
-<h4 id="Java线程安全的容器类"><a href="#Java线程安全的容器类" class="headerlink" title="Java线程安全的容器类"></a>Java线程安全的容器类</h4><ol>
-<li><strong>java.util.Hashtable</strong>：synchronized实现</li>
-<li><strong>*java.util.concurrent.ConcurrentHashMap</strong>: ReentrantLock实现</li>
-<li><strong>ava.util.concurrent.CopyOnWriteArrayList</strong>: ReentrantLock实现</li>
-<li><strong>java.util.concurrent.CopyOnWriteArraySet</strong>: ReentrantLock实现</li>
-<li><strong>Vector</strong>: ReentrantLock实现</li>
-<li><strong>StringBuffer</strong>： synchronized实现</li>
-</ol>
-<blockquote>
-<p>前1.2.属Map，3.4.5.属Collection。</p>
-</blockquote>
-<h4 id="容器本身也有很多有用的方法，待总结。"><a href="#容器本身也有很多有用的方法，待总结。" class="headerlink" title="容器本身也有很多有用的方法，待总结。"></a>容器本身也有很多有用的方法，待总结。</h4>
-          
+<p><em>注：新程序中不应该使用过时的Vector、Hashtable和Stack等。</em><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Java容器类和工具类/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1392,31 +1562,12 @@
 
       
         
-          
-            <h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
-<p>然后，在github服务器端也创建一个同名仓库<code>test</code>，执行以下命令关联远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:BluesTroy/test.git</div></pre></td></tr></table></figure></p>
-<p>接着，将远程<code>master</code>最新分支拉取到本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master</div></pre></td></tr></table></figure></p>
-<p>最后，就可以将本地库的内容推送到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure></p>
-<p>第一次推送到<code>master</code>分支时，<code>-u</code>参数会把本地<code>master</code>分支和远程<code>master</code>分支关联，之后就可以直接使用简化命令<code>git push</code>和<code>git pull</code>了。</p>
-<h4 id="拉取远程特定分支"><a href="#拉取远程特定分支" class="headerlink" title="拉取远程特定分支"></a>拉取远程特定分支</h4><p>远程分支和本地分支需要区分，所以，在从服务器上拉取特定分支的时候，需要指定本地分支名字。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout --track origin/develop</div></pre></td></tr></table></figure></p>
-<p>注意该命令由于带有–track参数，所以要求git1.6.4以上！这样git会自动切换到develop分支。</p>
-<h4 id="为git命令设置别名"><a href="#为git命令设置别名" class="headerlink" title="为git命令设置别名"></a>为git命令设置别名</h4><p>将以下内容追加到<code>C:\Users\Troy\.gitconfig</code>文件，就可以用简化命令，如<code>git st</code>来代替<code>git status</code>。  </p>
-<blockquote>
-<p>[alias]<br>  co = checkout<br>  ci = commit<br>  br = branch<br>  st = status<br>  unstage = reset HEAD<br>  last = log -1<br>  lg = log –color –graph –pretty=format:’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset’ –abbrev-commit</p>
-</blockquote>
-<h4 id="git修复冲突"><a href="#git修复冲突" class="headerlink" title="git修复冲突"></a>git修复冲突</h4><h5 id="修复merge冲突"><a href="#修复merge冲突" class="headerlink" title="修复merge冲突"></a>修复merge冲突</h5><p>如<code>develop</code>分支与<code>dev</code>分支合并：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout develop</div><div class="line">$ git merge dev</div></pre></td></tr></table></figure></p>
-<p>因为合并时有冲突，会出现分支(develop|MERGING)情况，会列出CONFLICT冲突的文件有哪些。<br><strong>解决：</strong><br>依次进入冲突文件，会出现冲突部分之前的内容和最新的内容，其中<br>==== HEAD<br>\======<br>=====dev<br>之间相关的内容要处理掉，需要保留最新的有用的内容，删掉旧的内容。<br>处理完成后执行以下命令即可修复冲突：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">$ git commit -m <span class="string">'fix conflict'</span></div></pre></td></tr></table></figure></p>
-<h5 id="修复rebase冲突"><a href="#修复rebase冲突" class="headerlink" title="修复rebase冲突"></a>修复rebase冲突</h5><p>使用以下命令可能会出现<code>rebase</code>冲突：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull --rebase</div></pre></td></tr></table></figure></p>
-<p>冲突出现和解决与<code>merge</code>冲突类似，解决完后执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
-<h4 id="ssh生成公钥和私钥"><a href="#ssh生成公钥和私钥" class="headerlink" title="ssh生成公钥和私钥"></a>ssh生成公钥和私钥</h4><p>git需要ssh访问的公钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen</div></pre></td></tr></table></figure></p>
-<h4 id="gitignore使用方法"><a href="#gitignore使用方法" class="headerlink" title=".gitignore使用方法"></a>.gitignore使用方法</h4><p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如无，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 此为注释 – 将被 Git 忽略  </div><div class="line">*.a       # 忽略所有 .a 结尾的文件  </div><div class="line">!lib.a    # 但 lib.a 除外  </div><div class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO </div><div class="line">build/    # 忽略 build/ 目录下的所有文件  </div><div class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括   doc/server/arch.txt</div></pre></td></tr></table></figure></p>
-<p><strong>如果某文件已添加到<code>.gitignore</code>，但不起作用，下面三条命令可解决：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git rm -r --cached .</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">'update .gitignore'</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交</p>
-</blockquote>
-<h4 id="git多人协作常用命令"><a href="#git多人协作常用命令" class="headerlink" title="git多人协作常用命令"></a>git多人协作常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># 从服务器上clone</div><div class="line">git clone ssh://git@xxx.xxx.xxx.xxx/opt/fashion/fashion.git  </div><div class="line"></div><div class="line">git branch dev	#本地建立新分支dev</div><div class="line">git checkout dev	#切换到dev分支</div><div class="line">#这样就可在dev分支上进行操作了,万一代码写错,还可以还原到原先的分支  </div><div class="line"></div><div class="line">git branch -d dev	#删除dev分支</div><div class="line">git branch	#查看当前分支HEAD</div><div class="line"></div><div class="line">#一但代码修改以后,保存自己写的代码到本地</div><div class="line">git status</div><div class="line">git add -A</div><div class="line">git commit -m “这段修改的代码你做了什么,写在这里面,方便别人看到”</div><div class="line"></div><div class="line">#接下来将自己的代码更新到网上</div><div class="line">git checkout develop</div><div class="line">git pull --rebase	#拉取服务器最新代码</div><div class="line">git merge dev	#将dev分支合并到develop分支</div><div class="line">git push	#提交自己的最新代码到服务器</div></pre></td></tr></table></figure>
-
-          
+          <h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/17/关于Git，你不需要记住更多/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1542,310 +1693,12 @@
 
       
         
-          
-            <p><img src="http://obmxnha1c.bkt.clouddn.com/266279_1442481223258_BB3663E2B94AB7FD90C31D24E4C6E7EB.jpg" alt="Untitled Image"><br><em>快排的辅助存储应该是log(n)</em><br><em>稳定的含义：  两个相同元素的相对位置不变。</em></p>
-<hr>
-<h3 id="1-快速排序"><a href="#1-快速排序" class="headerlink" title="1 快速排序"></a>1 快速排序</h3><h5 id="1-1-思路"><a href="#1-1-思路" class="headerlink" title="1.1 思路"></a>1.1 思路</h5><blockquote>
-<p>①以第一个关键字 K 1 为控制字，将 [K 1 ,K 2 ,…,K n ] 分成两个子区，使左区所有关键字小于等于 K 1 ，右区所有关键字大于等于 K 1 ，最后控制字居两个子区中间的适当位置。在子区内数据尚处于无序状态。<br>②把左区作为一个整体，用①的步骤进行处理，右区进行相同的处理。（即递归）<br>③重复第①、②步，直到左区处理完毕。`  </p>
-</blockquote>
-<h5 id="1-2-Java实现"><a href="#1-2-Java实现" class="headerlink" title="1.2 Java实现"></a>1.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 快速排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a     待排序的数组</div><div class="line"> * <span class="doctag">@param</span> left  待排序区间的开始下标</div><div class="line"> * <span class="doctag">@param</span> right 待排序区间的结束下标</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (left &gt;= right) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> i = left;</div><div class="line">    <span class="keyword">int</span> j = right;</div><div class="line">    <span class="keyword">int</span> key = a[i];    <span class="comment">//以第一个数为关键字</span></div><div class="line">    <span class="comment">//经过一趟后，关键字在中间的某处，左边的都比其小，右边的都比其大</span></div><div class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</div><div class="line">        <span class="comment">//先从j开始由右往左，遇见比关键字小的则将此数放到左边i的位置，然后i++</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt;= key) &#123;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[i] = a[j];</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//然后再从i开始由左往右，遇见比关键字大的数则将此数放到j的位置，然后j--</span></div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt;= key) &#123;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) &#123;</div><div class="line">            a[j] = a[i];</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    a[i] = key;</div><div class="line">    <span class="comment">//然后对左右区间分别执行快排算法</span></div><div class="line">    quickSort(a, left, i - <span class="number">1</span>);</div><div class="line">    quickSort(a, i + <span class="number">1</span>, right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="1-3-算法分析"><a href="#1-3-算法分析" class="headerlink" title="1.3 算法分析"></a>1.3 算法分析</h5><p>每次分成两组，分logn次，每趟比较n次。<br><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(+logn)<br><strong>不稳定</strong></p>
-<blockquote>
-<p>始序列有序时，快速排序效率最低<br>快排每一趟就是O(n)，在一般情况下递归深度是log(n)，所以总的复杂度是O(nlogn)。在有序的情况下，递归深度变成了n，所以总复杂度会退化到O(n*n)</p>
-</blockquote>
-<p><strong>针对快速排序的最坏情况进行的改进方法</strong> </p>
-<blockquote>
-<p>改进方法主要是对控制字pivot的选取进行改进，默认的是选取区间的第一个节点。<br>改进方法1. 随机选取区间里面的的一个数作为控制字。<br>改进方法2. 对区间的left,middle,last三数取中作为关键字，避开了随机数产生器的开销又带了了一定程度的随机性。<br><em>改进方法还有其他很多种。</em>  </p>
-</blockquote>
-<p><strong>快速排序的优化</strong></p>
-<ol>
-<li>待排序序列的长度分割到一定大小后，使用插入排序。（比如right-left+1&lt;10）。<strong>原因：</strong> 对于很小和部分有序的数组，快排不如插排好。</li>
-<li>优化尾部递归、使用并行或多线程处理子序列等其他。</li>
-</ol>
-<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2 冒泡排序"></a>2 冒泡排序</h3><p>按从小到大排序：</p>
-<h5 id="2-1-思路"><a href="#2-1-思路" class="headerlink" title="2.1 思路"></a>2.1 思路</h5><blockquote>
-<ol>
-<li>按从前往后的顺序多次扫描，每次扫描向后比较相邻元素，若后面比前面小，则交换它们</li>
-<li>第一趟扫描完后，最后一个元素应该是最大的数</li>
-<li>同理扫描前n-1个数，第二次扫描第二大元素则变为倒数第二个位置</li>
-<li>以此类推</li>
-</ol>
-</blockquote>
-<h5 id="2-2-Java实现"><a href="#2-2-Java实现" class="headerlink" title="2.2 Java实现"></a>2.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 冒泡排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a 待排序的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>;</div><div class="line">    <span class="comment">//n个数，进行n-1次扫描</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="comment">//每次扫描都比较前i个数，每两个相邻的数，将小的放前面</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>]) &#123;</div><div class="line">                temp = a[j];</div><div class="line">                a[j] = a[j + <span class="number">1</span>];</div><div class="line">                a[j + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="2-3-算法分析"><a href="#2-3-算法分析" class="headerlink" title="2.3 算法分析"></a>2.3 算法分析</h5><p>感觉冒泡排序交换次数太多，用的比较少<br><strong>时间复杂度</strong>： O(n^2)<br><strong>最坏情况</strong>：O(n^2)<br><strong>最好</strong>：O(n)<br><strong>空间复杂度</strong>：O(1)<br><strong>稳定</strong></p>
-<h3 id="3-直接选择排序"><a href="#3-直接选择排序" class="headerlink" title="3 直接选择排序"></a>3 直接选择排序</h3><h5 id="3-1-思路"><a href="#3-1-思路" class="headerlink" title="3.1 思路"></a>3.1 思路</h5><blockquote>
-<p>每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法</p>
-<h5 id="3-2-Java实现"><a href="#3-2-Java实现" class="headerlink" title="3.2 Java实现"></a>3.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 直接选择排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a 待排序的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> min = <span class="number">0</span>, temp = <span class="number">0</span>;</div><div class="line">    <span class="comment">//进行n次扫描</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</div><div class="line">        min = i;</div><div class="line">        <span class="comment">//每一次扫描取出待排序中最小的元素</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; a.length; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (a[min] &gt; a[j]) &#123;</div><div class="line">                min = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//将该最小的元素放到待排序序列的第一个位置</span></div><div class="line">        <span class="keyword">if</span> (min != i) &#123;</div><div class="line">            temp = a[min];</div><div class="line">            a[min] = a[i];</div><div class="line">            a[i] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</blockquote>
-<h5 id="3-3-算法分析"><a href="#3-3-算法分析" class="headerlink" title="3.3 算法分析"></a>3.3 算法分析</h5><p><strong>时间复杂度</strong>： O(n^2)<br><strong>最坏情况</strong>：O(n^2)<br><strong>空间复杂度</strong>：O(1)<br><strong>不稳定</strong></p>
-<h3 id="4-堆排序"><a href="#4-堆排序" class="headerlink" title="4 堆排序"></a>4 堆排序</h3><p>以大根堆为例：</p>
-<h5 id="4-1-思路"><a href="#4-1-思路" class="headerlink" title="4.1 思路"></a>4.1 思路</h5><blockquote>
-<ol>
-<li>将一个无序数列建成一个初始堆</li>
-<li>输出堆顶元素并调整剩余元素成为一个新堆</li>
-<li>重复1和2，则最终按顺序输出的数列即为排好序的数列</li>
-</ol>
-</blockquote>
-<h6 id="4-2-构建初始堆"><a href="#4-2-构建初始堆" class="headerlink" title="4.2 构建初始堆"></a>4.2 构建初始堆</h6><ol>
-<li>首先数列构造一个完全二叉树。  </li>
-<li>n为下标，从0开始。则最后一个非叶节点下标x是[n/2]向下取整，故从x处从后往前进行调整。  </li>
-<li>每次比较父节点、左孩子、右孩子，将最小的孩子与父节点交换。</li>
-<li>每次交换后需对被交换的孩子节点进行调整  </li>
-</ol>
-<h5 id="4-3-Java实现"><a href="#4-3-Java实现" class="headerlink" title="4.3 Java实现"></a>4.3 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * 调整堆，使满足堆的定义。此例为大根堆</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> a          待排序的数组</div><div class="line">     * <span class="doctag">@param</span> startIndex 待调整堆的开始下标</div><div class="line">     * <span class="doctag">@param</span> endIndex   待调整堆的结束下标</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapAdjust</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> startIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</div><div class="line">        <span class="comment">//start和end分别为【初始下标】和【结束下标】</span></div><div class="line">        <span class="keyword">int</span> temp;</div><div class="line">        <span class="keyword">int</span> i;</div><div class="line">        <span class="keyword">for</span> (; <span class="number">2</span> * startIndex + <span class="number">1</span> &lt;= endIndex; startIndex = i) &#123;</div><div class="line">            i = <span class="number">2</span> * startIndex + <span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span> (i &lt; endIndex &amp;&amp; a[i] &lt; a[i + <span class="number">1</span>]) &#123;</div><div class="line">                i++;  <span class="comment">//i为较大孩子节点的下标</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (a[startIndex] &lt; a[i]) &#123; <span class="comment">//左右孩子中获胜者与父亲比较</span></div><div class="line">                <span class="comment">//将孩子结点上位，则以孩子结点的位置进行下一轮的筛选</span></div><div class="line">                temp = a[startIndex];</div><div class="line">                a[startIndex] = a[i];</div><div class="line">                a[i] = temp;</div><div class="line"><span class="comment">//                start = i;</span></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">//因为整棵树是从下往上调整数，所以，若父节点不需要调整，说明该节点子树已满足堆性质，跳出循环</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 堆排序</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> a 待排序的数组</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;   <span class="comment">//从最后一个非叶节点开始，建立初始堆</span></div><div class="line">            heapAdjust(a, i, a.length - <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//进行排序</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; --i) &#123;</div><div class="line">            <span class="comment">//将待排序区最后一个元素和第一个元素进行交换</span></div><div class="line">            <span class="keyword">int</span> temp = a[i];</div><div class="line">            a[i] = a[<span class="number">0</span>];</div><div class="line">            a[<span class="number">0</span>] = temp;</div><div class="line">            <span class="comment">//将剩下的无序元素调整为大顶堆</span></div><div class="line">            heapAdjust(a, <span class="number">0</span>, i - <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h5 id="4-4-算法分析"><a href="#4-4-算法分析" class="headerlink" title="4.4 算法分析"></a>4.4 算法分析</h5><p><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(nlogn)<br><strong>空间复杂度</strong>：O(1)<br><strong>不稳定</strong></p>
-<blockquote>
-<p><strong>堆排序方法对记录数较少的文件并不值得提倡，但对n较大的文件还是很有效的</strong>。因为其运行时间主要耗费在建初始堆和调整建新堆时进行的反复“筛选”上。<br>堆排序在最坏的情况下，其时间复杂度也为O(nlogn)。相对于快速排序来说，这是堆排序的最大优点。此外，堆排序仅需一个记录大小的供交换用的辅助存储空间。</p>
-</blockquote>
-<h3 id="5-直接插入排序"><a href="#5-直接插入排序" class="headerlink" title="5 直接插入排序"></a>5 直接插入排序</h3><h5 id="5-1-思路"><a href="#5-1-思路" class="headerlink" title="5.1 思路"></a>5.1 思路</h5><ol>
-<li>从第一个元素开始，该元素可以认为已经被排序</li>
-<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
-<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
-<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
-<li>将新元素插入到下一位置中</li>
-<li>重复步骤2~5<h5 id="5-2-Java实现"><a href="#5-2-Java实现" class="headerlink" title="5.2 Java实现"></a>5.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 直接插入排序</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a 待排序的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> temp;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="comment">//遍历数组</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">        temp = a[i]; <span class="comment">//将待排序的第一个元素放到监视哨中，作为要插入的数</span></div><div class="line">        j = i - <span class="number">1</span>;  <span class="comment">//从后往前开始查找的位置j</span></div><div class="line">        <span class="keyword">while</span> (j &gt; -<span class="number">1</span> &amp;&amp; temp &lt; a[j]) &#123;</div><div class="line">            a[j + <span class="number">1</span>] = a[j];    <span class="comment">//将大于该数的右移</span></div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        a[j + <span class="number">1</span>] = temp;    <span class="comment">//最终找到插入位置为j+1</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="5-3-算法分析"><a href="#5-3-算法分析" class="headerlink" title="5.3 算法分析"></a>5.3 算法分析</h5><p>感觉直接插入排序的移动次数太多，效率也不高<br><strong>时间复杂度</strong>： O(n^2)<br><strong>最坏情况</strong>：O(n^2)<br><strong>最好</strong>： O(n)<br><strong>空间复杂度</strong>：O(1)<br><strong>稳定</strong></p>
-<h3 id="6-希尔（shell）排序"><a href="#6-希尔（shell）排序" class="headerlink" title="6 希尔（shell）排序"></a>6 希尔（shell）排序</h3><h5 id="6-1-思路"><a href="#6-1-思路" class="headerlink" title="6.1 思路"></a>6.1 思路</h5><blockquote>
-<ol>
-<li>先取一个正整数d1&lt;n，把所有序号相隔d1的数组元素放一组，组内进行<strong>直接插入排序</strong></li>
-<li>然后取d2&lt;d1，重复上述分组和排序操作</li>
-<li>直至di=1，即所有记录放进一个组中排序为止<h5 id="6-2-Java实现"><a href="#6-2-Java实现" class="headerlink" title="6.2 Java实现"></a>6.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 希尔排序，步长依次为 n/2,n/4,.....</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> a 待排序的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> d = a.length / <span class="number">2</span>; <span class="comment">//初始步长</span></div><div class="line">    <span class="keyword">while</span> (d &gt;= <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; d; x++) &#123;   <span class="comment">//一共有x组</span></div><div class="line">            <span class="comment">//对每一组进行直接插入排序</span></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = x + d; i &lt; a.length; i += d) &#123;</div><div class="line">                <span class="keyword">int</span> temp = a[i];</div><div class="line">                <span class="keyword">int</span> j = i - d;</div><div class="line">                <span class="keyword">while</span> (j &gt; x - <span class="number">1</span> &amp;&amp; temp &lt; a[j]) &#123;</div><div class="line">                    a[j + d] = a[j];</div><div class="line">                    j -= d;</div><div class="line">                &#125;</div><div class="line">                a[j + d] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        d = d / <span class="number">2</span>;  <span class="comment">//缩短步长</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<h5 id="6-3-算法分析"><a href="#6-3-算法分析" class="headerlink" title="6.3 算法分析"></a>6.3 算法分析</h5><p><strong>时间复杂度</strong>： O(n^1.3)<br><strong>最坏情况</strong>：O(n^2)<br><strong>最好</strong>： O(n)<br><strong>空间复杂度</strong>：O(1)<br><strong>不稳定</strong></p>
-<h3 id="7-归并排序"><a href="#7-归并排序" class="headerlink" title="7 归并排序"></a>7 归并排序</h3><h5 id="7-1-思路"><a href="#7-1-思路" class="headerlink" title="7.1 思路"></a>7.1 思路</h5><blockquote>
-<ol>
-<li>将序列每相邻两个数字进行归并操作（merge)，形成floor(n/2)个序列，排序后每个序列包含两个元素  </li>
-<li>将上述序列再次归并，形成floor(n/4)个序列，每个序列包含四个元素  </li>
-<li>重复步骤2，直到所有元素排序完毕<br><strong>&lt; 超优美的递归 &gt;</strong></li>
-</ol>
-<p>如:<br>设有数列{6，202，100，301，38，8，1}<br>初始状态：6，202，100，301，38，8，1<br>第一次归并后：{6，202}，{100，301}，{8，38}，{1}，比较次数：3；<br>第二次归并后：{6，100，202，301}，{1，8，38}，比较次数：4；<br>第三次归并后：{1，6，8，38，100，202，301}，比较次数：4；<br>总的比较次数为：3+4+4=11，<br>逆序数为14。</p>
-<h5 id="7-2-Java实现"><a href="#7-2-Java实现" class="headerlink" title="7.2 Java实现"></a>7.2 Java实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 二路归并</div><div class="line"> * <span class="doctag">@param</span> a 要归并的数组</div><div class="line"> * <span class="doctag">@param</span> startIndex 要归并数组的起始下标-即第一个子序列的开始下标</div><div class="line"> * <span class="doctag">@param</span> midIndex 要归并数组的中点下标-即第二个子序列的开始下标</div><div class="line"> * <span class="doctag">@param</span> endIndex 要归并数组的终点下标</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> startIndex, <span class="keyword">int</span> midIndex, <span class="keyword">int</span> endIndex)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i = startIndex; <span class="comment">//第一个序列的下标</span></div><div class="line">    <span class="keyword">int</span> j = midIndex +<span class="number">1</span>;<span class="comment">//第二个序列的下标</span></div><div class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;   <span class="comment">// k是临时数组的下标</span></div><div class="line">    <span class="keyword">int</span> [] array = <span class="keyword">new</span> <span class="keyword">int</span>[endIndex-startIndex+<span class="number">1</span>]; <span class="comment">//临时合并数组</span></div><div class="line">    <span class="comment">//每次取出两个序列中的小者，将其放到合并数组中（两个子序列已时排好序的）</span></div><div class="line">    <span class="keyword">while</span>(i&lt;=midIndex &amp;&amp; j&lt;=endIndex)&#123;</div><div class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])&#123;</div><div class="line">            array[k] = a[i];</div><div class="line">            i++;k++;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            array[k]=a[j];</div><div class="line">            j++;k++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//若第一个序列没扫描完，则将其全部复制到合并数组</span></div><div class="line">    <span class="keyword">while</span> (i&lt;=midIndex)&#123;</div><div class="line">        array[k] = a[i];</div><div class="line">        i++;k++;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//若第二个序列没扫描完，则将其全部复制到合并数组</span></div><div class="line">    <span class="keyword">while</span> (j&lt;=endIndex)&#123;</div><div class="line">        array[k] = a[j];</div><div class="line">        j++;k++;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//将合并数组复制到原序列中</span></div><div class="line">    <span class="keyword">for</span>(k=<span class="number">0</span>,i=startIndex;i&lt;=endIndex;i++,k++)&#123;</div><div class="line">        a[i] = array[k];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 归并排序，内部使用递归，太优美了</div><div class="line"> * <span class="doctag">@param</span> a 要排序的数组</div><div class="line"> * <span class="doctag">@param</span> startIndex 要排序的起始下标</div><div class="line"> * <span class="doctag">@param</span> endIndex 要排序的终点下标</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> startIndex, <span class="keyword">int</span> endIndex)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> midIndex;</div><div class="line">    <span class="keyword">if</span>(startIndex &lt; endIndex)&#123;</div><div class="line">        midIndex = (startIndex+endIndex)/<span class="number">2</span>;</div><div class="line">        mergeSort(a, startIndex, midIndex);</div><div class="line">        mergeSort(a, midIndex+<span class="number">1</span>, endIndex);</div><div class="line">        merge(a,startIndex,midIndex,endIndex);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</blockquote>
-<h5 id="7-3-算法分析"><a href="#7-3-算法分析" class="headerlink" title="7.3 算法分析"></a>7.3 算法分析</h5><p><strong>时间复杂度</strong>： O(nlogn)<br><strong>最坏情况</strong>：O(nlogn)<br><strong>最好</strong>： O(nlogn)<br><strong>空间复杂度</strong>：O(n)<br><strong>稳定</strong></p>
-<h2 id="gt-归并排序需要一个数组保存结果，所以辅助存储为O-n-。是空间复杂度最高的排序。"><a href="#gt-归并排序需要一个数组保存结果，所以辅助存储为O-n-。是空间复杂度最高的排序。" class="headerlink" title="&gt; 归并排序需要一个数组保存结果，所以辅助存储为O(n)。是空间复杂度最高的排序。"></a>&gt; 归并排序需要一个数组保存结果，所以辅助存储为O(n)。是空间复杂度最高的排序。</h2><p><strong><em>以上所有，都应深深地印在脑子里。  </em></strong></p>
-<p><img src="http://obmxnha1c.bkt.clouddn.com/21457204_1326898064RUxx.jpg" alt="Untitled Image"><br><strong>*图上有错</strong>：归并排序需要一个数组保存结果，所以辅助存储为O(n)*  </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/15/关于数据结构的小知识/" itemprop="url">
-                  关于数据结构的小知识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T20:15:02+08:00" content="2016-09-15">
-              2016-09-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/15/关于数据结构的小知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/关于数据结构的小知识/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/15/关于数据结构的小知识/" class="leancloud_visitors" data-flag-title="关于数据结构的小知识">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="二叉树的深度和高度"><a href="#二叉树的深度和高度" class="headerlink" title="二叉树的深度和高度"></a>二叉树的深度和高度</h4><blockquote>
-<p>树的深度是从根节点开始（其深度为1）自顶向下逐层累加的，而高度是从叶节点开始（其高度为1）自底向上逐层累加的。  </p>
-</blockquote>
-<p>二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。<br>第i层节点数： 2^(i-1)  </p>
-<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><blockquote>
-<p>它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。  </p>
-</blockquote>
-<h4 id="完全二叉树："><a href="#完全二叉树：" class="headerlink" title="完全二叉树："></a>完全二叉树：</h4><blockquote>
-<p>只有最下面两层节点度能够小于2，并且最下面一层的节点都集中在该层最左边的若干位置的二叉树。</p>
-</blockquote>
-<p><strong><em>树的高度为 logN+1向下取整。当使用二分搜索时，比较的次数即为数的高度。</em></strong>  </p>
-<p>若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边，这就是<strong>完全二叉树</strong>。  </p>
-<h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
-<p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1   </p>
-</blockquote>
-<p><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
-<h4 id="二叉排序树（二叉查找树、二叉搜索树）"><a href="#二叉排序树（二叉查找树、二叉搜索树）" class="headerlink" title="二叉排序树（二叉查找树、二叉搜索树）"></a>二叉排序树（二叉查找树、二叉搜索树）</h4><blockquote>
-<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的结点。</p>
-<div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg" width="300" height="180" align="center"><br></div>
-
-</blockquote>
-<h4 id="哈夫曼树（最优二叉树）"><a href="#哈夫曼树（最优二叉树）" class="headerlink" title="哈夫曼树（最优二叉树）"></a>哈夫曼树（最优二叉树）</h4><blockquote>
-<p>带权路径长度最短的二叉树。  </p>
-</blockquote>
-<p><strong>节点的带权路径长度：</strong> 从根结点到该结点之间的路径长度与该结点的权的乘积  </p>
-<p><strong>树的带权路径长度：</strong> 所有<strong><em>叶子结点</em></strong>的带权路径长度之和，记为WPL</p>
-<h6 id="哈夫曼编码步骤"><a href="#哈夫曼编码步骤" class="headerlink" title="哈夫曼编码步骤"></a>哈夫曼编码步骤</h6><blockquote>
-<p>一、对给定的n个权值{W1,W2,W3,…,Wi,…,Wn}构成n棵二叉树的初始集合F= {T1,T2,T3,…,Ti,…,Tn}，其中每棵二叉树Ti中只有一个权值为Wi的根结点，它的左右子树均为空。（为方便在计算机上实现算 法，一般还要求以Ti的权值Wi的升序排列。）<br>二、在F中选取两棵根结点权值最小的树作为新构造的二叉树的左右子树，新二叉树的根结点的权值为其左右子树的根结点的权值之和。<br>三、从F中删除这两棵树，并把这棵新的二叉树同样以升序排列加入到集合F中。<br>四、重复二和三两步，直到集合F中只有一棵二叉树为止。</p>
-</blockquote>
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>Ki(i从0开始）。 则Ki的左孩子为K(2i+1)，右孩子K(2i+2)。父节点为Parent(i)=K[(i-1)/2]  </p>
-<p><strong>小根堆：</strong> K[i]&lt;=K[2i+1] &amp;&amp; K[i]&lt;=K[2i+2]<br><strong>大根堆：</strong> K[i]&gt;=K[2i+1] &amp;&amp; K[i]&gt;=K[2i+2]  </p>
-<p>空间复杂度：O(1)，建堆复杂度O(n)，调整堆的复杂度O(nlogn)</p>
-<h4 id="各种排序算法复杂度"><a href="#各种排序算法复杂度" class="headerlink" title="各种排序算法复杂度"></a>各种排序算法复杂度</h4><p><img src="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg" alt="各种排序算法复杂度"></p>
-<h4 id="死锁的4个必要条件"><a href="#死锁的4个必要条件" class="headerlink" title="死锁的4个必要条件"></a>死锁的4个必要条件</h4><p>（1） 互斥条件：一个资源每次只能被一个进程使用。<br>（2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>（3） 不可抢占（不剥夺）条件：进程已获得的资源，在末使用完之前，不能强行剥夺。<br>（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。  </p>
-<h4 id="标准的SQL解析顺序"><a href="#标准的SQL解析顺序" class="headerlink" title="标准的SQL解析顺序"></a>标准的SQL解析顺序</h4><p>(1).FROM 子句, 组装来自不同数据源的数据<br>(2).WHERE 子句, 基于指定的条件对记录进行筛选<br>(3).GROUP BY 子句, 将数据划分为多个分组<br>(4).使用聚合函数进行计算<br>(5).使用 HAVING 子句筛选分组<br>(6).计算Select所有的表达式<br>(7).使用 ORDER BY 对结果集进行排序  </p>
-<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p>同： abstract类 和接口都可以有abstract方法<br>不同：  </p>
-<ol>
-<li><p>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </p>
-</li>
-<li><p>abstract类也可以有非abstract方法，接口不可以。  </p>
-</li>
-<li>实现接口是一定要实现接口里定义的所有方法，而实现抽象类可以有选择的重写需要用到的方法。  </li>
-<li>接口是公开的，里面不能有私有的方法和变量。而首次昂类是可以有私有方法和私有变量的。  </li>
-<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有没有具体实现的抽象方法）  </li>
-<li>子类只能单继承抽象类；而子类能够同时实现多个接口</li>
-</ol>
-<h4 id="java中对象什么时候被垃圾回收"><a href="#java中对象什么时候被垃圾回收" class="headerlink" title="java中对象什么时候被垃圾回收"></a>java中对象什么时候被垃圾回收</h4><p>当没有任何对象的引用指向对象时，在一个不可预期的时间内对象才会被回收  </p>
-<p>当对象的引用为空，当对象堆当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
-<blockquote>
-<p>一个对象，可以有一个或多个引用变量指向它。当一个对象不再有任何一个引用变量指向它时，这个对象就被应用抛弃了。或者说，这个对象可以被垃圾回收机制回收了。这就是说，当不存在对某对象的任何引用时，就意味着，应用告诉JVM：我不要这个对象，你可以回收了。  </p>
-<p>JVM的垃圾回收机制对堆空间做实时检测。当发现某对象的引用计数为0时，就将该对象列入待回收列表中。但是，并不是马上予以销毁</p>
-</blockquote>
-<h4 id="计算1！-2！-……-n-（最简单的单循环方法）"><a href="#计算1！-2！-……-n-（最简单的单循环方法）" class="headerlink" title="计算1！+2！+……+n!（最简单的单循环方法）"></a>计算1！+2！+……+n!（最简单的单循环方法）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> n;</div><div class="line">		<span class="keyword">long</span> sum =<span class="number">0</span>;</div><div class="line">		<span class="keyword">long</span> temp =<span class="number">1</span>;</div><div class="line">		Scanner cin = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		n = cin.nextInt();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">			temp*=i;	</div><div class="line">			sum+=temp;</div><div class="line">		&#125;</div><div class="line">		System.out.println(sum);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_id,c_id,score</div><div class="line"><span class="keyword">from</span> grade</div><div class="line"><span class="keyword">where</span> score&gt;<span class="number">80</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_name,c_id,score</div><div class="line"><span class="keyword">from</span> grade,student</div><div class="line"><span class="keyword">where</span> score&gt;<span class="number">80</span> <span class="keyword">and</span> grade.s_id = student.s_id;</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_name,c_name,score</div><div class="line"><span class="keyword">from</span> student,course,grade</div><div class="line"><span class="keyword">where</span> score <span class="keyword">is</span> <span class="literal">NULL</span> <span class="keyword">and</span> student.s_id = grade.s_id <span class="keyword">and</span> course.c_id = grade.c_id;</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> s_id</div><div class="line"><span class="keyword">from</span> grade </div><div class="line"><span class="keyword">where</span> <span class="keyword">min</span>(score) &gt;<span class="number">80</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> s_id;</div></pre></td></tr></table></figure>
-<p>列出学生及格和不及格的科目数，栏位包括学生号、及格科目数、不及格科目数：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.s_id, <span class="keyword">count</span>(a), <span class="keyword">count</span>(b)</div><div class="line"><span class="keyword">from</span> grade <span class="keyword">as</span> a,</div><div class="line">	(<span class="keyword">select</span> s_id <span class="keyword">from</span> grade <span class="keyword">where</span> score &lt; <span class="number">60</span>) <span class="keyword">as</span> b </div><div class="line"><span class="keyword">where</span> a.score&gt;<span class="number">60</span> <span class="keyword">and</span> a.s_id = b.s_id </div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> s_id;</div></pre></td></tr></table></figure></p>
-<h4 id="Java单例模式"><a href="#Java单例模式" class="headerlink" title="Java单例模式"></a>Java单例模式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 懒汉模式，线程不安全</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	instance = <span class="keyword">new</span> Singleton();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//懒汉模式 线程安全</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	instance = <span class="keyword">new</span> Singleton();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//懒汉模式 线程安全优化</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance =<span class="keyword">null</span>;</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</div><div class="line">        	<span class="keyword">synchronized</span>(Singleton.class)&#123;</div><div class="line">            	<span class="keyword">if</span>(instance ==<span class="keyword">null</span>)&#123;</div><div class="line">                	instance = <span class="keyword">new</span> Singleton();</div><div class="line">            	&#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 饿汉模式，无线程安全问题</span></div><div class="line"> * 缺点是类一加载就实例化，提前占用系统资源。</div><div class="line"> * 但实际可能并没有用到</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</div><div class="line">   	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> INSTANCE;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="在3亿个数中找出不重复的整数，假设电脑内存之后2G"><a href="#在3亿个数中找出不重复的整数，假设电脑内存之后2G" class="headerlink" title="在3亿个数中找出不重复的整数，假设电脑内存之后2G"></a>在3亿个数中找出不重复的整数，假设电脑内存之后2G</h4><p>待回答。</p>
-<h4 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h4><blockquote>
-<ol>
-<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。 </li>
-<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议  </li>
-<li>http和https使用的是完全不同的连接方式用的端口也不一样,前者是80,后者是443。  </li>
-<li>http的连接很简单,是无状态的  </li>
-<li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议 要比http协议安全  </li>
-</ol>
-</blockquote>
-<h4 id="数据库的并发控制"><a href="#数据库的并发控制" class="headerlink" title="数据库的并发控制"></a>数据库的并发控制</h4><p><strong>数据库的并发操作通常会带来3个问题：</strong></p>
-<ol>
-<li>丢失更新问题：两个事务的操作交错执行，引起数据不正确</li>
-<li>读脏数据问题：另一个事务读了一个事务未提交的值</li>
-<li>不可重复读问题：一个事务两次读A操作间隔中，另一事务改变了A，两次同一数据却读出了不同的值  </li>
-</ol>
-<p><em>脏数据：未提交的随后被撤销（Rollback）的数据。</em></p>
-<blockquote>
-<p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个被更新后的数据。  </p>
-</blockquote>
-<p><em>这写问题都可通过并发控制子系统解决。</em></p>
-<p>基本锁有X锁，S锁和U锁。</p>
-<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
-<p><br><br><br></p>
-<p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em>  </p>
-<p><br><br><br></p>
-
-          
+          <p><img src="http://obmxnha1c.bkt.clouddn.com/266279_1442481223258_BB3663E2B94AB7FD90C31D24E4C6E7EB.jpg" alt="Untitled Image"><br><em>快排的辅助存储应该是log(n)</em><br><em>稳定的含义：  两个相同元素的相对位置不变。</em>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/15/各种排序算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1917,7 +1770,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

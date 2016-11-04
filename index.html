@@ -246,6 +246,161 @@
           </a>
         </li>
       
+	  
+	  
+	  <li class="menu-item"> <a title="嗨起来~" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()    '><i>High一下<i></a> </li>
+	  
+	  
+	  
     </ul>
   
 
@@ -273,6 +428,137 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/04/Hexo的Next主题之让你的博客嗨起来/" itemprop="url">
+                  Hexo的Next主题之让你的博客嗨起来~
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-04T21:17:39+08:00" content="2016-11-04">
+              2016-11-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/04/Hexo的Next主题之让你的博客嗨起来/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/04/Hexo的Next主题之让你的博客嗨起来/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/04/Hexo的Next主题之让你的博客嗨起来/" class="leancloud_visitors" data-flag-title="Hexo的Next主题之让你的博客嗨起来~">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="让博客High起来"><a href="#让博客High起来" class="headerlink" title="让博客High起来"></a>让博客High起来</h3><p>效果很赞，整个页面的不同部分渐进式摇摆，摇摆摇摆，当然，还有Music。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/04/Hexo的Next主题之让你的博客嗨起来/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -373,42 +659,18 @@
 
       
         
-          
-            <h3 id="TCP和UDP的区别："><a href="#TCP和UDP的区别：" class="headerlink" title="TCP和UDP的区别："></a>TCP和UDP的区别：</h3><ol>
+          <h3 id="TCP和UDP的区别："><a href="#TCP和UDP的区别：" class="headerlink" title="TCP和UDP的区别："></a>TCP和UDP的区别：</h3><ol>
 <li>TCP传输控制协议，UDP用户数据包协议，都是传输层协议。</li>
 <li>TCP面向连接，UDP无连接</li>
 <li>TCP传输可靠，UDP传输不可靠，可能会丢包</li>
 <li>TCP传输速度慢，UDP传输速度快</li>
-<li>TCP保证数据真确性和数据的顺序，UDP可能丢包，不保证顺序</li>
-<li>UDP数据包结构简单，对系统资源要求少</li>
-</ol>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p>一种流量控制技术</p>
-<ul>
-<li>滑动窗口协议</li>
-<li>停等协议（1比特滑动窗口协议）：发送窗口=接收窗口=1</li>
-<li>后退n协议：发送窗口&gt;1，接收窗口=1</li>
-<li>选择重传协议：要求接收方有足够大的缓冲区空间，发送窗口&gt;1，接收窗口&gt;1<br><strong>窗口</strong>：连接建立时，各端分配一块缓冲区用来春初接收的数据，并将缓冲区的尺寸发送给另一端。<br>接收方发送的确认信息中包含了自己剩余的缓冲区尺寸。<br>剩余缓冲区空间的数量叫做 窗口。  </li>
-</ul>
-<h3 id="长连接和短连接"><a href="#长连接和短连接" class="headerlink" title="长连接和短连接"></a>长连接和短连接</h3><h3 id="Http-301-和-302区别"><a href="#Http-301-和-302区别" class="headerlink" title="Http 301 和 302区别"></a>Http 301 和 302区别</h3><p>301，302 都是HTTP状态的编码，都代表着某个URL发生了转移，不同之处在于：<br>301 redirect: 301 代表永久性转移(Permanently Moved)。<br>302 redirect: 302 代表暂时性转移(Temporarily Moved)。<br>302可能会发生<strong>网址劫持</strong>。从定义来说，从网址A做一个302重定向到网址B时，主机服务器的隐含意思是网址A随时有可能改主意，重新显示本身的内容或转向其他的地方。  </p>
-<blockquote>
-<p>一个不道德的人在他自己的网址A做一个302重定向到你的网址B，出于某种原因， Google搜索结果所显示的仍然是网址A，但是所用的网页内容却是你的网址B上的内容，这种情况就叫做网址URL劫持。你辛辛苦苦所写的内容就这样被别人偷走了。</p>
-</blockquote>
-<h3 id="Volatile-变量"><a href="#Volatile-变量" class="headerlink" title="Volatile 变量"></a>Volatile 变量</h3><p>Volatile 变量具有 synchronized 的可见性特性，但是<strong>不具备原子特性</strong>。这就是说线程能够自动发现 volatile 变量的最新值。Volatile 变量可用于提供线程安全，但是只能应用于非常有限的一组用例：多个变量之间或者某个变量的当前值与修改后值之间没有约束。因此，单独使用 volatile 还不足以实现计数器、互斥锁或任何具有与多个变量相关的不变式（Invariants）的类（例如 “start &lt;=end”）。</p>
-<h3 id="从任务中产生返回值"><a href="#从任务中产生返回值" class="headerlink" title="从任务中产生返回值"></a>从任务中产生返回值</h3><p>Runnable是执行工作的独立任务，但是它不返回任何值。如果要完成任务时能够返回一个值，那么可以实现Callable接口而不是Runnable接口。在Java SE5中引入的Callable是一种具有参数类型的泛型，他的类型参数表示是从方法call()中返回的值，并且必须使用ExecutorService.submit()方法调用它。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TaskWithResult</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">String</span>&gt;</span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</div><div class="line">	...</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="string">"result of TaskWithResult"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CallableDemo</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">    	ExecutorService exec = Executors.newCachedThreadPool();</div><div class="line">    	Future&lt;String&gt; fs = exec.submit(<span class="keyword">new</span> TaskWithREsult(<span class="number">3</span>));</div><div class="line">        System.out.println(fs.get());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>submit()方法会产生Future对象，他用Callable返回结果的特定类型进行了参数化，可以调用isDone()方法来查询Future是否已经完成。当任务完成时，它具有一个结果，你可以调用get()方法获取该结果。也可以不用isDone检查就直接调用get，这个get可能会阻塞，知道结果准备就绪。</p>
-<h3 id="原子类"><a href="#原子类" class="headerlink" title="原子类"></a>原子类</h3><p>java.util.concurrent.atomic<br>Java SE5已入了注入AtomicInteger、AtomicLong、AtomicReference等特殊的原子性变量类。（机器级别的原子性），对常规编程来说，很少会派上用场，但涉及性能调优，它们就大有用武之地了。<br>Atomic类被设计用来构建java.util.concurrent中的类，因此只有在特殊情况下才在自己的代码中使用它们，即便使用了也需要确保不存在其他可能出现的问题。通常依赖于锁要更安全一下，（要么是synchronized关键字，要么是显示的Lock对象）。</p>
-<blockquote>
-<p>其基本的特性就是在多线程环境下，当有多个线程同时执行这些类的实例包含的方法时，具有排他性，即当某个线程进入方法，执行其中的指令时，不会被其他线程打断，而别的线程就像自旋锁一样，一直等到该方法执行完成，才由JVM从等待队列中选择一个另一个线程进入，这只是一种逻辑上的理解。实际上是借助硬件的相关指令来实现的，不会阻塞线程(或者说只是在硬件级别上阻塞了)</p>
-</blockquote>
-<h3 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h3><blockquote>
-<p>阻塞队列:BlockingQueue,如果BlockQueue是空的,从BlockingQueue取东西的操作将会被阻断进入等待状态,直到BlockingQueue进了东西才会被唤醒.同样,如果BlockingQueue是满的,任何试图往里存东西的操作也会被阻断进入等待状态,直到BlockingQueue里有空间才会被唤醒继续操作.<br>java.util.concurrent.BlockingQueue<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BlockingQueue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedBlockingQueue&lt;Integer&gt;();</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p><a href="http://tonl.iteye.com/blog/1936391" target="_blank" rel="external">使用Java的BlockingQueue实现生产者-消费者</a>;</p>
-<h3 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h3><p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。<br>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。<br>ZooKeeper包含一个简单的原语集，提供Java和C的接口。</p>
-<h3 id="Netty"><a href="#Netty" class="headerlink" title="Netty"></a>Netty</h3><p>Netty是由JBOSS提供的一个java开源框架。Netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。<br>也就是说，Netty 是一个基于NIO的客户，服务器端编程框架，使用Netty 可以确保你快速和简单的开发出一个网络应用，例如实现了某种协议的客户，服务端应用。Netty相当简化和流线化了网络应用的编程开发过程，例如，TCP和UDP的socket服务开发。</p>
-<h3 id="前缀树（Trie树、字典树、单词查找树）"><a href="#前缀树（Trie树、字典树、单词查找树）" class="headerlink" title="前缀树（Trie树、字典树、单词查找树）"></a>前缀树（Trie树、字典树、单词查找树）</h3><p>Trie树，又称单词查找树、字典树，是一种树形结构，是一种哈希树的变种，是一种用于快速检索的多叉树结构。典型应用是用于统计和排序大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：最大限度地减少无谓的字符串比较，查询效率比哈希表高。（lgN，普通排序是NlgN）<br>核心思想：空间换时间<br><a href="http://blog.csdn.net/hguisu/article/details/8131559" target="_blank" rel="external"> Trie树：应用于统计和排序</a><br><a href="https://segmentfault.com/a/1190000005810561" target="_blank" rel="external">Trie树结构</a>  </p>
-
-          
+<li>TCP保证数据正确性和数据的顺序，UDP可能丢包，不保证顺序</li>
+<li>UDP数据包结构简单，对系统资源要求少
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/13/面试小知识点/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -534,78 +796,16 @@
 
       
         
-          
-            <h3 id="Spring-Bean的两种实现方式："><a href="#Spring-Bean的两种实现方式：" class="headerlink" title="Spring Bean的两种实现方式："></a>Spring Bean的两种实现方式：</h3><ol>
+          <h3 id="Spring-Bean的两种实现方式："><a href="#Spring-Bean的两种实现方式：" class="headerlink" title="Spring Bean的两种实现方式："></a>Spring Bean的两种实现方式：</h3><ol>
 <li>xml配置</li>
 <li>注解</li>
 </ol>
-<p>Bean Factory提供配置结构和基本功能，加载并初始化Bean.<br>ApplicationContext保存了Bean对象并在Spring中被广泛使用。  </p>
-<h3 id="IOC和DI"><a href="#IOC和DI" class="headerlink" title="IOC和DI"></a>IOC和DI</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/9XIFv" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/hKjhG" alt="Untitled Image">  </p>
-<h4 id="Spring-注入"><a href="#Spring-注入" class="headerlink" title="Spring 注入"></a>Spring 注入</h4><p><strong>Spring注入是指</strong>在启动Spring容器加载Bean配置的时候（扫描Bean的配置，为这些Bean进行实例化，创建bean），在创建的过程中完成<strong>对成员变量的赋值行为</strong>。<br>常用的两种注入方式：</p>
-<ul>
-<li>设值注入 <bean><property></property></bean></li>
-<li>构造注入 <bean><constructor-arg></constructor-arg></bean></li>
-</ul>
-<h3 id="Bean的生命周期"><a href="#Bean的生命周期" class="headerlink" title="Bean的生命周期"></a>Bean的生命周期</h3><ul>
-<li>定义 xml中配置</li>
-<li>初始化 1.init-method 2.实现InitializingBean afterPropertiesSet()  实现接口的方法优先执行</li>
-<li>使用   getBean(“xxx”);</li>
-<li>销毁 1.distroy-method  2.DisposableBean  destroy()  </li>
-</ul>
-<p>schema中配置default-init-method / default-destroy-method<br>三种方法同时使用时，默认的不执行，其他两种都执行，实现接口的方式先于配置init-method  </p>
-<h3 id="Bean的自动装配"><a href="#Bean的自动装配" class="headerlink" title="Bean的自动装配"></a>Bean的自动装配</h3><p>不用配置Property、constructor-arg等属性。<br>schema中配置属性default-autowire=”ByName”<br>byType按照class属性类 类型实例化<br>constructor 自动找到构造方法装配。  </p>
-<h3 id="Bean的作用域"><a href="#Bean的作用域" class="headerlink" title="Bean的作用域"></a>Bean的作用域</h3><ol>
-<li>Singleton: 单例，指一个Bean容器中只存在一份</li>
-<li>prototype：每次请求（每次使用）创建新的实例，destroy方式不生效。  </li>
-<li>request：每次http请求创建一个实例且仅在当前request内有效  </li>
-<li>session：同上，每次http请求创建，当前session内有效 </li>
-<li>global session：基于portlet的Web中有效（portlet定义了global session），如果是在web中，同session。  </li>
-</ol>
-<h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><ul>
-<li>AOP（Aspect Oriented Programming）面向切面编程。通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。  </li>
-<li><strong>主要功能</strong>：日志记录、性能统计、安全控制、事务处理、异常处理等。<br><img src="http://obmxnha1c.bkt.clouddn.com/QydOx" alt="Untitled Image"></li>
-</ul>
-<h3 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h3><p>允许用户定制自己的方面，已完成OOP与AOP的互补使用。<br><img src="http://obmxnha1c.bkt.clouddn.com/4sAeg" alt="Untitled Image">  </p>
-<h4 id="Spring-AOP-实现"><a href="#Spring-AOP-实现" class="headerlink" title="Spring AOP 实现"></a>Spring AOP 实现</h4><p><strong>横切代码：</strong> 例如日志功能。日志代码往往水平地散布在所有对象层次中，而与它所散布到的对象的核心功能毫无关系。对于其他类型的代码，如安全性、异常处理和透明的持续性也是如此。这种散布在各处的无关的代码被称为横切（cross-cutting）代码。<em>AOP使用了横切技术</em><br><strong>实现：</strong> </p>
-<ol>
-<li>是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；</li>
-<li>是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码。   </li>
-</ol>
-<p><strong>AOP代理对象的生成：</strong> </p>
-<ul>
-<li>JDKProxy</li>
-<li>CGLIB<br>默认使用Java SE动态代理作为AOP代理。  <h4 id="有接口和无接口的Spring-AOP实现区别"><a href="#有接口和无接口的Spring-AOP实现区别" class="headerlink" title="有接口和无接口的Spring AOP实现区别"></a>有接口和无接口的Spring AOP实现区别</h4></li>
-</ul>
-<ol>
-<li>Spring AOP默认使用标准的Java SE动态代理作为AOP代理，这使得任何接口（或者接口集）都可以被代理。  </li>
-<li>Spring AOP中也可以使用CGLIB代理（如果一个业务对象并没有实现一个接口）  <h4 id="AOP实现方式"><a href="#AOP实现方式" class="headerlink" title="AOP实现方式"></a>AOP实现方式</h4></li>
-<li>预编译 -AspectJ</li>
-<li>运行期动态代理（JDK动态代理、CGLib动态代理） -SpringAOP JbossAOP  </li>
-</ol>
-<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>代理是你为了提供额外的或不同的操作，而插入的用来代替“实际”对象的对象。这些操作通常涉及与“涉及“与实际对象的通信，因此代理通常充当着中间人的角色。<br>当你希望跟踪对RealObject中的方法的调用，或者希望度量这些调用的开销，那么肯定是不希望将这些代码合并到应用程序中的代码，这时候代理就可以很容易的添加或移除它们。  </p>
-<h4 id="Java动态代理"><a href="#Java动态代理" class="headerlink" title="Java动态代理"></a>Java动态代理</h4><p>java的动态代理比代理的思想更向前迈进了一步。它可以动态地创建代理并动态地处理对所代理方法的调用。在动态代理上所做的所有调用都会被重定向到单一的调用处理器上，它的工作是揭示盗用的类型并确定相应的对策。<br><strong>动态代理：</strong> 可以提供对另一个对象的访问，同时隐藏实际对象的具体事实。代理一般会实现它所表示的实际对象的接口。代理可以访问实际对象，但是延迟实现实际对象的部分功能，实际对象实现系统的实际功能，代理对象对客户隐藏了实际对象。客户不知道它是与代理打交道还是与实际对象打交道。</p>
-<blockquote>
-<p>目前Java开发包中包含了对动态代理的支持，但是其实现只支持对接口的的实现。 其实现主要通过java.lang.reflect.Proxy类和java.lang.reflect.InvocationHandler接口。<br>Proxy类主要用来获取动态代理对象，InvocationHandler接口用来约束调用者实现</p>
-</blockquote>
-<p><em>参考<a href="http://www.cnblogs.com/linjiqin/archive/2011/02/18/1957600.html" target="_blank" rel="external">Java动态代理一——动态类Proxy的使用</a></em></p>
-<h3 id="spring的事务管理机制"><a href="#spring的事务管理机制" class="headerlink" title="spring的事务管理机制"></a>spring的事务管理机制</h3><ol>
-<li>声名式事务  <blockquote>
-<p>Spring声明式事务让我们从复杂的事务处理中得到解脱。使得我们再也无需要去处理获得连接、关闭连接、事务提交和回滚等这些操作。再也无需要我们在与事务相关的方法中处理大量的try…catch…finally代码。我们在使用Spring声明式事务时，有一个非常重要的概念就是事务属性。事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成。我们在进行事务划分时，需要进行事务定义，也就是配置事务的属性。  </p>
-</blockquote>
-</li>
-</ol>
-<p>使用spring声明式事务，spring使用AOP来支持声明式事务，会根据事务属性，自动在方法调用之前决定是否开启一个事务，并在方法执行之后决定事务提交或回滚事务。  </p>
-<ol>
-<li>编程式事务（用到的不多） </li>
-</ol>
-<h3 id="事务的四个隔离级别"><a href="#事务的四个隔离级别" class="headerlink" title="事务的四个隔离级别"></a>事务的四个隔离级别</h3><ol>
-<li>Read Uncommitted 读未提交数据；（可能脏读）</li>
-<li>Read Committed 读已提交数据；</li>
-<li>Repeatable Read 可重复读；</li>
-<li>Serializable 串行化</li>
-</ol>
-
-          
+<p>Bean Factory提供配置结构和基本功能，加载并初始化Bean.<br>ApplicationContext保存了Bean对象并在Spring中被广泛使用。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/13/Spring-IOC、Bean、AOP、代理、事务机制理解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -731,22 +931,12 @@
 
       
         
-          
-            <p><strong>题目1：</strong><br>一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。</p>
-<p><strong>分析：</strong><br>两层循环判断的时间复杂度和空间复杂度都太大，如何在尽可能小的时间、空间复杂度内找出这个数——使用异或位运算。  </p>
-<ul>
-<li>x^y^z=y^x^z</li>
-<li>x^0=x</li>
-<li>x^x=0<br>如果只有一个数出现一次，其他数出现两次，那么所有数异或的结果就是要找的数。有：<br>result=x^b^c^b^d^d^c=x  </li>
-</ul>
-<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> sum =<span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> a[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</div><div class="line">	sum^=a[i];</div><div class="line">	System.out.println(sum);</div><div class="line">&#125;</div><div class="line">System.out.println(sum);</div><div class="line"><span class="comment">// output: 5</span></div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>题目2：</strong><br>一个组数，只有两个数只出现了一次，其他所有数都是成对出现的。怎么找出这两个数。</p>
-<p><strong>分析：</strong><br>所有数的异或结果中，在它的二进制表示中为0的位说明两个数在此位的二进制表示相同，同样的如果此位为1，说明两个数在此位的二进制不同。<br>方法： 只要我们把这组数分开，分为两组数（使这两个数在不同的组）再分别利用异或，就可以得那两个数。<br>找不同：异或按位操作是相同的为0 ，不同的为1，那么这两个数异或的结果转换成2进制时，低位出现第一个1是就可以区分他们了。</p>
-<p><strong>代码实现：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> b[]= &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">int</span> res=<span class="number">0</span>;  <span class="comment">//总的异或结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j:b) &#123;</div><div class="line">    res^=j;</div><div class="line">&#125;</div><div class="line">String binaryResult = Integer.toBinaryString(res);</div><div class="line"><span class="comment">//index需要右移的位数</span></div><div class="line"><span class="keyword">int</span> index= binaryResult.length()-(binaryResult.lastIndexOf(<span class="string">"1"</span>)+<span class="number">1</span>);</div><div class="line"><span class="keyword">int</span> result1=<span class="number">0</span>,result2=<span class="number">0</span>;    <span class="comment">//两组分别异或的结果</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k: b)&#123;</div><div class="line">    <span class="keyword">if</span> (((k&gt;&gt;index)&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</div><div class="line">        result1^=k;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        result2^=k;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">System.out.println(<span class="string">"result1 = "</span> + result1);</div><div class="line">System.out.println(<span class="string">"result2 = "</span> + result2);</div></pre></td></tr></table></figure></p>
-<p><strong>题目延伸：</strong><br>一个组数，只有1个数只出现了奇数次次，其他所有数都是成对出现的。<br><em>只要出现了奇数次都可以用这种方法</em></p>
-
-          
+          <p><strong>题目1：</strong><br>一个组数，只有1个数只出现了一次，其他所有数都是成对出现的。怎么找出这个数。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/09/找出数组中出现奇数次的数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -872,64 +1062,13 @@
 
       
         
-          
-            <h4 id="JDK1-8-新特性"><a href="#JDK1-8-新特性" class="headerlink" title="JDK1.8 新特性"></a>JDK1.8 新特性</h4><ol>
-<li><p><strong>接口的默认方法</strong><br>一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法</p>
-</li>
-<li><p><strong>lambda表达式</strong><br>由参数列表、箭头符号-&gt;和函数体组成</p>
-</li>
-<li><p>函数式接口<br>“函数式接口”是指仅仅只包含一个抽象方法的接口。只需要给你的接口添加 @FunctionalInterface 注解。</p>
-</li>
-<li><p><strong>方法和对象函数引用</strong><br>Java8 允许使用::关键字来传递方法或者构造函数的引用。</p>
-</li>
-<li><p>lambda直接访问外城的局部变量，无需声明final。</p>
-</li>
-<li><p>lambda可访问对象字段和静态变量</p>
-</li>
-<li><p>包java.time下包含了<strong>全新的时间日期API</strong>，与Joda-time相似而不同。</p>
-</li>
-</ol>
-<h4 id="JDK1-7-新特性"><a href="#JDK1-7-新特性" class="headerlink" title="JDK1.7 新特性"></a>JDK1.7 新特性</h4><ol>
-<li><p><strong>switch中可以使用字符串</strong></p>
-</li>
-<li><p><strong>泛型实例化自动推断</strong><br>List<string> tempList = new ArrayList&lt;&gt;();</string></p>
-</li>
-<li><p>语法上支持集合，并一定是数组<br>List<integer> digits =[1,2,3,4];</integer></p>
-</li>
-<li><p>新增取环境信息的方法<br>File System.getJavaIoTempDir()//IO临时文件夹<br>File System.getUserHomeDir()//当前用户目录<br>…</p>
-</li>
-<li><p>Boolean类型反转，空指针安全，参与位运算</p>
-</li>
-<li><p>两个Char间的equals<br>boolean Character.equalsIgnoreCase(char c1,char c2);</p>
-</li>
-<li><p>安全的加减乘除<br>int Math.safeAdd(int v1,int v2);</p>
-</li>
-<li><p>二进制字面量  </p>
-</li>
-<li>数字字面量可出现下划线</li>
-<li>一个catch多个异常，用“|”隔开  </li>
-<li>自定义自动关闭类<br>实现AutoCloseable接口  </li>
-<li>try-witch-resources，可自动关闭资源</li>
-</ol>
-<h4 id="JDK1-6-新特性"><a href="#JDK1-6-新特性" class="headerlink" title="JDK1.6 新特性"></a>JDK1.6 新特性</h4><ol>
-<li>Desktop类和SystemTray类 </li>
-<li>STAX</li>
-<li>轻量级Http Server API  </li>
-<li>用Console开发控制程序</li>
-<li>对脚本语言支持<br>…</li>
-</ol>
-<h4 id="JDK1-5-新特性"><a href="#JDK1-5-新特性" class="headerlink" title="JDK1.5 新特性"></a>JDK1.5 新特性</h4><ol>
-<li><strong>泛型</strong></li>
-<li><strong>foreach</strong></li>
-<li><strong>自动拆箱装箱</strong> </li>
-<li><strong>枚举</strong></li>
-<li>静态导入（Static import）</li>
-<li>元数据（Metadata）</li>
-<li><strong>线程池</strong></li>
-<li>Java Generics<br>创建一个明确只能存放某种特定类型对象的容器类实例。容器类型安全</li>
-</ol>
-
-          
+          <h4 id="JDK1-8-新特性"><a href="#JDK1-8-新特性" class="headerlink" title="JDK1.8 新特性"></a>JDK1.8 新特性</h4><ol>
+<li><p><strong>接口的默认方法</strong><br>一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/09/JDK1-8-1-5新特性总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1055,27 +1194,12 @@
 
       
         
-          
-            <h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。<br>与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。  </p>
-<h4 id="Redis优点"><a href="#Redis优点" class="headerlink" title="Redis优点"></a>Redis优点</h4><ul>
-<li><strong>异常快速 :</strong> Redis是非常快的，每秒可以执行大约110000设置操作，81000个/每秒的读取操作。</li>
-<li><strong>支持丰富的数据类型 :</strong> Redis支持最大多数开发人员已经知道如列表，集合，可排序集合，哈希等数据类型。</li>
-<li><strong>操作都是原子性的 :</strong> 所有 Redis 的操作都是原子，从而确保当两个客户同时访问 Redis 服务器得到的是更新后的值（最新值）。</li>
-<li><strong>MultiUtility工具：</strong> Redis是一个多功能实用工具，可以在很多如：缓存，消息传递队列中使用（Redis原生支持发布/订阅），在应用程序中，如：Web应用程序会话，网站页面点击数等任何短暂的数据；</li>
-</ul>
-<blockquote>
-<p><em>Redis不能直接保存Object（POJO），需要将Object序列化成Bytes[]进行缓存。</em></p>
-</blockquote>
-<h3 id="Protostuff简介"><a href="#Protostuff简介" class="headerlink" title="Protostuff简介"></a>Protostuff简介</h3><ul>
-<li>Protostuff是一个开源的、基于Java语言的序列化库，它内建支持向前向后兼容（模式演进）和验证功能。  </li>
-<li>Protostuff则是在protobuff基础上改进的一个优秀的高性能的序列化和反序列化框架。</li>
-<li>Protostuff相对于Java内置的实现Serializable接口，其序列化和反序列化具有更快的速度和更小的空间。  </li>
-</ul>
-<p><em>Java序列化和反序列有很多开源框架，可移步github上<a href="https://github.com/eishay/jvm-serializers/wiki" target="_blank" rel="external">jvm-serializers对比分析</a>了解。</em></p>
-<h3 id="Redis和Protostuff整合实现缓存"><a href="#Redis和Protostuff整合实现缓存" class="headerlink" title="Redis和Protostuff整合实现缓存"></a>Redis和Protostuff整合实现缓存</h3><p>下面的例子实现了对Seckill对象的超时（策略）缓存。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisDao</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> JedisPool jedisPool;    <span class="comment">//redis连接池</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedisDao</span><span class="params">(String ip,<span class="keyword">int</span> port)</span></span>&#123;</div><div class="line">        jedisPool = <span class="keyword">new</span> JedisPool(ip,port);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</div><div class="line">    <span class="comment">//获取Seckill对象的sechema，sechema保存了类的属性等信息</span></div><div class="line">    <span class="keyword">private</span> RuntimeSchema&lt;Seckill&gt; schema = RuntimeSchema.createFrom(Seckill.class);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 从缓存中读取seckill对象</div><div class="line">     * <span class="doctag">@param</span> seckillId</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Seckill <span class="title">getSeckill</span><span class="params">(<span class="keyword">long</span> seckillId)</span></span>&#123;</div><div class="line">        <span class="comment">//redis逻辑操作</span></div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            <span class="comment">//使用了redis的客户端Jedis来操作缓存</span></div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key=<span class="string">"seckill:"</span>+seckillId;</div><div class="line">                <span class="comment">//redis并没有实现内部序列化操作</span></div><div class="line">                <span class="comment">//get-&gt;byte[]-&gt;反序列化-&gt;Object(Seckill)</span></div><div class="line">                <span class="comment">//采用自定义序列化:速度快、空间小</span></div><div class="line">                <span class="comment">//protostuff:pojo</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = jedis.get(key.getBytes());</div><div class="line">                <span class="keyword">if</span> (bytes !=<span class="keyword">null</span>)&#123;</div><div class="line">                    Seckill seckill = schema.newMessage(); <span class="comment">//创建一个空对象</span></div><div class="line">                    ProtostuffIOUtil.mergeFrom(bytes,seckill,schema);<span class="comment">//反序列化</span></div><div class="line">                    <span class="keyword">return</span> seckill;</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 将数据放入redis缓存</div><div class="line">     * <span class="doctag">@param</span> seckill</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">putSeckill</span><span class="params">(Seckill seckill)</span></span>&#123;</div><div class="line">        <span class="comment">//set Object(Seckill) -&gt;序列化 -&gt; byte[]</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Jedis jedis = jedisPool.getResource();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                String key =<span class="string">"seckill:"</span>+seckill.getSeckillId();</div><div class="line">                <span class="comment">//序列化，第三个参数是缓冲器</span></div><div class="line">                <span class="keyword">byte</span>[] bytes = ProtostuffIOUtil.toByteArray(seckill,schema, LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE));</div><div class="line">                <span class="comment">//超时缓存</span></div><div class="line">                <span class="keyword">int</span> timeout = <span class="number">60</span>*<span class="number">60</span>; <span class="comment">//1个小时</span></div><div class="line">                String result = jedis.setex(key.getBytes(),timeout,bytes);</div><div class="line">                <span class="keyword">return</span> result; <span class="comment">//"OK"</span></div><div class="line">            &#125;<span class="keyword">finally</span> &#123;</div><div class="line">                jedis.close();</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            logger.error(e.getMessage(),e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>  <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面的代码需要引入以下依赖包:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- redis 客户端  jedis--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- Protostuff序列化依赖--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.dyuproject.protostuff<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>protostuff-runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-
-          
+          <h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个开源的，先进的 key-value 存储可用于构建高性能，可扩展的 Web 应用程序的解决方案。<br>与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/06/Redis-Protostuff实现缓存对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1201,55 +1325,12 @@
 
       
         
-          
-            <h4 id="查看哪些IP连接本机"><a href="#查看哪些IP连接本机" class="headerlink" title="查看哪些IP连接本机"></a>查看哪些IP连接本机</h4><p>netstat -an</p>
-<h4 id="查看TCP连接数"><a href="#查看TCP连接数" class="headerlink" title="查看TCP连接数"></a>查看TCP连接数</h4><ol>
-<li><p>统计80端口连接数<br>netstat -nat|grep -i “80”|wc -l</p>
-</li>
-<li><p>统计httpd协议连接数<br>ps -ef|grep httpd|wc -l</p>
-</li>
-<li><p>统计已连接上的，状态为“established<br>netstat -na|grep ESTABLISHED|wc -l</p>
-</li>
-<li><p>查出哪个IP地址连接最多,将其封了.<br>netstat -na|grep ESTABLISHED|awk {print $5}|awk -F: {print $1}|sort|uniq -c|sort -r +0n<br>netstat -na|grep SYN|awk {print $5}|awk -F: {print $1}|sort|uniq -c|sort -r +0n</p>
-</li>
-</ol>
-<hr>
-<ol>
-<li><p>查看apache当前并发访问数：<br>netstat -an | grep ESTABLISHED | wc -l<br>对比httpd.conf中MaxClients的数字差距多少。</p>
-</li>
-<li><p>查看有多少个进程数：<br>ps aux|grep httpd|wc -l</p>
-</li>
-<li><p>可以使用如下参数查看数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ps -ef|grep httpd|wc <span class="_">-l</span></div><div class="line">1388</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>统计httpd进程数，连个请求会启动一个进程，使用于Apache服务器。<br>表示Apache能够处理1388个并发请求，这个值Apache可根据负载情况自动调整。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -nat|grep -i <span class="string">"80"</span>|wc <span class="_">-l</span></div><div class="line">4341</div></pre></td></tr></table></figure></p>
-<p>netstat -an会打印系统当前网络链接状态，而grep -i “80”是用来提取与80端口有关的连接的，wc -l进行连接数统计。<br>最终返回的数字就是当前所有80端口的请求总数。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -na|grep ESTABLISHED|wc <span class="_">-l</span></div><div class="line">376</div></pre></td></tr></table></figure>
-<p>netstat -an会打印系统当前网络链接状态，而grep ESTABLISHED 提取出已建立连接的信息。 然后wc -l统计。<br>最终返回的数字就是当前所有80端口的已建立连接的总数。</p>
-<p><code>netstat -nat | grep ESTABLISHED</code> 可查看所有建立连接的详细记录  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;'</span></div></pre></td></tr></table></figure>
-<p>查看Apache的并发请求数及其TCP连接状态.</p>
-<blockquote>
-<p>TIME_WAIT 8947 等待足够的时间以确保远程TCP接收到连接中断请求的确认<br>FIN_WAIT1 15 等待远程TCP连接中断请求，或先前的连接中断请求的确认<br>FIN_WAIT2 1 从远程TCP等待连接中断请求<br>ESTABLISHED 55 代表一个打开的连接<br>SYN_RECV 21 再收到和发送一个连接请求后等待对方对连接请求的确认<br>CLOSING 2 没有任何连接状态<br>LAST_ACK 4 等待原来的发向远程TCP的连接中断请求的确认  </p>
-</blockquote>
-<p><strong>TCP连接状态详解</strong><br>LISTEN： 侦听来自远方的TCP端口的连接请求<br>SYN-SENT： 再发送连接请求后等待匹配的连接请求<br>SYN-RECEIVED：再收到和发送一个连接请求后等待对方对连接请求的确认<br>ESTABLISHED： 代表一个打开的连接<br>FIN-WAIT-1： 等待远程TCP连接中断请求，或先前的连接中断请求的确认<br>FIN-WAIT-2： 从远程TCP等待连接中断请求<br>CLOSE-WAIT： 等待从本地用户发来的连接中断请求<br>CLOSING： 等待远程TCP对连接中断的确认<br>LAST-ACK： 等待原来的发向远程TCP的连接中断请求的确认<br>TIME-WAIT： 等待足够的时间以确保远程TCP接收到连接中断请求的确认<br>CLOSED： 没有任何连接状态  </p>
-<hr>
-<h4 id="wc-命令"><a href="#wc-命令" class="headerlink" title="wc 命令"></a>wc 命令</h4><blockquote>
-<p>wc [-clw] [filename…]</p>
-<ul>
-<li>-c Bytes数</li>
-<li>-l  行数（列数）</li>
-<li>-w  字数</li>
-</ul>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ wc testfile testfile_1 testfile_2  <span class="comment">#统计三个文件的信息  </span></div><div class="line">3 92 598 testfile                    <span class="comment">#第一个文件行数为3、单词数92、字节数598  </span></div><div class="line">9 18 78 testfile_1                   <span class="comment">#第二个文件的行数为9、单词数18、字节数78  </span></div><div class="line">3 6 32 testfile_2                    <span class="comment">#第三个文件的行数为3、单词数6、字节数32  </span></div><div class="line">15 116 708 总用量                    <span class="comment">#三个文件总共的行数为15、单词数116、字节数708</span></div></pre></td></tr></table></figure>
-<p><br><br><br></p>
-<blockquote>
-<p><em>内容多数转自<a href="https://my.oschina.net/u/1169079/blog/397705" target="_blank" rel="external">查看linux中的TCP连接数</a></em></p>
-</blockquote>
-
-          
+          <h4 id="查看哪些IP连接本机"><a href="#查看哪些IP连接本机" class="headerlink" title="查看哪些IP连接本机"></a>查看哪些IP连接本机</h4><p>netstat -an
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/05/查看Linux中TCP连接数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1375,27 +1456,12 @@
 
       
         
-          
-            <p><strong>求有向图的所有拓扑序列：</strong><br>依次取只有出度的节点。列出所有可能的情况。<br><strong>二分查找的比较次数：</strong> 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。  </p>
-<h2 id="汉诺塔游戏"><a href="#汉诺塔游戏" class="headerlink" title="汉诺塔游戏"></a>汉诺塔游戏</h2><p><strong>规则：</strong>  </p>
-<ul>
-<li>每次只能移动一个盘子</li>
-<li>小盘子必须在大盘子上面</li>
-</ul>
-<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><blockquote>
-<p>设三个塔分别为A、B、C。   </p>
-<ol>
-<li>当A塔上有n个盘子时，先将A塔上编号1至n-1的盘子（共n-1个）移动到B塔上（借助C塔）  </li>
-<li>然后将A塔上最大的n号盘子移动到C塔上  </li>
-<li>最后将B塔上的n-1个盘子借助A塔移动到C塔上。<br>只有一个盘子时直接从A盘移到C盘。</li>
-</ol>
-</blockquote>
-<p><strong>如何理解？</strong><br>该算法使用了递归。递归永远都那么<em>迷人</em>。可以这样理解：<br>假设已经有了这样的一个方法hanio()可以实现想要的功能，那么递归调用时就直接调用hanio()，而不需要去明白功能的细节，只需要在写方法的时候处理好递归可能终止的条件就可以了。<br>就比如下面的代码中的<code>hanoi(start,end,mid,n-1)</code>，我不需要知道到底是经过哪些步骤实现了将n-1个盘子从初始塔移动到借用塔上，我只需明白<code>hanoi()</code>是有这个功能的。于是，整个代码就显得那么简洁优雅。<br>而当程序运行时，所以的实现细节就都呈现在眼前了。</p>
-<h4 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HanoiTower</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> start  初始塔</div><div class="line">     * <span class="doctag">@param</span> mid   借用塔</div><div class="line">     * <span class="doctag">@param</span> end   目标塔</div><div class="line">     * <span class="doctag">@param</span> n     盘子数</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(String start,String mid,String end, <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">        <span class="comment">//只有一个盘子时直接将初塔上的盘子移动到目标塔</span></div><div class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">            System.out.println(start+<span class="string">"-&gt;"</span>+end);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            hanoi(start,end,mid,n-<span class="number">1</span>);<span class="comment">//将初始塔的n-1个盘子借助目的塔移动到借用塔</span></div><div class="line">            System.out.println(start+<span class="string">"-&gt;"</span>+end);<span class="comment">//将剩下最大的盘移动到目标塔</span></div><div class="line">            hanoi(mid, start, end, n-<span class="number">1</span>);<span class="comment">//将借用塔上的n-1个盘子借用初始塔移动到目标塔</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        hanoi(<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="number">4</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><p>一共需要移动2^n-1步。<br>时间复杂度O(2^n)<br>空间复杂度O(n)</p>
-<h2 id="折纸游戏"><a href="#折纸游戏" class="headerlink" title="折纸游戏"></a>折纸游戏</h2><p>（未完）</p>
-
-          
+          <p><strong>求有向图的所有拓扑序列：</strong><br>依次取只有出度的节点。列出所有可能的情况。<br><strong>二分查找的比较次数：</strong> 完全二叉树的高度为logN+1向下取整，高度即为比较的次数。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/05/递归——汉诺塔/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1521,40 +1587,13 @@
 
       
         
-          
-            <blockquote>
-<p><strong>记：</strong><br>完成了基于SpringMVC+Mybatis+redis的Java高并发（练手）项目之后，想把它（seckill）部署到自己的子域名上。<br>于是，开始了一系列的部署之旅。</p>
-</blockquote>
-<h3 id="添加子域名解析记录"><a href="#添加子域名解析记录" class="headerlink" title="添加子域名解析记录"></a>添加子域名解析记录</h3><p>首先，进入你的域名解析管理页面，添加A记录，如下：<br><img src="http://obmxnha1c.bkt.clouddn.com/XNlj3" alt="Untitled Image"></p>
-<h3 id="服务器安装tomcat7-nginx-redis"><a href="#服务器安装tomcat7-nginx-redis" class="headerlink" title="服务器安装tomcat7+nginx+redis"></a>服务器安装tomcat7+nginx+redis</h3><p>本人服务器是Linux ubuntu 14.04，安装命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ apt-get update</div><div class="line">$ apt-get install tomcat7</div><div class="line">$ apt-get install nginx <span class="comment">#不指定版本的话好像默认版本较低</span></div><div class="line">$ apt-get install redis-server <span class="comment">#会默认安装redis-cli</span></div><div class="line">$ apt-get install mysql-server-5.6</div><div class="line">$ apt-get install mysql-client-5.6</div></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><h4 id="理解反向代理"><a href="#理解反向代理" class="headerlink" title="理解反向代理"></a>理解反向代理</h4><blockquote>
-<p><strong><em>反向代理（Reverse Proxy）</em></strong>方式是指以代理服务器来接受Internet的连接请求，然后将请求转发给内部网络的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。  </p>
-</blockquote>
-<p><strong>理解：</strong><br>反向代理方式实际上就是一台负责转发的代理服务器，看似充当了真正服务器的功能，但实际上并不是，代理服务器只是充当了转发的作用，并且从真正的（上游）服务器那里取得返回的数据。    </p>
-<p>这样说，其实nginx完成的就是这样的工作。我们让nginx监听一个端口，譬如80端口，但实际上我们转发给在8080端口的tomcat，由它来处理真正的请求，当请求完成后，tomcat返回，但数据此时没直接返回，而是直接给nginx，由nginx进行返回，这里，我们会以为是nginx进行了处理，但实际上进行处理的是tomcat。  </p>
-<p>于是，很多人就会想到，使用nginx处理用户请求的js、css、图片等静态资源，使用tomcat（servlet容器）处理如jsp等动态资源。nginx处理静态页面效率远高于tomcat，这样就能更好的提高并发处理性能。实际上，这种动静分离可以搭建高性能负载均衡的集群。  </p>
-<h4 id="nginx虚拟主机配置"><a href="#nginx虚拟主机配置" class="headerlink" title="nginx虚拟主机配置"></a>nginx虚拟主机配置</h4><p>对于静态资源网站，nginx作为服务器直接处理，不需要转发：  </p>
-<p>nginx的配置文件是<code>/etc/nginx/nginx.conf</code>，发现其中http下引入了<code>etc/nginx/sites-enabled/*</code>，那索性就把所有的虚拟主机都配置在<code>etc/nginx/sites-enabled/default</code>中，在其中添加如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;  </div><div class="line">        listen 80;  <span class="comment">#监听端口</span></div><div class="line">        server_name resume.bluestroy.com; <span class="comment">#二级域名  </span></div><div class="line">  		root /opt/webapp/resume; <span class="comment">#项目路径</span></div><div class="line">        location / &#123;  <span class="comment"># /表示处理所有请求</span></div><div class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404; </div><div class="line">        &#125;  </div><div class="line">        <span class="comment"># nginx还有很多其他属性，自行了解</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nginx -t <span class="comment">#检查配置文件是否正确</span></div><div class="line">$ nginx <span class="_">-s</span> reload <span class="comment">#重新加载配置文件而不必重启</span></div></pre></td></tr></table></figure>
-<p>配置完成后，浏览器直接输入子域名resume.bluestroy.com就可以访问到的我的简历项目（只有一个index.html）。</p>
-<hr>
-<h3 id="Nginx-Tomcat配置多个二级域名"><a href="#Nginx-Tomcat配置多个二级域名" class="headerlink" title="Nginx+Tomcat配置多个二级域名"></a>Nginx+Tomcat配置多个二级域名</h3><p>上面nginx添加了虚拟主机只能处理静态资源。那么下面就配置动态web项目的二级域名。</p>
-<h4 id="配置nginx虚拟主机"><a href="#配置nginx虚拟主机" class="headerlink" title="配置nginx虚拟主机"></a>配置nginx虚拟主机</h4><p>在<code>etc/nginx/sites-enabled/default</code>中添加如下server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name seckill.bluestroy.com;</div><div class="line">        <span class="comment"># tomcat7 处理动态请求</span></div><div class="line">        location / &#123;</div><div class="line">                proxy_pass http://seckill.bluestroy.com:8080; <span class="comment">#tomcat7端口</span></div><div class="line">                <span class="comment">#proxy_redirect off;</span></div><div class="line">                proxy_<span class="built_in">set</span>_header Host <span class="variable">$host</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Real-IP <span class="variable">$remote_addr</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="comment"># nginx直接寻找并加载静态资源</span></div><div class="line"><span class="comment">#       location ~ \.(html|js|css|png|jpg|jpeg|gif)$ &#123;</span></div><div class="line"><span class="comment">#              root /opt/webapp/seckill;</span></div><div class="line"><span class="comment">#     &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面的配置让tomcat处理了所有请求，要实现动静分离请自行了解。</p>
-<h4 id="Tomcat7配置默认项目和虚拟目录"><a href="#Tomcat7配置默认项目和虚拟目录" class="headerlink" title="Tomcat7配置默认项目和虚拟目录"></a>Tomcat7配置默认项目和虚拟目录</h4><p>在 <code>/etc/tomcat7/server.xml</code>中增加如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">"seckill.bluestroy.com"</span> <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"/opt/webapp/seckill"</span> <span class="attr">debug</span>=<span class="string">"0"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>Host标签的name是子域名，与nginx中相同。appBase下的子目录会自动解压及加载部署。<br>Context表齐纳的path=””表示直接输入ip（域名）直接对应到项目根目录,docBase是项目的路径。</p>
-<blockquote>
-<p>这里没有把seckill项目放到tomcat7的webapps目录下，如果放到webapps下是，会造成seckill项目重复加载: </p>
-<ol>
-<li>Tomcat 会在启动时自动加载 appBase 指定目录下的所有合法工程；<br>2.由于同时又通过 Context 的docBase 属性设置了Tomcat 默认工程， 所以，指定的 seckill工程又会被加载一次<br>另外，若放到webapps目录下时，发现seckill.bluestroy.com/seckill/seckill/list 才能访问到，没有将seckill作为根目录导致xxx/seckill/list 404错误。<br><strong><em>因此，最好将自己的项目放到其他地方。</em></strong></li>
-</ol>
-</blockquote>
-<h4 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h4><p><code>vi /etc/hosts</code>将<code>seckill.bluestroy.com</code>追加到127.0.0.1后面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1 	seckill.bluestroy.com</div></pre></td></tr></table></figure></p>
-<h4 id="SUCCESS"><a href="#SUCCESS" class="headerlink" title="SUCCESS"></a>SUCCESS</h4><p>配置完成，重启tomcat7，重新加载nginx配置文件。浏览器访问 <a href="http://seckill.bluestroy.com" target="_blank" rel="external">http://seckill.bluestroy.com</a></p>
-<p><img src="http://obmxnha1c.bkt.clouddn.com/F81yQ" alt="Untitled Image"></p>
-
-          
+          <blockquote>
+<p><strong>记：</strong><br>完成了基于SpringMVC+Mybatis+redis的Java高并发（练手）项目之后，想把它（seckill）部署到自己的子域名上。<br>于是，开始了一系列的部署之旅。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/05/部署web项目-nginx-tomcat7-二级域名/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1680,186 +1719,12 @@
 
       
         
-          
-            <h4 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h4><p><strong>Description:</strong><br>输入图的缩进表示，用1个空格缩进，请转换为广义表方式输出等价的树。</p>
-<p>节点名可以是多个字符，不包括空格、逗号和圆括号</p>
-<p><strong>Input</strong><br>输入图的缩进表示，用一个空格缩进</p>
-<p><strong>Output</strong><br>请转换为广义表方式输出等价的树，用英文括号和逗号分隔。  </p>
-<p><img src="http://obmxnha1c.bkt.clouddn.com/DDokd" alt="Untitled Image"></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><blockquote>
-<p>b1：上一行的前缀空格数<br>b2：当前行的前缀空格数</p>
-<ul>
-<li>b2&gt;b1，则追加【(X】</li>
-<li>b2==b1，则追加【,X】</li>
-<li>b2&lt;b1，则先追加  b1-b2个【)】，再追加【,X】</li>
-<li>b2为最后一行时，最后追加b2个【)】</li>
-</ul>
-</blockquote>
-<h4 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line"></div><div class="line">        ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">        Scanner cin = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">        <span class="comment">//不知道怎么结束循环，输入0结束为了调试。</span></div><div class="line">        <span class="keyword">while</span> (!cin.hasNext(<span class="string">"0"</span>))&#123;</div><div class="line">            String a = cin.nextLine();</div><div class="line">            list.add(a);</div><div class="line">        &#125;</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(); <span class="comment">//保存最后的结果</span></div><div class="line"></div><div class="line">        <span class="keyword">int</span> b1=<span class="number">0</span>;   <span class="comment">//保存上一行的前缀空格数</span></div><div class="line">        <span class="keyword">int</span> b2=<span class="number">0</span>;   <span class="comment">//保存当前行的前缀空格数</span></div><div class="line"></div><div class="line">        sb.append(list.get(<span class="number">0</span>)); <span class="comment">//一定有根节点，其前缀空格数为0，先保存进去</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;list.size();i++)&#123;   <span class="comment">//遍历每一个节点</span></div><div class="line">            b2=<span class="number">0</span>;</div><div class="line">            String str = list.get(i);</div><div class="line">            <span class="comment">//求出当前节点的前缀空格数，即b2</span></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> c : str.toCharArray())&#123;</div><div class="line">                <span class="keyword">if</span> (c ==<span class="string">' '</span>) b2++;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//为表示方便，用X表示当前节点的内容，即当前行的String</span></div><div class="line">            <span class="keyword">if</span> (b2&gt;b1)  <span class="comment">//b2&gt;b1，则追加【(X】</span></div><div class="line">                sb.append(<span class="string">"("</span>).append(str);</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (b2==b1)    <span class="comment">//b2==b1，则追加【,X】</span></div><div class="line">                sb.append(<span class="string">","</span>).append(str);</div><div class="line">            <span class="keyword">else</span> &#123;          <span class="comment">//b2&lt;b1，则先追加  b1-b2个【)】，再追加【,X】</span></div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;b1-b2;j++)&#123;</div><div class="line">                    sb.append(<span class="string">")"</span>);</div><div class="line">                &#125;</div><div class="line">                sb.append(<span class="string">","</span>).append(str);</div><div class="line">            &#125;</div><div class="line">            b1 =b2;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//此时b2为最后一样的前缀空格数，最后追加b2个【)】</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;b2;j++)&#123;</div><div class="line">            sb.append(<span class="string">")"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//最后的最后，将所有的空格剔除掉。</span></div><div class="line">        System.out.println(sb.toString().replaceAll(<span class="string">" "</span>,<span class="string">""</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><br>  </p>
-<p><em>注：盛大游戏编程题之一</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/28/Java-IO流总结/" itemprop="url">
-                  Java IO流总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T10:56:00+08:00" content="2016-09-28">
-              2016-09-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/28/Java-IO流总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/Java-IO流总结/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/28/Java-IO流总结/" class="leancloud_visitors" data-flag-title="Java IO流总结">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="Java四个基本的抽象类"><a href="#Java四个基本的抽象类" class="headerlink" title="Java四个基本的抽象类"></a>Java四个基本的抽象类</h4><p><img src="http://obmxnha1c.bkt.clouddn.com/Dj77B" alt="Untitled Image">  </p>
-<hr>
-<h4 id="IO体系图："><a href="#IO体系图：" class="headerlink" title="IO体系图："></a>IO体系图：</h4><p><img src="http://obmxnha1c.bkt.clouddn.com/qf17S" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/bcHre" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/nvGaH" alt="Untitled Image"><br><img src="http://obmxnha1c.bkt.clouddn.com/9AJf9" alt="Untitled Image">  </p>
-<hr>
-<h4 id="上层流："><a href="#上层流：" class="headerlink" title="上层流："></a>上层流：</h4><blockquote>
-<p>更高级的流，有更强的读写能力。上层流指向底层流。Java采用缓存技术将上层流和底层流链接。  </p>
-</blockquote>
-<ul>
-<li>BufferedReader(Reader in);     &nbsp;&nbsp;//缓冲流</li>
-<li>BufferedWriter(Writer out);</li>
-<li>DataInputStream(InputString in);  &nbsp;&nbsp;//数据流</li>
-<li>DataOutputStream(OutputString out); </li>
-<li>ObjectInputStream(InputStream in); &nbsp;&nbsp;//对象流</li>
-<li>ObjectOutputStream(OutputStream out); </li>
-</ul>
-<hr>
-<h4 id="随机流"><a href="#随机流" class="headerlink" title="随机流"></a>随机流</h4><p><code>RandomAccessFile</code>既不是<code>InputStream</code>的子类，也不是<code>OutputSteam</code>的子类。其流的指向既可以作为流的源，也可以作为流的目的地。mode取<code>r</code>或<code>rw</code>。</p>
-<ul>
-<li>RandomAccessFile(String name, String mode);</li>
-<li>RandomAccessFile(File file, String mode);</li>
-</ul>
-<p><strong>例： 将int数组写入tom.bat，然后倒序读出。</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">import java.io.*;</div><div class="line">public class Main&#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">    	RandomAccessFile inAndOut = null;</div><div class="line">        int data[] = &#123;1,2,3,4,5,6,7,8,9,10&#125;;</div><div class="line">        try&#123;	</div><div class="line">        	inAndOut = new RandomAccessFile("tom.bat","rw);</div><div class="line">            for(int i=0;i&lt;data.length;i++)&#123;</div><div class="line">            	inAndOut.writeInt(data[i]);</div><div class="line">            &#125;</div><div class="line">            for(long i=data.length-1;i&gt;=0;i--)&#123;</div><div class="line">            	inAndOut.seek(i*4);</div><div class="line">                System.out.printf("\t%d",inAndOut.readInt());</div><div class="line">            &#125;</div><div class="line"> 			inAndOut.close();</div><div class="line">        &#125;catch(IOException e)&#123;&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">```  </div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">#### 数组流  </div><div class="line">流的源和目标除了文件还可以是计算机内存。  </div><div class="line"></div><div class="line">**1. 字节数组流**  </div><div class="line">- ByteArrayInputStream(byte[] buf);</div><div class="line">- ByteArrayInputStream(byte[] buf, int offset, int length);</div><div class="line">- ByteArrayOutputStream();	//默认指向32字节缓冲区</div><div class="line">- ByteArrayOutputStream(int size);  </div><div class="line"></div><div class="line">**2.字符数组流**  </div><div class="line">`CharArrayReader`和`CharArrayWriter`与字节数组流对应。  </div><div class="line"></div><div class="line">---  </div><div class="line"></div><div class="line">#### 文件锁  </div><div class="line"></div><div class="line">``` java</div><div class="line">// 1.读写属性必须是rw</div><div class="line">RandomAccessFile input = new RandomAccessFile("Example.java","rw");  </div><div class="line">// 2.获得连接到底层文件的信道</div><div class="line">FileChannel channel = input.getChannel();</div><div class="line">// 3.对文件加锁</div><div class="line">FileLock lock = channel.tryLock();</div><div class="line">// 4.释放文件锁</div><div class="line">lock .release();</div></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="序列化与对象克隆"><a href="#序列化与对象克隆" class="headerlink" title="序列化与对象克隆"></a>序列化与对象克隆</h3><p><strong>克隆对象：</strong> 复制品实体的变化不会引起原对象实体发生变化。<em>（区别于引用赋值）</em> </p>
-<blockquote>
-<p>使用对象流容易获取一个序列化对象的可偶那个，只需将该对象写入对象输出流指向的目的地，然后将该目的地作为一个对象输入流的源，那么该对象输入流从元中都会的文件一定是原对象的一个克隆。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">TV a = <span class="keyword">new</span> TV();	<span class="comment">//TV已实现了序列化</span></div><div class="line"><span class="comment">//写入序列化对象</span></div><div class="line">ByteArrayOutputStream outByte = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">ObjectOutputStream objOut = <span class="keyword">new</span> ObjectOutputStream(outByte);</div><div class="line">objOut.writeObject(a);</div><div class="line">objOut.close();</div><div class="line"><span class="comment">//读取序列化对象</span></div><div class="line">ByteArrayInputStream inByte = <span class="keyword">new</span> ByteArrayInputStream(outByte.toByteArray());</div><div class="line">ObjectInputStream objIn = <span class="keyword">new</span> ObjectInputStream(inByte);</div><div class="line">TV b = (TV)objIn.readObject();</div><div class="line">objIn.close();</div></pre></td></tr></table></figure>
-<hr>
-<h4 id="I-O流设计模式"><a href="#I-O流设计模式" class="headerlink" title="I/O流设计模式"></a>I/O流设计模式</h4><p><strong>装饰模式</strong>在Java语言中最著名的应用莫过于Java I/O标准为库的设计了。  </p>
-<p>Java I/O库需要很多性能的各种组合，如果说这些性能的组合是通过继承方式来实现的话，那么每一种组合都需要一个类，这样就会出现大量重复性问题的出现，从而使类数目“爆炸”。而如果采用装饰模式，那么不仅类的数目大减少了，性能的重复也可以减至到最少。所以装饰模式是Java I/O库的基本模式。  </p>
-<p>由于装饰模式的引用，造成了灵活性和复杂都大大增加了，我们在使用Java I/O库时，必须理解Java I/O库是由一些基本的原始流处理器和围绕它们的装饰流处理器所组成的，这样可以在学习和使用Java I/O库时达到事半功倍的效果。</p>
-
-          
+          <h4 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h4><p><strong>Description:</strong><br>输入图的缩进表示，用1个空格缩进，请转换为广义表方式输出等价的树。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/29/ACM-树的表示-缩进到广义表/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1931,7 +1796,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
