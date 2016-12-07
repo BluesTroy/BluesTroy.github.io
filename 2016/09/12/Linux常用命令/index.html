@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://www.bluestroy.com/2016/09/12/Linux常用命令/index.html">
 <meta property="og:site_name" content="Troy的输出流">
 <meta property="og:description" content="一、crontab简介crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在crontab文件中，以供之后读取和执行。">
-<meta property="og:updated_time" content="2016-11-04T13:54:17.973Z">
+<meta property="og:updated_time" content="2016-12-07T07:19:40.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
 <meta name="twitter:description" content="一、crontab简介crontab命令常见于Unix和类Unix系统中，用于设置周期性被执行的命令。该命令从标准输入设备读取指令，并将其存放在crontab文件中，以供之后读取和执行。">
@@ -534,7 +534,7 @@
 </ul>
 <h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
-<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
+<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-8/2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
 <p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
@@ -563,11 +563,11 @@
 <li>/home 存放普通用户的相关文件</li>
 <li>/bin 存放常用命令的文件 。系统的一些指令</li>
 <li>/sbin 具有一定权限才可以使用的命令。超级用户指令、系统管理指令</li>
-<li>/mnt 默认挂在光驱和软驱的目录</li>
+<li>/mnt 默认挂载光驱和软驱的目录</li>
 <li>/boot 存放引导相关的文件</li>
 <li>/etc 存放配置相关的文件</li>
 <li>/var 存放经常变化的文件</li>
-<li>/usr 安装程序的默认安装文件夹。</li>
+<li>/usr 安装程序的默认安装文件夹</li>
 </ol>
 <ul>
 <li>/usr/bin  后期安装的一些软件的运行脚本</li>
@@ -726,7 +726,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -734,7 +734,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -743,7 +743,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

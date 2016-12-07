@@ -4,6 +4,14 @@
   
     
     <entry>
+      <title><![CDATA[一张图解读什么是数字签名、数字证书、https原理]]></title>
+      <url>http://www.bluestroy.com/2016/12/07/%E4%B8%80%E5%BC%A0%E5%9B%BE%E8%A7%A3%E8%AF%BB%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E3%80%81%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E3%80%81https%E5%8E%9F%E7%90%86/</url>
+      <content type="html"><![CDATA[<p>数字签名和数字证书是什么？ https是如果实现加密传输的？<br><a id="more"></a></p>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/cxQkK" alt="Untitled Image"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[sublime中添加groovy编译功能]]></title>
       <url>http://www.bluestroy.com/2016/11/05/sublime%E4%B8%AD%E6%B7%BB%E5%8A%A0groovy%E7%BC%96%E8%AF%91%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<p>新建一个文件名字可以叫做<code>groovy.sublime-build</code>，  <a id="more"></a><br>里面 写入内容：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"cmd"</span>:[<span class="string">"groovy.bat"</span>,<span class="string">"$file"</span>]</div><div class="line">    <span class="string">"selector"</span>:<span class="string">"source.groovy"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -669,7 +677,7 @@
     <entry>
       <title><![CDATA[关于Git，你不需要记住更多]]></title>
       <url>http://www.bluestroy.com/2016/09/17/%E5%85%B3%E4%BA%8EGit%EF%BC%8C%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E8%AE%B0%E4%BD%8F%E6%9B%B4%E5%A4%9A/</url>
-      <content type="html"><![CDATA[<h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件<code>test</code>，将其初始化为git<br>仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h4 id="关联本地仓库和远程仓库"><a href="#关联本地仓库和远程仓库" class="headerlink" title="关联本地仓库和远程仓库"></a>关联本地仓库和远程仓库</h4><p>首先，需要本地创建一个文件夹<code>test</code>，将其初始化为git仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>然后，在github服务器端也创建一个同名仓库<code>test</code>，执行以下命令关联远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:BluesTroy/test.git</div></pre></td></tr></table></figure></p>
 <p>接着，将远程<code>master</code>最新分支拉取到本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master</div></pre></td></tr></table></figure></p>
@@ -804,7 +812,7 @@
 <h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
 <p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1   </p>
 </blockquote>
-<p><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
+<p><strong>叶子数：</strong> 2^(h-1)<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
 <h4 id="二叉排序树（二叉查找树、二叉搜索树）"><a href="#二叉排序树（二叉查找树、二叉搜索树）" class="headerlink" title="二叉排序树（二叉查找树、二叉搜索树）"></a>二叉排序树（二叉查找树、二叉搜索树）</h4><blockquote>
 <p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的结点。</p>
 <div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg" width="300" height="180" align="center"><br></div>
@@ -824,19 +832,17 @@
 <h4 id="各种排序算法复杂度"><a href="#各种排序算法复杂度" class="headerlink" title="各种排序算法复杂度"></a>各种排序算法复杂度</h4><p><img src="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg" alt="各种排序算法复杂度"></p>
 <h4 id="死锁的4个必要条件"><a href="#死锁的4个必要条件" class="headerlink" title="死锁的4个必要条件"></a>死锁的4个必要条件</h4><p>（1） 互斥条件：一个资源每次只能被一个进程使用。<br>（2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>（3） 不可抢占（不剥夺）条件：进程已获得的资源，在末使用完之前，不能强行剥夺。<br>（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。  </p>
 <h4 id="标准的SQL解析顺序"><a href="#标准的SQL解析顺序" class="headerlink" title="标准的SQL解析顺序"></a>标准的SQL解析顺序</h4><p>(1).FROM 子句, 组装来自不同数据源的数据<br>(2).WHERE 子句, 基于指定的条件对记录进行筛选<br>(3).GROUP BY 子句, 将数据划分为多个分组<br>(4).使用聚合函数进行计算<br>(5).使用 HAVING 子句筛选分组<br>(6).计算Select所有的表达式<br>(7).使用 ORDER BY 对结果集进行排序  </p>
-<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p>同： abstract类 和接口都可以有abstract方法<br>不同：  </p>
+<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p><strong>同</strong>： abstract类 和接口都可以有abstract方法<br><strong>不同</strong>：  </p>
 <ol>
-<li><p>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </p>
-</li>
-<li><p>abstract类也可以有非abstract方法，接口不可以。  </p>
-</li>
+<li>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </li>
+<li>abstract类也可以有非abstract方法，接口不可以。  </li>
 <li>实现接口是一定要实现接口里定义的所有方法，而实现抽象类可以有选择的重写需要用到的方法。  </li>
-<li>接口是公开的，里面不能有私有的方法和变量。而首次昂类是可以有私有方法和私有变量的。  </li>
-<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有没有具体实现的抽象方法）  </li>
+<li>接口是公开的，里面不能有私有的方法和变量。而抽象类是可以有私有方法和私有变量的。  </li>
+<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有具体实现的抽象方法）  </li>
 <li>子类只能单继承抽象类；而子类能够同时实现多个接口</li>
 </ol>
 <h4 id="java中对象什么时候被垃圾回收"><a href="#java中对象什么时候被垃圾回收" class="headerlink" title="java中对象什么时候被垃圾回收"></a>java中对象什么时候被垃圾回收</h4><p>当没有任何对象的引用指向对象时，在一个不可预期的时间内对象才会被回收  </p>
-<p>当对象的引用为空，当对象堆当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
+<p>当对象的引用为空，当对象对当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
 <blockquote>
 <p>一个对象，可以有一个或多个引用变量指向它。当一个对象不再有任何一个引用变量指向它时，这个对象就被应用抛弃了。或者说，这个对象可以被垃圾回收机制回收了。这就是说，当不存在对某对象的任何引用时，就意味着，应用告诉JVM：我不要这个对象，你可以回收了。  </p>
 <p>JVM的垃圾回收机制对堆空间做实时检测。当发现某对象的引用计数为0时，就将该对象列入待回收列表中。但是，并不是马上予以销毁</p>
@@ -871,10 +877,9 @@
 <blockquote>
 <p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个被更新后的数据。  </p>
 </blockquote>
-<p><em>这写问题都可通过并发控制子系统解决。</em></p>
+<p><em>这些问题都可通过并发控制子系统解决。</em></p>
 <p>基本锁有X锁，S锁和U锁。</p>
-<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
-<p><br><br><br></p>
+<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a><br>例如：<br><strong>5个9</strong>：(1-99.999%)<em>365</em>24*60=5.26分钟，表示该软件系统在连续运行1年时间里最多可能的业务中断时间是5.26分钟。<br><br><br><br></p>
 <p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em>  </p>
 <p><br><br><br></p>
 ]]></content>
@@ -894,7 +899,7 @@
 </ul>
 <h5 id="2、crontab命令的例子"><a href="#2、crontab命令的例子" class="headerlink" title="2、crontab命令的例子"></a>2、crontab命令的例子</h5><p><strong>*</strong> 表示该范围内任意时候，如每分钟执行一次：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* * * * * date &gt; /home/mydate</div></pre></td></tr></table></figure>
-<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-7/2 * * * date</div></pre></td></tr></table></figure></p>
+<p>每天晚上11点到早上8点之间每两个小时，即早上八点 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 23-8/2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每两个小时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 */2 * * * date</div></pre></td></tr></table></figure></p>
 <p>每个月的4号和每周的周一到周三的早上11点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0 11 4 * mon-wed date</div></pre></td></tr></table></figure></p>
 <p>每天18 : 00至23 : 00之间每隔30分钟重启apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart</div></pre></td></tr></table></figure></p>
@@ -923,11 +928,11 @@
 <li>/home 存放普通用户的相关文件</li>
 <li>/bin 存放常用命令的文件 。系统的一些指令</li>
 <li>/sbin 具有一定权限才可以使用的命令。超级用户指令、系统管理指令</li>
-<li>/mnt 默认挂在光驱和软驱的目录</li>
+<li>/mnt 默认挂载光驱和软驱的目录</li>
 <li>/boot 存放引导相关的文件</li>
 <li>/etc 存放配置相关的文件</li>
 <li>/var 存放经常变化的文件</li>
-<li>/usr 安装程序的默认安装文件夹。</li>
+<li>/usr 安装程序的默认安装文件夹</li>
 </ol>
 <ul>
 <li>/usr/bin  后期安装的一些软件的运行脚本</li>

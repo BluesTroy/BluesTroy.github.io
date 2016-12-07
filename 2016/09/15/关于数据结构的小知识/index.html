@@ -102,7 +102,7 @@
 二叉树的深度h即为二叉树的层数，二叉树最多含有节点数为 2^h-1。第i层节点数： 2^(i-1)">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg">
 <meta property="og:image" content="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg">
-<meta property="og:updated_time" content="2016-11-04T13:54:48.398Z">
+<meta property="og:updated_time" content="2016-12-07T08:29:25.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于数据结构的小知识">
 <meta name="twitter:description" content="二叉树的深度和高度
@@ -550,7 +550,7 @@
 <h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
 <p>除叶子节点外的所有节点均有两个子节点，即节点数达到最大值。 2^h-1   </p>
 </blockquote>
-<p><strong>叶子数：</strong> 2^h<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
+<p><strong>叶子数：</strong> 2^(h-1)<br><strong>第k层节点数：</strong> 2^(k-1)<br><strong>总结点数：</strong> 2^k-1</p>
 <h4 id="二叉排序树（二叉查找树、二叉搜索树）"><a href="#二叉排序树（二叉查找树、二叉搜索树）" class="headerlink" title="二叉排序树（二叉查找树、二叉搜索树）"></a>二叉排序树（二叉查找树、二叉搜索树）</h4><blockquote>
 <p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的结点。</p>
 <div align="center"><br><img src="http://obmxnha1c.bkt.clouddn.com/94cad1c8a786c9179df9bed6c93d70cf3ac75763.jpg" width="300" height="180" align="center"><br></div>
@@ -570,19 +570,17 @@
 <h4 id="各种排序算法复杂度"><a href="#各种排序算法复杂度" class="headerlink" title="各种排序算法复杂度"></a>各种排序算法复杂度</h4><p><img src="http://blog.chinaunix.net/attachment/201201/18/21457204_1326898064RUxx.jpg" alt="各种排序算法复杂度"></p>
 <h4 id="死锁的4个必要条件"><a href="#死锁的4个必要条件" class="headerlink" title="死锁的4个必要条件"></a>死锁的4个必要条件</h4><p>（1） 互斥条件：一个资源每次只能被一个进程使用。<br>（2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>（3） 不可抢占（不剥夺）条件：进程已获得的资源，在末使用完之前，不能强行剥夺。<br>（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。  </p>
 <h4 id="标准的SQL解析顺序"><a href="#标准的SQL解析顺序" class="headerlink" title="标准的SQL解析顺序"></a>标准的SQL解析顺序</h4><p>(1).FROM 子句, 组装来自不同数据源的数据<br>(2).WHERE 子句, 基于指定的条件对记录进行筛选<br>(3).GROUP BY 子句, 将数据划分为多个分组<br>(4).使用聚合函数进行计算<br>(5).使用 HAVING 子句筛选分组<br>(6).计算Select所有的表达式<br>(7).使用 ORDER BY 对结果集进行排序  </p>
-<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p>同： abstract类 和接口都可以有abstract方法<br>不同：  </p>
+<h4 id="简述abstract-类和interface的区别"><a href="#简述abstract-类和interface的区别" class="headerlink" title="简述abstract 类和interface的区别"></a>简述abstract 类和interface的区别</h4><p><strong>同</strong>： abstract类 和接口都可以有abstract方法<br><strong>不同</strong>：  </p>
 <ol>
-<li><p>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </p>
-</li>
-<li><p>abstract类也可以有非abstract方法，接口不可以。  </p>
-</li>
+<li>接口中只可以有常量，不能有变量；而abstract类中既可以有常量也可以有变量  </li>
+<li>abstract类也可以有非abstract方法，接口不可以。  </li>
 <li>实现接口是一定要实现接口里定义的所有方法，而实现抽象类可以有选择的重写需要用到的方法。  </li>
-<li>接口是公开的，里面不能有私有的方法和变量。而首次昂类是可以有私有方法和私有变量的。  </li>
-<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有没有具体实现的抽象方法）  </li>
+<li>接口是公开的，里面不能有私有的方法和变量。而抽象类是可以有私有方法和私有变量的。  </li>
+<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有具体实现的抽象方法）  </li>
 <li>子类只能单继承抽象类；而子类能够同时实现多个接口</li>
 </ol>
 <h4 id="java中对象什么时候被垃圾回收"><a href="#java中对象什么时候被垃圾回收" class="headerlink" title="java中对象什么时候被垃圾回收"></a>java中对象什么时候被垃圾回收</h4><p>当没有任何对象的引用指向对象时，在一个不可预期的时间内对象才会被回收  </p>
-<p>当对象的引用为空，当对象堆当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
+<p>当对象的引用为空，当对象对当前使用这个对象的应用程序不可触及的时候，这个对象就可以被回收了。</p>
 <blockquote>
 <p>一个对象，可以有一个或多个引用变量指向它。当一个对象不再有任何一个引用变量指向它时，这个对象就被应用抛弃了。或者说，这个对象可以被垃圾回收机制回收了。这就是说，当不存在对某对象的任何引用时，就意味着，应用告诉JVM：我不要这个对象，你可以回收了。  </p>
 <p>JVM的垃圾回收机制对堆空间做实时检测。当发现某对象的引用计数为0时，就将该对象列入待回收列表中。但是，并不是马上予以销毁</p>
@@ -617,10 +615,9 @@
 <blockquote>
 <p>脏读就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个被更新后的数据。  </p>
 </blockquote>
-<p><em>这写问题都可通过并发控制子系统解决。</em></p>
+<p><em>这些问题都可通过并发控制子系统解决。</em></p>
 <p>基本锁有X锁，S锁和U锁。</p>
-<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a></p>
-<p><br><br><br></p>
+<h4 id="系统平均无故障时间——可靠性。X个9的含义"><a href="#系统平均无故障时间——可靠性。X个9的含义" class="headerlink" title="系统平均无故障时间——可靠性。X个9的含义"></a>系统平均无故障时间——可靠性。X个9的含义</h4><p><em>参考</em> <a href="http://blog.csdn.net/alonesword/article/details/21555745" target="_blank" rel="external">什么是“5个9”(99.999%)的可靠性？</a><br>例如：<br><strong>5个9</strong>：(1-99.999%)<em>365</em>24*60=5.26分钟，表示该软件系统在连续运行1年时间里最多可能的业务中断时间是5.26分钟。<br><br><br><br></p>
 <p><em>你也许会不经意的发现，这篇文章对解决17招行笔试题很有帮助，那还不赶快打个赏！！</em>  </p>
 <p><br><br><br></p>
 
@@ -776,7 +773,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -784,7 +781,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -793,7 +790,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
