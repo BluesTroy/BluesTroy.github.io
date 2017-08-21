@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/bcHre">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/nvGaH">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/9AJf9">
-<meta property="og:updated_time" content="2016-11-04T13:52:12.636Z">
+<meta property="og:updated_time" content="2016-12-09T03:28:48.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java IO流总结">
 <meta name="twitter:description" content="Java四个基本的抽象类">
@@ -554,13 +554,13 @@
 <hr>
 <h3 id="序列化与对象克隆"><a href="#序列化与对象克隆" class="headerlink" title="序列化与对象克隆"></a>序列化与对象克隆</h3><p><strong>克隆对象：</strong> 复制品实体的变化不会引起原对象实体发生变化。<em>（区别于引用赋值）</em> </p>
 <blockquote>
-<p>使用对象流容易获取一个序列化对象的可偶那个，只需将该对象写入对象输出流指向的目的地，然后将该目的地作为一个对象输入流的源，那么该对象输入流从元中都会的文件一定是原对象的一个克隆。</p>
+<p>使用对象流容易获取一个序列化对象的克隆对象，只需将该对象写入对象输出流指向的目的地，然后将该目的地作为一个对象输入流的源，那么该对象输入流从源中读出的文件一定是原对象的一个克隆。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">TV a = <span class="keyword">new</span> TV();	<span class="comment">//TV已实现了序列化</span></div><div class="line"><span class="comment">//写入序列化对象</span></div><div class="line">ByteArrayOutputStream outByte = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">ObjectOutputStream objOut = <span class="keyword">new</span> ObjectOutputStream(outByte);</div><div class="line">objOut.writeObject(a);</div><div class="line">objOut.close();</div><div class="line"><span class="comment">//读取序列化对象</span></div><div class="line">ByteArrayInputStream inByte = <span class="keyword">new</span> ByteArrayInputStream(outByte.toByteArray());</div><div class="line">ObjectInputStream objIn = <span class="keyword">new</span> ObjectInputStream(inByte);</div><div class="line">TV b = (TV)objIn.readObject();</div><div class="line">objIn.close();</div></pre></td></tr></table></figure>
 <hr>
-<h4 id="I-O流设计模式"><a href="#I-O流设计模式" class="headerlink" title="I/O流设计模式"></a>I/O流设计模式</h4><p><strong>装饰模式</strong>在Java语言中最著名的应用莫过于Java I/O标准为库的设计了。  </p>
-<p>Java I/O库需要很多性能的各种组合，如果说这些性能的组合是通过继承方式来实现的话，那么每一种组合都需要一个类，这样就会出现大量重复性问题的出现，从而使类数目“爆炸”。而如果采用装饰模式，那么不仅类的数目大减少了，性能的重复也可以减至到最少。所以装饰模式是Java I/O库的基本模式。  </p>
-<p>由于装饰模式的引用，造成了灵活性和复杂都大大增加了，我们在使用Java I/O库时，必须理解Java I/O库是由一些基本的原始流处理器和围绕它们的装饰流处理器所组成的，这样可以在学习和使用Java I/O库时达到事半功倍的效果。</p>
+<h4 id="I-O流设计模式"><a href="#I-O流设计模式" class="headerlink" title="I/O流设计模式"></a>I/O流设计模式</h4><p><strong>装饰模式</strong>在Java语言中最著名的应用莫过于Java I/O标准库的设计了。  </p>
+<p>Java I/O库需要很多性能的各种组合，如果说这些性能的组合是通过继承方式来实现的话，那么每一种组合都需要一个类，这样就会有大量重复性问题的出现，从而使类数目“爆炸”。而如果采用装饰模式，那么不仅类的数目大大减少了，性能的重复也可以减到最少。所以装饰模式是Java I/O库的基本模式。  </p>
+<p>由于装饰模式的引用，造成了灵活性和复杂度大大增加了，我们在使用Java I/O库时，必须理解Java I/O库是由一些基本的原始流处理器和围绕它们的装饰流处理器所组成的，这样可以在学习和使用Java I/O库时达到事半功倍的效果。</p>
 
       
     </div>
@@ -832,8 +832,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -100,7 +100,7 @@ Java编码中，我们经常需要用到容器来编程。在并发环境下，J
 Java编码中，我们经常需要用到容器来编程。在并发环境下，Java提供一些已有容器能够支持并发。Hashtable和Vector都是JKD早期版本的内容">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/mapLei.jpg">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg">
-<meta property="og:updated_time" content="2016-11-04T13:53:33.707Z">
+<meta property="og:updated_time" content="2016-12-09T01:36:09.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程安全的容器类">
 <meta name="twitter:description" content="转自Jeff的自留地：java线程安全的容器类  
@@ -544,14 +544,14 @@ Java编码中，我们经常需要用到容器来编程。在并发环境下，J
 <h3 id="2-Collection"><a href="#2-Collection" class="headerlink" title="2. Collection"></a>2. Collection</h3><p><img src="http://obmxnha1c.bkt.clouddn.com/collectionLei.jpg" alt="Untitled Image"></p>
 <p>Collection部分主要是运用的CopyOnWrite机制，即写时复制机制。从字面上就能理解什么意思，就是当我们往一个容器里添加元素的时候，先对这个容器进行一次复制，对副本进行写操作。写操作结束后，将原容器的引用指向新副本容器，就完成了写的刷新。从它的实现原理，我们可以看出这种机制是存在缺点的。</p>
 <p>1.内存占用：毫无疑问，每次写时需要首先复制一遍原容器，假如复制了很多，或者本身原容器就比较大，那么肯定会占用很多内存。可以采用压缩容器中的元素来防止内存消耗过大。</p>
-<p>2.数据一致性问题：当我们在副本中进行写操组时，只能在最终结束后使数据同步，不能实时同步</p>
+<p>2.数据一致性问题：当我们在副本中进行写操作时，只能在最终结束后使数据同步，不能实时同步</p>
 <p>可以看到，这种机制适用于读操作多，写操作少的应用场景。</p>
 <p><strong>java.util.concurrent.CopyOnWriteArrayList</strong></p>
 <p>Collection类的线程安全容器主要都是利用的ReentrantLock实现的线程安全，CopyOnWriteArrayList也不例外。在并发写的时候，需要获取lock。读的时候不需要进行lock</p>
 <p><strong>java.util.concurrent.CopyOnWriteArraySet</strong></p>
 <p>CopyOnWriteArraySet的实现就是基于CopyOnWriteArrayList实现的，采用的装饰器进行实现。二者的区别和List和Set的区别一样。</p>
 <p><strong>Vector</strong></p>
-<p>一般我们都不用Vector了，不过它确实也是线程安全的。相对于其他容器，能够提供随机访问功能。</p>
+<p>一般我们都不用Vector了，不过它确实也是线程安全的。相对于其他容器，能够提供随机访问功能，使用ReentrantLock实现线程安全。</p>
 <h3 id="3-StringBuffer和StringBuilder"><a href="#3-StringBuffer和StringBuilder" class="headerlink" title="3. StringBuffer和StringBuilder"></a>3. StringBuffer和StringBuilder</h3><p>我们知道，String在进行+操作的时候，原生的String会重新新建一个String对象来完成字符串拼接，明显这种操作多了的话会加重服务器负担。因此我们需要的时候就会用StringBuffer和StringBuilder。这二者有什么区别呢？</p>
 <p><strong>StringBuffer</strong>是线程安全的，StringBuilder不是。从StringBuffer的源码可以看到，它采用的是对方法进行synchronized实现的同步。但是加了同步机制，肯定会对性能有一定影响。  </p>
 <blockquote>
@@ -843,8 +843,8 @@ Java编码中，我们经常需要用到容器来编程。在并发环境下，J
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

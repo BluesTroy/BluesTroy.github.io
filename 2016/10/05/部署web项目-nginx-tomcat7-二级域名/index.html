@@ -96,7 +96,7 @@
 <meta property="og:description" content="记：完成了基于SpringMVC+Mybatis+redis的Java高并发（练手）项目之后，想把它（seckill）部署到自己的子域名上。于是，开始了一系列的部署之旅。">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/XNlj3">
 <meta property="og:image" content="http://obmxnha1c.bkt.clouddn.com/F81yQ">
-<meta property="og:updated_time" content="2016-11-04T13:56:35.771Z">
+<meta property="og:updated_time" content="2016-12-09T03:40:53.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署web项目 nginx+tomcat7+二级域名">
 <meta name="twitter:description" content="记：完成了基于SpringMVC+Mybatis+redis的Java高并发（练手）项目之后，想把它（seckill）部署到自己的子域名上。于是，开始了一系列的部署之旅。">
@@ -547,11 +547,12 @@
 <h4 id="配置nginx虚拟主机"><a href="#配置nginx虚拟主机" class="headerlink" title="配置nginx虚拟主机"></a>配置nginx虚拟主机</h4><p>在<code>etc/nginx/sites-enabled/default</code>中添加如下server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name seckill.bluestroy.com;</div><div class="line">        <span class="comment"># tomcat7 处理动态请求</span></div><div class="line">        location / &#123;</div><div class="line">                proxy_pass http://seckill.bluestroy.com:8080; <span class="comment">#tomcat7端口</span></div><div class="line">                <span class="comment">#proxy_redirect off;</span></div><div class="line">                proxy_<span class="built_in">set</span>_header Host <span class="variable">$host</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Real-IP <span class="variable">$remote_addr</span>;</div><div class="line">                proxy_<span class="built_in">set</span>_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="comment"># nginx直接寻找并加载静态资源</span></div><div class="line"><span class="comment">#       location ~ \.(html|js|css|png|jpg|jpeg|gif)$ &#123;</span></div><div class="line"><span class="comment">#              root /opt/webapp/seckill;</span></div><div class="line"><span class="comment">#     &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上面的配置让tomcat处理了所有请求，要实现动静分离请自行了解。</p>
 <h4 id="Tomcat7配置默认项目和虚拟目录"><a href="#Tomcat7配置默认项目和虚拟目录" class="headerlink" title="Tomcat7配置默认项目和虚拟目录"></a>Tomcat7配置默认项目和虚拟目录</h4><p>在 <code>/etc/tomcat7/server.xml</code>中增加如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">"seckill.bluestroy.com"</span> <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"/opt/webapp/seckill"</span> <span class="attr">debug</span>=<span class="string">"0"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>Host标签的name是子域名，与nginx中相同。appBase下的子目录会自动解压及加载部署。<br>Context表齐纳的path=””表示直接输入ip（域名）直接对应到项目根目录,docBase是项目的路径。</p>
+<p>Host标签的name是子域名，与nginx中相同。appBase下的子目录会自动解压及加载部署。<br>Context中的path=””表示直接输入ip（域名）直接对应到项目根目录,docBase是项目的路径。</p>
 <blockquote>
-<p>这里没有把seckill项目放到tomcat7的webapps目录下，如果放到webapps下是，会造成seckill项目重复加载: </p>
+<p>这里没有把seckill项目放到tomcat7的webapps目录下，如果放到webapps下时，会造成seckill项目重复加载： </p>
 <ol>
-<li>Tomcat 会在启动时自动加载 appBase 指定目录下的所有合法工程；<br>2.由于同时又通过 Context 的docBase 属性设置了Tomcat 默认工程， 所以，指定的 seckill工程又会被加载一次<br>另外，若放到webapps目录下时，发现seckill.bluestroy.com/seckill/seckill/list 才能访问到，没有将seckill作为根目录导致xxx/seckill/list 404错误。<br><strong><em>因此，最好将自己的项目放到其他地方。</em></strong></li>
+<li>Tomcat 会在启动时自动加载 appBase 指定目录下的所有合法工程；  </li>
+<li>由于同时又通过 Context 的docBase 属性设置了Tomcat 默认工程， 所以，指定的 seckill工程又会被加载一次<br>另外，若放到webapps目录下时，发现seckill.bluestroy.com/seckill/seckill/list 才能访问到，没有将seckill作为根目录导致xxx/seckill/list 404错误。<br><strong><em>因此，最好将自己的项目放到其他地方。</em></strong></li>
 </ol>
 </blockquote>
 <h4 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h4><p><code>vi /etc/hosts</code>将<code>seckill.bluestroy.com</code>追加到127.0.0.1后面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1 	seckill.bluestroy.com</div></pre></td></tr></table></figure></p>
@@ -830,8 +831,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://www.bluestroy.com/2016/10/05/查看Linux中TCP连接数/index.html">
 <meta property="og:site_name" content="Troy的输出流">
 <meta property="og:description" content="查看哪些IP连接本机netstat -an">
-<meta property="og:updated_time" content="2016-11-04T13:56:07.557Z">
+<meta property="og:updated_time" content="2016-12-09T03:54:00.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查看Linux中TCP连接数">
 <meta name="twitter:description" content="查看哪些IP连接本机netstat -an">
@@ -538,7 +538,7 @@
 <ol>
 <li><p>查看apache当前并发访问数：<br>netstat -an | grep ESTABLISHED | wc -l<br>对比httpd.conf中MaxClients的数字差距多少。</p>
 </li>
-<li><p>查看有多少个进程数：<br>ps aux|grep httpd|wc -l</p>
+<li><p>查看有多少个进程数：<br>ps -aux|grep httpd|wc -l</p>
 </li>
 <li><p>可以使用如下参数查看数据</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ps -ef|grep httpd|wc <span class="_">-l</span></div><div class="line">1388</div></pre></td></tr></table></figure>
@@ -842,8 +842,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
