@@ -4,6 +4,36 @@
   
     
     <entry>
+      <title><![CDATA[如何优雅地通过校招笔试]]></title>
+      <url>http://www.bluestroy.com/2017/10/18/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%80%9A%E8%BF%87%E6%A0%A1%E6%8B%9B%E7%AC%94%E8%AF%95/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>我不是教你笔试如何作弊，而是教你笔试如何优雅地合作！<a id="more"></a></p>
+</blockquote>
+<h3 id="1-使用谷歌浏览器和印象笔记"><a href="#1-使用谷歌浏览器和印象笔记" class="headerlink" title="1. 使用谷歌浏览器和印象笔记"></a>1. 使用谷歌浏览器和印象笔记</h3><ul>
+<li>首先，自行安装好谷歌浏览器和印象笔记，你不知道从哪里下载？好吧，看下图是如何下载印象笔记的。    </li>
+<li>安装完印象笔记之后注册并登录。（印象笔记挺好用的，平时记笔记也很方便。）  </li>
+<li>印象笔记里面建立群组共享笔记本，并把合作者加入到笔记本中。（创建共享笔记本的人需要是会员，具体操作暂不详述）  </li>
+</ul>
+<p><img src="http://obmxnha1c.bkt.clouddn.com/21Kmz" alt="Untitled Image"></p>
+<h3 id="2-在谷歌浏览器上安装印象笔记剪藏插件"><a href="#2-在谷歌浏览器上安装印象笔记剪藏插件" class="headerlink" title="2. 在谷歌浏览器上安装印象笔记剪藏插件"></a>2. 在谷歌浏览器上安装印象笔记剪藏插件</h3><ul>
+<li>下载地址：<a href="http://pan.baidu.com/s/1c0etxO" target="_blank" rel="external">印象笔记剪藏插件</a>  </li>
+<li>打开谷歌浏览器的<strong>扩展程序</strong>页面，如下图：<br><img src="http://obmxnha1c.bkt.clouddn.com/jKev2" alt="Untitled Image">  </li>
+<li>安装插件，将下载的插件拖到该页面。如下图：<br><img src="http://obmxnha1c.bkt.clouddn.com/kKxvN" alt="Untitled Image">  </li>
+</ul>
+<h3 id="3-登录印象笔记剪藏插件"><a href="#3-登录印象笔记剪藏插件" class="headerlink" title="3. 登录印象笔记剪藏插件"></a>3. 登录印象笔记剪藏插件</h3><p>安装完成后，谷歌浏览器的地址栏右边会出现插件的图标，第一次点击图标会提示登录，用你的印象笔记账号登录。见下图：<br><img src="http://obmxnha1c.bkt.clouddn.com/fCKA1" alt="Untitled Image">  </p>
+<h3 id="4-将笔试的页面保存到印象笔记中"><a href="#4-将笔试的页面保存到印象笔记中" class="headerlink" title="4. 将笔试的页面保存到印象笔记中"></a>4. 将笔试的页面保存到印象笔记中</h3><ul>
+<li>假设你正在笔试，现在浏览器中点击下印象笔记剪藏的插件图标，会弹出保存按钮。  </li>
+<li>你可以选择保存的内容，一般选<strong>整个页面</strong>（选择一次就好了，后面就默认这个）。也可以选择保存到的笔记本，如已经建好的<strong>校招笔试</strong>  </li>
+<li>（点击最先面的选项，可以进入插件的设置页面，可以设置总是保存到某个笔记本，这样以后保存内容的时候就默认的不需要选，只要点保存按钮就好了）<br><img src="http://obmxnha1c.bkt.clouddn.com/rYHTg" alt="Untitled Image">  </li>
+</ul>
+<h3 id="5-其他小伙伴开始助攻"><a href="#5-其他小伙伴开始助攻" class="headerlink" title="5. 其他小伙伴开始助攻"></a>5. 其他小伙伴开始助攻</h3><ul>
+<li>其他小伙伴使用印象笔记电脑版，当然他也在共享的笔记本下，点击<strong>同步</strong>，就可以在笔记本中看到你保存的页面内容了。<br><img src="http://obmxnha1c.bkt.clouddn.com/VVQw2" alt="Untitled Image">  </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">只要在共享笔记本里的人都可以看到你保存进去的笔记，小伙伴们在自己电脑上分工做题（可远程），然后微信上发给你答案。最后，**笔试通过**！！！</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[一张图解读什么是数字签名、数字证书、https原理]]></title>
       <url>http://www.bluestroy.com/2016/12/07/%E4%B8%80%E5%BC%A0%E5%9B%BE%E8%A7%A3%E8%AF%BB%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E3%80%81%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E3%80%81https%E5%8E%9F%E7%90%86/</url>
       <content type="html"><![CDATA[<p>数字签名和数字证书是什么？ https是如果实现加密传输的？<br><a id="more"></a></p>
